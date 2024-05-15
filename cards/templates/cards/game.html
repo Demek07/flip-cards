@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <body>
+    <center>
+      <div>
+        <h1>
+          Осталось: <b id="remains">10</b> Ошибок: <b id="errors_count">0</b>
+        </h1>
+        <br />
+        <div class="container_game">
+          <span id="block1">
+            {% for key, value in words_game.0.items %}
+              <div class="card_z" id="zs1{{ key }}">
+                <div id="l{{ key }}" class="card1" onclick='click1(id,"{{ value }}");'>{{ value }}</div>
+              </div>
+            {% endfor %}
+          </span>
+          <span id="block2">
+            {% for key, value in words_game.1.items %}
+              <div class="card_z" id="zs2{{ key }}">
+                <div id="r{{ key }}"
+                     class="card1 black"
+                     onclick='click1(id,"{{ value }}");'>{{ value }}</div>
+              </div>
+            {% endfor %}
+          </span>
+        </div>
+      </center>
+    </body>
+  {% endblock content %}

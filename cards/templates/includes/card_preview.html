@@ -1,0 +1,39 @@
+{% load markdown_to_html %}
+<!-- Краткое представление карточки cards/templates/cards/include/card_preview.html -->
+<div class="card mb-3 light">
+  <div class="row g-0 ">
+    {% comment %} <div class="col-md-3 d-flex align-items-center justify-content-center">
+      <div class="p-3 d-none d-md-block">
+        <i class="bi bi-question-circle-fill" style="font-size: 3rem;"></i>
+      </div>
+    </div> {% endcomment %}
+    <div class="col-md-12">
+      <div class="card-header text-end">
+        <i class="bi bi-star"></i> {{ card.adds }}
+      </div>
+      <div class="card-body text-center">
+        <h4 class="card-title">{{ card.en_word }}</h4>
+        <p class="card-text text-muted">{{ card.transcription }}</p>
+        <h4 class="card-text">{{ card.rus_word }}</h4>
+        {% comment %} {% for trans in card.translations %}<li>--> {{ trans }}</li>{% endfor %} {% endcomment %}
+        <!-- Горизонтальное выравнивание для элементов даты, просмотров, добавлений и кнопки -->
+        <div class="d-flex justify-content-between align-items-center ">
+          <div class="ms-auto">
+            <!-- Добавлен класс ms-auto для сдвига вправо -->
+          </div>
+          <!--    ТУТ 2 КНОПКИ. 1 видно на компьютерах, другую на телефонах.    -->
+          <!-- Кнопка для sm и меньше (только иконка) -->
+          <a href="#"
+             class="btn btn-primary btn-sm ms-3 d-block d-sm-none"
+             style="background-color: #4d59fb">
+            <i class="bi bi-arrow-right"></i>
+          </a>
+          <!-- Кнопка для sm и больше (полный текст) -->
+          <a href="#"
+             class="btn btn-primary btn-sm ms-3 d-none d-sm-block"
+             style="background-color: #4d59fb">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

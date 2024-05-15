@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}
+    Главная страница
+{% endblock title %}
+{% block content %}
+    <h1>Изучение английских слов по карточкам</h1>
+    <br>
+    <div class="container1">
+        <div class="wrapper">
+            <h2>Словарь английских слов</h2>
+            <div class="search">
+                <input type="text" placeholder="Поиск слов" required spellcheck="false">
+                <i class="bi bi-search"></i>
+                <span class="material-icons">⨯</span>
+            </div>
+            <p class="info-text">Введите любое слово и нажмите Enter, чтобы получить перевод.</p>
+            <ul>
+                <li class="word">
+                    <div class="details">
+                        <p>__</p>
+                        <span>_ _</span>
+                    </div>
+                    <i class="fas fa-volume-up"></i>
+                </li>
+                <div class="content">
+                    <li class="meaning">
+                        <div class="details">
+                            <p>Meaning</p>
+                            <span>___</span>
+                        </div>
+                    </li>
+                    <li class="example">
+                        <div class="details">
+                            <p>Example</p>
+                            <span>___</span>
+                        </div>
+                    </li>
+                    <li class="synonyms">
+                        <div class="details">
+                            <p>Synonyms</p>
+                            <div class="list"></div>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+{% endblock content %}
