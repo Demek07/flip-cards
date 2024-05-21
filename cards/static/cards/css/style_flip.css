@@ -1,47 +1,66 @@
-* {
-  box-sizing: border-box;
-}
-.container_flip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  /* margin-top: 25vh; */
-}
-
-.card-wrapper {
-  display: inline-block;
-  perspective: 1000px;
+body {
+  /* background: #eee; */
+  /* font-family: "Lily Script One"; */
 }
 
 .card {
-  position: relative;
-  width: 800px;
-  height: 250px;
-  cursor: pointer;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  width: 100%;
+  height: 200px;
+  /* padding: 100px; */
+  /* margin: 10px; */
+  /* float: left; */
+  perspective: 2000px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   transition-duration: 0.6s;
   transition-timing-function: ease-in-out;
+  /* transition: transform 1s; */
   transform-style: preserve-3d;
 }
 
-.card .front,
-.card .back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  transform-style: preserve-3d; /*без этой строки не работает в Firefox*/
+.card:hover .content {
+  transform: rotateX(-180deg);
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
   display: grid;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
-  -webkit-box-shadow: -16px -5px 11px -12px rgba(0, 0, 0, 0.65);
-  -moz-box-shadow: -16px -5px 11px -12px rgba(0, 0, 0, 0.65);
-  box-shadow: -16px -5px 11px -12px rgba(0, 0, 0, 0.65);
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  line-height: 300px;
+  color: #03446a;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.back {
+  background: AliceBlue;
+  font-size: 1.5rem;
+
+  /* color: white; */
+  transform: rotateX(-180deg);
+}
+
+.front {
+  font-weight: 700;
+  font-size: 1rem;
+  background-image: linear-gradient(90deg, #4776e6, #8e54e9);
 }
 
 .card_footer {
@@ -49,80 +68,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.card .front {
-  z-index: 2;
-  color: #333;
-  font-weight: 700;
-  font-size: 1rem;
-  background-image: linear-gradient(90deg, #4776e6, #8e54e9);
-}
-
-.card .back {
-  font-size: 1.5rem;
-  color: #333;
-  background: AliceBlue;
-  /* background: #ffffff; */
-  /* color: #91c92a; */
-}
-
-/* Animation classes */
-.flip-right .card .back {
-  transform: rotateY(180deg);
-}
-
-.flip-right:hover .card {
-  transform: rotateY(180deg);
-}
-
-/* .flip-left .card .back { */
-/* transform: rotateY(-180deg); */
-/* } */
-
-/* .flip-left:hover .card { */
-/* transform: rotateY(-180deg); */
-/* } */
-
-/* .flip-up .card .back { */
-/* transform: rotateX(180deg); */
-/* } */
-
-/* .flip-up:hover .card { */
-/* transform: rotateX(180deg); */
-/* } */
-
-/* .flip-down .card .back { */
-/* transform: rotateX(-180deg); */
-/* } */
-
-/* .flip-down:hover .card { */
-/* transform: rotateX(-180deg); */
-/* } */
-
-/* .flip-diagonal-right .card .back { */
-/* transform: rotate3d(1, 1, 0, 180deg); */
-/* } */
-
-/* .flip-diagonal-right:hover .card { */
-/* transform: rotate3d(1, 1, 0, 180deg); */
-/* } */
-
-/* .flip-diagonal-left .card .back { */
-/* transform: rotate3d(1, 1, 0, -180deg); */
-/* } */
-
-/* .flip-diagonal-left:hover .card { */
-/* transform: rotate3d(1, 1, 0, -180deg); */
-/* } */
-
-/* .flip-inverted-diagonal-right .card .back { */
-/* transform: rotate3d(-1, 1, 0, 180deg); */
-/* } */
-
-/* .flip-inverted-diagonal-left:hover .card { */
-/* transform: rotate3d(1, -1, 0, 180deg); */
-/* } */
-
-/* .flip-inverted-diagonal-left .card .back { */
-/* transform: rotate3d(1, -1, 0, 180deg); */
-/* } */

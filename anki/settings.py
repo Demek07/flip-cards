@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
 from pathlib import Path
 
 
@@ -24,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)i#pl3l_iw-r2ajqyg&qs&@8b9gw*k&#_%d)p9_rgj&uo*)d7!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['176.109.99.109']
+ALLOWED_HOSTS = []
 
 INTERNAL_IPS = ['127.0.0.1']
 
@@ -47,19 +46,19 @@ INSTALLED_APPS = [
     'users',
 ]
 
-# Админпанель
+# Админпанель  
 JAZZMIN_UI_TWEAKS = {
     "theme": "litera",
     "sticky_actions": True,
     "actions_sticky_top": True,
-}
+    }
 
 JAZZMIN_SETTINGS = {
     # "site_title": "Название сайта",
     # "site_brand": "Название сайта",
     "show_ui_builder": True,
     "changeform_format": "carousel",
-}
+    }
 
 
 MIDDLEWARE = [
@@ -142,7 +141,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -157,4 +155,4 @@ CACHES = {
 }
 
 LOGIN_URL = 'users:login'
-LOGOUT_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/" 

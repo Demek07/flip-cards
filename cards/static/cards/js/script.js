@@ -37,12 +37,17 @@ function click1(id_card) {
     document.getElementById(mark).style = select_style;
     if (left.slice(1) == right.slice(1)) {
         remains = remains - 1;
+        confirm('Желаете повторить?')
         document.getElementById(left).style = correct_style;
         document.getElementById(right).style = correct_style;
         document.getElementById("remains").innerHTML = remains;
         mark = "";
         left = "";
         right = "";
+        if (remains == 0) {
+            if (confirm('Желаете повторить?')) {
+                location.reload();}
+            }
         setTimeout(function () {
             remove(id);
         }, 333);

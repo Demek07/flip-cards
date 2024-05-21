@@ -1,4 +1,7 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponseRedirect
 from django.core.cache import cache
 from django.db.models import Q
 from django.template.defaultfilters import random
@@ -7,6 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Card
 from django.template.defaulttags import register
 import random
+from django.shortcuts import render
 
 
 info = {
@@ -113,8 +117,6 @@ class CatalogView(MenuMixin, ListView):
     def get_queryset(self):
         # Получение параметров сортировки из GET-запроса
         search_query = self.request.GET.get('search_query', '')
-
-        # Фильтрация карточек по поисковому запросу и сортировка
         if search_query:
             queryset = Card.objects.filter(Q(en_word__iexact=search_query) | Q(rus_word__iexact=search_query)).order_by('en_word')
         else:
@@ -124,18 +126,8 @@ class CatalogView(MenuMixin, ListView):
     def get_context_data(self, **kwargs):
         # Получение существующего контекста из базового класса
         context = super().get_context_data(**kwargs)
-        # добавить номер страницы в контекст
-        # context['page'] = self.request.GET.get('page')
-        # Добавление дополнительных данных в контекст
-        # context['sort'] = self.request.GET.get('sort', 'upload_date')
-        # context['order'] = self.request.GET.get('order', 'desc')
         context['search_query'] = self.request.GET.get('search_query', '')
         return context
-        # response = render(request, 'cards/catalog.html', context)
-        # response['Cache-Control'] = 'no-cache, no-store, must-revalidate'  # - кэш не используется
-        # response['Expires'] = '0'  # Перестраховка - устаревание кэша
-        # return response
-        # return render(request, 'cards/catalog.html', context)
 
 
 class GameView(MenuMixin, LoginRequiredMixin, ListView):
@@ -148,8 +140,12 @@ class GameView(MenuMixin, LoginRequiredMixin, ListView):
         rus = []
         en_word = {}
         rus_word = {}
-        all_objects = Card.objects.all()
-        random_objects = random.sample(list(all_objects), 10)
+        # all_objects = Card.objects.all()
+        all_objects = Card.objects.filter(favourites_word=self.request.user)
+        if all_objects.count() < 10:
+            random_objects = random.sample(list(all_objects), all_objects.count())
+        else:
+            random_objects = random.sample(list(all_objects), 10)
         for item in random_objects:
             en.append((item.id, item.en_word))
             rus.append((item.id, item.rus_word))
@@ -178,12 +174,12 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
     def get_queryset(self):
         # Получение параметров сортировки из GET-запроса
         search_query = self.request.GET.get('search_query', '')
-
         # Фильтрация карточек по поисковому запросу и сортировка
         if search_query:
-            queryset = Card.objects.filter(Q(en_word__iexact=search_query) | Q(rus_word__iexact=search_query)).order_by('en_word')
+            queryset = Card.objects.filter(Q(en_word__iexact=search_query) | Q(rus_word__iexact=search_query) & Q(favourites_word=self.request.user)).order_by('en_word')
         else:
-            queryset = Card.objects.all().order_by('en_word')
+            # Получаем только избранные карточки
+            queryset = Card.objects.filter(favourites_word=self.request.user).order_by('en_word')
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -196,3 +192,24 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
         # context['order'] = self.request.GET.get('order', 'desc')
         context['search_query'] = self.request.GET.get('search_query', '')
         return context
+
+
+@login_required
+def flip_cards(request):
+    user = request.user
+    cards = user.favourites_word.all()
+    context = {
+        'flip_cards': cards,
+        'menu': info['menu'],
+    }
+    return render(request, 'cards/flip_catalog.html', context)
+
+
+@login_required
+def favourites_word(request, id):
+    card = get_object_or_404(Card, id=id)
+    if card.favourites_word.filter(id=request.user.id).exists():
+        card.favourites_word.remove(request.user)
+    else:
+        card.favourites_word.add(request.user)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

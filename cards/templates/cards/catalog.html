@@ -28,7 +28,7 @@
       </div>
    </p>
    <div class="row">
-      <div {% for card in cards %}
+      {% for card in cards %}
          <div class="col-12 col-lg-6">{% include "includes/card_preview.html" %}</div>
       {% endfor %}
    </div>
