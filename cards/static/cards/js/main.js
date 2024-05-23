@@ -96,3 +96,21 @@ function error_reset(left, right) {
     document.getElementById(left).style = light_style;
 }
 /*игра конец*/
+
+$(document).on('click', '.favourites-button', function() {
+    var cardId = $(this).data('card-id');
+    $.ajax({
+        url: '/cards/favourites_word/' + cardId,
+        type: 'POST',
+        success: function(response) {
+            if (response.status === 'added') {
+                // Update UI to show that the card is added to favourites
+            } else if (response.status === 'removed') {
+                // Update UI to show that the card is removed from favourites
+            }
+        },
+        error: function() {
+            // Handle error
+        }
+    });
+});

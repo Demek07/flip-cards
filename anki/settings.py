@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Загружает переменные окружения из файла .env, который находится в той же директории, что и settings.py
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,14 +24,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)i#pl3l_iw-r2ajqyg&qs&@8b9gw*k&#_%d)p9_rgj&uo*)d7!'
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['flip-cards.ru', 'www.flip-cards.ru', 'localhost', '127.0.0.1']
 
-INTERNAL_IPS = ['127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://flip-cards.ru', 'https://www.flip-cards.ru']
+
+if DEBUG:    
+    INTERNAL_IPS = [
+        '127.0.0.1',
+    ]
 
 # Application definition
 
