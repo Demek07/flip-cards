@@ -1,23 +1,27 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Pacifico:wght@400;500;600;700&display=swap'); */
 /* body {
   background-color: AliceBlue;
 
 } */
 h1 {
   text-align: center;
-  font-family: "Pacifico", cursive;
+  font-family: cursive;
+  /* font-family: "Pacifico", cursive; */
   color: #afb4fd;
 }
 .all_text {
-  font-family: "Pacifico", cursive;
+  font-family: cursive;
+  /* font-family: "Pacifico", cursive; */
   color: #afb4fd;
 }
 h4 {
-  font-family: "Pacifico", cursive;
+  font-family: cursive;
+  /* font-family: "Pacifico", cursive; */
 }
 .card-text {
-  font-family: "Pacifico", cursive;
+  font-family: cursive;
+  /* font-family: "Pacifico", cursive; */
 }
 span {
   margin-right: 2px;

@@ -9,3 +9,4 @@
 dict.db
 .pyc
 *.pyc
+.vscode/launch.json
