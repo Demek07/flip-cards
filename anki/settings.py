@@ -30,11 +30,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['flip-cards.ru', 'www.flip-cards.ru', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['flip-cards.ru', 'www.flip-cards.ru', 'localhost', '127.0.0.1', '213.171.10.225']
 
 CSRF_TRUSTED_ORIGINS = ['https://flip-cards.ru', 'https://www.flip-cards.ru']
 
-if DEBUG:    
+if DEBUG:
     INTERNAL_IPS = [
         '127.0.0.1',
     ]
@@ -56,19 +56,19 @@ INSTALLED_APPS = [
     'users',
 ]
 
-# Админпанель  
+# Админпанель
 JAZZMIN_UI_TWEAKS = {
     "theme": "litera",
     "sticky_actions": True,
     "actions_sticky_top": True,
-    }
+}
 
 JAZZMIN_SETTINGS = {
     # "site_title": "Название сайта",
     # "site_brand": "Название сайта",
     "show_ui_builder": True,
     "changeform_format": "carousel",
-    }
+}
 
 
 MIDDLEWARE = [
@@ -165,4 +165,4 @@ CACHES = {
 }
 
 LOGIN_URL = 'users:login'
-LOGOUT_REDIRECT_URL = "/" 
+LOGOUT_REDIRECT_URL = "/"
