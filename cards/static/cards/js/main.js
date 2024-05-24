@@ -51,7 +51,7 @@ function click1(id_card) {
             if (confirm('Вы без ошибок определили все пары! Желаете повторить?')) {
                 location.reload();}
         } else if ((remains == 0) & (error_count != 0)) {
-            if (confirm('Вы ошиблись ' + error_count + ' раз. Желаете повторить?')) {
+            if (confirm('Вы ошиблись ' + error_count + ' раз(а). Желаете повторить?')) {
                 location.reload();}
         }
         
