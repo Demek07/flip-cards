@@ -6,21 +6,21 @@
 } */
 h1 {
   text-align: center;
-  font-family: cursive;
+  /*font-family: cursive;*/
   /* font-family: "Pacifico", cursive; */
   color: #afb4fd;
 }
 .all_text {
-  font-family: cursive;
+  /*font-family: cursive;
   /* font-family: "Pacifico", cursive; */
   color: #afb4fd;
 }
 h4 {
-  font-family: cursive;
+  /*font-family: cursive;
   /* font-family: "Pacifico", cursive; */
 }
 .card-text {
-  font-family: cursive;
+  /*font-family: cursive;
   /* font-family: "Pacifico", cursive; */
 }
 span {
