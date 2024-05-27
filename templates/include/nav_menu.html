@@ -1,6 +1,6 @@
 <!--Меню было вставлено через include в базовый шаблон-->
 <nav class="navbar navbar-expand-lg navbar-dark"
-     style="background-color: #1b5589">
+     style="background-color: #4d59fb">
   <div class="container-fluid">
     <!-- Логотип и кнопка для мобильных версий -->
     <button class="navbar-toggler"
@@ -26,12 +26,14 @@
         <!-- Элементы правой части без выравнивания по левому краю -->
         {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'users:profile' %}">Привет, {{ user.username }}!</a>
+            <a class="nav-link" href="#">Привет, {{ user.username }}!</a>
           </li>
           <li>
             <form id="logout-form" action="{% url 'users:logout' %}" method="post">
-              <a class="nav-link" href="#" onclick="document.getElementById('logout-form').submit(); return false;">Выйти</a>
-            {% csrf_token %}
+              <a class="nav-link"
+                 href="#"
+                 onclick="document.getElementById('logout-form').submit(); return false;">Выйти</a>
+              {% csrf_token %}
             </form>
           </li>
         {% else %}
