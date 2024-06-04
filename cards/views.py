@@ -118,7 +118,8 @@ class CatalogView(MenuMixin, ListView):
         # Получение параметров сортировки из GET-запроса
         search_query = self.request.GET.get('search_query', '')
         if search_query:
-            queryset = Card.objects.filter(Q(en_word__iexact=search_query) | Q(rus_word__iexact=search_query)).order_by('en_word')
+            queryset = Card.objects.filter(Q(en_word__iexact=search_query) | Q(
+                rus_word__iexact=search_query)).order_by('en_word')
         else:
             queryset = Card.objects.all().order_by('en_word')
         return queryset
@@ -159,7 +160,7 @@ class GameView(MenuMixin, LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
-    
+
 
 class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
     """
@@ -176,7 +177,9 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
         search_query = self.request.GET.get('search_query', '')
         # Фильтрация карточек по поисковому запросу и сортировка
         if search_query:
-            queryset = Card.objects.filter(Q(en_word__iexact=search_query) | Q(rus_word__iexact=search_query) & Q(favourites_word=self.request.user)).order_by('en_word')
+            queryset = Card.objects.filter(
+                Q(en_word__iexact=search_query) | Q(rus_word__iexact=search_query) &
+                Q(favourites_word=self.request.user)).order_by('en_word')
         else:
             # Получаем только избранные карточки
             queryset = Card.objects.filter(favourites_word=self.request.user).order_by('en_word')
@@ -205,11 +208,26 @@ def flip_cards(request):
     return render(request, 'cards/flip_catalog.html', context)
 
 
+# @login_required
+# def favourites_word(request, id):
+#     card = get_object_or_404(Card, id=id)
+#     if card.favourites_word.filter(id=request.user.id).exists():
+#         card.favourites_word.remove(request.user)
+#     else:
+#         card.favourites_word.add(request.user)
+    # венуть данные без обновления страницы
+    # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
 @login_required
 def favourites_word(request, id):
     card = get_object_or_404(Card, id=id)
-    if card.favourites_word.filter(id=request.user.id).exists():
-        card.favourites_word.remove(request.user)
+    user = request.user
+
+    if card.favourites_word.filter(id=user.id).exists():
+        card.favourites_word.remove(user)
+        is_favourite = False
     else:
-        card.favourites_word.add(request.user)
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        card.favourites_word.add(user)
+        is_favourite = True
+
+    return JsonResponse({'is_favourite': is_favourite})
