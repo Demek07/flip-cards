@@ -1,3 +1,4 @@
+from datetime import time
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
@@ -11,8 +12,7 @@ from django.shortcuts import render
 from .models import Card
 import random
 import requests
-import playsound3
-
+import pyglet
 
 info = {
     "menu": [
@@ -243,7 +243,17 @@ def get_word_audio_url(request, word):
         if audio_url:
             audio_response = requests.get(audio_url, timeout=10)
             if audio_response.status_code == 200:
-                playsound3.playsound(audio_url)
+                # Create a streaming media player
+                player = pyglet.media.Player()
+                # Create a media source from the URL
+                stream = pyglet.media.load(audio_url)
+                # Add the media source to the player
+                player.queue(stream)
+                # Start playing the audio
+                player.play()
+                # Wait for the player to finish playing
+                pyglet.app.run()
+                # playsound3.playsound(audio_url)
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
