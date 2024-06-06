@@ -7,10 +7,11 @@ from django.db.models import Q
 from django.template.defaultfilters import random
 from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Card
-from django.template.defaulttags import register
-import random
 from django.shortcuts import render
+from .models import Card
+import random
+import requests
+import playsound3
 
 
 info = {
@@ -231,3 +232,25 @@ def favourites_word(request, id):
         is_favourite = True
 
     return JsonResponse({'is_favourite': is_favourite})
+
+
+def get_word_audio_url(request, word):
+    word = word.lower()
+    url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
+    response = requests.get(url, timeout=10)
+    if response.status_code == 200:
+        audio_url = response.json()[0]["phonetics"][0]["audio"]
+        if audio_url:
+            audio_response = requests.get(audio_url, timeout=10)
+            if audio_response.status_code == 200:
+                playsound3.playsound(audio_url)
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+# def get_word_audio(request):
+#     if request.method == 'POST':
+#         word = request.POST.get('word')
+#         audio_url = get_word_audio_url(word)
+#         return JsonResponse({'audio_url': audio_url})
+#     return JsonResponse({'audio_url': None})

@@ -16,17 +16,17 @@
         {% endif %} {% endcomment %}
         {% if user.is_authenticated %}
           {% if user in card.favourites_word.all %}
-            <a href="#" class="favourites-button favourited" data-card-id="{{ card.id }}"><i class="bi bi-star-fill"></i></a>
+            <a href="#" class="favourites-button favourited" data-card-id="{{ card.id }}"><i class="bi bi-star-fill ms-2 h5"></i></a>
           {% else %}
-            <a href="#" class="favourites-button" data-card-id="{{ card.id }}"><i class="bi bi-star"></i></a>
+            <a href="#" class="favourites-button" data-card-id="{{ card.id }}"><i class="bi bi-star ms-2 h5"></i></a>
           {% endif %}
         {% else %}
-            <a href="{% url 'users:login' %}"><i class="bi bi-star"></i></a>
+            <a href="{% url 'users:login' %}"><i class="bi bi-star ms-2 h5"></i></a>
         {% endif %} 
-        <a href="#"><i class="bi bi-volume-up"></i></a>
       </div>
       <div class="card-body text-center">
-        <h4 class="card-title">{{ card.en_word }}</h4>
+        <h4 class="card-title">{{ card.en_word }}<a href="{% url 'speak' word=card.en_word %}"><i class="bi bi-volume-up ms-2 h2"></i></a>
+</h4>
         <p class="card-text text-muted">{{ card.transcription }}</p>
         <h4 class="card-text">{{ card.rus_word }}</h4>
       </div>
