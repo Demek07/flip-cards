@@ -12,7 +12,8 @@ from django.shortcuts import render
 from .models import Card
 import random
 import requests
-from soundplay import playsound
+# from soundplay import playsound
+from playsound3 import playsound
 
 
 info = {
@@ -244,8 +245,8 @@ def get_word_audio_url(request, word):
         if audio_url:
             audio_response = requests.get(audio_url, timeout=10)
             if audio_response.status_code == 200:
+                # playsound(audio_url)
                 playsound(audio_url)
-                # playsound3.playsound(audio_url)
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
