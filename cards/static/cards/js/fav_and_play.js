@@ -53,7 +53,7 @@ $(document).ready(function () {
     toastr.options.debug = false;
     toastr.options.newestOnTop = false;
     toastr.options.progressBar = false;
-    toastr.options.positionClass = 'toast-top-right';
+    toastr.options.positionClass = 'toast-top-center';
     toastr.options.preventDuplicates = false;
     toastr.options.onclick = null;
     toastr.options.showDuration = '300';
