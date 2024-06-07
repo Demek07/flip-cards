@@ -12,8 +12,8 @@ from django.shortcuts import render
 from .models import Card
 import random
 import requests
-# from soundplay import playsound
-from playsound3 import playsound
+from soundplay import playsound
+# from playsound3 import playsound
 
 
 info = {
