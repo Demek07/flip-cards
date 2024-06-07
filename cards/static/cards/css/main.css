@@ -9,8 +9,8 @@
 }
 
 .rotateImg:hover {
-  /* transform: rotate(360deg) scale(1.5); */
-  transform: rotate(360deg) scale(1.2);
+  transform: scale(1.2);
+  /* transform: rotate(360deg) scale(1.2); */
 }
 
 h1 {

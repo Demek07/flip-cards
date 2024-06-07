@@ -25,7 +25,7 @@
         {% endif %} 
       </div>
       <div class="card-body text-center">
-        <h4 class="card-title">{{ card.en_word }}<a href="{% url 'speak' word=card.en_word %}"><i class="bi bi-volume-up ms-2 h2"></i></a>
+        <h4 class="card-title">{{ card.en_word }}<a href="#" class="play-audio-button" data-word="{{ card.en_word }}"><i class="bi bi-volume-up"></i></a>
 </h4>
         <p class="card-text text-muted">{{ card.transcription }}</p>
         <h4 class="card-text">{{ card.rus_word }}</h4>

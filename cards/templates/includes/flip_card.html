@@ -38,7 +38,9 @@
             <h2>{{ card.transcription }}</h2>
           </div>
           <div class="back">
-            <h2>{{ card.rus_word }}<a href="{% url 'speak' word=card.en_word %}"><i class="bi bi-volume-up ms-2 h2"></i></a></h2>
+            <h2>{{ card.rus_word }}
+              <a href="#" class="play-audio-button" data-word="{{ card.en_word }}"><i class="bi bi-volume-up"></i></a>
+            </h2>
             <div class="card_footer">
               <button class="btn btn-primary">Запомнил</button>
             </div>

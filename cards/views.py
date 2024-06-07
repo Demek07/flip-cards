@@ -12,8 +12,6 @@ from django.shortcuts import render
 from .models import Card
 import random
 import requests
-from soundplay import playsound
-# from playsound3 import playsound
 
 
 info = {
@@ -211,16 +209,6 @@ def flip_cards(request):
     return render(request, 'cards/flip_catalog.html', context)
 
 
-# @login_required
-# def favourites_word(request, id):
-#     card = get_object_or_404(Card, id=id)
-#     if card.favourites_word.filter(id=request.user.id).exists():
-#         card.favourites_word.remove(request.user)
-#     else:
-#         card.favourites_word.add(request.user)
-    # венуть данные без обновления страницы
-    # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
 @login_required
 def favourites_word(request, id):
     card = get_object_or_404(Card, id=id)
@@ -236,24 +224,19 @@ def favourites_word(request, id):
     return JsonResponse({'is_favourite': is_favourite})
 
 
-def get_word_audio_url(request, word):
-    word = word.lower()
+def get_word_audio_url(word):
     url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
     response = requests.get(url, timeout=10)
     if response.status_code == 200:
         audio_url = response.json()[0]["phonetics"][0]["audio"]
         if audio_url:
-            audio_response = requests.get(audio_url, timeout=10)
-            if audio_response.status_code == 200:
-                # playsound(audio_url)
-                playsound(audio_url)
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+            return audio_url
+    return None
 
 
-# def get_word_audio(request):
-#     if request.method == 'POST':
-#         word = request.POST.get('word')
-#         audio_url = get_word_audio_url(word)
-#         return JsonResponse({'audio_url': audio_url})
-#     return JsonResponse({'audio_url': None})
+def speak(request, word):
+    word = word.lower()
+    audio_url = get_word_audio_url(word)
+    if audio_url:
+        return JsonResponse({'audio_url': audio_url})
+    return JsonResponse({'audio_url': None})
