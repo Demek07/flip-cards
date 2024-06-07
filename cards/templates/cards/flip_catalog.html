@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-   {% load static %}
+{% load static %}
    <link rel="stylesheet" href="{% static 'cards/css/style_flip.css' %}" />
    <h1>Общий словарь английских слов</h1>
    <p class="all_text">Здесь вы можете выбрать слова для изучения</p>
@@ -30,12 +30,12 @@
       </div>
    </p>
    <div class="row">
-      <div>
          {% for card in flip_cards %}
-            <div>{% include "includes/flip_card.html" %}</div>
+            <div class="col-12">{% include "includes/flip_card.html" %}</div>
          {% endfor %}
-      </div>
-      {% comment %} Пагинация начало {% endcomment %}
-      <div class="col-12">{% include "includes/pagination.html" %}</div>
-      {% comment %} Пагинация конец {% endcomment %}
+   </div>  
+   <br>    
+   {% comment %} Пагинация начало {% endcomment %}
+   <div class="col-12">{% include "includes/pagination.html" %}</div>
+   {% comment %} Пагинация конец {% endcomment %}
    {% endblock content %}
