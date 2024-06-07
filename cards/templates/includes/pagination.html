@@ -3,11 +3,11 @@
       {% if page_obj.has_previous %}
          <li class="page-item">
             <a class="page-link"
-               href="?page={{ page_obj.first_page_number }}&sort={{ sort }}&order={{ order }}{% if search_query %}&search_query={{ search_query }}{% endif %}">Первая</a>
+               href="?page={{ page_obj.first_page_number }}&sort={{ sort }}&order={{ order }}{% if search_query %}&search_query={{ search_query }}{% endif %}"><i class="bi bi-chevron-double-left"></i></a>
          </li>
          <li class="page-item">
             <a class="page-link"
-               href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}&order={{ order }}{% if search_query %}&search_query={{ search_query }}{% endif %}">Назад</a>
+               href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}&order={{ order }}{% if search_query %}&search_query={{ search_query }}{% endif %}"><i class="bi bi-chevron-left"></i></a>
          </li>
       {% endif %}
       {% if page_obj.number|add:'-4' > 1 %}
@@ -40,11 +40,11 @@
       {% if page_obj.has_next %}
          <li class="page-item">
             <a class="page-link"
-               href="?page={{ page_obj.next_page_number }}&sort={{ sort }}&order={{ order }}{% if search_query %}&search_query={{ search_query }}{% endif %}">Вперед</a>
+               href="?page={{ page_obj.next_page_number }}&sort={{ sort }}&order={{ order }}{% if search_query %}&search_query={{ search_query }}{% endif %}"><i class="bi bi-chevron-right"></i></a>
          </li>
          <li class="page-item">
             <a class="page-link"
-               href="?page={{ page_obj.paginator.num_pages }}&sort={{ sort }}&order={{ order }}{% if search_query %}&search_query={{ search_query }}{% endif %}">Последняя</a>
+               href="?page={{ page_obj.paginator.num_pages }}&sort={{ sort }}&order={{ order }}{% if search_query %}&search_query={{ search_query }}{% endif %}"><i class="bi bi-chevron-double-right"></i></a>
          </li>
       {% else %}
          <li class="page-item disabled">
