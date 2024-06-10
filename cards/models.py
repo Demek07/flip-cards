@@ -47,5 +47,5 @@ class FavouritesWords(models.Model):
         verbose_name = 'Избранное слово'
         verbose_name_plural = 'Избранные слова'
 
-        # Уникальность пары карточка-тег
+        # Уникальность пары слово-пользователь
         unique_together = ('card', 'user')
