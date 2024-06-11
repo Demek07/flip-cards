@@ -8,7 +8,7 @@
     <br>
     <div class="row">
         <div class="col-sm-4">
-            <a href="/cards/catalog/" class="text-decoration-none">
+            <a href="{% url 'catalog' %}" class="text-decoration-none">
                 <div class="card text-center mb-3">
                     <img src="{% static 'cards/img/trans.png' %}"
                          class="card-img-top rotateImg"
@@ -20,25 +20,25 @@
             </a>
         </div>
         <div class="col-sm-4">
-            <a href="/cards/game/" class="text-decoration-none">
-                <div class="card text-center mb-3">
-                    <img src="{% static 'cards/img/game.png' %}"
-                         class="card-img-top rotateImg"
-                         alt="Определи слово">
-                    <div class="card-body">
-                        <h1>Определи слово</h1>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a href="/cards/flip/" class="text-decoration-none">
+            <a href="{% url 'flip-cards' %}" class="text-decoration-none">
                 <div class="card text-center mb-3">
                     <img src="{% static 'cards/img/card.png' %}"
                          class="card-img-top rotateImg"
                          alt="Флип карточки">
                     <div class="card-body">
                         <h1>Флип карточки</h1>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="{% url 'game' %}" class="text-decoration-none">
+                <div class="card text-center mb-3">
+                    <img src="{% static 'cards/img/game.png' %}"
+                         class="card-img-top rotateImg"
+                         alt="Определи слово">
+                    <div class="card-body">
+                        <h1>Определи слово</h1>
                     </div>
                 </div>
             </a>

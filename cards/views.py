@@ -1,17 +1,18 @@
 from datetime import time
+import random
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect, JsonResponse
 from django.core.cache import cache
 from django.db.models import Q
-from django.template.defaultfilters import random
+from django.db import transaction
+# from django.template.defaultfilters import random
 from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from .models import Card
-import random
 import requests
+from .models import Card, FavouritesWords
 
 
 info = {
@@ -22,12 +23,12 @@ info = {
         {"title": "Словарь",
          "url": "/cards/catalog/",
          "url_name": "catalog"},
-        {"title": "Определи слово",
-         "url": "/cards/game/",
-         "url_name": "game"},
         {"title": "Флип карточки",
          "url": "/cards/flip/",
          "url_name": "flip-cards"},
+        {"title": "Определи слово",
+         "url": "/cards/game/",
+         "url_name": "game"},
         {"title": "О проекте",
          "url": "/about/",
          "url_name": "about"},
@@ -240,3 +241,16 @@ def speak(request, word):
     if audio_url:
         return JsonResponse({'audio_url': audio_url})
     return JsonResponse({'audio_url': None})
+
+
+def save_results(request, card, errors, rights):
+    with transaction.atomic():
+        favourite_word, created = FavouritesWords.objects.get_or_create(
+            user=request.user,
+            card=card
+        )
+        if errors > 0:
+            favourite_word.errors_word = favourite_word.errors_word + errors
+        if rights > 0:
+            favourite_word.rights_word = favourite_word.rights_word + rights
+        favourite_word.save()

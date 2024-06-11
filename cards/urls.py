@@ -9,4 +9,5 @@ urlpatterns = [
     path('flip/', views.FlipCardsView.as_view(), name='flip-cards'),
     path('favorite/<int:id>', views.favourites_word, name='favourites_word'),
     path('speak/<str:word>', views.speak, name='speak'),
+    path('save_results/', views.save_results, name='save_results'),
 ]

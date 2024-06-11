@@ -41,6 +41,7 @@ class FavouritesWords(models.Model):
     is_learned = models.BooleanField(default=False, choices=tuple(
         map(lambda x: (bool(x[0]), x[1]), Learned.choices)), verbose_name='Выучено')
     errors_word = models.IntegerField(default=0, db_column='Errors_word', verbose_name='Количество ошибок')
+    rights_word = models.IntegerField(default=0, db_column='Rights_word', verbose_name='Количество ответов')
 
     class Meta:
         db_table = 'FavouritesWords'

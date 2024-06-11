@@ -4,6 +4,7 @@ let left = "";
 let right = "";
 // let remains = 10;
 let remains = parseInt(document.getElementById("remains").innerHTML);
+// let user_id = document.getElementById("user_id").innerHTML.slice(7);
 let id = "";
 let error_count = 0;
 let error_style = `
@@ -45,6 +46,8 @@ function click1(id_card) {
         left = "";
         right = "";
         setTimeout(function () {
+            console.log(id);
+            console.log(user_id);
             remove(id);
         }, 333);
         if ((remains == 0) & ( error_count == 0)) {
@@ -76,6 +79,8 @@ function click1(id_card) {
         document.getElementById("errors_count").innerHTML = error_count;
         document.getElementById(left).style = error_style;
         document.getElementById(right).style = error_style;
+        console.log(id);
+        console.log(user_id);
         setTimeout(error_reset, 666, left, right);
         left = "";
         right = "";
@@ -89,8 +94,8 @@ function remove(btn) {
     document.getElementById("zs1" + btn + "").style.pointerEvents = "none";
     document.getElementById("zs2" + btn + "").style.opacity = 0.5;
     document.getElementById("zs2" + btn + "").style.pointerEvents = "none";
-
 }
+
 function error_reset(left, right) {
     document.getElementById(right).style = dark_style;
     document.getElementById(left).style = light_style;
