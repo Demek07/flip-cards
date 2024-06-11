@@ -46,8 +46,8 @@ function click1(id_card) {
         left = "";
         right = "";
         setTimeout(function () {
-            console.log(id);
-            console.log(user_id);
+            // console.log(id);
+            // console.log(user_id);
             remove(id);
         }, 333);
         if ((remains == 0) & ( error_count == 0)) {
@@ -79,8 +79,8 @@ function click1(id_card) {
         document.getElementById("errors_count").innerHTML = error_count;
         document.getElementById(left).style = error_style;
         document.getElementById(right).style = error_style;
-        console.log(id);
-        console.log(user_id);
+        // console.log(id);
+        // console.log(user_id);
         setTimeout(error_reset, 666, left, right);
         left = "";
         right = "";
