@@ -154,7 +154,7 @@ label, .helptext {
   margin: -1px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  font-family: "Pacifico", cursive;
+  /* font-family: "Pacifico", cursive; */
   font-size: 20px;
   line-height: 15px;
 }
