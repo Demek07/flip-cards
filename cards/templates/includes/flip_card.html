@@ -37,7 +37,8 @@
             <h1>{{ card.card.en_word }}</h1>
             <h2>{{ card.card.transcription }}</h2>
             <div class="card_footer">
-              <h5><i class="fa-regular fa-face-smile fa-xl" style="color: #31d41c;"></i> - {{ card.rights_word }} <i class="fa-regular fa-face-angry fa-xl" style="color: #e70d0d;"></i> - {{ card.errors_word }}</h5>
+              <h5 class="d-block d-md-none"><i class="fa-regular fa-face-smile fa-xl" style="color: #31d41c;"></i> - {{ card.rights_word }} <i class="fa-regular fa-face-angry fa-xl" style="color: #e70d0d;"></i> - {{ card.errors_word }}</h5>
+              <h5 class="d-none d-md-block">Правильных слов - {{ card.rights_word }} / Ошибочных слов - {{ card.errors_word }}</h5>
             </div>
           </div>
           <div class="back">
