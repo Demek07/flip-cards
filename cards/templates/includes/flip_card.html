@@ -34,12 +34,15 @@
       <div class="card">
         <div class="content">
           <div class="front">
-            <h1>{{ card.en_word }}</h1>
-            <h2>{{ card.transcription }}</h2>
+            <h1>{{ card.card.en_word }}</h1>
+            <h2>{{ card.card.transcription }}</h2>
+            <div class="card_footer">
+              <h5>Правильных ответов: {{ card.rights_word }} / Ошибочных ответов: {{ card.errors_word }}</h5>
+            </div>
           </div>
           <div class="back">
-            <h2>{{ card.rus_word }}
-              <a href="#" class="play-audio-button" data-word="{{ card.en_word }}"><i class="bi bi-volume-up ms-2"></i></a>
+            <h2>{{ card.card.rus_word }}
+              <a href="#" class="play-audio-button" data-word="{{ card.card.en_word }}"><i class="bi bi-volume-up ms-2"></i></a>
             </h2>
             <div class="card_footer">
               <button class="btn btn-primary">Запомнил</button>

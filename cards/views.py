@@ -168,33 +168,32 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
     """
     Выводим каталог карточек
     """
-    model = Card  # Указываем модель, данные которой мы хотим отобразить
+    model = FavouritesWords
+  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'cards/flip_catalog.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'flip_cards'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 26  # Количество объектов на странице
 
     # Метод для модификации начального запроса к БД
+
     def get_queryset(self):
         # Получение параметров сортировки из GET-запроса
         search_query = self.request.GET.get('search_query', '')
+
         # Фильтрация карточек по поисковому запросу и сортировка
         if search_query:
-            queryset = Card.objects.filter(
-                Q(en_word__iexact=search_query) | Q(rus_word__iexact=search_query) &
-                Q(favourites_word=self.request.user)).order_by('en_word')
+            queryset = FavouritesWords.objects.filter(
+                Q(card__en_word__iexact=search_query) | Q(card__rus_word__iexact=search_query) &
+                Q(user=self.request.user)).select_related('card').order_by('card__en_word').distinct()
         else:
             # Получаем только избранные карточки
-            queryset = Card.objects.filter(favourites_word=self.request.user).order_by('en_word')
+            queryset = FavouritesWords.objects.filter(
+                user=self.request.user).select_related('card').order_by('card__en_word')
         return queryset
 
     def get_context_data(self, **kwargs):
         # Получение существующего контекста из базового класса
         context = super().get_context_data(**kwargs)
-        # добавить номер страницы в контекст
-        # context['page'] = self.request.GET.get('page')
-        # Добавление дополнительных данных в контекст
-        # context['sort'] = self.request.GET.get('sort', 'upload_date')
-        # context['order'] = self.request.GET.get('order', 'desc')
         context['search_query'] = self.request.GET.get('search_query', '')
         return context
 
@@ -243,14 +242,20 @@ def speak(request, word):
     return JsonResponse({'audio_url': None})
 
 
-def save_results(request, card, errors, rights):
+@login_required
+def save_results(request):
+    if request.method == 'POST':
+        card = request.POST.get('card_id')
+        errors = int(request.POST.get('errors'))
+        rights = int(request.POST.get('rights'))
+        user = request.user
     with transaction.atomic():
         favourite_word, created = FavouritesWords.objects.get_or_create(
-            user=request.user,
+            user=user,
             card=card
         )
         if errors > 0:
-            favourite_word.errors_word = favourite_word.errors_word + errors
+            favourite_word.errors_word += errors
         if rights > 0:
-            favourite_word.rights_word = favourite_word.rights_word + rights
+            favourite_word.rights_word += rights
         favourite_word.save()

@@ -25,6 +25,28 @@ let dark_style = `
     border-color : #1d2731;
     color: #FFF;`    
 
+function save_results(card_id, errors, rights) {
+    // Отправляем AJAX-запрос на сервер для обновления счетчиков в базе данных
+    var csrftoken = getCookie('csrftoken');
+    $.ajax({
+        url: '/cards/save_results/',
+        type: 'POST',
+        headers: {'X-CSRFToken': csrftoken},
+        data: {
+        card_id: card_id,
+        errors: errors,
+        rights: rights
+        },
+        success: function(response) {
+        // Обрабатываем ответ сервера, если это необходимо
+        console.log(response);
+        },
+        error: function(xhr, status, error) {
+        // Обрабатываем ошибки, которые могут возникнуть во время отправки AJAX-запроса
+        console.error(error);
+        }
+    });
+}
 
 function click1(id_card) {
     id = id_card.slice(1);
@@ -39,6 +61,7 @@ function click1(id_card) {
     document.getElementById(mark).style = select_style;
     if (left.slice(1) == right.slice(1)) {
         remains = remains - 1;
+        save_results(mark.slice(1), 0, 1);
         document.getElementById(left).style = correct_style;
         document.getElementById(right).style = correct_style;
         document.getElementById("remains").innerHTML = remains;
@@ -76,11 +99,11 @@ function click1(id_card) {
         mark = id_card;
     } else if (left != "" || right != "") {
         error_count = error_count + 1;
+        console.log(mark.slice(1));
+        save_results(mark.slice(1), 1, 0);
         document.getElementById("errors_count").innerHTML = error_count;
         document.getElementById(left).style = error_style;
         document.getElementById(right).style = error_style;
-        // console.log(id);
-        // console.log(user_id);
         setTimeout(error_reset, 666, left, right);
         left = "";
         right = "";
