@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import CreateView, TemplateView
-from cards.views import MenuMixin
+from flip_cards_app.views import MenuMixin
 from .forms import LoginUserForm, RegisterUserForm
 
 

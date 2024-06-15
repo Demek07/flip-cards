@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="content">
+          <div class="front">
+            <h1>{{ word.word.en_word }}</h1>
+            <h2>{{ word.word.transcription }}</h2>
+            <div class="card_footer">
+              <h5 class="d-block d-md-none"><i class="fa-regular fa-face-smile fa-xl" style="color: #31d41c;"></i> - {{ word.rights_word }} <i class="fa-regular fa-face-angry fa-xl" style="color: #e70d0d;"></i> - {{ card.errors_word }}</h5>
+              <h5 class="d-none d-md-block">Правильных слов - {{ word.rights_word }} / Ошибочных слов - {{ word.errors_word }}</h5>
+            </div>
+          </div>
+          <div class="back">
+            <h2>{{ word.word.rus_word }}
+              <a href="#" class="play-audio-button" data-word="{{ word.word.en_word }}"><i class="bi bi-volume-up ms-2"></i></a>
+            </h2>
+            <div class="card_footer">
+              <button class="btn btn-primary">Запомнил</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
