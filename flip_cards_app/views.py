@@ -120,8 +120,8 @@ class CatalogView(MenuMixin, ListView):
         # Получение параметров сортировки из GET-запроса
         search_query = self.request.GET.get('search_query', '')
         if search_query:
-            queryset = Word.objects.filter(Q(en_word__iexact=search_query) | Q(
-                rus_word__iexact=search_query)).order_by('en_word')
+            queryset = Word.objects.filter(Q(en_word__iregex=search_query) | Q(
+                rus_word__iregex=search_query)).order_by('en_word')
         else:
             queryset = Word.objects.all().order_by('en_word')
         return queryset
@@ -183,7 +183,7 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
         # Фильтрация карточек по поисковому запросу и сортировка
         if search_query:
             queryset = FavouritesWords.objects.filter(
-                Q(card__en_word__iexact=search_query) | Q(card__rus_word__iexact=search_query) &
+                Q(card__en_word__iregex=search_query) | Q(card__rus_word__iregex=search_query) &
                 Q(user=self.request.user)).select_related('word').order_by('word__en_word').distinct()
         else:
             # Получаем только избранные карточки
