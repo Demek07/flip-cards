@@ -25,15 +25,15 @@ let dark_style = `
     border-color : #1d2731;
     color: #FFF;`    
 
-function save_results(card_id, errors, rights) {
+function save_results(word_id, errors, rights) {
     // Отправляем AJAX-запрос на сервер для обновления счетчиков в базе данных
     var csrftoken = getCookie('csrftoken');
     $.ajax({
-        url: '/cards/save_results/',
+        url: '/words/save_results/',
         type: 'POST',
         headers: {'X-CSRFToken': csrftoken},
         data: {
-        card_id: card_id,
+        word_id: word_id,
         errors: errors,
         rights: rights
         },
@@ -48,15 +48,15 @@ function save_results(card_id, errors, rights) {
     });
 }
 
-function click1(id_card) {
-    id = id_card.slice(1);
-    if (id_card[0] == "l") {
-        left = id_card;
-    } else if (id_card[0] == "r") {
-        right = id_card;
+function click1(id_word) {
+    id = id_word.slice(1);
+    if (id_word[0] == "l") {
+        left = id_word;
+    } else if (id_word[0] == "r") {
+        right = id_word;
     }
     if (mark == "") {
-        mark = id_card;
+        mark = id_word;
     }
     document.getElementById(mark).style = select_style;
     if (left.slice(1) == right.slice(1)) {
@@ -89,14 +89,14 @@ function click1(id_card) {
             document.getElementById(left).style.color = "#000";
 
         }
-        mark = id_card;
+        mark = id_word;
     } else if (left == "") {
         if (right != mark) {
             document.getElementById(mark).style = dark_style;
             document.getElementById(right).style = select_style;
             document.getElementById(right).style.color = "#FFF";
         }
-        mark = id_card;
+        mark = id_word;
     } else if (left != "" || right != "") {
         error_count = error_count + 1;
         console.log(mark.slice(1));

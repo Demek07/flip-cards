@@ -75,7 +75,7 @@ $(document).ready(function () {
 
         // AJAX-запрос для получения ссылки на аудио
         $.ajax({
-            url: '/cards/speak/' + word,
+            url: '/words/speak/' + word,
             type: 'POST',
             headers: {'X-CSRFToken': csrftoken},
             success: function(response) {
