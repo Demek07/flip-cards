@@ -4,6 +4,9 @@ from django.contrib.auth import get_user_model
 
 
 class Word(models.Model):
+    class Status(models.IntegerChoices):
+        UNCHECKED = 0, 'Не проверено'
+        CHECKED = 1, 'Проверено'
 
     id = models.AutoField(primary_key=True, db_column='ID', verbose_name='ID')
     en_word = models.CharField(max_length=100, db_column='En_word', verbose_name='Слово')
@@ -12,14 +15,13 @@ class Word(models.Model):
     # favourites_word = models.ManyToManyField(User, related_name='favourites_word', blank=True)
     favourites_word = models.ManyToManyField(get_user_model(), through='FavouritesWords',
                                              related_name='words', verbose_name='Избранные')
+    status = models.BooleanField(default=False, choices=tuple(
+        map(lambda x: (bool(x[0]), x[1]), Status.choices)), verbose_name='Проверено')
 
     class Meta:
         db_table = 'allwords'  # имя таблицы в базе данных
-        verbose_name = 'Словарь'  # имя модели в единственном числе
-        verbose_name_plural = 'Словари'  # имя модели во множественном числе
-
-    def __str__(self):
-        return f'Карточка {self.source} - {self.translations[:10]}'
+        verbose_name = 'Словo'  # имя модели в единственном числе
+        verbose_name_plural = 'Слова'  # имя модели во множественном числе
 
     def is_favourited(self, user):
         return user.is_authenticated and self.favourites_word.filter(id=user.id).exists()
