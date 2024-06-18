@@ -27,15 +27,11 @@ class Word(models.Model):
 
 
 class FavoritesWords(models.Model):
-    class Learned(models.IntegerChoices):
-        UNCHECKED = 0, 'Не выучено'
-        CHECKED = 1, 'Выучено'
 
     id = models.AutoField(primary_key=True, db_column='id')
     word = models.ForeignKey(Word, on_delete=models.CASCADE, db_column='WordID')
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, db_column='UserID')
-    is_learned = models.BooleanField(default=False, choices=tuple(
-        map(lambda x: (bool(x[0]), x[1]), Learned.choices)), verbose_name='Выучено')
+    is_learned = models.BooleanField(default=False, verbose_name='Выучено')
     errors_word = models.IntegerField(default=0, db_column='Errors_word', verbose_name='Количество ошибок')
     rights_word = models.IntegerField(default=0, db_column='Rights_word', verbose_name='Количество ответов')
 

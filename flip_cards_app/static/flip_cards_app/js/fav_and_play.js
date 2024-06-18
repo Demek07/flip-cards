@@ -19,14 +19,14 @@ $(document).ready(function() {
     $('.favorites-button').on('click', function(event) {
         event.preventDefault(); // предотвратить перезагрузку страницы
         
-        var cardId = $(this).data('card-id');
+        var wordId = $(this).data('word-id');
 
         // Получение токена CSRF из элемента meta с именем csrf-token
         var csrftoken = getCookie('csrftoken');
 
         // AJAX-запрос
         $.ajax({
-            url: '/words/favorite/' + cardId,
+            url: '/words/favorite/' + wordId,
             type: 'POST',
             headers: {'X-CSRFToken': csrftoken},
             success: function(response) {
@@ -90,6 +90,36 @@ $(document).ready(function () {
             error: function () {
                 console.log('Ошибка при запросе ссылки на аудио');
                 toastr.error('К сожаления, такого звукового файла пока нет')
+            }
+        });
+    });
+});
+
+
+$(document).ready(function() {
+    $('.learned-btn').on('click', function(event) {
+        event.preventDefault(); // предотвратить перезагрузку страницы
+
+        var wordId = $(this).data('word-id');
+        var isLearned = true;
+
+        // Получение токена CSRF из элемента meta с именем csrf-token
+        var csrftoken = getCookie('csrftoken');
+        // AJAX-запрос для обновления данных в базе данных 
+        $.ajax({
+            url: '/words/learned_words/' + wordId,
+            type: 'POST',
+            headers: {'X-CSRFToken': csrftoken},
+            data: {
+                word_id: wordId,
+                is_learned: true,
+            },
+            success: function(response) {
+                // Обработка успешного ответа здесь
+                window.location.reload();
+            },
+            error: function(xhr, status, error) {
+                // Обработка ошибки здесь
             }
         });
     });

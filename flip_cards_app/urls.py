@@ -11,5 +11,6 @@ urlpatterns = [
     path('speak/<str:word>', views.speak, name='speak'),
     path('save_results/', views.save_results, name='save_results'),
     path('favorites/', views.FavoritesView.as_view(), name='favorites'),  # Общий каталог всех слов
+    path('learned_words/<int:id>', views.learned_words, name='learned_words'),
 
 ]

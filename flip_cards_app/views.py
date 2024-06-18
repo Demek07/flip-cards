@@ -214,11 +214,11 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
         if search_query:
             queryset = FavoritesWords.objects.filter(
                 Q(card__en_word__iregex=search_query) | Q(card__rus_word__iregex=search_query) &
-                Q(user=self.request.user)).select_related('word').order_by('word__en_word').distinct()
+                Q(user=self.request.user) & Q(is_learned=False)).select_related('word').order_by('word__en_word').distinct()
         else:
             # Получаем только избранные карточки
-            queryset = FavoritesWords.objects.filter(
-                user=self.request.user).select_related('word').order_by('word__en_word')
+            queryset = FavoritesWords.objects.filter(Q(user=self.request.user) & Q(
+                is_learned=False)).select_related('word').order_by('word__en_word')
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -278,3 +278,16 @@ def save_results(request):
         if rights > 0:
             favorite_word.rights_word += rights
         favorite_word.save()
+
+
+def learned_words(request, id):
+    if request.method == 'POST':
+        word_id = request.POST.get('word_id')
+        is_learned = request.POST.get('is_learned')
+
+        # Обновите или создайте новую запись в модели FavoritesWords
+        if is_learned:
+            FavoritesWords.objects.filter(id=word_id).update(is_learned=True)
+
+        return JsonResponse({'message': 'Слово помечено как выученное'})
+    return JsonResponse({'message': 'Ошибка'}, status=400)
