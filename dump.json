@@ -381,8 +381,8 @@
   "model": "auth.user",
   "pk": 2,
   "fields": {
-    "password": "pbkdf2_sha256$600000$uvgQfP1ZsIMxp3V6jJ0HiR$agkUn9gE9WvXuVh1OiPJexTOOetrnQ3c6+MYAN8wrlk=",
-    "last_login": "2024-06-14T16:54:00.667Z",
+    "password": "pbkdf2_sha256$720000$OPgRNYF6K96BgTMvQXdhY9$P8dGMHeT5XCSjmtSorZwHx21MjK3wqFUrTUr6odrceI=",
+    "last_login": "2024-06-17T07:56:09.522Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -553,6 +553,14 @@
 },
 {
   "model": "sessions.session",
+  "pk": "jat1ue476irozk0033dcmjg1qw7oywhp",
+  "fields": {
+    "session_data": ".eJxVjDsOgzAQRO_iOrL8iYNJmZ4zWLvedUwS2RKGKuLugESRTDnvzXxFgGXOYWk8hZHEXRhx-e0Q4pvLAegF5VllrGWeRpSHIk_a5FCJP4_T_TvI0PK-9pZ1oojgkSI4UsolT4R7ek69jtpYxkQ326ECZRxfDQETJtspQCfWDTacOfI:1sJ7Dl:WGzcAOZC4NatWJA4KVy0LhkRGg0w2i2DkE-khilD7Vc",
+    "expire_date": "2024-07-01T07:56:09.685Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "kij0nabs85ghztkn4qfpzxacswnwuurc",
   "fields": {
     "session_data": ".eJxVjDsOwjAQBe_iGln-Z01Jzxms9a6DA8iR4qRC3B0ipYD2zcx7iYTbWtPWy5ImFmdhxOl3y0iP0nbAd2y3WdLc1mXKclfkQbu8zlyel8P9O6jY67cGjdZ7DZy5uGxGFY2iqDB4tgqy1gOQcUSDL5aYtTOx-BjUCBCIvBXvD9RtN3E:1s78km:z4ix445n5YvGxEJ03E5Ac8mfet4alUcSJuxUwQ5-d2E",
@@ -589,14 +597,6 @@
   "fields": {
     "session_data": ".eJxVjDsOwjAQBe_iGlmOF_8o6XMGy-td4wBypDipEHeHSCmgfTPzXiKmba1x67zEicRFaHH63TDlB7cd0D212yzz3NZlQrkr8qBdjjPx83q4fwc19fqtA4K3AMhgtGWXsSgmq72jYLi4AIqMG5QpOng6K_CMA2XtEmXgolG8P9vPOBI:1s9Tip:9CIEIPTNZoYshuNfVkF3ysb03sUa6NWegHMiYSPidmM",
     "expire_date": "2024-06-04T17:56:23.796Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "r1hgrtqtziyk31y32j0we9hytjnsnaaz",
-  "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGlmOF_8o6XMGy-td4wBypDipEHeHSCmgfTPzXiKmba1x67zEicRFaHH63TDlB7cd0D212yzz3NZlQrkr8qBdjjPx83q4fwc19fqtA4K3AMhgtGWXsSgmq72jYLi4AIqMG5QpOng6K_CMA2XtEmXgolG8P9vPOBI:1sFCIa:HC5reiMXxymJvmONFCtuBxp1WTbqXF_35Fsd5wQYGzA",
-    "expire_date": "2024-06-20T12:32:56.096Z"
   }
 },
 {
@@ -98473,6 +98473,50 @@
     "transcription": null,
     "rus_word": "нет",
     "status": false
+  }
+},
+{
+  "model": "flip_cards_app.favoriteswords",
+  "pk": 2,
+  "fields": {
+    "word": 9358,
+    "user": 2,
+    "is_learned": false,
+    "errors_word": 0,
+    "rights_word": 0
+  }
+},
+{
+  "model": "flip_cards_app.favoriteswords",
+  "pk": 3,
+  "fields": {
+    "word": 2447,
+    "user": 2,
+    "is_learned": false,
+    "errors_word": 0,
+    "rights_word": 0
+  }
+},
+{
+  "model": "flip_cards_app.favoriteswords",
+  "pk": 4,
+  "fields": {
+    "word": 2446,
+    "user": 2,
+    "is_learned": false,
+    "errors_word": 0,
+    "rights_word": 0
+  }
+},
+{
+  "model": "flip_cards_app.favoriteswords",
+  "pk": 6,
+  "fields": {
+    "word": 9350,
+    "user": 2,
+    "is_learned": false,
+    "errors_word": 0,
+    "rights_word": 0
   }
 }
 ]

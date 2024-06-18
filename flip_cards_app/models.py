@@ -12,9 +12,8 @@ class Word(models.Model):
     en_word = models.CharField(max_length=100, db_column='En_word', verbose_name='Слово')
     transcription = models.CharField(max_length=100, db_column='Transcription', verbose_name='Транскрипция', null=True)
     rus_word = models.CharField(max_length=100, db_column='Rus_word', verbose_name='Перевод')
-    # favourites_word = models.ManyToManyField(User, related_name='favourites_word', blank=True)
-    favourites_word = models.ManyToManyField(get_user_model(), through='FavouritesWords',
-                                             related_name='words', verbose_name='Избранные')
+    favorites_word = models.ManyToManyField(get_user_model(), through='FavoritesWords',
+                                            related_name='words', verbose_name='Избранные')
     status = models.BooleanField(default=False, choices=tuple(
         map(lambda x: (bool(x[0]), x[1]), Status.choices)), verbose_name='Проверено')
 
@@ -23,16 +22,11 @@ class Word(models.Model):
         verbose_name = 'Словo'  # имя модели в единственном числе
         verbose_name_plural = 'Слова'  # имя модели во множественном числе
 
-    def is_favourited(self, user):
-        return user.is_authenticated and self.favourites_word.filter(id=user.id).exists()
-    # def number_of_favorites_words(self):
-    #     if self.favorites_words.count() == 0:
-    #         return ''
-    #     else:
-    #         return self.favorites_words.count()
+    def is_favorited(self, user):
+        return user.is_authenticated and self.favorites_word.filter(id=user.id).exists()
 
 
-class FavouritesWords(models.Model):
+class FavoritesWords(models.Model):
     class Learned(models.IntegerChoices):
         UNCHECKED = 0, 'Не выучено'
         CHECKED = 1, 'Выучено'
@@ -46,7 +40,7 @@ class FavouritesWords(models.Model):
     rights_word = models.IntegerField(default=0, db_column='Rights_word', verbose_name='Количество ответов')
 
     class Meta:
-        db_table = 'FavouritesWords'
+        db_table = 'FavoritesWords'
         verbose_name = 'Избранное слово'
         verbose_name_plural = 'Избранные слова'
 

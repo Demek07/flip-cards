@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Word, FavouritesWords
+from .models import Word, FavoritesWords
 
 
 @admin.register(Word)
@@ -36,8 +36,8 @@ class WordsAdmin(admin.ModelAdmin):
         self.message_user(request, f"{updated_count} записей было помечено как непроверенное")
 
 
-@admin.register(FavouritesWords)
-class FavouritesWordsAdmin(admin.ModelAdmin):
+@admin.register(FavoritesWords)
+class FavoritesWordsAdmin(admin.ModelAdmin):
     list_display = ('id', 'word', 'is_learned', 'errors_word', 'rights_word')
     list_editable = ('word', 'is_learned', 'errors_word', 'rights_word',)
     # search_fields = ('name',)

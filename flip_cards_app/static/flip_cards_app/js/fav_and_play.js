@@ -15,8 +15,8 @@ function getCookie(name) {
 }
 
 $(document).ready(function() {
-    // Обработчик события клика на элементе с классом "favourites-button"
-    $('.favourites-button').on('click', function(event) {
+    // Обработчик события клика на элементе с классом "favorites-button"
+    $('.favorites-button').on('click', function(event) {
         event.preventDefault(); // предотвратить перезагрузку страницы
         
         var cardId = $(this).data('card-id');
@@ -30,11 +30,11 @@ $(document).ready(function() {
             type: 'POST',
             headers: {'X-CSRFToken': csrftoken},
             success: function(response) {
-                if (response.is_favourite) {
-                    $(this).addClass('favourited');
+                if (response.is_favorite) {
+                    $(this).addClass('favorited');
                     console.log('Карточка добавлена в избранное');
                 } else {
-                    $(this).removeClass('favourited');
+                    $(this).removeClass('favorited');
                     console.log('Карточка удалена из избранного');
                 }
                 window.location.reload();

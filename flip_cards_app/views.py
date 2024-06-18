@@ -12,7 +12,7 @@ from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 import requests
-from .models import Word, FavouritesWords
+from .models import Word, FavoritesWords
 
 
 info = {
@@ -29,6 +29,9 @@ info = {
         {"title": "Определи слово",
          "url": "/words/game/",
          "url_name": "game"},
+        {"title": "Избранное",
+         "url": "/words/favorites/",
+         "url_name": "favorites"},
         {"title": "О проекте",
          "url": "/about/",
          "url_name": "about"},
@@ -133,6 +136,33 @@ class CatalogView(MenuMixin, ListView):
         return context
 
 
+class FavoritesView(MenuMixin, ListView):
+    """
+    Выводим каталог карточек
+    """
+    model = Word  # Указываем модель, данные которой мы хотим отобразить
+    template_name = 'words/catalog.html'  # Путь к шаблону, который будет использоваться для отображения страницы
+    context_object_name = 'words'  # Имя переменной контекста, которую будем использовать в шаблоне
+    paginate_by = 26  # Количество объектов на странице
+
+    # Метод для модификации начального запроса к БД
+    def get_queryset(self):
+        # Получение параметров сортировки из GET-запроса
+        search_query = self.request.GET.get('search_query', '')
+        if search_query:
+            queryset = Word.objects.filter(Q(en_word__iregex=search_query) | Q(
+                rus_word__iregex=search_query) & Q(favorites_word=self.request.user)).order_by('en_word')
+        else:
+            queryset = Word.objects.filter(favorites_word=self.request.user).order_by('en_word')
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        # Получение существующего контекста из базового класса
+        context = super().get_context_data(**kwargs)
+        context['search_query'] = self.request.GET.get('search_query', '')
+        return context
+
+
 class GameView(MenuMixin, LoginRequiredMixin, ListView):
     model = Word  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'words/game.html'  # Путь к шаблону, который будет использоваться для отображения страницы
@@ -144,7 +174,7 @@ class GameView(MenuMixin, LoginRequiredMixin, ListView):
         en_word = {}
         rus_word = {}
         # all_objects = Word.objects.all()
-        all_objects = Word.objects.filter(favourites_word=self.request.user)
+        all_objects = Word.objects.filter(favorites_word=self.request.user)
         if all_objects.count() < 10:
             random_objects = random.sample(list(all_objects), all_objects.count())
         else:
@@ -168,7 +198,7 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
     """
     Выводим каталог карточек
     """
-    model = FavouritesWords
+    model = FavoritesWords
   # Указываем модель, данные которой мы хотим отобразить
     template_name = 'words/flip_catalog.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'flip_cards'  # Имя переменной контекста, которую будем использовать в шаблоне
@@ -182,12 +212,12 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
 
         # Фильтрация карточек по поисковому запросу и сортировка
         if search_query:
-            queryset = FavouritesWords.objects.filter(
+            queryset = FavoritesWords.objects.filter(
                 Q(card__en_word__iregex=search_query) | Q(card__rus_word__iregex=search_query) &
                 Q(user=self.request.user)).select_related('word').order_by('word__en_word').distinct()
         else:
             # Получаем только избранные карточки
-            queryset = FavouritesWords.objects.filter(
+            queryset = FavoritesWords.objects.filter(
                 user=self.request.user).select_related('word').order_by('word__en_word')
         return queryset
 
@@ -201,7 +231,7 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
 @login_required
 def flip_cards(request):
     user = request.user
-    words = user.favourites_word.all()
+    words = user.favorites_word.all()
     context = {
         'flip_cards': words,
         'menu': info['menu'],
@@ -210,18 +240,18 @@ def flip_cards(request):
 
 
 @login_required
-def favourites_word(request, id):
+def favorites_word(request, id):
     word = get_object_or_404(Word, id=id)
     user = request.user
 
-    if word.favourites_word.filter(id=user.id).exists():
-        word.favourites_word.remove(user)
-        is_favourite = False
+    if word.favorites_word.filter(id=user.id).exists():
+        word.favorites_word.remove(user)
+        is_favorite = False
     else:
-        word.favourites_word.add(user)
-        is_favourite = True
+        word.favorites_word.add(user)
+        is_favorite = True
 
-    return JsonResponse({'is_favourite': is_favourite})
+    return JsonResponse({'is_favorite': is_favorite})
 
 
 def get_word_audio_url(word):
@@ -250,12 +280,12 @@ def save_results(request):
         rights = int(request.POST.get('rights'))
         user = request.user
     with transaction.atomic():
-        favourite_word, created = FavouritesWords.objects.get_or_create(
+        favorite_word, created = FavoritesWords.objects.get_or_create(
             user=user,
             word=word
         )
         if errors > 0:
-            favourite_word.errors_word += errors
+            favorite_word.errors_word += errors
         if rights > 0:
-            favourite_word.rights_word += rights
-        favourite_word.save()
+            favorite_word.rights_word += rights
+        favorite_word.save()

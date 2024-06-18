@@ -5,19 +5,19 @@
     <div class="col-md-12">
       <div class="card-header text-end">
         {% comment %} {% if user.is_authenticated %}
-          {% if user in card.favourites_word.all %}
-                       <a href="{% url 'favourites_word' id=card.id %}" class="favourites-button favourited"><i class="bi bi-star-fill"></i></a>
+          {% if user in card.favorites_word.all %}
+                       <a href="{% url 'favorites_word' id=card.id %}" class="favorites-button favorited"><i class="bi bi-star-fill"></i></a>
           {% else %}
-            <a href="{% url 'favourites_word' id=card.id %}" class="favourites-button"><i class="bi bi-star"></i></a>
+            <a href="{% url 'favorites_word' id=card.id %}" class="favorites-button"><i class="bi bi-star"></i></a>
           {% endif %}
         {% else %}
-            <a href="{% url 'favourites_word' id=card.id %}" class="favourites-button"><i class="bi bi-star"></i></a>
+            <a href="{% url 'favorites_word' id=card.id %}" class="favorites-button"><i class="bi bi-star"></i></a>
         {% endif %} {% endcomment %}
         {% if user.is_authenticated %}
-          {% if user in word.favourites_word.all %}
-            <a href="#" class="favourites-button favourited" data-card-id="{{ word.id }}"><i class="bi bi-star-fill ms-2 h5"></i></a>
+          {% if user in word.favorites_word.all %}
+            <a href="#" class="favorites-button favorited" data-card-id="{{ word.id }}"><i class="bi bi-star-fill ms-2 h5"></i></a>
           {% else %}
-            <a href="#" class="favourites-button" data-card-id="{{ word.id }}"><i class="bi bi-star ms-2 h5"></i></a>
+            <a href="#" class="favorites-button" data-card-id="{{ word.id }}"><i class="bi bi-star ms-2 h5"></i></a>
           {% endif %}
         {% else %}
             <a href="{% url 'users:login' %}"><i class="bi bi-star ms-2 h5"></i></a>
