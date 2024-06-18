@@ -136,7 +136,7 @@ class CatalogView(MenuMixin, ListView):
         return context
 
 
-class FavoritesView(MenuMixin, ListView):
+class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
     """
     Выводим каталог карточек
     """
@@ -226,17 +226,6 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context['search_query'] = self.request.GET.get('search_query', '')
         return context
-
-
-@login_required
-def flip_cards(request):
-    user = request.user
-    words = user.favorites_word.all()
-    context = {
-        'flip_cards': words,
-        'menu': info['menu'],
-    }
-    return render(request, 'words/flip_catalog.html', context)
 
 
 @login_required
