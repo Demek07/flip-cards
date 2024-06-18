@@ -1,16 +1,13 @@
-from datetime import time
 import random
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import JsonResponse
 from django.core.cache import cache
 from django.db.models import Q
 from django.db import transaction
-# from django.template.defaultfilters import random
 from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
 import requests
 from .models import Word, FavoritesWords
 
@@ -196,10 +193,10 @@ class GameView(MenuMixin, LoginRequiredMixin, ListView):
 
 class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
     """
-    Выводим каталог карточек
+    Выводим каталог слов
     """
+    # Указываем модель, данные которой мы хотим отобразить
     model = FavoritesWords
-  # Указываем модель, данные которой мы хотим отобразить
     template_name = 'words/flip_catalog.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'flip_cards'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 26  # Количество объектов на странице
@@ -210,7 +207,7 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
         # Получение параметров сортировки из GET-запроса
         search_query = self.request.GET.get('search_query', '')
 
-        # Фильтрация карточек по поисковому запросу и сортировка
+        # Фильтрация карточек по поисковому запросу
         if search_query:
             queryset = FavoritesWords.objects.filter(
                 Q(card__en_word__iregex=search_query) | Q(card__rus_word__iregex=search_query) &
@@ -243,24 +240,6 @@ def favorites_word(request, id):
     return JsonResponse({'is_favorite': is_favorite})
 
 
-def get_word_audio_url(word):
-    url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
-    response = requests.get(url, timeout=10)
-    if response.status_code == 200:
-        audio_url = response.json()[0]["phonetics"][0]["audio"]
-        if audio_url:
-            return audio_url
-    return None
-
-
-def speak(request, word):
-    word = word.lower()
-    audio_url = get_word_audio_url(word)
-    if audio_url:
-        return JsonResponse({'audio_url': audio_url})
-    return JsonResponse({'audio_url': None})
-
-
 @login_required
 def save_results(request):
     if request.method == 'POST':
@@ -280,6 +259,7 @@ def save_results(request):
         favorite_word.save()
 
 
+@login_required
 def learned_words(request, id):
     if request.method == 'POST':
         word_id = request.POST.get('word_id')
@@ -291,3 +271,21 @@ def learned_words(request, id):
 
         return JsonResponse({'message': 'Слово помечено как выученное'})
     return JsonResponse({'message': 'Ошибка'}, status=400)
+
+
+def get_word_audio_url(word):
+    url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
+    response = requests.get(url, timeout=10)
+    if response.status_code == 200:
+        audio_url = response.json()[0]["phonetics"][0]["audio"]
+        if audio_url:
+            return audio_url
+    return None
+
+
+def speak(request, word):
+    word = word.lower()
+    audio_url = get_word_audio_url(word)
+    if audio_url:
+        return JsonResponse({'audio_url': audio_url})
+    return JsonResponse({'audio_url': None})

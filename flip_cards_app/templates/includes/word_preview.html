@@ -1,20 +1,11 @@
 {% load static %}
-{% comment %} {% csrf_token %} {% endcomment %}
 <div class="card mb-3 light">
   <div class="row g-0 ">
     <div class="col-md-12">
       <div class="card-header text-end">
-        {% comment %} {% if user.is_authenticated %}
-          {% if user in card.favorites_word.all %}
-                       <a href="{% url 'favorites_word' id=card.id %}" class="favorites-button favorited"><i class="bi bi-star-fill"></i></a>
-          {% else %}
-            <a href="{% url 'favorites_word' id=card.id %}" class="favorites-button"><i class="bi bi-star"></i></a>
-          {% endif %}
-        {% else %}
-            <a href="{% url 'favorites_word' id=card.id %}" class="favorites-button"><i class="bi bi-star"></i></a>
-        {% endif %} {% endcomment %}
         {% if user.is_authenticated %}
           {% if user in word.favorites_word.all %}
+            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i class="bi bi-arrow-repeat ms-2 h5"></i></a>
             <a href="#" class="favorites-button favorited" data-word-id="{{ word.id }}"><i class="bi bi-star-fill ms-2 h5"></i></a>
           {% else %}
             <a href="#" class="favorites-button" data-word-id="{{ word.id }}"><i class="bi bi-star ms-2 h5"></i></a>
