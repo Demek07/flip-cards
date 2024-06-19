@@ -5,7 +5,6 @@
       <div class="card-header text-end">
         {% if user.is_authenticated %}
           {% if user in word.favorites_word.all %}
-            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i class="bi bi-clipboard-check ms-2 h5"></i></a>
             <a href="#" class="favorites-button favorited" data-word-id="{{ word.id }}"><i class="bi bi-star-fill ms-2 h5"></i></a>
           {% else %}
             <a href="#" class="favorites-button" data-word-id="{{ word.id }}"><i class="bi bi-star ms-2 h5"></i></a>

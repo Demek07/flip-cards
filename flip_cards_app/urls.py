@@ -10,7 +10,7 @@ urlpatterns = [
     path('favorite/<int:id>', views.favorites_word, name='favorites_word'),
     path('speak/<str:word>', views.speak, name='speak'),
     path('save_results/', views.save_results, name='save_results'),
-    path('favorites/', views.FavoritesView.as_view(), name='favorites'),  # Общий каталог всех слов
+    path('favorites/', views.FavoritesView.as_view(), name='favorites'),  # Общий каталог всех слов d в избранном
     path('learned_words/<int:id>', views.learned_words, name='learned_words'),
 
 ]

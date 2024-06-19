@@ -12,7 +12,7 @@ class Word(models.Model):
     transcription = models.CharField(max_length=100, db_column='Transcription', verbose_name='Транскрипция', null=True)
     rus_word = models.CharField(max_length=100, db_column='Rus_word', verbose_name='Перевод')
     favorites_word = models.ManyToManyField(get_user_model(), through='FavoritesWords',
-                                            related_name='words', verbose_name='Избранные')
+                                            related_name='favorites_word', verbose_name='Избранные')
     status = models.BooleanField(default=False, choices=tuple(
         map(lambda x: (bool(x[0]), x[1]), Status.choices)), verbose_name='Проверено')
 

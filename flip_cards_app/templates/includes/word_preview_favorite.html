@@ -1,0 +1,22 @@
+{% load static %}
+<div class="card mb-3 light">
+  <div class="row g-0 ">
+    <div class="col-md-12">
+      <div class="card-header text-end">
+        {% if word.is_learned %}
+            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i class="bbi bi-patch-check-fill ms-2 h5"></i></a>
+        {% else %}
+            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i class="bi bi-patch-check ms-2 h5"></i></a>
+        {% endif %}
+            <a href="#" class="favorites-button favorited" data-word-id="{{ word.word.id }}"><i class="bi bi-star-fill ms-2 h5"></i></a>
+      </div>
+      <div class="card-body text-center">
+        <h4 class="card-title">{{ word.word.en_word }}
+          <a href="#" class="play-audio-button" data-word="{{ word.word.en_word }}"><i class="bi bi-volume-up ms-2"></i></a>
+        </h4>
+        <p class="card-text text-muted">{{ word.word.transcription }}</p>
+        <h4 class="card-text">{{ word.word.rus_word }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

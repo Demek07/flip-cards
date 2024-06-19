@@ -123,7 +123,8 @@ class CatalogView(MenuMixin, ListView):
             queryset = Word.objects.filter(Q(en_word__iregex=search_query) | Q(
                 rus_word__iregex=search_query)).order_by('en_word')
         else:
-            queryset = Word.objects.all().order_by('en_word')
+            # queryset = Word.objects.all().order_by('en_word')
+            queryset = Word.objects.all().prefetch_related("favorites_word").order_by('en_word')
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -138,7 +139,7 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
     Выводим каталог карточек
     """
     model = Word  # Указываем модель, данные которой мы хотим отобразить
-    template_name = 'words/catalog.html'  # Путь к шаблону, который будет использоваться для отображения страницы
+    template_name = 'words/catalog_favorite.html'  # Путь к шаблону, который будет использоваться для отображения страницы
     context_object_name = 'words'  # Имя переменной контекста, которую будем использовать в шаблоне
     paginate_by = 26  # Количество объектов на странице
 
@@ -146,11 +147,22 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
     def get_queryset(self):
         # Получение параметров сортировки из GET-запроса
         search_query = self.request.GET.get('search_query', '')
+        # if search_query:
+        #     queryset = Word.objects.filter(Q(en_word__iregex=search_query) | Q(
+        #         rus_word__iregex=search_query) & Q(favorites_word=self.request.user)).order_by('en_word')
+        # else:
+        #     queryset = Word.objects.filter(favorites_word=self.request.user).prefetch_related(
+        #         "favorites_word").order_by('en_word')
+        # return queryset
+        # Фильтрация карточек по поисковому запросу
         if search_query:
-            queryset = Word.objects.filter(Q(en_word__iregex=search_query) | Q(
-                rus_word__iregex=search_query) & Q(favorites_word=self.request.user)).order_by('en_word')
+            queryset = FavoritesWords.objects.filter(
+                Q(card__en_word__iregex=search_query) | Q(card__rus_word__iregex=search_query) &
+                Q(user=self.request.user)).select_related('word').order_by('word__en_word').distinct()
         else:
-            queryset = Word.objects.filter(favorites_word=self.request.user).order_by('en_word')
+            # Получаем только избранные карточки
+            queryset = FavoritesWords.objects.filter(
+                user=self.request.user).select_related('word').order_by('word__en_word')
         return queryset
 
     def get_context_data(self, **kwargs):
