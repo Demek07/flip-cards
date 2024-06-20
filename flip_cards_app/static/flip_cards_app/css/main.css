@@ -13,6 +13,15 @@
   /* transform: rotate(360deg) scale(1.2); */
 }
 
+.card-img-pic {
+  transition: 1s;
+}
+
+.card-img-pic:hover {
+  transform: scale(2);
+  /* transform: rotate(360deg) scale(1.2); */
+}
+
 h1 {
   text-align: center;
   /*font-family: cursive;*/
