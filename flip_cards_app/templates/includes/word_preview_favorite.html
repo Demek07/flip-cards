@@ -9,13 +9,14 @@
     </div>
 
     <div class="col-md-9">
-      <div class="card-header text-end">
+      <div class="card-header d-flex">
         {% if word.is_learned %}
-            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i class="bbi bi-patch-check-fill ms-2 h5"></i></a>
+            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i title="Слово изучено" class="bbi bi-patch-check-fill ms-2 h5"></i></a>
         {% else %}
-            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i class="bi bi-patch-check ms-2 h5"></i></a>
+            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i title="Слово не изучено" class="bi bi-patch-check ms-2 h5"></i></a>
         {% endif %}
-            <a href="#" class="favorites-button favorited" data-word-id="{{ word.word.id }}"><i class="bi bi-star-fill ms-2 h5"></i></a>
+            <a href="#" class="favorites-button favorited" data-word-id="{{ word.word.id }}"><i title="Добавить/удалить слово в избранное" class="bi bi-star-fill ms-2 h5"></i></a>
+        <span class="ms-auto"><i title="Количество правильных ответов" class="fa-regular fa-face-smile fa-xl" style="color: #31d41c;"></i> - {{ word.rights_word }} <i title="Количество неправильных ответов" class="fa-regular fa-face-angry fa-xl" style="color: #e70d0d;"></i> - {{ word.errors_word }}</span>    
       </div>
       <div class="card-body text-center">
         <h4 class="card-title">{{ word.word.en_word }}

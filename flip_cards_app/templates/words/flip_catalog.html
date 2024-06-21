@@ -6,7 +6,9 @@
    <p class="all_text">Здесь вы можете выбрать слова для изучения</p>
    <p class="all_text">На данный момент у вас для изучения: {{ page_obj.paginator.count }} слов</p>
    {% comment %} Пагинация начало {% endcomment %}
-   <div class="col-12">{% include "includes/pagination.html" %}</div>
+   {% if page_obj.paginator.num_pages != 1 %}
+      <div class="col-12">{% include "includes/pagination.html" %}</div>
+   {% endif %}
    {% comment %} Пагинация конец {% endcomment %}
    <p>
       <div class="container mt-3 col-auto">
@@ -36,6 +38,8 @@
    </div>  
    <br>    
    {% comment %} Пагинация начало {% endcomment %}
-   <div class="col-12">{% include "includes/pagination.html" %}</div>
+   {% if page_obj.paginator.num_pages != 1 %}
+      <div class="col-12">{% include "includes/pagination.html" %}</div>
+   {% endif %}
    {% comment %} Пагинация конец {% endcomment %}
    {% endblock content %}
