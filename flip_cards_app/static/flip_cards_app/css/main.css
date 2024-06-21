@@ -206,7 +206,7 @@ label, .helptext {
   --bs-pagination-active-border-color: #afb4fd; */
 }
 
-@media (max-width:550px) {
+@media (max-width:760px) {
   .card-img-pic:hover {
     transform: none;
   }
