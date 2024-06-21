@@ -1,3 +1,5 @@
+# dump базы данных - python - Xutf8 manage.py dumpdata - -indent = 2 > dump.json
+# загрузка базы данных - python manage.py loaddata dump.json
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -13,6 +15,8 @@ class Word(models.Model):
     rus_word = models.CharField(max_length=100, db_column='Rus_word', verbose_name='Перевод')
     favorites_word = models.ManyToManyField(get_user_model(), through='FavoritesWords',
                                             related_name='favorites_word', verbose_name='Избранные')
+    img_name_file = models.CharField(max_length=100, db_column='Img_name_file',
+                                     verbose_name='Имя файла картинки', null=True)
     status = models.BooleanField(default=False, choices=tuple(
         map(lambda x: (bool(x[0]), x[1]), Status.choices)), verbose_name='Проверено')
 
