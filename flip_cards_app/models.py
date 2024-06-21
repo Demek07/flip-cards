@@ -1,4 +1,4 @@
-# dump базы данных - python - Xutf8 manage.py dumpdata - -indent = 2 > dump.json
+# dump базы данных - python -Xutf8 manage.py dumpdata --indent=2 > dump.json
 # загрузка базы данных - python manage.py loaddata dump.json
 from django.db import models
 from django.contrib.auth import get_user_model

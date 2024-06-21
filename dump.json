@@ -704,7 +704,7 @@
     "en_word": "condition",
     "transcription": "[kənˈdɪʃən]",
     "rus_word": "состояние",
-    "img_name_file": "condition",
+    "img_name_file": "condition2",
     "status": false
   }
 },
@@ -4466,7 +4466,7 @@
     "en_word": "grade",
     "transcription": "[greɪd]",
     "rus_word": "оценка",
-    "img_name_file": "grade",
+    "img_name_file": "grade2",
     "status": false
   }
 },
@@ -4686,7 +4686,7 @@
     "en_word": "case",
     "transcription": "[keɪs]",
     "rus_word": "случай, дело",
-    "img_name_file": "case",
+    "img_name_file": "",
     "status": false
   }
 },
@@ -4697,7 +4697,7 @@
     "en_word": "case",
     "transcription": "[keɪs]",
     "rus_word": "дело (уголовное)",
-    "img_name_file": "case",
+    "img_name_file": "",
     "status": false
   }
 },
@@ -6094,7 +6094,7 @@
     "en_word": "grave",
     "transcription": "[greɪv]",
     "rus_word": "могила",
-    "img_name_file": "grave",
+    "img_name_file": "grave2",
     "status": false
   }
 },
@@ -6160,7 +6160,7 @@
     "en_word": "entitle",
     "transcription": "[ɪnˈtaɪtl]",
     "rus_word": "давать название",
-    "img_name_file": "entitle",
+    "img_name_file": "entitle2",
     "status": false
   }
 },
@@ -7029,7 +7029,7 @@
     "en_word": "issue",
     "transcription": "[ˈɪʃuː]",
     "rus_word": "издать, выпустить, выпуск",
-    "img_name_file": "issue",
+    "img_name_file": "issue2",
     "status": false
   }
 },
@@ -8833,7 +8833,7 @@
     "en_word": "either",
     "transcription": "[ˈaɪðə]",
     "rus_word": "либо",
-    "img_name_file": "either",
+    "img_name_file": "either2",
     "status": false
   }
 },
@@ -8921,7 +8921,7 @@
     "en_word": "flat",
     "transcription": "[flæt]",
     "rus_word": "плоский, ровный",
-    "img_name_file": "flat",
+    "img_name_file": "flat2",
     "status": false
   }
 },
@@ -8976,7 +8976,7 @@
     "en_word": "go off",
     "transcription": "[gəʊɒf]",
     "rus_word": "уходить",
-    "img_name_file": "go off",
+    "img_name_file": "",
     "status": false
   }
 },
@@ -10109,7 +10109,7 @@
     "en_word": "fair",
     "transcription": "[feə]",
     "rus_word": "светлый",
-    "img_name_file": "fair",
+    "img_name_file": "fair2",
     "status": false
   }
 },
@@ -10285,7 +10285,7 @@
     "en_word": "give up",
     "transcription": "[gɪvʌp]",
     "rus_word": "отказаться, сдаться",
-    "img_name_file": "give up",
+    "img_name_file": "give up2",
     "status": false
   }
 },
@@ -10439,7 +10439,7 @@
     "en_word": "coat",
     "transcription": "[kəʊt]",
     "rus_word": "покрывать",
-    "img_name_file": "coat",
+    "img_name_file": "coat2",
     "status": false
   }
 },
@@ -10791,7 +10791,7 @@
     "en_word": "fashion",
     "transcription": "[ˈfæʃən]",
     "rus_word": "мода",
-    "img_name_file": "fashion",
+    "img_name_file": "fashion2",
     "status": false
   }
 },
@@ -10945,7 +10945,7 @@
     "en_word": "coach",
     "transcription": "[kəʊʧ]",
     "rus_word": "тренер",
-    "img_name_file": "coach",
+    "img_name_file": "coach2",
     "status": false
   }
 },
@@ -11506,7 +11506,7 @@
     "en_word": "current",
     "transcription": "[ˈkʌrənt]",
     "rus_word": "ток, поток, течение",
-    "img_name_file": "current",
+    "img_name_file": "current2",
     "status": false
   }
 },
@@ -12980,7 +12980,7 @@
     "en_word": "facility",
     "transcription": "[fəˈsɪlɪti]",
     "rus_word": "лёгкость, удобство",
-    "img_name_file": "facility",
+    "img_name_file": "facility2",
     "status": false
   }
 },
@@ -14674,7 +14674,7 @@
     "en_word": "decline",
     "transcription": "[dɪˈklaɪn]",
     "rus_word": "отказаться, отклонить",
-    "img_name_file": "decline",
+    "img_name_file": "decline2",
     "status": false
   }
 },
@@ -15818,7 +15818,7 @@
     "en_word": "fashion",
     "transcription": "[ˈfæʃən]",
     "rus_word": "стиль, образ, манер",
-    "img_name_file": "fashion",
+    "img_name_file": "fashion2",
     "status": false
   }
 },
@@ -17204,7 +17204,7 @@
     "en_word": "catch on",
     "transcription": "[kæʧɒn]",
     "rus_word": "становиться популярным",
-    "img_name_file": "catch on",
+    "img_name_file": "catch on2",
     "status": false
   }
 },
@@ -17897,7 +17897,7 @@
     "en_word": "handle",
     "transcription": "[ˈhændl]",
     "rus_word": "управляться, обращаться",
-    "img_name_file": "handle",
+    "img_name_file": "handle2",
     "status": false
   }
 },
@@ -18007,7 +18007,7 @@
     "en_word": "fine",
     "transcription": "[faɪn]",
     "rus_word": "штраф",
-    "img_name_file": "fine",
+    "img_name_file": "fine2",
     "status": false
   }
 },
@@ -18568,7 +18568,7 @@
     "en_word": "deliver",
     "transcription": "[dɪˈlɪvə]",
     "rus_word": "рожать",
-    "img_name_file": "deliver",
+    "img_name_file": "deliver2",
     "status": false
   }
 },
@@ -18799,7 +18799,7 @@
     "en_word": "fit",
     "transcription": "[fɪt]",
     "rus_word": "приступ, припадок",
-    "img_name_file": "fit",
+    "img_name_file": "fit2",
     "status": false
   }
 },
@@ -20108,7 +20108,7 @@
     "en_word": "give away",
     "transcription": "[gɪvəˈweɪ]",
     "rus_word": "выдать (раскрыть)",
-    "img_name_file": "give away",
+    "img_name_file": "give away2",
     "status": false
   }
 },
@@ -20218,7 +20218,7 @@
     "en_word": "charge",
     "transcription": "[ʧɑːʤ]",
     "rus_word": "обвинять",
-    "img_name_file": "charge",
+    "img_name_file": "charge4",
     "status": false
   }
 },
@@ -21164,7 +21164,7 @@
     "en_word": "dismiss",
     "transcription": "[dɪsˈmɪs]",
     "rus_word": "прогонять, посылать, увольнять",
-    "img_name_file": "dismiss",
+    "img_name_file": "dismiss2",
     "status": false
   }
 },
@@ -21681,7 +21681,7 @@
     "en_word": "integrity",
     "transcription": "[ɪnˈtɛgrɪti]",
     "rus_word": "честность, порядочность",
-    "img_name_file": "integrity",
+    "img_name_file": "integrity2",
     "status": false
   }
 },
@@ -21725,7 +21725,7 @@
     "en_word": "chest",
     "transcription": "[ʧɛst]",
     "rus_word": "грудь (грудная клетка)",
-    "img_name_file": "chest",
+    "img_name_file": "chest2",
     "status": false
   }
 },
@@ -21934,7 +21934,7 @@
     "en_word": "fault",
     "transcription": "[fɔːlt]",
     "rus_word": "недостаток, неисправность",
-    "img_name_file": "fault",
+    "img_name_file": "fault2",
     "status": false
   }
 },
@@ -22176,7 +22176,7 @@
     "en_word": "dish",
     "transcription": "[dɪʃ]",
     "rus_word": "тарелка или миска",
-    "img_name_file": "dish",
+    "img_name_file": "dish2",
     "status": false
   }
 },
@@ -22682,7 +22682,7 @@
     "en_word": "come up to",
     "transcription": "[kʌmʌptuː]",
     "rus_word": "подойти к кому-л.",
-    "img_name_file": "come up to",
+    "img_name_file": "come up to2",
     "status": false
   }
 },
@@ -24607,7 +24607,7 @@
     "en_word": "involve",
     "transcription": "[ɪnˈvɒlv]",
     "rus_word": "вовлекать, увлекать",
-    "img_name_file": "involve",
+    "img_name_file": "involve2",
     "status": false
   }
 },
@@ -25311,7 +25311,7 @@
     "en_word": "former",
     "transcription": "[ˈfɔːmə]",
     "rus_word": "бывший",
-    "img_name_file": "former",
+    "img_name_file": "former2",
     "status": false
   }
 },
@@ -26323,7 +26323,7 @@
     "en_word": "either",
     "transcription": "[ˈaɪðə]",
     "rus_word": "тоже (не)",
-    "img_name_file": "either",
+    "img_name_file": "either3",
     "status": false
   }
 },
@@ -26961,7 +26961,7 @@
     "en_word": "confer",
     "transcription": "[kənˈfɜː]",
     "rus_word": "совещаться",
-    "img_name_file": "confer",
+    "img_name_file": "confer2",
     "status": false
   }
 },
@@ -27170,7 +27170,7 @@
     "en_word": "employ",
     "transcription": "[ɪmˈplɔɪ]",
     "rus_word": "нанимать на работу",
-    "img_name_file": "employ",
+    "img_name_file": "employ2",
     "status": false
   }
 },
@@ -27874,7 +27874,7 @@
     "en_word": "commitment",
     "transcription": "[kəˈmɪtmənt]",
     "rus_word": "обязательство",
-    "img_name_file": "commitment",
+    "img_name_file": "commitment2",
     "status": false
   }
 },
@@ -28655,7 +28655,7 @@
     "en_word": "foster",
     "transcription": "[ˈfɒstə]",
     "rus_word": "приёмный (ребёнок)",
-    "img_name_file": "foster",
+    "img_name_file": "foster2",
     "status": false
   }
 },
@@ -29656,7 +29656,7 @@
     "en_word": "draft",
     "transcription": "[drɑːft]",
     "rus_word": "тяга, сквозняк",
-    "img_name_file": "draft",
+    "img_name_file": "draft2",
     "status": false
   }
 },
@@ -32197,7 +32197,7 @@
     "en_word": "domestic",
     "transcription": "[dəʊˈmɛstɪk]",
     "rus_word": "внутренний (о политике)",
-    "img_name_file": "domestic",
+    "img_name_file": "domestic2",
     "status": false
   }
 },
@@ -32483,7 +32483,7 @@
     "en_word": "clip",
     "transcription": "[klɪp]",
     "rus_word": "отсекать, обрезать",
-    "img_name_file": "clip",
+    "img_name_file": "clip2",
     "status": false
   }
 },
@@ -32571,7 +32571,7 @@
     "en_word": "gross",
     "transcription": "[grəʊs]",
     "rus_word": "валовой, грязный",
-    "img_name_file": "gross",
+    "img_name_file": "gross2",
     "status": false
   }
 },
@@ -33132,7 +33132,7 @@
     "en_word": "faint",
     "transcription": "[feɪnt]",
     "rus_word": "слабый, неуловимый",
-    "img_name_file": "faint",
+    "img_name_file": "faint2",
     "status": false
   }
 },
@@ -34001,7 +34001,7 @@
     "en_word": "fine",
     "transcription": "[faɪn]",
     "rus_word": "тонкий",
-    "img_name_file": "fine",
+    "img_name_file": "fine3",
     "status": false
   }
 },
@@ -34375,7 +34375,7 @@
     "en_word": "custom",
     "transcription": "[ˈkʌstəm]",
     "rus_word": "заказной, индивидуальный",
-    "img_name_file": "custom",
+    "img_name_file": "custom2",
     "status": false
   }
 },
@@ -34771,7 +34771,7 @@
     "en_word": "court",
     "transcription": "[kɔːt]",
     "rus_word": "двор (королевский)",
-    "img_name_file": "court",
+    "img_name_file": "court2",
     "status": false
   }
 },
@@ -34881,7 +34881,7 @@
     "en_word": "court",
     "transcription": "[kɔːt]",
     "rus_word": "игровая площадка",
-    "img_name_file": "court",
+    "img_name_file": "court3",
     "status": false
   }
 },
@@ -35376,7 +35376,7 @@
     "en_word": "dump",
     "transcription": "[dʌmp]",
     "rus_word": "бросать (парня/девушку)",
-    "img_name_file": "dump",
+    "img_name_file": "dump2",
     "status": false
   }
 },
@@ -35816,7 +35816,7 @@
     "en_word": "counter",
     "transcription": "[ˈkaʊntə]",
     "rus_word": "противостоять, противоположный",
-    "img_name_file": "counter",
+    "img_name_file": "counter2",
     "status": false
   }
 },
@@ -36454,7 +36454,7 @@
     "en_word": "fellow",
     "transcription": "[ˈfɛləʊ]",
     "rus_word": "товарищ по чему-либо",
-    "img_name_file": "fellow",
+    "img_name_file": "fellow2",
     "status": false
   }
 },
@@ -36696,7 +36696,7 @@
     "en_word": "count",
     "transcription": "[kaʊnt]",
     "rus_word": "граф",
-    "img_name_file": "count",
+    "img_name_file": "count2",
     "status": false
   }
 },
@@ -37048,7 +37048,7 @@
     "en_word": "go on",
     "transcription": "[gəʊɒn]",
     "rus_word": "происходить",
-    "img_name_file": "go on",
+    "img_name_file": "go on2",
     "status": false
   }
 },
@@ -37422,7 +37422,7 @@
     "en_word": "ill",
     "transcription": "[ɪl]",
     "rus_word": "дурной, нехороший",
-    "img_name_file": "ill",
+    "img_name_file": "ill2",
     "status": false
   }
 },
@@ -38852,7 +38852,7 @@
     "en_word": "cheer",
     "transcription": "[ʧɪə]",
     "rus_word": "аплодировать, радостно встречать",
-    "img_name_file": "cheer",
+    "img_name_file": "cheer2",
     "status": false
   }
 },
@@ -40810,7 +40810,7 @@
     "en_word": "counter",
     "transcription": "[ˈkaʊntə]",
     "rus_word": "счётчик",
-    "img_name_file": "counter",
+    "img_name_file": "",
     "status": false
   }
 },
@@ -41272,7 +41272,7 @@
     "en_word": "go for",
     "transcription": "[gəʊfɔː]",
     "rus_word": "быть проданным за",
-    "img_name_file": "go for",
+    "img_name_file": "go for3",
     "status": false
   }
 },
@@ -41877,7 +41877,7 @@
     "en_word": "desert",
     "transcription": "[ˈdɛzət]",
     "rus_word": "пустыня",
-    "img_name_file": "desert",
+    "img_name_file": "desert2",
     "status": false
   }
 },
@@ -42801,7 +42801,7 @@
     "en_word": "floor",
     "transcription": "[flɔː]",
     "rus_word": "этаж",
-    "img_name_file": "floor",
+    "img_name_file": "floor2",
     "status": false
   }
 },
@@ -43274,7 +43274,7 @@
     "en_word": "direct",
     "transcription": "[dɪˈrɛkt]",
     "rus_word": "направлять",
-    "img_name_file": "direct",
+    "img_name_file": "direct2",
     "status": false
   }
 },
@@ -44187,7 +44187,7 @@
     "en_word": "introduce",
     "transcription": "[ˌɪntrəˈdjuːs]",
     "rus_word": "ввести (в употребление)",
-    "img_name_file": "introduce",
+    "img_name_file": "introduce2",
     "status": false
   }
 },
@@ -44308,7 +44308,7 @@
     "en_word": "claim",
     "transcription": "[kleɪm]",
     "rus_word": "утверждать, претендовать",
-    "img_name_file": "claim",
+    "img_name_file": "claim2",
     "status": false
   }
 },
@@ -44418,7 +44418,7 @@
     "en_word": "exhaust",
     "transcription": "[ɪgˈzɔːst]",
     "rus_word": "выхлопные газы",
-    "img_name_file": "exhaust",
+    "img_name_file": "exhaust2",
     "status": false
   }
 },
@@ -44825,7 +44825,7 @@
     "en_word": "iron",
     "transcription": "[ˈaɪən]",
     "rus_word": "утюг, гладить",
-    "img_name_file": "iron",
+    "img_name_file": "iron2",
     "status": false
   }
 },
@@ -45749,7 +45749,7 @@
     "en_word": "common",
     "transcription": "[ˈkɒmən]",
     "rus_word": "обычный, распространённый",
-    "img_name_file": "common",
+    "img_name_file": "common2",
     "status": false
   }
 },
@@ -45804,7 +45804,7 @@
     "en_word": "degree",
     "transcription": "[dɪˈgriː]",
     "rus_word": "градус",
-    "img_name_file": "degree",
+    "img_name_file": "degree2",
     "status": false
   }
 },
@@ -46288,7 +46288,7 @@
     "en_word": "come along",
     "transcription": "[kʌməˈlɒŋ]",
     "rus_word": "идти вместе",
-    "img_name_file": "come along",
+    "img_name_file": "come along2",
     "status": false
   }
 },
@@ -46398,7 +46398,7 @@
     "en_word": "charge",
     "transcription": "[ʧɑːʤ]",
     "rus_word": "плата",
-    "img_name_file": "charge",
+    "img_name_file": "charge2",
     "status": false
   }
 },
@@ -46827,7 +46827,7 @@
     "en_word": "drop",
     "transcription": "[drɒp]",
     "rus_word": "капля",
-    "img_name_file": "drop",
+    "img_name_file": "drop2",
     "status": false
   }
 },
@@ -46860,7 +46860,7 @@
     "en_word": "consider",
     "transcription": "[kənˈsɪdə]",
     "rus_word": "считать чем-либо",
-    "img_name_file": "consider",
+    "img_name_file": "consider2",
     "status": false
   }
 },
@@ -46915,7 +46915,7 @@
     "en_word": "care",
     "transcription": "[keə]",
     "rus_word": "переживать, интересоваться",
-    "img_name_file": "care",
+    "img_name_file": "care2",
     "status": false
   }
 },
@@ -49005,7 +49005,7 @@
     "en_word": "come up",
     "transcription": "[kʌm ʌp]",
     "rus_word": "приближаться (о событии)",
-    "img_name_file": "come up",
+    "img_name_file": "come up2",
     "status": false
   }
 },
@@ -49027,7 +49027,7 @@
     "en_word": "fortune",
     "transcription": "[ˈfɔːʧən]",
     "rus_word": "счастье, удача, судьба",
-    "img_name_file": "fortune",
+    "img_name_file": "fortune2",
     "status": false
   }
 },
@@ -50017,7 +50017,7 @@
     "en_word": "dumb",
     "transcription": "[dʌm]",
     "rus_word": "немой",
-    "img_name_file": "dumb",
+    "img_name_file": "dumb2",
     "status": false
   }
 },
@@ -50523,7 +50523,7 @@
     "en_word": "hail",
     "transcription": "[heɪl]",
     "rus_word": "град",
-    "img_name_file": "hail",
+    "img_name_file": "hail2",
     "status": false
   }
 },
@@ -54835,7 +54835,7 @@
     "en_word": "fancy",
     "transcription": "[ˈfænsi]",
     "rus_word": "необычный, причудливый, модный",
-    "img_name_file": "fancy",
+    "img_name_file": "fancy2",
     "status": false
   }
 },
@@ -55110,7 +55110,7 @@
     "en_word": "check out",
     "transcription": "[ʧɛkaʊt]",
     "rus_word": "посмотреть, заценить",
-    "img_name_file": "check out",
+    "img_name_file": "check out2",
     "status": false
   }
 },
@@ -56342,7 +56342,7 @@
     "en_word": "come out",
     "transcription": "[kʌmaʊt]",
     "rus_word": "выступить, заявить",
-    "img_name_file": "come out",
+    "img_name_file": "come out2",
     "status": false
   }
 },
@@ -57651,7 +57651,7 @@
     "en_word": "foil",
     "transcription": "[fɔɪl]",
     "rus_word": "фольга",
-    "img_name_file": "foil",
+    "img_name_file": "foil2",
     "status": false
   }
 },
@@ -58652,7 +58652,7 @@
     "en_word": "hustle",
     "transcription": "[ˈhʌsl]",
     "rus_word": "нечестно добыть (амер.)",
-    "img_name_file": "hustle",
+    "img_name_file": "hustle2",
     "status": false
   }
 },
@@ -59158,7 +59158,7 @@
     "en_word": "flight",
     "transcription": "[flaɪt]",
     "rus_word": "бегство",
-    "img_name_file": "flight",
+    "img_name_file": "flight2",
     "status": false
   }
 },
@@ -59565,7 +59565,7 @@
     "en_word": "hunch",
     "transcription": "[hʌnʧ]",
     "rus_word": "горб, горбиться",
-    "img_name_file": "hunch",
+    "img_name_file": "hunch2",
     "status": false
   }
 },
@@ -60203,7 +60203,7 @@
     "en_word": "hold on",
     "transcription": "[həʊldɒn]",
     "rus_word": "оставаться на линии",
-    "img_name_file": "hold on",
+    "img_name_file": "hold on2",
     "status": false
   }
 },
@@ -64416,7 +64416,7 @@
     "en_word": "come to",
     "transcription": "[kʌmtuː]",
     "rus_word": "доходить до",
-    "img_name_file": "come to",
+    "img_name_file": "come to2",
     "status": false
   }
 },
@@ -64647,7 +64647,7 @@
     "en_word": "catch",
     "transcription": "[kæʧ]",
     "rus_word": "расслышать, уловить",
-    "img_name_file": "catch",
+    "img_name_file": "catch2",
     "status": false
   }
 },
@@ -64878,7 +64878,7 @@
     "en_word": "go into",
     "transcription": "[gəʊˈɪntuː]",
     "rus_word": "вдаваться",
-    "img_name_file": "go into",
+    "img_name_file": "go into2",
     "status": false
   }
 },
@@ -65131,7 +65131,7 @@
     "en_word": "forge",
     "transcription": "[fɔːʤ]",
     "rus_word": "подделывать",
-    "img_name_file": "forge",
+    "img_name_file": "forge2",
     "status": false
   }
 },
@@ -66022,7 +66022,7 @@
     "en_word": "curb",
     "transcription": "[kɜːb]",
     "rus_word": "бордюр или обочина",
-    "img_name_file": "curb",
+    "img_name_file": "curb2",
     "status": false
   }
 },
@@ -66385,7 +66385,7 @@
     "en_word": "hook up",
     "transcription": "[hʊkʌp]",
     "rus_word": "подключить, смонтировать",
-    "img_name_file": "hook up",
+    "img_name_file": "hook up2",
     "status": false
   }
 },
@@ -66440,7 +66440,7 @@
     "en_word": "go off",
     "transcription": "[gəʊɒf]",
     "rus_word": "уходить",
-    "img_name_file": "go off",
+    "img_name_file": "",
     "status": false
   }
 },
@@ -67507,7 +67507,7 @@
     "en_word": "grit",
     "transcription": "[grɪt]",
     "rus_word": "твёрдость, стойкость",
-    "img_name_file": "grit",
+    "img_name_file": "grit2",
     "status": false
   }
 },
@@ -68134,7 +68134,7 @@
     "en_word": "host",
     "transcription": "[həʊst]",
     "rus_word": "множество",
-    "img_name_file": "host",
+    "img_name_file": "host2",
     "status": false
   }
 },
@@ -68739,7 +68739,7 @@
     "en_word": "dispose of",
     "transcription": "[dɪsˈpəʊzɒv]",
     "rus_word": "избавиться",
-    "img_name_file": "dispose of",
+    "img_name_file": "dispose of2",
     "status": false
   }
 },
@@ -70312,7 +70312,7 @@
     "en_word": "gulf",
     "transcription": "[gʌlf]",
     "rus_word": "залив",
-    "img_name_file": "gulf",
+    "img_name_file": "gulf2",
     "status": false
   }
 },
@@ -73029,7 +73029,7 @@
     "en_word": "furnish",
     "transcription": "[ˈfɜːnɪʃ]",
     "rus_word": "обставлять, меблировать",
-    "img_name_file": "furnish",
+    "img_name_file": "furnish2",
     "status": false
   }
 },
@@ -73139,7 +73139,7 @@
     "en_word": "dash",
     "transcription": "[dæʃ]",
     "rus_word": "бросать, бросаться",
-    "img_name_file": "dash",
+    "img_name_file": "dash2",
     "status": false
   }
 },
@@ -73260,7 +73260,7 @@
     "en_word": "come off",
     "transcription": "[kʌmɒf]",
     "rus_word": "отвалиться",
-    "img_name_file": "come off",
+    "img_name_file": "come off2",
     "status": false
   }
 },
@@ -73337,7 +73337,7 @@
     "en_word": "hail",
     "transcription": "[heɪl]",
     "rus_word": "окликнуть, привлечь внимание",
-    "img_name_file": "hail",
+    "img_name_file": "hail3",
     "status": false
   }
 },
@@ -74778,7 +74778,7 @@
     "en_word": "hood",
     "transcription": "[hʊd]",
     "rus_word": "капюшон",
-    "img_name_file": "hood",
+    "img_name_file": "hood2",
     "status": false
   }
 },
@@ -75229,7 +75229,7 @@
     "en_word": "go for",
     "transcription": "[gəʊfɔː]",
     "rus_word": "выбирать, предпочитать",
-    "img_name_file": "go for",
+    "img_name_file": "go for2",
     "status": false
   }
 },
@@ -78980,7 +78980,7 @@
     "en_word": "demand",
     "transcription": "[dɪˈmɑːnd]",
     "rus_word": "спрос",
-    "img_name_file": "demand",
+    "img_name_file": "demand2",
     "status": false
   }
 },
@@ -79222,7 +79222,7 @@
     "en_word": "come by",
     "transcription": "[kʌm baɪ]",
     "rus_word": "зайти",
-    "img_name_file": "come by",
+    "img_name_file": "come by2",
     "status": false
   }
 },
@@ -81884,7 +81884,7 @@
     "en_word": "flick",
     "transcription": "[flɪk]",
     "rus_word": "фильм (разг.)",
-    "img_name_file": "flick",
+    "img_name_file": "flick2",
     "status": false
   }
 },
@@ -83105,7 +83105,7 @@
     "en_word": "go off",
     "transcription": "[gəʊɒf]",
     "rus_word": "отключиться",
-    "img_name_file": "go off",
+    "img_name_file": "go off2",
     "status": false
   }
 },
@@ -83116,7 +83116,7 @@
     "en_word": "go on",
     "transcription": "[gəʊɒn]",
     "rus_word": "включиться",
-    "img_name_file": "go on",
+    "img_name_file": "",
     "status": false
   }
 },
@@ -83842,7 +83842,7 @@
     "en_word": "flush",
     "transcription": "[flʌʃ]",
     "rus_word": "румянец, порозоветь",
-    "img_name_file": "flush",
+    "img_name_file": "flush2",
     "status": false
   }
 },
@@ -84777,7 +84777,7 @@
     "en_word": "complement",
     "transcription": "[ˈkɒmplɪmənt]",
     "rus_word": "набор, состав, комплект",
-    "img_name_file": "complement",
+    "img_name_file": "complement2",
     "status": false
   }
 },
@@ -84898,7 +84898,7 @@
     "en_word": "execute",
     "transcription": "[ˈɛksɪkjuːt]",
     "rus_word": "казнить",
-    "img_name_file": "execute",
+    "img_name_file": "execute2",
     "status": false
   }
 },
@@ -85085,7 +85085,7 @@
     "en_word": "fall for",
     "transcription": "[fɔːlfɔː]",
     "rus_word": "влюбляться",
-    "img_name_file": "fall for",
+    "img_name_file": "fall for2",
     "status": false
   }
 },
@@ -85107,7 +85107,7 @@
     "en_word": "creep",
     "transcription": "[kriːp]",
     "rus_word": "гад, урод (разг)",
-    "img_name_file": "creep",
+    "img_name_file": "creep2",
     "status": false
   }
 },
@@ -85151,7 +85151,7 @@
     "en_word": "dash",
     "transcription": "[dæʃ]",
     "rus_word": "разрушить (перен.)",
-    "img_name_file": "dash",
+    "img_name_file": "dash3",
     "status": false
   }
 },
@@ -89210,7 +89210,7 @@
     "en_word": "court",
     "transcription": "[kɔːt]",
     "rus_word": "корт",
-    "img_name_file": "court",
+    "img_name_file": "court3",
     "status": false
   }
 },
@@ -103983,7 +103983,7 @@
     "en_word": "fortune",
     "transcription": null,
     "rus_word": "удача, случай",
-    "img_name_file": "fortune",
+    "img_name_file": "fortune2",
     "status": false
   }
 },
