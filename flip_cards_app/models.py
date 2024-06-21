@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 
+# Основная модель БД - Слово
 class Word(models.Model):
     class Status(models.IntegerChoices):
         UNCHECKED = 0, 'Не проверено'
@@ -29,6 +30,7 @@ class Word(models.Model):
         return user.is_authenticated and self.favorites_word.filter(id=user.id).exists()
 
 
+# Модель избранных слов
 class FavoritesWords(models.Model):
 
     id = models.AutoField(primary_key=True, db_column='id')
