@@ -35,58 +35,81 @@ info = {
     ]
 }
 
+# Миксин для вставки меню в шаблон
+
 
 class MenuMixin:
     """
     Миксин для вставки меню в шаблон
     """
-    timeout = 30  # Время хранения в кэше (в секундах)
+    # Время хранения в кэше (в секундах)
+    timeout = 30
 
     def get_menu(self):
         """
         Возвращает меню из кэша
         return: menu - возвращаем меню
         """
-        menu = cache.get('menu')  # получаем меню из кэша
-        if not menu:  # если меню нет в кэше
-            menu = info['menu']  # то возвращаем меню
-            cache.set('menu', menu, timeout=self.timeout)  # сохраняем меню в кэше
+        # получаем меню из кэша
+        menu = cache.get('menu')
+        # если меню нет в кэше
+        if not menu:
+            # то возвращаем меню
+            menu = info['menu']
+            # сохраняем меню в кэше
+            cache.set('menu', menu, timeout=self.timeout)
         return menu
 
+    # Считаем количество слов
     def get_words_count(self):
         """
-        Возвращает количество карточек из кэша
-        return: cards_count - возвращаем количество карточек
+        Возвращает количество слов из кэша
+        return: cards_count - возвращаем количество слов
         """
-        words_count = cache.get('cards_count')  # получаем количество карточек из кэша
-        if not words_count:  # если количество карточек нет в кэше
-            words_count = Word.objects.count()  # то возвращаем количество карточек
-            cache.set('words_count', words_count, timeout=self.timeout)  # сохраняем количество карточек в кэше
+        # получаем количество карточек из кэша
+        words_count = cache.get('cards_count')
+        # если количество карточек нет в кэше
+        if not words_count:
+            # то возвращаем количество карточек
+            words_count = Word.objects.count()
+            # сохраняем количество карточек в кэше
+            cache.set('words_count', words_count, timeout=self.timeout)
         return words_count
 
+    # Считаем количество пользователей
     def get_users_count(self):
         """
         Возвращает количество пользователей из кэша
         return: users_count - возвращаем количество пользователей
         """
-        users_count = cache.get('users_count')  # получаем количество пользователей из кэша
-        if not users_count:  # если количество пользователей нет в кэше
-            users_count = get_user_model().objects.count()  # то возвращаем количество пользователей
-            cache.set('users_count', users_count, timeout=self.timeout)  # сохраняем количество пользователей в кэше
+        # получаем количество пользователей из кэша
+        users_count = cache.get('users_count')
+        # если количество пользователей нет в кэше
+        if not users_count:
+            # то возвращаем количество пользователей
+            users_count = get_user_model().objects.count()
+            # сохраняем количество пользователей в кэше
+            cache.set('users_count', users_count, timeout=self.timeout)
         return users_count
 
+    # Метод для модификации контекста для шаблона
     def get_context_data(self, **kwargs):
         """
         Метод для модификации контекста для шаблона
         return: context - возвращаем контекст
         """
-        context = super().get_context_data(**kwargs)  # вызываем метод родительского класса. Получаем контекст
-        context['menu'] = self.get_menu()  # добавляем в контекст меню
-        context['cards_count'] = self.get_words_count()  # добавляем в контекст количество карточек
-        context['users_count'] = self.get_users_count()  # добавляем в контекст количество пользователей
+        # вызываем метод родительского класса. Получаем контекст
+        context = super().get_context_data(**kwargs)
+        # добавляем в контекст меню
+        context['menu'] = self.get_menu()
+        # добавляем в контекст количество слов
+        context['cards_count'] = self.get_words_count()
+        # добавляем в контекст количество пользователей
+        context['users_count'] = self.get_users_count()
         return context
 
 
+# Класс для вывода страницы о проекте
 class AboutView(MenuMixin, TemplateView):
     """
     Выводим страницу о проекте
@@ -95,6 +118,7 @@ class AboutView(MenuMixin, TemplateView):
     extra_context = {'title': 'О проекте'}
 
 
+# Класс для вывода главной страницы
 class IndexView(MenuMixin, TemplateView):
     """
     Выводим главную страницу
@@ -102,18 +126,24 @@ class IndexView(MenuMixin, TemplateView):
     template_name = 'main.html'
 
 
+# Класс для вывода страницы 404
 class PageNotFoundView(MenuMixin, TemplateView):
     template_name = '404.html'
 
 
+# Класс для вывода каталога слов
 class CatalogView(MenuMixin, ListView):
     """
-    Выводим каталог карточек
+    Выводим каталог слов
     """
-    model = Word  # Указываем модель, данные которой мы хотим отобразить
-    template_name = 'words/catalog.html'  # Путь к шаблону, который будет использоваться для отображения страницы
-    context_object_name = 'words'  # Имя переменной контекста, которую будем использовать в шаблоне
-    paginate_by = 26  # Количество объектов на странице
+    # Указываем модель, данные которой мы хотим отобразить
+    model = Word
+    # Путь к шаблону, который будет использоваться для отображения страницы
+    template_name = 'words/catalog.html'
+    # Имя переменной контекста, которую будем использовать в шаблоне
+    context_object_name = 'words'
+    # Количество объектов на странице
+    paginate_by = 26
 
     # Метод для модификации начального запроса к БД
     def get_queryset(self):
@@ -134,14 +164,19 @@ class CatalogView(MenuMixin, ListView):
         return context
 
 
+# Класс для вывода каталога избранных слов
 class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
     """
-    Выводим каталог карточек
+    Выводим каталог избранных слов
     """
-    model = Word  # Указываем модель, данные которой мы хотим отобразить
-    template_name = 'words/catalog_favorite.html'  # Путь к шаблону, который будет использоваться для отображения страницы
-    context_object_name = 'words'  # Имя переменной контекста, которую будем использовать в шаблоне
-    paginate_by = 26  # Количество объектов на странице
+    # Указываем модель, данные которой мы хотим отобразить
+    model = Word
+    # Путь к шаблону, который будет использоваться для отображения страницы
+    template_name = 'words/catalog_favorite.html'
+    # Имя переменной контекста, которую будем использовать в шаблоне
+    context_object_name = 'words'
+    # Количество объектов на странице
+    paginate_by = 26
 
     # Метод для модификации начального запроса к БД
     def get_queryset(self):
@@ -154,13 +189,13 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
         #     queryset = Word.objects.filter(favorites_word=self.request.user).prefetch_related(
         #         "favorites_word").order_by('en_word')
         # return queryset
-        # Фильтрация карточек по поисковому запросу
+        # Фильтрация слов по поисковому запросу
         if search_query:
             queryset = FavoritesWords.objects.filter(
                 Q(card__en_word__iregex=search_query) | Q(card__rus_word__iregex=search_query) &
                 Q(user=self.request.user)).select_related('word').order_by('word__en_word').distinct()
         else:
-            # Получаем только избранные карточки
+            # Получаем только избранные слова
             queryset = FavoritesWords.objects.filter(
                 user=self.request.user).select_related('word').order_by('word__en_word')
         return queryset
@@ -172,25 +207,34 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
         return context
 
 
+# Класс для вывода страницы игры
 class GameView(MenuMixin, LoginRequiredMixin, ListView):
-    model = Word  # Указываем модель, данные которой мы хотим отобразить
-    template_name = 'words/game.html'  # Путь к шаблону, который будет использоваться для отображения страницы
-    context_object_name = 'words_game'  # Имя переменной контекста, которую будем использовать в шаблоне
+    # Указываем модель, данные которой мы хотим отобразить
+    model = Word
+    # Путь к шаблону, который будет использоваться для отображения страницы
+    template_name = 'words/game.html'
+    # Имя переменной контекста, которую будем использовать в шаблоне
+    context_object_name = 'words_game'
 
     def get_queryset(self):
+        # Обнуляем переменные
         en = []
         rus = []
         en_word = {}
         rus_word = {}
-        # all_objects = Word.objects.all()
+        # Получаем 10 случайных слов
         all_objects = Word.objects.filter(favorites_word=self.request.user)
+        # Если количество слов меньше 10, то берем все
         if all_objects.count() < 10:
             random_objects = random.sample(list(all_objects), all_objects.count())
         else:
+            # Берем 10 случайных слов
             random_objects = random.sample(list(all_objects), 10)
+        # Заполняем переменные
         for item in random_objects:
             en.append((item.id, item.en_word))
             rus.append((item.id, item.rus_word))
+        # Перемешиваем слова
         random.shuffle(rus)
         tuple(en)
         tuple(rus)
@@ -198,20 +242,25 @@ class GameView(MenuMixin, LoginRequiredMixin, ListView):
         rus_word = dict(rus)
         return en_word, rus_word
 
+    # Метод для модификации начального запроса к БД
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
 
 
+# Класс для вывода каталога флип карточек
 class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
     """
-    Выводим каталог слов
+    Выводим каталог флип карточек
     """
     # Указываем модель, данные которой мы хотим отобразить
     model = FavoritesWords
-    template_name = 'words/flip_catalog.html'  # Путь к шаблону, который будет использоваться для отображения страницы
-    context_object_name = 'flip_cards'  # Имя переменной контекста, которую будем использовать в шаблоне
-    paginate_by = 26  # Количество объектов на странице
+    # Путь к шаблону, который будет использоваться для отображения страницы
+    template_name = 'words/flip_catalog.html'
+    # Имя переменной контекста, которую будем использовать в шаблоне
+    context_object_name = 'flip_cards'
+    # Количество объектов на странице
+    paginate_by = 26
 
     # Метод для модификации начального запроса к БД
 
@@ -237,21 +286,27 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
         return context
 
 
+# Метод для добавления/удаления из избранного
 @login_required
 def favorites_word(request, id):
+    # Получаем слово по id
     word = get_object_or_404(Word, id=id)
+    # Получаем текущего пользователя
     user = request.user
-
+    # Проверяем наличие в избранном
     if word.favorites_word.filter(id=user.id).exists():
+        # Удаляем из избранного
         word.favorites_word.remove(user)
         is_favorite = False
     else:
+        # Либо добавляем в избранное
         word.favorites_word.add(user)
         is_favorite = True
 
     return JsonResponse({'is_favorite': is_favorite})
 
 
+# Метод для обновления инфы об правильных/неправильных ответах
 @login_required
 def save_results(request):
     if request.method == 'POST':
@@ -271,6 +326,7 @@ def save_results(request):
         favorite_word.save()
 
 
+# Метод для изменения статуса - выучено/не выучено
 @login_required
 def learned_words(request, id):
     if request.method == 'POST':
@@ -286,6 +342,7 @@ def learned_words(request, id):
     return JsonResponse({'message': 'Ошибка'}, status=400)
 
 
+# Метод для получения ссылки на аудиофайл слова
 def get_word_audio_url(word):
     url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
     response = requests.get(url, timeout=10)
@@ -296,6 +353,7 @@ def get_word_audio_url(word):
     return None
 
 
+# Метод для воспроизведения аудиофайла
 def speak(request, word):
     word = word.lower()
     audio_url = get_word_audio_url(word)
