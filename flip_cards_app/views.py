@@ -276,10 +276,11 @@ def learned_words(request, id):
     if request.method == 'POST':
         word_id = request.POST.get('word_id')
         is_learned = request.POST.get('is_learned')
+        is_learned_status = FavoritesWords.objects.get(id=word_id)
 
         # Обновите или создайте новую запись в модели FavoritesWords
         if is_learned:
-            FavoritesWords.objects.filter(id=word_id).update(is_learned=True)
+            FavoritesWords.objects.filter(id=word_id).update(is_learned=not is_learned_status.is_learned)
 
         return JsonResponse({'message': 'Слово помечено как выученное'})
     return JsonResponse({'message': 'Ошибка'}, status=400)

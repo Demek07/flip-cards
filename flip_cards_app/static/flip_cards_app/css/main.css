@@ -22,6 +22,7 @@
   /* transform: rotate(360deg) scale(1.2); */
 }
 
+
 h1 {
   text-align: center;
   /*font-family: cursive;*/
@@ -203,4 +204,10 @@ label, .helptext {
   --bs-pagination-hover-color: #6d6d6d;
   --bs-pagination-active-color: #fff;
   --bs-pagination-active-border-color: #afb4fd; */
+}
+
+@media (max-width:550px) {
+  .card-img-pic:hover {
+    transform: none;
+  }
 }
