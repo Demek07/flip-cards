@@ -60,7 +60,11 @@ body {
 .front {
   font-weight: 700;
   font-size: 1rem;
-  background-image: linear-gradient(90deg, #4776e6, #8e54e9);
+  background-image: linear-gradient(
+    90deg,
+    rgba(104, 83, 158, 1) 21%,
+    rgba(234, 231, 220, 1) 85%
+  );
 }
 
 .card_footer {

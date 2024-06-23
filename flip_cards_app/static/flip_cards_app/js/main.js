@@ -14,15 +14,15 @@ let correct_style = `
     background-color: #73A720;
     border-color : #68961D;`
 let select_style = `
-    background-color: #3F88C5;
-    border-color : #3A7CB4;`
+    background-color: #B7ABD8;
+    border-color : #B7ABD8;`
 let light_style = `
-    background-color: #FFF;
+    background-color: #eae7dc;
     border-color : #CCC;
     color: #666;`
 let dark_style = `
-    background-color: #1d2731;
-    border-color : #1d2731;
+    background-color: #68539E;
+    border-color : #68539E;
     color: #FFF;`    
 
 function save_results(word_id, errors, rights) {
