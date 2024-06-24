@@ -1,12 +1,15 @@
 from django.urls import reverse_lazy
-from django.contrib.auth.views import LoginView, LogoutView
-from django.views.generic import CreateView, TemplateView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
+from django.views.generic import CreateView, TemplateView, ListView, UpdateView
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin
 from flip_cards_app.views import MenuMixin
-from .forms import LoginUserForm, RegisterUserForm
+from flip_cards_app.models import Word
+from .forms import RegisterUserForm, ProfileUserForm, UserPasswordChangeForm, CustomAuthenticationForm
 
 
 class LoginUser(MenuMixin, LoginView):
-    form_class = LoginUserForm
+    form_class = CustomAuthenticationForm
     template_name = 'users/login.html'
     extra_context = {'title': 'Авторизация'}
     redirect_field_name = 'next'
@@ -18,15 +21,55 @@ class LoginUser(MenuMixin, LoginView):
 
 
 class LogoutUser(LogoutView):
-    next_page = reverse_lazy('index')
+    next_page = reverse_lazy('catalog')
 
 
 class RegisterUser(MenuMixin, CreateView):
     form_class = RegisterUserForm
     template_name = 'users/register.html'
-    success_url = reverse_lazy('users:thanks')
+    success_url = reverse_lazy('users:register_done')
 
 
-class ThanksForRegistrView(MenuMixin, TemplateView):
-    template_name = 'users/thanks.html'
+class RegisterDoneView(MenuMixin, TemplateView):
+    template_name = 'users/register_done.html'
     extra_context = {'title': 'Регистрация завершена'}
+
+
+class ProfileUser(MenuMixin, LoginRequiredMixin, UpdateView):
+    model = get_user_model()  # Используем модель текущего пользователя
+    form_class = ProfileUserForm  # Связываем с формой профиля пользователя
+    template_name = 'users/profile.html'  # Указываем путь к шаблону
+    # Дополнительный контекст для передачи в шаблон
+    extra_context = {'title': 'Профиль пользователя', 'active_tab': 'profile'}
+
+    def get_success_url(self):
+        # URL, на который переадресуется пользователь после успешного обновления
+        return reverse_lazy('users:profile')
+
+    def get_object(self, queryset=None):
+        # Возвращает объект модели, который должен быть отредактирован
+        return self.request.user
+
+
+class PasswordChange(MenuMixin, LoginRequiredMixin, PasswordChangeView):
+    form_class = UserPasswordChangeForm
+    template_name = 'users/password_change_form.html'
+    extra_context = {'title': 'Изменение пароля',
+                     'active_tab': 'password_change'}
+    success_url = reverse_lazy('users:password_change_done')
+
+
+class PasswordChangeDone(MenuMixin, LoginRequiredMixin, TemplateView):
+    template_name = 'users/password_change_done.html'
+    extra_context = {'title': 'Пароль изменен успешно'}
+
+
+class UserCardsView(MenuMixin, LoginRequiredMixin, ListView):
+    model = Word
+    template_name = 'users/profile_cards.html'
+    context_object_name = 'words'
+    extra_context = {'title': 'Мои слова',
+                     'active_tab': 'profile_cards'}
+
+    # def get_queryset(self):
+    # return Card.objects.filter(author=self.request.user).order_by('-upload_date')

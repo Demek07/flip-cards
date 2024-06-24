@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
 from flip_cards import settings
 from flip_cards_app import views
 
@@ -41,3 +42,9 @@ if settings.DEBUG:
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+
+    # Добавляем обработку медиафайлов
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Определяем кастомный обработчик 404 ошибки
+handler404 = views.PageNotFoundView.as_view()

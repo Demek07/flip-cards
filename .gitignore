@@ -10,3 +10,4 @@ dict.db
 .pyc
 *.pyc
 .vscode/launch.json
+media/users/images/*

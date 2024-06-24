@@ -25,7 +25,7 @@
         <!-- Элементы правой части без выравнивания по левому краю -->
         {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Привет, {{ user.username }}!</a>
+            <a class="nav-link" href="{% url 'users:profile' %}" aria-current="page">Привет, {{ user.username }}!</a>
           </li>
           <li>
             <form id="logout-form" action="{% url 'users:logout' %}" method="post">

@@ -19,7 +19,6 @@ class WordsAdmin(admin.ModelAdmin):
     # Поля, которые можно редактировать
     list_editable = ('status', 'en_word', 'rus_word')
     actions = ['set_checked', 'set_unchecked']
-    # fields = ('question', 'answer', 'category', 'status','tags')
     save_on_top = True
     search_fields = ('rus_word',)
     # изменяем шаблон админки

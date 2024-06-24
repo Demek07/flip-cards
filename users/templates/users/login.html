@@ -11,6 +11,7 @@
                     <input type="hidden" name="next" value="{{ request.GET.next }}">
                     <button type="submit"
                             class="btn btn-primary">Войти</button>
+                    <a href="{% url 'users:password_reset' %}">Забыли пароль?</a>
                 </form>
             </div>
         </div>
