@@ -367,8 +367,7 @@ def get_word_audio_url(word):
         elif file_name.startswith('_'):
             audio_url = f'https://media.merriam-webster.com/audio/prons/en/us/mp3/number/{file_name}.mp3'
         else:
-            audio_url = f'https://media.merriam-webster.com/audio/prons/en/us/mp3/{file_name[0]}/{
-                file_name}.mp3'
+            audio_url = f'https://media.merriam-webster.com/audio/prons/en/us/mp3/{file_name[0]}/{file_name}.mp3'
 
         if audio_url:
             return audio_url
