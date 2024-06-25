@@ -10,6 +10,7 @@ from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
 from .models import Word, FavoritesWords
+from flip_cards.settings import API_WORDNIK, URL_FOR_VOICE
 
 
 info = {
@@ -344,10 +345,16 @@ def learned_words(request, id):
 
 # Метод для получения ссылки на аудиофайл слова
 def get_word_audio_url(word):
-    url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
+    # Бесплатный API - мало слов
+    # url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
+    # API Wordnik
+    url = f"https://api.wordnik.com/v4/word.json/{word}/audio?useCanonical=false&limit=1&api_key={API_WORDNIK}"
     response = requests.get(url, timeout=10)
     if response.status_code == 200:
-        audio_url = response.json()[0]["phonetics"][0]["audio"]
+        # получаем ссылку на аудиофайл из бесплтного API
+        # audio_url = response.json()[0]["phonetics"][0]["audio"]
+        # получаем ссылку на аудиофайл из Wordnik
+        audio_url = response.json()[0]["fileUrl"]
         if audio_url:
             return audio_url
     return None
@@ -355,7 +362,7 @@ def get_word_audio_url(word):
 
 # Метод для воспроизведения аудиофайла
 def speak(request, word):
-    word = word.lower()
+    # word = word.lower()
     audio_url = get_word_audio_url(word)
     if audio_url:
         return JsonResponse({'audio_url': audio_url})
