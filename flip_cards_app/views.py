@@ -10,7 +10,7 @@ from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
 from .models import Word, FavoritesWords
-from flip_cards.settings import API_WORDNIK, URL_FOR_VOICE
+from flip_cards.settings import API_WORDNIK, URL_FOR_VOICE, API_DICTIONARYAPI
 
 
 info = {
@@ -348,13 +348,28 @@ def get_word_audio_url(word):
     # Бесплатный API - мало слов
     # url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
     # API Wordnik
-    url = f"https://api.wordnik.com/v4/word.json/{word}/audio?useCanonical=false&limit=1&api_key={API_WORDNIK}"
+    # url = f"https://api.wordnik.com/v4/word.json/{word}/audio?useCanonical=false&limit=1&api_key={API_WORDNIK}"
+    # API www.dictionaryapi.com
+    url = f"https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={API_DICTIONARYAPI}"
+
     response = requests.get(url, timeout=10)
     if response.status_code == 200:
         # получаем ссылку на аудиофайл из бесплтного API
         # audio_url = response.json()[0]["phonetics"][0]["audio"]
         # получаем ссылку на аудиофайл из Wordnik
-        audio_url = response.json()[0]["fileUrl"]
+        # audio_url = response.json()[0]["fileUrl"]
+        # получаем ссылку на аудиофайл из www.dictionaryapi.com
+        file_name = response.json()[0]['hwi']['prs'][0]['sound']['audio']
+        if file_name.startswith('bix'):
+            audio_url = f'https://media.merriam-webster.com/audio/prons/en/us/mp3/bix/{file_name}.mp3'
+        elif file_name.startswith('gg'):
+            audio_url = f'https://media.merriam-webster.com/audio/prons/en/us/mp3/gg/{file_name}.mp3'
+        elif file_name.startswith('_'):
+            audio_url = f'https://media.merriam-webster.com/audio/prons/en/us/mp3/number/{file_name}.mp3'
+        else:
+            audio_url = f'https://media.merriam-webster.com/audio/prons/en/us/mp3/{file_name[0]}/{
+                file_name}.mp3'
+
         if audio_url:
             return audio_url
     return None
