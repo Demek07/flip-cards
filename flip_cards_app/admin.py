@@ -37,6 +37,16 @@ class WordsAdmin(admin.ModelAdmin):
 
 @admin.register(FavoritesWords)
 class FavoritesWordsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'word', 'is_learned', 'errors_word', 'rights_word')
-    list_editable = ('word', 'is_learned', 'errors_word', 'rights_word',)
+    list_display = ('id', 'get_en_word', 'get_transcription', 'get_rus_word',
+                    'is_learned', 'errors_word', 'rights_word')
+    list_editable = ('is_learned', 'errors_word', 'rights_word',)
     # search_fields = ('name',)
+
+    def get_en_word(self, obj):
+        return obj.word.en_word
+
+    def get_transcription(self, obj):
+        return obj.word.transcription
+
+    def get_rus_word(self, obj):
+        return obj.word.rus_word
