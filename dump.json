@@ -6967,7 +6967,7 @@
   "pk": 634,
   "fields": {
     "en_word": "erroneous",
-    "transcription": null,
+    "transcription": "ɪˈroʊniəs",
     "rus_word": "ошибочный",
     "img_name_file": "erroneous",
     "status": false
@@ -26063,7 +26063,7 @@
   "pk": 2370,
   "fields": {
     "en_word": "jr.",
-    "transcription": null,
+    "transcription": "[ˈdʒuːniər]",
     "rus_word": "мл.",
     "img_name_file": "jr.",
     "status": false
@@ -101116,7 +101116,7 @@
   "pk": 9193,
   "fields": {
     "en_word": "nature",
-    "transcription": null,
+    "transcription": "[ˈneɪtʃər]",
     "rus_word": "природа",
     "img_name_file": "nature",
     "status": false
@@ -101127,7 +101127,7 @@
   "pk": 9194,
   "fields": {
     "en_word": "flower",
-    "transcription": null,
+    "transcription": "[ˈflaʊər]",
     "rus_word": "цветок",
     "img_name_file": "flower",
     "status": false
@@ -101138,7 +101138,7 @@
   "pk": 9195,
   "fields": {
     "en_word": "water",
-    "transcription": null,
+    "transcription": "[ˈwɔːtər]",
     "rus_word": "вода",
     "img_name_file": "water",
     "status": false
@@ -101149,7 +101149,7 @@
   "pk": 9196,
   "fields": {
     "en_word": "air",
-    "transcription": null,
+    "transcription": "[ɛr]",
     "rus_word": "воздух",
     "img_name_file": "air",
     "status": false
@@ -101160,7 +101160,7 @@
   "pk": 9197,
   "fields": {
     "en_word": "life",
-    "transcription": null,
+    "transcription": "[laɪf]",
     "rus_word": "жизнь",
     "img_name_file": "life",
     "status": false
@@ -101171,7 +101171,7 @@
   "pk": 9198,
   "fields": {
     "en_word": "death",
-    "transcription": null,
+    "transcription": "[dɛθ]",
     "rus_word": "смерть",
     "img_name_file": "death",
     "status": false
@@ -101182,7 +101182,7 @@
   "pk": 9199,
   "fields": {
     "en_word": "land",
-    "transcription": null,
+    "transcription": "[lænd]",
     "rus_word": "земля",
     "img_name_file": "land",
     "status": false
@@ -101193,7 +101193,7 @@
   "pk": 9200,
   "fields": {
     "en_word": "star",
-    "transcription": null,
+    "transcription": "[stɑːr]",
     "rus_word": "звезда",
     "img_name_file": "star",
     "status": false
@@ -101204,7 +101204,7 @@
   "pk": 9201,
   "fields": {
     "en_word": "grass",
-    "transcription": null,
+    "transcription": "[ɡræs]",
     "rus_word": "трава",
     "img_name_file": "grass",
     "status": false
@@ -101215,7 +101215,7 @@
   "pk": 9202,
   "fields": {
     "en_word": "tree",
-    "transcription": null,
+    "transcription": "[triː]",
     "rus_word": "дерево",
     "img_name_file": "tree",
     "status": false
@@ -101226,7 +101226,7 @@
   "pk": 9203,
   "fields": {
     "en_word": "gold",
-    "transcription": null,
+    "transcription": "[ɡoʊld]",
     "rus_word": "золото",
     "img_name_file": "gold",
     "status": false
@@ -101237,7 +101237,7 @@
   "pk": 9204,
   "fields": {
     "en_word": "silver",
-    "transcription": null,
+    "transcription": "[ˈsɪlvər]",
     "rus_word": "серебро",
     "img_name_file": "silver",
     "status": false
@@ -101248,7 +101248,7 @@
   "pk": 9205,
   "fields": {
     "en_word": "sound",
-    "transcription": null,
+    "transcription": "[saʊnd]",
     "rus_word": "звук",
     "img_name_file": "sound",
     "status": false
@@ -101259,7 +101259,7 @@
   "pk": 9206,
   "fields": {
     "en_word": "fire",
-    "transcription": null,
+    "transcription": "[faɪər]",
     "rus_word": "огонь",
     "img_name_file": "fire",
     "status": false
@@ -101270,7 +101270,7 @@
   "pk": 9207,
   "fields": {
     "en_word": "sky",
-    "transcription": null,
+    "transcription": "[skaɪ]",
     "rus_word": "небо",
     "img_name_file": "sky",
     "status": false
@@ -101281,7 +101281,7 @@
   "pk": 9208,
   "fields": {
     "en_word": "ground",
-    "transcription": null,
+    "transcription": "[ɡraʊnd]",
     "rus_word": "земля",
     "img_name_file": "ground",
     "status": false
@@ -101292,7 +101292,7 @@
   "pk": 9209,
   "fields": {
     "en_word": "sun",
-    "transcription": null,
+    "transcription": "[sʌn]",
     "rus_word": "солнце",
     "img_name_file": "sun",
     "status": false
@@ -101303,7 +101303,7 @@
   "pk": 9210,
   "fields": {
     "en_word": "rain",
-    "transcription": null,
+    "transcription": "[reɪn]",
     "rus_word": "дождь",
     "img_name_file": "rain",
     "status": false
@@ -101314,7 +101314,7 @@
   "pk": 9211,
   "fields": {
     "en_word": "moon",
-    "transcription": null,
+    "transcription": "[mun]",
     "rus_word": "луна",
     "img_name_file": "moon",
     "status": false
@@ -101325,7 +101325,7 @@
   "pk": 9212,
   "fields": {
     "en_word": "stone",
-    "transcription": null,
+    "transcription": "[stoʊn]",
     "rus_word": "камень",
     "img_name_file": "stone",
     "status": false
@@ -101336,7 +101336,7 @@
   "pk": 9213,
   "fields": {
     "en_word": "wind",
-    "transcription": null,
+    "transcription": "[wɪnd]",
     "rus_word": "ветер",
     "img_name_file": "wind",
     "status": false
@@ -101347,7 +101347,7 @@
   "pk": 9214,
   "fields": {
     "en_word": "smoke",
-    "transcription": null,
+    "transcription": "[smoʊk]",
     "rus_word": "дым, курить",
     "img_name_file": "smoke",
     "status": false
@@ -101358,7 +101358,7 @@
   "pk": 9215,
   "fields": {
     "en_word": "river",
-    "transcription": null,
+    "transcription": "[ˈrɪvər]",
     "rus_word": "река",
     "img_name_file": "river",
     "status": false
@@ -101369,7 +101369,7 @@
   "pk": 9216,
   "fields": {
     "en_word": "sea",
-    "transcription": null,
+    "transcription": "[siː]",
     "rus_word": "море",
     "img_name_file": "sea",
     "status": false
@@ -101380,7 +101380,7 @@
   "pk": 9217,
   "fields": {
     "en_word": "lake",
-    "transcription": null,
+    "transcription": "[leɪk]",
     "rus_word": "озеро",
     "img_name_file": "lake",
     "status": false
@@ -101391,7 +101391,7 @@
   "pk": 9218,
   "fields": {
     "en_word": "ocean",
-    "transcription": null,
+    "transcription": "[ˈoʊʃən]",
     "rus_word": "океан",
     "img_name_file": "ocean",
     "status": false
@@ -101402,7 +101402,7 @@
   "pk": 9219,
   "fields": {
     "en_word": "beach",
-    "transcription": null,
+    "transcription": "[biːtʃ]",
     "rus_word": "пляж",
     "img_name_file": "beach",
     "status": false
@@ -101413,7 +101413,7 @@
   "pk": 9220,
   "fields": {
     "en_word": "forest",
-    "transcription": null,
+    "transcription": "[ˈfɔrɪst]",
     "rus_word": "лес",
     "img_name_file": "forest",
     "status": false
@@ -101424,7 +101424,7 @@
   "pk": 9221,
   "fields": {
     "en_word": "ice",
-    "transcription": null,
+    "transcription": "[aɪs]",
     "rus_word": "лёд",
     "img_name_file": "ice",
     "status": false
@@ -101435,7 +101435,7 @@
   "pk": 9222,
   "fields": {
     "en_word": "color",
-    "transcription": null,
+    "transcription": "[ˈkʌlər]",
     "rus_word": "цвет",
     "img_name_file": "color",
     "status": false
@@ -101446,7 +101446,7 @@
   "pk": 9223,
   "fields": {
     "en_word": "weather",
-    "transcription": null,
+    "transcription": "[ˈwɛðər]",
     "rus_word": "погода",
     "img_name_file": "weather",
     "status": false
@@ -101457,7 +101457,7 @@
   "pk": 9224,
   "fields": {
     "en_word": "snow",
-    "transcription": null,
+    "transcription": "[snoʊ]",
     "rus_word": "снег",
     "img_name_file": "snow",
     "status": false
@@ -101468,7 +101468,7 @@
   "pk": 9225,
   "fields": {
     "en_word": "animal",
-    "transcription": null,
+    "transcription": "[ˈænɪməl]",
     "rus_word": "животное",
     "img_name_file": "animal",
     "status": false
@@ -101479,7 +101479,7 @@
   "pk": 9226,
   "fields": {
     "en_word": "bird",
-    "transcription": null,
+    "transcription": "[bɜːrd]",
     "rus_word": "птица",
     "img_name_file": "bird",
     "status": false
@@ -101490,7 +101490,7 @@
   "pk": 9227,
   "fields": {
     "en_word": "egg",
-    "transcription": null,
+    "transcription": "[ɛɡ]",
     "rus_word": "яйцо",
     "img_name_file": "egg",
     "status": false
@@ -101501,7 +101501,7 @@
   "pk": 9228,
   "fields": {
     "en_word": "dog",
-    "transcription": null,
+    "transcription": "[dɔːɡ]",
     "rus_word": "собака",
     "img_name_file": "dog",
     "status": false
@@ -101512,7 +101512,7 @@
   "pk": 9229,
   "fields": {
     "en_word": "cat",
-    "transcription": null,
+    "transcription": "[kæt]",
     "rus_word": "кошка",
     "img_name_file": "cat",
     "status": false
@@ -101523,7 +101523,7 @@
   "pk": 9230,
   "fields": {
     "en_word": "bear",
-    "transcription": null,
+    "transcription": "[bɛr]",
     "rus_word": "медведь",
     "img_name_file": "",
     "status": false
@@ -101534,7 +101534,7 @@
   "pk": 9231,
   "fields": {
     "en_word": "wolf",
-    "transcription": null,
+    "transcription": "[wʊlf]",
     "rus_word": "волк",
     "img_name_file": "wolf",
     "status": false
@@ -101545,7 +101545,7 @@
   "pk": 9232,
   "fields": {
     "en_word": "fox",
-    "transcription": null,
+    "transcription": "[fɑːks]",
     "rus_word": "лиса",
     "img_name_file": "fox",
     "status": false
@@ -101556,7 +101556,7 @@
   "pk": 9233,
   "fields": {
     "en_word": "fish",
-    "transcription": null,
+    "transcription": "[fɪʃ]",
     "rus_word": "рыба",
     "img_name_file": "fish",
     "status": false
@@ -101567,7 +101567,7 @@
   "pk": 9234,
   "fields": {
     "en_word": "dolphin",
-    "transcription": null,
+    "transcription": "[ˈdɒlfɪn]",
     "rus_word": "дельфин",
     "img_name_file": "dolphin",
     "status": false
@@ -101578,7 +101578,7 @@
   "pk": 9235,
   "fields": {
     "en_word": "camel",
-    "transcription": null,
+    "transcription": "[ˈkæməl]",
     "rus_word": "верблюд",
     "img_name_file": "camel",
     "status": false
@@ -101589,7 +101589,7 @@
   "pk": 9236,
   "fields": {
     "en_word": "horse",
-    "transcription": null,
+    "transcription": "[hɔːrs]",
     "rus_word": "лошадь",
     "img_name_file": "horse",
     "status": false
@@ -101600,7 +101600,7 @@
   "pk": 9237,
   "fields": {
     "en_word": "chicken",
-    "transcription": null,
+    "transcription": "[ˈtʃɪkɪn]",
     "rus_word": "курица, цыплёнок",
     "img_name_file": "chicken",
     "status": false
@@ -101611,7 +101611,7 @@
   "pk": 9238,
   "fields": {
     "en_word": "eagle",
-    "transcription": null,
+    "transcription": "[ˈiːɡəl]",
     "rus_word": "орёл",
     "img_name_file": "eagle",
     "status": false
@@ -101622,7 +101622,7 @@
   "pk": 9239,
   "fields": {
     "en_word": "cow",
-    "transcription": null,
+    "transcription": "[kaʊ]",
     "rus_word": "корова",
     "img_name_file": "cow",
     "status": false
@@ -101633,7 +101633,7 @@
   "pk": 9240,
   "fields": {
     "en_word": "duck",
-    "transcription": null,
+    "transcription": "[dʌk]",
     "rus_word": "утка",
     "img_name_file": "duck",
     "status": false
@@ -101644,7 +101644,7 @@
   "pk": 9241,
   "fields": {
     "en_word": "goose",
-    "transcription": null,
+    "transcription": "[ɡuːs]",
     "rus_word": "гусь",
     "img_name_file": "goose",
     "status": false
@@ -101655,7 +101655,7 @@
   "pk": 9242,
   "fields": {
     "en_word": "mouse",
-    "transcription": null,
+    "transcription": "[maʊs]",
     "rus_word": "мышь",
     "img_name_file": "mouse",
     "status": false
@@ -101666,7 +101666,7 @@
   "pk": 9243,
   "fields": {
     "en_word": "pig",
-    "transcription": null,
+    "transcription": "[pɪɡ]",
     "rus_word": "свинья",
     "img_name_file": "pig",
     "status": false
@@ -101677,7 +101677,7 @@
   "pk": 9244,
   "fields": {
     "en_word": "rat",
-    "transcription": null,
+    "transcription": "[ræt]",
     "rus_word": "крыса",
     "img_name_file": "rat",
     "status": false
@@ -101688,7 +101688,7 @@
   "pk": 9245,
   "fields": {
     "en_word": "bull",
-    "transcription": null,
+    "transcription": "[bʊl]",
     "rus_word": "бык",
     "img_name_file": "bull",
     "status": false
@@ -101699,7 +101699,7 @@
   "pk": 9246,
   "fields": {
     "en_word": "lion",
-    "transcription": null,
+    "transcription": "[ˈlaɪən]",
     "rus_word": "лев",
     "img_name_file": "lion",
     "status": false
@@ -101710,7 +101710,7 @@
   "pk": 9247,
   "fields": {
     "en_word": "bee",
-    "transcription": null,
+    "transcription": "[biː]",
     "rus_word": "пчела",
     "img_name_file": "bee",
     "status": false
@@ -101721,7 +101721,7 @@
   "pk": 9248,
   "fields": {
     "en_word": "spider",
-    "transcription": null,
+    "transcription": "[ˈspaɪdər]",
     "rus_word": "паук",
     "img_name_file": "spider",
     "status": false
@@ -101732,7 +101732,7 @@
   "pk": 9249,
   "fields": {
     "en_word": "elephant",
-    "transcription": null,
+    "transcription": "[ˈɛlɪfənt]",
     "rus_word": "слон",
     "img_name_file": "elephant",
     "status": false
@@ -101743,7 +101743,7 @@
   "pk": 9250,
   "fields": {
     "en_word": "monkey",
-    "transcription": null,
+    "transcription": "[ˈmʌŋki]",
     "rus_word": "обезьяна",
     "img_name_file": "monkey",
     "status": false
@@ -101754,7 +101754,7 @@
   "pk": 9251,
   "fields": {
     "en_word": "tiger",
-    "transcription": null,
+    "transcription": "[ˈtaɪɡər]",
     "rus_word": "тигр",
     "img_name_file": "tiger",
     "status": false
@@ -101765,7 +101765,7 @@
   "pk": 9252,
   "fields": {
     "en_word": "fox",
-    "transcription": null,
+    "transcription": "[fɑːks]",
     "rus_word": "лиса",
     "img_name_file": "fox",
     "status": false
@@ -101776,7 +101776,7 @@
   "pk": 9253,
   "fields": {
     "en_word": "shit",
-    "transcription": null,
+    "transcription": "[ʃɪt]",
     "rus_word": "дерьмо",
     "img_name_file": "shit",
     "status": false
@@ -101787,7 +101787,7 @@
   "pk": 9254,
   "fields": {
     "en_word": "people",
-    "transcription": null,
+    "transcription": "[ˈpiːpl]",
     "rus_word": "люди",
     "img_name_file": "people",
     "status": false
@@ -101798,7 +101798,7 @@
   "pk": 9255,
   "fields": {
     "en_word": "man",
-    "transcription": null,
+    "transcription": "[mæn]",
     "rus_word": "человек, мужик",
     "img_name_file": "man",
     "status": false
@@ -101809,7 +101809,7 @@
   "pk": 9256,
   "fields": {
     "en_word": "woman",
-    "transcription": null,
+    "transcription": "[ˈwʊmən]",
     "rus_word": "женщина",
     "img_name_file": "woman",
     "status": false
@@ -101820,7 +101820,7 @@
   "pk": 9257,
   "fields": {
     "en_word": "child",
-    "transcription": null,
+    "transcription": "[tʃaɪld]",
     "rus_word": "ребёнок",
     "img_name_file": "child",
     "status": false
@@ -101831,7 +101831,7 @@
   "pk": 9258,
   "fields": {
     "en_word": "person",
-    "transcription": null,
+    "transcription": "[ˈpɜːrsən]",
     "rus_word": "человек",
     "img_name_file": "person",
     "status": false
@@ -101842,7 +101842,7 @@
   "pk": 9259,
   "fields": {
     "en_word": "family",
-    "transcription": null,
+    "transcription": "[ˈfæməli]",
     "rus_word": "семья",
     "img_name_file": "family",
     "status": false
@@ -101853,7 +101853,7 @@
   "pk": 9260,
   "fields": {
     "en_word": "mother",
-    "transcription": null,
+    "transcription": "[ˈmʌðər]",
     "rus_word": "мать",
     "img_name_file": "mother",
     "status": false
@@ -101864,7 +101864,7 @@
   "pk": 9261,
   "fields": {
     "en_word": "father",
-    "transcription": null,
+    "transcription": "[ˈfɑːðər]",
     "rus_word": "отец",
     "img_name_file": "father",
     "status": false
@@ -101875,7 +101875,7 @@
   "pk": 9262,
   "fields": {
     "en_word": "parent",
-    "transcription": null,
+    "transcription": "[ˈpɛrənt]",
     "rus_word": "родитель",
     "img_name_file": "parent",
     "status": false
@@ -101886,7 +101886,7 @@
   "pk": 9263,
   "fields": {
     "en_word": "girl",
-    "transcription": null,
+    "transcription": "[ɡɜːrl]",
     "rus_word": "девочка",
     "img_name_file": "girl",
     "status": false
@@ -101897,7 +101897,7 @@
   "pk": 9264,
   "fields": {
     "en_word": "boy",
-    "transcription": null,
+    "transcription": "[bɔɪ]",
     "rus_word": "мальчик",
     "img_name_file": "boy",
     "status": false
@@ -101908,7 +101908,7 @@
   "pk": 9265,
   "fields": {
     "en_word": "enemy",
-    "transcription": null,
+    "transcription": "[ˈɛnəmi]",
     "rus_word": "враг",
     "img_name_file": "enemy",
     "status": false
@@ -101919,7 +101919,7 @@
   "pk": 9266,
   "fields": {
     "en_word": "friend",
-    "transcription": null,
+    "transcription": "[frɛnd]",
     "rus_word": "друг",
     "img_name_file": "friend",
     "status": false
@@ -101930,7 +101930,7 @@
   "pk": 9267,
   "fields": {
     "en_word": "wife",
-    "transcription": null,
+    "transcription": "[waɪf]",
     "rus_word": "жена",
     "img_name_file": "wife",
     "status": false
@@ -101941,7 +101941,7 @@
   "pk": 9268,
   "fields": {
     "en_word": "dad",
-    "transcription": null,
+    "transcription": "[dæd]",
     "rus_word": "папа",
     "img_name_file": "dad",
     "status": false
@@ -101952,7 +101952,7 @@
   "pk": 9269,
   "fields": {
     "en_word": "mom",
-    "transcription": null,
+    "transcription": "[mɒm]",
     "rus_word": "мама",
     "img_name_file": "mom",
     "status": false
@@ -101963,7 +101963,7 @@
   "pk": 9270,
   "fields": {
     "en_word": "son",
-    "transcription": null,
+    "transcription": "[sʌn]",
     "rus_word": "сын",
     "img_name_file": "son",
     "status": false
@@ -101974,7 +101974,7 @@
   "pk": 9271,
   "fields": {
     "en_word": "baby (babe)",
-    "transcription": null,
+    "transcription": "[ˈbeɪbi]",
     "rus_word": "крошка",
     "img_name_file": "baby",
     "status": false
@@ -101985,7 +101985,7 @@
   "pk": 9272,
   "fields": {
     "en_word": "brother",
-    "transcription": null,
+    "transcription": "[ˈbrʌðər]",
     "rus_word": "брат",
     "img_name_file": "brother",
     "status": false
@@ -101996,7 +101996,7 @@
   "pk": 9273,
   "fields": {
     "en_word": "sister",
-    "transcription": null,
+    "transcription": "[ˈsɪstər]",
     "rus_word": "сестра",
     "img_name_file": "sister",
     "status": false
@@ -102007,7 +102007,7 @@
   "pk": 9274,
   "fields": {
     "en_word": "daughter",
-    "transcription": null,
+    "transcription": "[ˈdɔːtər]",
     "rus_word": "дочь",
     "img_name_file": "daughter",
     "status": false
@@ -102018,7 +102018,7 @@
   "pk": 9275,
   "fields": {
     "en_word": "husband",
-    "transcription": null,
+    "transcription": "[ˈhʌzbənd]",
     "rus_word": "муж",
     "img_name_file": "husband",
     "status": false
@@ -102029,7 +102029,7 @@
   "pk": 9276,
   "fields": {
     "en_word": "teacher",
-    "transcription": null,
+    "transcription": "[ˈtiːtʃər]",
     "rus_word": "учитель",
     "img_name_file": "teacher",
     "status": false
@@ -102040,7 +102040,7 @@
   "pk": 9277,
   "fields": {
     "en_word": "soldier",
-    "transcription": null,
+    "transcription": "[ˈsoʊldʒər]",
     "rus_word": "солдат",
     "img_name_file": "soldier",
     "status": false
@@ -102051,7 +102051,7 @@
   "pk": 9278,
   "fields": {
     "en_word": "engineer",
-    "transcription": null,
+    "transcription": "[ˌɛndʒəˈnɪr]",
     "rus_word": "инженер",
     "img_name_file": "engineer",
     "status": false
@@ -102062,7 +102062,7 @@
   "pk": 9279,
   "fields": {
     "en_word": "policeman",
-    "transcription": null,
+    "transcription": "[ˈpɑːlɪsmən]",
     "rus_word": "полицейский",
     "img_name_file": "policeman",
     "status": false
@@ -102073,7 +102073,7 @@
   "pk": 9280,
   "fields": {
     "en_word": "guy",
-    "transcription": null,
+    "transcription": "[ɡaɪ]",
     "rus_word": "парень, чувак",
     "img_name_file": "guy",
     "status": false
@@ -102084,7 +102084,7 @@
   "pk": 9281,
   "fields": {
     "en_word": "girlfriend",
-    "transcription": null,
+    "transcription": "[ˈɡɜːrlˌfrɛnd]",
     "rus_word": "девушка (его)",
     "img_name_file": "girlfriend",
     "status": false
@@ -102095,7 +102095,7 @@
   "pk": 9282,
   "fields": {
     "en_word": "boyfriend",
-    "transcription": null,
+    "transcription": "[ˈbɔɪˌfrɛnd]",
     "rus_word": "парень (её)",
     "img_name_file": "boyfriend",
     "status": false
@@ -102106,7 +102106,7 @@
   "pk": 9283,
   "fields": {
     "en_word": "sir",
-    "transcription": null,
+    "transcription": "[sɜːr]",
     "rus_word": "сэр",
     "img_name_file": "sir",
     "status": false
@@ -102117,7 +102117,7 @@
   "pk": 9284,
   "fields": {
     "en_word": "body",
-    "transcription": null,
+    "transcription": "[ˈbɒdi]",
     "rus_word": "тело",
     "img_name_file": "body",
     "status": false
@@ -102128,7 +102128,7 @@
   "pk": 9285,
   "fields": {
     "en_word": "back",
-    "transcription": null,
+    "transcription": "[bæk]",
     "rus_word": "спина",
     "img_name_file": "back",
     "status": false
@@ -102139,7 +102139,7 @@
   "pk": 9286,
   "fields": {
     "en_word": "finger",
-    "transcription": null,
+    "transcription": "[ˈfɪŋɡər]",
     "rus_word": "палец",
     "img_name_file": "finger",
     "status": false
@@ -102150,7 +102150,7 @@
   "pk": 9287,
   "fields": {
     "en_word": "hand",
-    "transcription": null,
+    "transcription": "[hænd]",
     "rus_word": "рука",
     "img_name_file": "hand",
     "status": false
@@ -102161,7 +102161,7 @@
   "pk": 9288,
   "fields": {
     "en_word": "head",
-    "transcription": null,
+    "transcription": "[hɛd]",
     "rus_word": "голова",
     "img_name_file": "head",
     "status": false
@@ -102172,7 +102172,7 @@
   "pk": 9289,
   "fields": {
     "en_word": "wing",
-    "transcription": null,
+    "transcription": "[wɪŋ]",
     "rus_word": "крыло",
     "img_name_file": "wing",
     "status": false
@@ -102183,7 +102183,7 @@
   "pk": 9290,
   "fields": {
     "en_word": "face",
-    "transcription": null,
+    "transcription": "[feɪs]",
     "rus_word": "лицо",
     "img_name_file": "face",
     "status": false
@@ -102194,7 +102194,7 @@
   "pk": 9291,
   "fields": {
     "en_word": "brain",
-    "transcription": null,
+    "transcription": "[breɪn]",
     "rus_word": "мозг",
     "img_name_file": "brain",
     "status": false
@@ -102205,7 +102205,7 @@
   "pk": 9292,
   "fields": {
     "en_word": "eye",
-    "transcription": null,
+    "transcription": "[aɪ]",
     "rus_word": "глаз",
     "img_name_file": "eye",
     "status": false
@@ -102216,7 +102216,7 @@
   "pk": 9293,
   "fields": {
     "en_word": "nose",
-    "transcription": null,
+    "transcription": "[noʊz]",
     "rus_word": "нос",
     "img_name_file": "nose",
     "status": false
@@ -102227,7 +102227,7 @@
   "pk": 9294,
   "fields": {
     "en_word": "ear",
-    "transcription": null,
+    "transcription": "[ɪr]",
     "rus_word": "ухо",
     "img_name_file": "ear",
     "status": false
@@ -102238,7 +102238,7 @@
   "pk": 9295,
   "fields": {
     "en_word": "mouth",
-    "transcription": null,
+    "transcription": "[maʊθ]",
     "rus_word": "рот",
     "img_name_file": "mouth",
     "status": false
@@ -102249,7 +102249,7 @@
   "pk": 9296,
   "fields": {
     "en_word": "foot",
-    "transcription": null,
+    "transcription": "[fʊt]",
     "rus_word": "нога",
     "img_name_file": "foot",
     "status": false
@@ -102260,7 +102260,7 @@
   "pk": 9297,
   "fields": {
     "en_word": "heart",
-    "transcription": null,
+    "transcription": "[hɑːrt]",
     "rus_word": "сердце",
     "img_name_file": "heart",
     "status": false
@@ -102271,7 +102271,7 @@
   "pk": 9298,
   "fields": {
     "en_word": "soul",
-    "transcription": null,
+    "transcription": "[soʊl]",
     "rus_word": "душа",
     "img_name_file": "soul",
     "status": false
@@ -102282,7 +102282,7 @@
   "pk": 9299,
   "fields": {
     "en_word": "mind",
-    "transcription": null,
+    "transcription": "[maɪnd]",
     "rus_word": "разум",
     "img_name_file": "mind",
     "status": false
@@ -102293,7 +102293,7 @@
   "pk": 9300,
   "fields": {
     "en_word": "voice",
-    "transcription": null,
+    "transcription": "[vɔɪs]",
     "rus_word": "голос",
     "img_name_file": "voice",
     "status": false
@@ -102304,7 +102304,7 @@
   "pk": 9301,
   "fields": {
     "en_word": "hair",
-    "transcription": null,
+    "transcription": "[hɛr]",
     "rus_word": "волосы",
     "img_name_file": "hair",
     "status": false
@@ -102315,7 +102315,7 @@
   "pk": 9302,
   "fields": {
     "en_word": "blood",
-    "transcription": null,
+    "transcription": "[blʌd]",
     "rus_word": "кровь",
     "img_name_file": "blood",
     "status": false
@@ -102326,7 +102326,7 @@
   "pk": 9303,
   "fields": {
     "en_word": "toy",
-    "transcription": null,
+    "transcription": "[tɔɪ]",
     "rus_word": "игрушка",
     "img_name_file": "toy",
     "status": false
@@ -102337,7 +102337,7 @@
   "pk": 9304,
   "fields": {
     "en_word": "book",
-    "transcription": null,
+    "transcription": "[bʊk]",
     "rus_word": "книга",
     "img_name_file": "book",
     "status": false
@@ -102348,7 +102348,7 @@
   "pk": 9305,
   "fields": {
     "en_word": "textbook",
-    "transcription": null,
+    "transcription": "[ˈtɛkstˌbʊk]",
     "rus_word": "учебник",
     "img_name_file": "textbook",
     "status": false
@@ -102359,7 +102359,7 @@
   "pk": 9306,
   "fields": {
     "en_word": "notebook",
-    "transcription": null,
+    "transcription": "[ˈnoʊtˌbʊk]",
     "rus_word": "тетрадь",
     "img_name_file": "notebook",
     "status": false
@@ -102370,7 +102370,7 @@
   "pk": 9307,
   "fields": {
     "en_word": "page",
-    "transcription": null,
+    "transcription": "[peɪdʒ]",
     "rus_word": "страница",
     "img_name_file": "page",
     "status": false
@@ -102381,7 +102381,7 @@
   "pk": 9308,
   "fields": {
     "en_word": "tale",
-    "transcription": null,
+    "transcription": "[teɪl]",
     "rus_word": "сказка",
     "img_name_file": "tale",
     "status": false
@@ -102392,7 +102392,7 @@
   "pk": 9309,
   "fields": {
     "en_word": "button",
-    "transcription": null,
+    "transcription": "[ˈbʌtən]",
     "rus_word": "кнопка",
     "img_name_file": "button",
     "status": false
@@ -102403,7 +102403,7 @@
   "pk": 9310,
   "fields": {
     "en_word": "door",
-    "transcription": null,
+    "transcription": "[dɔːr]",
     "rus_word": "дверь",
     "img_name_file": "door",
     "status": false
@@ -102414,7 +102414,7 @@
   "pk": 9311,
   "fields": {
     "en_word": "car",
-    "transcription": null,
+    "transcription": "[kɑːr]",
     "rus_word": "автомобиль",
     "img_name_file": "car",
     "status": false
@@ -102425,7 +102425,7 @@
   "pk": 9312,
   "fields": {
     "en_word": "ship",
-    "transcription": null,
+    "transcription": "[ʃɪp]",
     "rus_word": "корабль",
     "img_name_file": "ship",
     "status": false
@@ -102436,7 +102436,7 @@
   "pk": 9313,
   "fields": {
     "en_word": "bus",
-    "transcription": null,
+    "transcription": "[bʌs]",
     "rus_word": "автобус",
     "img_name_file": "bus",
     "status": false
@@ -102447,7 +102447,7 @@
   "pk": 9314,
   "fields": {
     "en_word": "bike",
-    "transcription": null,
+    "transcription": "[baɪk]",
     "rus_word": "мотоцикл",
     "img_name_file": "bike",
     "status": false
@@ -102458,7 +102458,7 @@
   "pk": 9315,
   "fields": {
     "en_word": "pen",
-    "transcription": null,
+    "transcription": "[pɛn]",
     "rus_word": "ручка",
     "img_name_file": "pen",
     "status": false
@@ -102469,7 +102469,7 @@
   "pk": 9316,
   "fields": {
     "en_word": "pencil",
-    "transcription": null,
+    "transcription": "[ˈpɛnsəl]",
     "rus_word": "карандаш",
     "img_name_file": "pencil",
     "status": false
@@ -102480,7 +102480,7 @@
   "pk": 9317,
   "fields": {
     "en_word": "mirror",
-    "transcription": null,
+    "transcription": "[ˈmɪrər]",
     "rus_word": "зеркало",
     "img_name_file": "mirror",
     "status": false
@@ -102491,7 +102491,7 @@
   "pk": 9318,
   "fields": {
     "en_word": "news",
-    "transcription": null,
+    "transcription": "[nuz]",
     "rus_word": "новости",
     "img_name_file": "news",
     "status": false
@@ -102502,7 +102502,7 @@
   "pk": 9319,
   "fields": {
     "en_word": "map",
-    "transcription": null,
+    "transcription": "[mæp]",
     "rus_word": "карта",
     "img_name_file": "map",
     "status": false
@@ -102513,7 +102513,7 @@
   "pk": 9320,
   "fields": {
     "en_word": "bed",
-    "transcription": null,
+    "transcription": "[bɛd]",
     "rus_word": "кровать",
     "img_name_file": "bed",
     "status": false
@@ -102524,7 +102524,7 @@
   "pk": 9321,
   "fields": {
     "en_word": "picture",
-    "transcription": null,
+    "transcription": "[ˈpɪkʧər]",
     "rus_word": "картинка",
     "img_name_file": "picture",
     "status": false
@@ -102535,7 +102535,7 @@
   "pk": 9322,
   "fields": {
     "en_word": "table",
-    "transcription": null,
+    "transcription": "[ˈteɪbəl]",
     "rus_word": "стол",
     "img_name_file": "table",
     "status": false
@@ -102546,7 +102546,7 @@
   "pk": 9323,
   "fields": {
     "en_word": "wall",
-    "transcription": null,
+    "transcription": "[wɔːl]",
     "rus_word": "стена",
     "img_name_file": "wall",
     "status": false
@@ -102557,7 +102557,7 @@
   "pk": 9324,
   "fields": {
     "en_word": "window",
-    "transcription": null,
+    "transcription": "[ˈwɪndoʊ]",
     "rus_word": "окно",
     "img_name_file": "window",
     "status": false
@@ -102568,7 +102568,7 @@
   "pk": 9325,
   "fields": {
     "en_word": "box",
-    "transcription": null,
+    "transcription": "[bɒks]",
     "rus_word": "коробка",
     "img_name_file": "box",
     "status": false
@@ -102579,7 +102579,7 @@
   "pk": 9326,
   "fields": {
     "en_word": "present",
-    "transcription": null,
+    "transcription": "[ˈprɛzənt]",
     "rus_word": "подарок",
     "img_name_file": "present",
     "status": false
@@ -102590,7 +102590,7 @@
   "pk": 9327,
   "fields": {
     "en_word": "ball",
-    "transcription": null,
+    "transcription": "[bɔːl]",
     "rus_word": "мяч",
     "img_name_file": "ball",
     "status": false
@@ -102601,7 +102601,7 @@
   "pk": 9328,
   "fields": {
     "en_word": "screen",
-    "transcription": null,
+    "transcription": "[skrin]",
     "rus_word": "экран",
     "img_name_file": "screen",
     "status": false
@@ -102612,7 +102612,7 @@
   "pk": 9329,
   "fields": {
     "en_word": "net",
-    "transcription": null,
+    "transcription": "[nɛt]",
     "rus_word": "сеть",
     "img_name_file": "net",
     "status": false
@@ -102623,7 +102623,7 @@
   "pk": 9330,
   "fields": {
     "en_word": "knife",
-    "transcription": null,
+    "transcription": "[naɪf]",
     "rus_word": "нож",
     "img_name_file": "knife",
     "status": false
@@ -102634,7 +102634,7 @@
   "pk": 9331,
   "fields": {
     "en_word": "spoon",
-    "transcription": null,
+    "transcription": "[spun]",
     "rus_word": "ложка",
     "img_name_file": "spoon",
     "status": false
@@ -102645,7 +102645,7 @@
   "pk": 9332,
   "fields": {
     "en_word": "fork",
-    "transcription": null,
+    "transcription": "[fɔːrk]",
     "rus_word": "вилка",
     "img_name_file": "fork",
     "status": false
@@ -102656,7 +102656,7 @@
   "pk": 9333,
   "fields": {
     "en_word": "cup",
-    "transcription": null,
+    "transcription": "[kʌp]",
     "rus_word": "чашка",
     "img_name_file": "cup",
     "status": false
@@ -102667,7 +102667,7 @@
   "pk": 9334,
   "fields": {
     "en_word": "plate",
-    "transcription": null,
+    "transcription": "[pleɪt]",
     "rus_word": "тарелка",
     "img_name_file": "plate",
     "status": false
@@ -102678,7 +102678,7 @@
   "pk": 9335,
   "fields": {
     "en_word": "clock",
-    "transcription": null,
+    "transcription": "[klɒk]",
     "rus_word": "часы",
     "img_name_file": "clock",
     "status": false
@@ -102689,7 +102689,7 @@
   "pk": 9336,
   "fields": {
     "en_word": "coin",
-    "transcription": null,
+    "transcription": "[kɔɪn]",
     "rus_word": "монета",
     "img_name_file": "coin",
     "status": false
@@ -102700,7 +102700,7 @@
   "pk": 9337,
   "fields": {
     "en_word": "device",
-    "transcription": null,
+    "transcription": "[dɪˈvaɪs]",
     "rus_word": "прибор",
     "img_name_file": "device",
     "status": false
@@ -102711,7 +102711,7 @@
   "pk": 9338,
   "fields": {
     "en_word": "time",
-    "transcription": null,
+    "transcription": "[taɪm]",
     "rus_word": "время",
     "img_name_file": "time",
     "status": false
@@ -102722,7 +102722,7 @@
   "pk": 9339,
   "fields": {
     "en_word": "year",
-    "transcription": null,
+    "transcription": "[jɪr]",
     "rus_word": "год",
     "img_name_file": "year",
     "status": false
@@ -102733,7 +102733,7 @@
   "pk": 9340,
   "fields": {
     "en_word": "hour",
-    "transcription": null,
+    "transcription": "[aʊər]",
     "rus_word": "час",
     "img_name_file": "hour",
     "status": false
@@ -102744,7 +102744,7 @@
   "pk": 9341,
   "fields": {
     "en_word": "week",
-    "transcription": null,
+    "transcription": "[wik]",
     "rus_word": "неделя",
     "img_name_file": "week",
     "status": false
@@ -102755,7 +102755,7 @@
   "pk": 9342,
   "fields": {
     "en_word": "month",
-    "transcription": null,
+    "transcription": "[mʌnθ]",
     "rus_word": "месяц",
     "img_name_file": "month",
     "status": false
@@ -102766,7 +102766,7 @@
   "pk": 9343,
   "fields": {
     "en_word": "day",
-    "transcription": null,
+    "transcription": "[deɪ]",
     "rus_word": "день",
     "img_name_file": "day",
     "status": false
@@ -102777,7 +102777,7 @@
   "pk": 9344,
   "fields": {
     "en_word": "evening",
-    "transcription": null,
+    "transcription": "[ˈivnɪŋ]",
     "rus_word": "вечер",
     "img_name_file": "evening",
     "status": false
@@ -102788,7 +102788,7 @@
   "pk": 9345,
   "fields": {
     "en_word": "night",
-    "transcription": null,
+    "transcription": "[naɪt]",
     "rus_word": "ночь",
     "img_name_file": "night",
     "status": false
@@ -102799,7 +102799,7 @@
   "pk": 9346,
   "fields": {
     "en_word": "morning",
-    "transcription": null,
+    "transcription": "[ˈmɔːrnɪŋ]",
     "rus_word": "утро",
     "img_name_file": "morning",
     "status": false
@@ -102810,7 +102810,7 @@
   "pk": 9347,
   "fields": {
     "en_word": "January",
-    "transcription": null,
+    "transcription": "[ˈdʒænjuˌɛri]",
     "rus_word": "январь",
     "img_name_file": "January",
     "status": false
@@ -102821,7 +102821,7 @@
   "pk": 9348,
   "fields": {
     "en_word": "February",
-    "transcription": null,
+    "transcription": "[ˈfɛbjuˌɛri]",
     "rus_word": "февраль",
     "img_name_file": "February",
     "status": false
@@ -102832,7 +102832,7 @@
   "pk": 9349,
   "fields": {
     "en_word": "March",
-    "transcription": null,
+    "transcription": "[mɑːrtʃ]",
     "rus_word": "март",
     "img_name_file": "March",
     "status": false
@@ -102843,7 +102843,7 @@
   "pk": 9350,
   "fields": {
     "en_word": "April",
-    "transcription": null,
+    "transcription": "[ˈeɪprəl]",
     "rus_word": "апрель",
     "img_name_file": "April",
     "status": false
@@ -102854,7 +102854,7 @@
   "pk": 9351,
   "fields": {
     "en_word": "May",
-    "transcription": null,
+    "transcription": "[meɪ]",
     "rus_word": "май",
     "img_name_file": "May",
     "status": false
@@ -102865,7 +102865,7 @@
   "pk": 9352,
   "fields": {
     "en_word": "June",
-    "transcription": null,
+    "transcription": "[dʒun]",
     "rus_word": "июнь",
     "img_name_file": "June",
     "status": false
@@ -102876,7 +102876,7 @@
   "pk": 9353,
   "fields": {
     "en_word": "July",
-    "transcription": null,
+    "transcription": "[dʒʊˈlaɪ]",
     "rus_word": "июль",
     "img_name_file": "July",
     "status": false
@@ -102887,7 +102887,7 @@
   "pk": 9354,
   "fields": {
     "en_word": "August",
-    "transcription": null,
+    "transcription": "[ɔːˈɡʌst]",
     "rus_word": "август",
     "img_name_file": "August",
     "status": false
@@ -102898,7 +102898,7 @@
   "pk": 9355,
   "fields": {
     "en_word": "September",
-    "transcription": null,
+    "transcription": "[sɛpˈtɛmbər]",
     "rus_word": "сентябрь",
     "img_name_file": "September",
     "status": false
@@ -102909,7 +102909,7 @@
   "pk": 9356,
   "fields": {
     "en_word": "October",
-    "transcription": null,
+    "transcription": "[ɒkˈtoʊbər]",
     "rus_word": "октябрь",
     "img_name_file": "October",
     "status": false
@@ -102920,7 +102920,7 @@
   "pk": 9357,
   "fields": {
     "en_word": "November",
-    "transcription": null,
+    "transcription": "[noʊˈvɛmbər]",
     "rus_word": "ноябрь",
     "img_name_file": "November",
     "status": false
@@ -102931,7 +102931,7 @@
   "pk": 9358,
   "fields": {
     "en_word": "December",
-    "transcription": null,
+    "transcription": "[dɪˈsɛmbər]",
     "rus_word": "декабрь",
     "img_name_file": "December",
     "status": false
@@ -102942,7 +102942,7 @@
   "pk": 9359,
   "fields": {
     "en_word": "Monday",
-    "transcription": null,
+    "transcription": "[ˈmʌndeɪ]",
     "rus_word": "понедельник",
     "img_name_file": "Monday",
     "status": false
@@ -102953,7 +102953,7 @@
   "pk": 9360,
   "fields": {
     "en_word": "Tuesday",
-    "transcription": null,
+    "transcription": "[ˈtuzdeɪ]",
     "rus_word": "вторник",
     "img_name_file": "Tuesday",
     "status": false
@@ -102964,7 +102964,7 @@
   "pk": 9361,
   "fields": {
     "en_word": "Wednesday",
-    "transcription": null,
+    "transcription": "[ˈwɛnzdeɪ]",
     "rus_word": "среда",
     "img_name_file": "Wednesday",
     "status": false
@@ -102975,7 +102975,7 @@
   "pk": 9362,
   "fields": {
     "en_word": "Thursday",
-    "transcription": null,
+    "transcription": "[ˈθɜːrzdeɪ]",
     "rus_word": "четверг",
     "img_name_file": "Thursday",
     "status": false
@@ -102986,7 +102986,7 @@
   "pk": 9363,
   "fields": {
     "en_word": "Friday",
-    "transcription": null,
+    "transcription": "[ˈfraɪdeɪ]",
     "rus_word": "пятница",
     "img_name_file": "Friday",
     "status": false
@@ -102997,7 +102997,7 @@
   "pk": 9364,
   "fields": {
     "en_word": "Saturday",
-    "transcription": null,
+    "transcription": "[ˈsætərdeɪ]",
     "rus_word": "суббота",
     "img_name_file": "Saturday",
     "status": false
@@ -103008,7 +103008,7 @@
   "pk": 9365,
   "fields": {
     "en_word": "Sunday",
-    "transcription": null,
+    "transcription": "[ˈsʌndeɪ]",
     "rus_word": "воскресенье",
     "img_name_file": "Sunday",
     "status": false
@@ -103019,7 +103019,7 @@
   "pk": 9366,
   "fields": {
     "en_word": "spring",
-    "transcription": null,
+    "transcription": "[sprɪŋ]",
     "rus_word": "весна",
     "img_name_file": "spring",
     "status": false
@@ -103030,7 +103030,7 @@
   "pk": 9367,
   "fields": {
     "en_word": "summer",
-    "transcription": null,
+    "transcription": "[ˈsʌmər]",
     "rus_word": "лето",
     "img_name_file": "summer",
     "status": false
@@ -103041,7 +103041,7 @@
   "pk": 9368,
   "fields": {
     "en_word": "autumn",
-    "transcription": null,
+    "transcription": "[ˈɔːtəm]",
     "rus_word": "осень",
     "img_name_file": "autumn",
     "status": false
@@ -103052,7 +103052,7 @@
   "pk": 9369,
   "fields": {
     "en_word": "winter",
-    "transcription": null,
+    "transcription": "[ˈwɪntər]",
     "rus_word": "зима",
     "img_name_file": "winter",
     "status": false
@@ -103063,7 +103063,7 @@
   "pk": 9370,
   "fields": {
     "en_word": "food",
-    "transcription": null,
+    "transcription": "[fud]",
     "rus_word": "еда",
     "img_name_file": "food",
     "status": false
@@ -103074,7 +103074,7 @@
   "pk": 9371,
   "fields": {
     "en_word": "breakfast",
-    "transcription": null,
+    "transcription": "[ˈbrɛkfəst]",
     "rus_word": "завтрак",
     "img_name_file": "breakfast",
     "status": false
@@ -103085,7 +103085,7 @@
   "pk": 9372,
   "fields": {
     "en_word": "lunch",
-    "transcription": null,
+    "transcription": "[lʌntʃ]",
     "rus_word": "обед",
     "img_name_file": "lunch",
     "status": false
@@ -103096,7 +103096,7 @@
   "pk": 9373,
   "fields": {
     "en_word": "dinner",
-    "transcription": null,
+    "transcription": "[ˈdɪnər]",
     "rus_word": "ужин",
     "img_name_file": "dinner",
     "status": false
@@ -103107,7 +103107,7 @@
   "pk": 9374,
   "fields": {
     "en_word": "supper",
-    "transcription": null,
+    "transcription": "[ˈsʌpər]",
     "rus_word": "поздний ужин",
     "img_name_file": "supper",
     "status": false
@@ -103118,7 +103118,7 @@
   "pk": 9375,
   "fields": {
     "en_word": "bottle",
-    "transcription": null,
+    "transcription": "[ˈbɒtl]",
     "rus_word": "бутылка",
     "img_name_file": "bottle",
     "status": false
@@ -103129,7 +103129,7 @@
   "pk": 9376,
   "fields": {
     "en_word": "milk",
-    "transcription": null,
+    "transcription": "[mɪlk]",
     "rus_word": "молоко",
     "img_name_file": "milk",
     "status": false
@@ -103140,7 +103140,7 @@
   "pk": 9377,
   "fields": {
     "en_word": "meat",
-    "transcription": null,
+    "transcription": "[mit]",
     "rus_word": "мясо",
     "img_name_file": "meat",
     "status": false
@@ -103151,7 +103151,7 @@
   "pk": 9378,
   "fields": {
     "en_word": "sugar",
-    "transcription": null,
+    "transcription": "[ˈʃʊɡər]",
     "rus_word": "сахар",
     "img_name_file": "sugar",
     "status": false
@@ -103162,7 +103162,7 @@
   "pk": 9379,
   "fields": {
     "en_word": "cake",
-    "transcription": null,
+    "transcription": "[keɪk]",
     "rus_word": "пироженое",
     "img_name_file": "cake",
     "status": false
@@ -103173,7 +103173,7 @@
   "pk": 9380,
   "fields": {
     "en_word": "cheese",
-    "transcription": null,
+    "transcription": "[tʃiz]",
     "rus_word": "сыр",
     "img_name_file": "cheese",
     "status": false
@@ -103184,7 +103184,7 @@
   "pk": 9381,
   "fields": {
     "en_word": "fruit",
-    "transcription": null,
+    "transcription": "[frut]",
     "rus_word": "фрукт",
     "img_name_file": "fruit",
     "status": false
@@ -103195,7 +103195,7 @@
   "pk": 9382,
   "fields": {
     "en_word": "bread",
-    "transcription": null,
+    "transcription": "[brɛd]",
     "rus_word": "хлеб",
     "img_name_file": "bread",
     "status": false
@@ -103206,7 +103206,7 @@
   "pk": 9383,
   "fields": {
     "en_word": "tea",
-    "transcription": null,
+    "transcription": "[ti]",
     "rus_word": "чай",
     "img_name_file": "tea",
     "status": false
@@ -103217,7 +103217,7 @@
   "pk": 9384,
   "fields": {
     "en_word": "soup",
-    "transcription": null,
+    "transcription": "[sup]",
     "rus_word": "суп",
     "img_name_file": "soup",
     "status": false
@@ -103228,7 +103228,7 @@
   "pk": 9385,
   "fields": {
     "en_word": "pasta",
-    "transcription": null,
+    "transcription": "[ˈpæstə]",
     "rus_word": "макароны",
     "img_name_file": "pasta",
     "status": false
@@ -103239,7 +103239,7 @@
   "pk": 9386,
   "fields": {
     "en_word": "beer",
-    "transcription": null,
+    "transcription": "[bɪr]",
     "rus_word": "пиво",
     "img_name_file": "beer",
     "status": false
@@ -103250,7 +103250,7 @@
   "pk": 9387,
   "fields": {
     "en_word": "apple",
-    "transcription": null,
+    "transcription": "[ˈæpəl]",
     "rus_word": "яблоко",
     "img_name_file": "apple",
     "status": false
@@ -103261,7 +103261,7 @@
   "pk": 9388,
   "fields": {
     "en_word": "lemon",
-    "transcription": null,
+    "transcription": "[ˈlɛmən]",
     "rus_word": "лимон",
     "img_name_file": "lemon",
     "status": false
@@ -103272,7 +103272,7 @@
   "pk": 9389,
   "fields": {
     "en_word": "cherry",
-    "transcription": null,
+    "transcription": "[ˈʧɛri]",
     "rus_word": "вишня",
     "img_name_file": "cherry",
     "status": false
@@ -103283,7 +103283,7 @@
   "pk": 9390,
   "fields": {
     "en_word": "orange",
-    "transcription": null,
+    "transcription": "[ˈɔrɪndʒ]",
     "rus_word": "апельсин",
     "img_name_file": "orange",
     "status": false
@@ -103294,7 +103294,7 @@
   "pk": 9391,
   "fields": {
     "en_word": "juice",
-    "transcription": null,
+    "transcription": "[dʒus]",
     "rus_word": "сок",
     "img_name_file": "juice",
     "status": false
@@ -103305,7 +103305,7 @@
   "pk": 9392,
   "fields": {
     "en_word": "force",
-    "transcription": null,
+    "transcription": "[fɔːrs]",
     "rus_word": "сила",
     "img_name_file": "force",
     "status": false
@@ -103316,7 +103316,7 @@
   "pk": 9393,
   "fields": {
     "en_word": "power",
-    "transcription": null,
+    "transcription": "[ˈpaʊər]",
     "rus_word": "сила",
     "img_name_file": "power",
     "status": false
@@ -103327,7 +103327,7 @@
   "pk": 9394,
   "fields": {
     "en_word": "top",
-    "transcription": null,
+    "transcription": "[tɒp]",
     "rus_word": "верх",
     "img_name_file": "top",
     "status": false
@@ -103338,7 +103338,7 @@
   "pk": 9395,
   "fields": {
     "en_word": "size",
-    "transcription": null,
+    "transcription": "[saɪz]",
     "rus_word": "размер",
     "img_name_file": "size",
     "status": false
@@ -103349,7 +103349,7 @@
   "pk": 9396,
   "fields": {
     "en_word": "half",
-    "transcription": null,
+    "transcription": "[hæf]",
     "rus_word": "половина",
     "img_name_file": "half",
     "status": false
@@ -103360,7 +103360,7 @@
   "pk": 9397,
   "fields": {
     "en_word": "speed",
-    "transcription": null,
+    "transcription": "[spid]",
     "rus_word": "скорость",
     "img_name_file": "speed",
     "status": false
@@ -103371,7 +103371,7 @@
   "pk": 9398,
   "fields": {
     "en_word": "luck",
-    "transcription": null,
+    "transcription": "[lʌk]",
     "rus_word": "удача",
     "img_name_file": "luck",
     "status": false
@@ -103382,7 +103382,7 @@
   "pk": 9399,
   "fields": {
     "en_word": "trouble",
-    "transcription": null,
+    "transcription": "[ˈtrʌbəl]",
     "rus_word": "проблема",
     "img_name_file": "trouble",
     "status": false
@@ -103393,7 +103393,7 @@
   "pk": 9400,
   "fields": {
     "en_word": "fortune",
-    "transcription": null,
+    "transcription": "[ˈfɔːrtʃən]",
     "rus_word": "удача, случай",
     "img_name_file": "fortune2",
     "status": false
@@ -103404,7 +103404,7 @@
   "pk": 9401,
   "fields": {
     "en_word": "danger",
-    "transcription": null,
+    "transcription": "[ˈdeɪndʒər]",
     "rus_word": "опасность",
     "img_name_file": "danger",
     "status": false
@@ -103415,7 +103415,7 @@
   "pk": 9402,
   "fields": {
     "en_word": "war",
-    "transcription": null,
+    "transcription": "[wɔːr]",
     "rus_word": "война",
     "img_name_file": "war",
     "status": false
@@ -103426,7 +103426,7 @@
   "pk": 9403,
   "fields": {
     "en_word": "victory",
-    "transcription": null,
+    "transcription": "[ˈvɪktəri]",
     "rus_word": "победа",
     "img_name_file": "victory",
     "status": false
@@ -103437,7 +103437,7 @@
   "pk": 9404,
   "fields": {
     "en_word": "peace",
-    "transcription": null,
+    "transcription": "[pis]",
     "rus_word": "мир",
     "img_name_file": "peace",
     "status": false
@@ -103448,7 +103448,7 @@
   "pk": 9405,
   "fields": {
     "en_word": "holiday",
-    "transcription": null,
+    "transcription": "[ˈhɒləˌdeɪ]",
     "rus_word": "праздник",
     "img_name_file": "holiday",
     "status": false
@@ -103459,7 +103459,7 @@
   "pk": 9406,
   "fields": {
     "en_word": "web",
-    "transcription": null,
+    "transcription": "[wɛb]",
     "rus_word": "сеть, паутина",
     "img_name_file": "web",
     "status": false
@@ -103470,7 +103470,7 @@
   "pk": 9407,
   "fields": {
     "en_word": "mail",
-    "transcription": null,
+    "transcription": "[meɪl]",
     "rus_word": "почта",
     "img_name_file": "mail",
     "status": false
@@ -103481,7 +103481,7 @@
   "pk": 9408,
   "fields": {
     "en_word": "world",
-    "transcription": null,
+    "transcription": "[wɜːrld]",
     "rus_word": "мир",
     "img_name_file": "world",
     "status": false
@@ -103492,7 +103492,7 @@
   "pk": 9409,
   "fields": {
     "en_word": "country",
-    "transcription": null,
+    "transcription": "[ˈkʌntri]",
     "rus_word": "страна",
     "img_name_file": "country",
     "status": false
@@ -103503,7 +103503,7 @@
   "pk": 9410,
   "fields": {
     "en_word": "kingdom",
-    "transcription": null,
+    "transcription": "[ˈkɪŋdəm]",
     "rus_word": "королевство",
     "img_name_file": "kingdom",
     "status": false
@@ -103514,7 +103514,7 @@
   "pk": 9411,
   "fields": {
     "en_word": "capital",
-    "transcription": null,
+    "transcription": "[ˈkæpɪtl]",
     "rus_word": "столица",
     "img_name_file": "capital",
     "status": false
@@ -103525,7 +103525,7 @@
   "pk": 9412,
   "fields": {
     "en_word": "city",
-    "transcription": null,
+    "transcription": "[ˈsɪti]",
     "rus_word": "город",
     "img_name_file": "city",
     "status": false
@@ -103536,7 +103536,7 @@
   "pk": 9413,
   "fields": {
     "en_word": "place",
-    "transcription": null,
+    "transcription": "[pleɪs]",
     "rus_word": "место",
     "img_name_file": "place",
     "status": false
@@ -103547,7 +103547,7 @@
   "pk": 9414,
   "fields": {
     "en_word": "school",
-    "transcription": null,
+    "transcription": "[skuːl]",
     "rus_word": "школа",
     "img_name_file": "school",
     "status": false
@@ -103558,7 +103558,7 @@
   "pk": 9415,
   "fields": {
     "en_word": "lesson",
-    "transcription": null,
+    "transcription": "[ˈlɛsən]",
     "rus_word": "урок",
     "img_name_file": "lesson",
     "status": false
@@ -103569,7 +103569,7 @@
   "pk": 9416,
   "fields": {
     "en_word": "hospital",
-    "transcription": null,
+    "transcription": "[ˈhɒspɪtl]",
     "rus_word": "больница",
     "img_name_file": "hospital",
     "status": false
@@ -103580,7 +103580,7 @@
   "pk": 9417,
   "fields": {
     "en_word": "job",
-    "transcription": null,
+    "transcription": "[dʒɑːb]",
     "rus_word": "работа",
     "img_name_file": "job",
     "status": false
@@ -103591,7 +103591,7 @@
   "pk": 9418,
   "fields": {
     "en_word": "market",
-    "transcription": null,
+    "transcription": "[ˈmɑːrkɪt]",
     "rus_word": "рынок",
     "img_name_file": "market",
     "status": false
@@ -103602,7 +103602,7 @@
   "pk": 9419,
   "fields": {
     "en_word": "street",
-    "transcription": null,
+    "transcription": "[strit]",
     "rus_word": "улица",
     "img_name_file": "street",
     "status": false
@@ -103613,7 +103613,7 @@
   "pk": 9420,
   "fields": {
     "en_word": "road",
-    "transcription": null,
+    "transcription": "[roʊd]",
     "rus_word": "дорога",
     "img_name_file": "road",
     "status": false
@@ -103624,7 +103624,7 @@
   "pk": 9421,
   "fields": {
     "en_word": "town",
-    "transcription": null,
+    "transcription": "[taʊn]",
     "rus_word": "город",
     "img_name_file": "town",
     "status": false
@@ -103635,7 +103635,7 @@
   "pk": 9422,
   "fields": {
     "en_word": "shop",
-    "transcription": null,
+    "transcription": "[ʃɒp]",
     "rus_word": "магазин",
     "img_name_file": "shop",
     "status": false
@@ -103646,7 +103646,7 @@
   "pk": 9423,
   "fields": {
     "en_word": "money",
-    "transcription": null,
+    "transcription": "[ˈmʌni]",
     "rus_word": "деньги",
     "img_name_file": "money",
     "status": false
@@ -103657,7 +103657,7 @@
   "pk": 9424,
   "fields": {
     "en_word": "price",
-    "transcription": null,
+    "transcription": "[praɪs]",
     "rus_word": "цена",
     "img_name_file": "price",
     "status": false
@@ -103668,7 +103668,7 @@
   "pk": 9425,
   "fields": {
     "en_word": "home",
-    "transcription": null,
+    "transcription": "[hoʊm]",
     "rus_word": "дом",
     "img_name_file": "home",
     "status": false
@@ -103679,7 +103679,7 @@
   "pk": 9426,
   "fields": {
     "en_word": "house",
-    "transcription": null,
+    "transcription": "[haʊs]",
     "rus_word": "дом",
     "img_name_file": "house",
     "status": false
@@ -103690,7 +103690,7 @@
   "pk": 9427,
   "fields": {
     "en_word": "castle",
-    "transcription": null,
+    "transcription": "[ˈkæsəl]",
     "rus_word": "замок",
     "img_name_file": "castle",
     "status": false
@@ -103701,7 +103701,7 @@
   "pk": 9428,
   "fields": {
     "en_word": "room",
-    "transcription": null,
+    "transcription": "[rum]",
     "rus_word": "комната",
     "img_name_file": "room",
     "status": false
@@ -103712,7 +103712,7 @@
   "pk": 9429,
   "fields": {
     "en_word": "kitchen",
-    "transcription": null,
+    "transcription": "[ˈkɪtʃən]",
     "rus_word": "кухня",
     "img_name_file": "kitchen",
     "status": false
@@ -103723,7 +103723,7 @@
   "pk": 9430,
   "fields": {
     "en_word": "bedroom",
-    "transcription": null,
+    "transcription": "[ˈbɛdˌrum]",
     "rus_word": "спальня",
     "img_name_file": "bedroom",
     "status": false
@@ -103734,7 +103734,7 @@
   "pk": 9431,
   "fields": {
     "en_word": "toilet",
-    "transcription": null,
+    "transcription": "[ˈtɔɪlɪt]",
     "rus_word": "туалет",
     "img_name_file": "toilet",
     "status": false
@@ -103745,7 +103745,7 @@
   "pk": 9432,
   "fields": {
     "en_word": "bathroom",
-    "transcription": null,
+    "transcription": "[ˈbæθˌrum]",
     "rus_word": "ванная",
     "img_name_file": "bathroom",
     "status": false
@@ -103756,7 +103756,7 @@
   "pk": 9433,
   "fields": {
     "en_word": "word",
-    "transcription": null,
+    "transcription": "[wɜːrd]",
     "rus_word": "слово",
     "img_name_file": "word",
     "status": false
@@ -103767,7 +103767,7 @@
   "pk": 9434,
   "fields": {
     "en_word": "letter",
-    "transcription": null,
+    "transcription": "[ˈlɛtər]",
     "rus_word": "буква",
     "img_name_file": "letter",
     "status": false
@@ -103778,7 +103778,7 @@
   "pk": 9435,
   "fields": {
     "en_word": "message",
-    "transcription": null,
+    "transcription": "[ˈmɛsɪdʒ]",
     "rus_word": "сообщение",
     "img_name_file": "message",
     "status": false
@@ -103789,7 +103789,7 @@
   "pk": 9436,
   "fields": {
     "en_word": "speech",
-    "transcription": null,
+    "transcription": "[spiːʧ]",
     "rus_word": "речь",
     "img_name_file": "speech",
     "status": false
@@ -103800,7 +103800,7 @@
   "pk": 9437,
   "fields": {
     "en_word": "song",
-    "transcription": null,
+    "transcription": "[sɔŋ]",
     "rus_word": "песня",
     "img_name_file": "song",
     "status": false
@@ -103811,7 +103811,7 @@
   "pk": 9438,
   "fields": {
     "en_word": "name",
-    "transcription": null,
+    "transcription": "[neɪm]",
     "rus_word": "имя, назвать",
     "img_name_file": "name",
     "status": false
@@ -103822,7 +103822,7 @@
   "pk": 9439,
   "fields": {
     "en_word": "last name",
-    "transcription": null,
+    "transcription": "[læst neɪm]",
     "rus_word": "фамилия",
     "img_name_file": "last name",
     "status": false
@@ -103833,7 +103833,7 @@
   "pk": 9440,
   "fields": {
     "en_word": "nickname",
-    "transcription": null,
+    "transcription": "[ˈnɪkˌneɪm]",
     "rus_word": "прозвище",
     "img_name_file": "nickname",
     "status": false
@@ -103844,7 +103844,7 @@
   "pk": 9441,
   "fields": {
     "en_word": "question",
-    "transcription": null,
+    "transcription": "[ˈkwɛsʧən]",
     "rus_word": "вопрос",
     "img_name_file": "question",
     "status": false
@@ -103855,7 +103855,7 @@
   "pk": 9442,
   "fields": {
     "en_word": "fun",
-    "transcription": null,
+    "transcription": "[fʌn]",
     "rus_word": "веселье",
     "img_name_file": "fun",
     "status": false
@@ -103866,7 +103866,7 @@
   "pk": 9443,
   "fields": {
     "en_word": "truth",
-    "transcription": null,
+    "transcription": "[truːθ]",
     "rus_word": "правда",
     "img_name_file": "truth",
     "status": false
@@ -103877,7 +103877,7 @@
   "pk": 9444,
   "fields": {
     "en_word": "joke",
-    "transcription": null,
+    "transcription": "[dʒoʊk]",
     "rus_word": "шутка",
     "img_name_file": "joke",
     "status": false
@@ -103888,7 +103888,7 @@
   "pk": 9445,
   "fields": {
     "en_word": "language",
-    "transcription": null,
+    "transcription": "[ˈlæŋɡwɪdʒ]",
     "rus_word": "язык",
     "img_name_file": "language",
     "status": false
@@ -103899,7 +103899,7 @@
   "pk": 9446,
   "fields": {
     "en_word": "game",
-    "transcription": null,
+    "transcription": "[ɡeɪm]",
     "rus_word": "игра",
     "img_name_file": "game",
     "status": false
@@ -103910,7 +103910,7 @@
   "pk": 9447,
   "fields": {
     "en_word": "party",
-    "transcription": null,
+    "transcription": "[ˈpɑːrti]",
     "rus_word": "вечеринка",
     "img_name_file": "party",
     "status": false
@@ -103921,7 +103921,7 @@
   "pk": 9448,
   "fields": {
     "en_word": "king",
-    "transcription": null,
+    "transcription": "[kɪŋ]",
     "rus_word": "король",
     "img_name_file": "king",
     "status": false
@@ -103932,7 +103932,7 @@
   "pk": 9449,
   "fields": {
     "en_word": "queen",
-    "transcription": null,
+    "transcription": "[kwiːn]",
     "rus_word": "королева",
     "img_name_file": "queen",
     "status": false
@@ -103943,7 +103943,7 @@
   "pk": 9450,
   "fields": {
     "en_word": "god",
-    "transcription": null,
+    "transcription": "[ɡɒd]",
     "rus_word": "бог",
     "img_name_file": "god",
     "status": false
@@ -103954,7 +103954,7 @@
   "pk": 9451,
   "fields": {
     "en_word": "devil",
-    "transcription": null,
+    "transcription": "[ˈdɛvəl]",
     "rus_word": "дьявол",
     "img_name_file": "devil",
     "status": false
@@ -103965,7 +103965,7 @@
   "pk": 9452,
   "fields": {
     "en_word": "art",
-    "transcription": null,
+    "transcription": "[ɑːrt]",
     "rus_word": "искусство",
     "img_name_file": "art",
     "status": false
@@ -103976,7 +103976,7 @@
   "pk": 9453,
   "fields": {
     "en_word": "hell",
-    "transcription": null,
+    "transcription": "[hɛl]",
     "rus_word": "ад",
     "img_name_file": "hell",
     "status": false
@@ -103987,7 +103987,7 @@
   "pk": 9454,
   "fields": {
     "en_word": "paradise",
-    "transcription": null,
+    "transcription": "[ˈpærəˌdaɪs]",
     "rus_word": "рай",
     "img_name_file": "paradise",
     "status": false
@@ -103998,7 +103998,7 @@
   "pk": 9455,
   "fields": {
     "en_word": "do",
-    "transcription": null,
+    "transcription": "[duː]",
     "rus_word": "делать",
     "img_name_file": "do",
     "status": false
@@ -104009,7 +104009,7 @@
   "pk": 9456,
   "fields": {
     "en_word": "have",
-    "transcription": null,
+    "transcription": "[hæv]",
     "rus_word": "иметь",
     "img_name_file": "have",
     "status": false
@@ -104020,7 +104020,7 @@
   "pk": 9457,
   "fields": {
     "en_word": "go",
-    "transcription": null,
+    "transcription": "[ɡoʊ]",
     "rus_word": "идти",
     "img_name_file": "go",
     "status": false
@@ -104031,7 +104031,7 @@
   "pk": 9458,
   "fields": {
     "en_word": "get",
-    "transcription": null,
+    "transcription": "[ɡɛt]",
     "rus_word": "получать",
     "img_name_file": "get",
     "status": false
@@ -104042,7 +104042,7 @@
   "pk": 9459,
   "fields": {
     "en_word": "know",
-    "transcription": null,
+    "transcription": "[noʊ]",
     "rus_word": "знать",
     "img_name_file": "know",
     "status": false
@@ -104053,7 +104053,7 @@
   "pk": 9460,
   "fields": {
     "en_word": "make",
-    "transcription": null,
+    "transcription": "[meɪk]",
     "rus_word": "делать",
     "img_name_file": "make",
     "status": false
@@ -104064,9 +104064,9 @@
   "pk": 9461,
   "fields": {
     "en_word": "can/could",
-    "transcription": null,
+    "transcription": "[kæn/kʊd]",
     "rus_word": "может / мог",
-    "img_name_file": "can/could",
+    "img_name_file": "can_could",
     "status": false
   }
 },
@@ -104075,9 +104075,9 @@
   "pk": 9462,
   "fields": {
     "en_word": "would/should",
-    "transcription": null,
+    "transcription": "[wʊd/ʃʊd]",
     "rus_word": "бы",
-    "img_name_file": "would/should",
+    "img_name_file": "would_should",
     "status": false
   }
 },
@@ -104086,7 +104086,7 @@
   "pk": 9463,
   "fields": {
     "en_word": "must",
-    "transcription": null,
+    "transcription": "[mʌst]",
     "rus_word": "должен",
     "img_name_file": "must",
     "status": false
@@ -104097,7 +104097,7 @@
   "pk": 9464,
   "fields": {
     "en_word": "think",
-    "transcription": null,
+    "transcription": "[θɪŋk]",
     "rus_word": "думать",
     "img_name_file": "think",
     "status": false
@@ -104108,7 +104108,7 @@
   "pk": 9465,
   "fields": {
     "en_word": "like",
-    "transcription": null,
+    "transcription": "[laɪk]",
     "rus_word": "любить",
     "img_name_file": "like",
     "status": false
@@ -104119,7 +104119,7 @@
   "pk": 9466,
   "fields": {
     "en_word": "see",
-    "transcription": null,
+    "transcription": "[siː]",
     "rus_word": "видеть",
     "img_name_file": "see",
     "status": false
@@ -104130,7 +104130,7 @@
   "pk": 9467,
   "fields": {
     "en_word": "take",
-    "transcription": null,
+    "transcription": "[teɪk]",
     "rus_word": "брать",
     "img_name_file": "take",
     "status": false
@@ -104141,7 +104141,7 @@
   "pk": 9468,
   "fields": {
     "en_word": "come",
-    "transcription": null,
+    "transcription": "[kʌm]",
     "rus_word": "приходить",
     "img_name_file": "come",
     "status": false
@@ -104152,7 +104152,7 @@
   "pk": 9469,
   "fields": {
     "en_word": "work",
-    "transcription": null,
+    "transcription": "[wɜːrk]",
     "rus_word": "работать",
     "img_name_file": "work",
     "status": false
@@ -104163,7 +104163,7 @@
   "pk": 9470,
   "fields": {
     "en_word": "use",
-    "transcription": null,
+    "transcription": "[jus]",
     "rus_word": "использовать",
     "img_name_file": "use",
     "status": false
@@ -104174,7 +104174,7 @@
   "pk": 9471,
   "fields": {
     "en_word": "look",
-    "transcription": null,
+    "transcription": "[lʊk]",
     "rus_word": "смотреть",
     "img_name_file": "look",
     "status": false
@@ -104185,7 +104185,7 @@
   "pk": 9472,
   "fields": {
     "en_word": "want",
-    "transcription": null,
+    "transcription": "[wɒnt]",
     "rus_word": "хотеть",
     "img_name_file": "want",
     "status": false
@@ -104196,7 +104196,7 @@
   "pk": 9473,
   "fields": {
     "en_word": "hope",
-    "transcription": null,
+    "transcription": "[hoʊp]",
     "rus_word": "надеяться",
     "img_name_file": "hope",
     "status": false
@@ -104207,7 +104207,7 @@
   "pk": 9474,
   "fields": {
     "en_word": "find",
-    "transcription": null,
+    "transcription": "[faɪnd]",
     "rus_word": "находить",
     "img_name_file": "find",
     "status": false
@@ -104218,7 +104218,7 @@
   "pk": 9475,
   "fields": {
     "en_word": "give",
-    "transcription": null,
+    "transcription": "[ɡɪv]",
     "rus_word": "давать",
     "img_name_file": "give",
     "status": false
@@ -104229,7 +104229,7 @@
   "pk": 9476,
   "fields": {
     "en_word": "tell",
-    "transcription": null,
+    "transcription": "[tɛl]",
     "rus_word": "говорить",
     "img_name_file": "tell",
     "status": false
@@ -104240,7 +104240,7 @@
   "pk": 9477,
   "fields": {
     "en_word": "call",
-    "transcription": null,
+    "transcription": "[kɔːl]",
     "rus_word": "звать",
     "img_name_file": "call",
     "status": false
@@ -104251,7 +104251,7 @@
   "pk": 9478,
   "fields": {
     "en_word": "need",
-    "transcription": null,
+    "transcription": "[nid]",
     "rus_word": "нуждаться",
     "img_name_file": "need",
     "status": false
@@ -104262,7 +104262,7 @@
   "pk": 9479,
   "fields": {
     "en_word": "may",
-    "transcription": null,
+    "transcription": "[meɪ]",
     "rus_word": "мочь",
     "img_name_file": "may",
     "status": false
@@ -104273,7 +104273,7 @@
   "pk": 9480,
   "fields": {
     "en_word": "wash",
-    "transcription": null,
+    "transcription": "[wɒʃ]",
     "rus_word": "мыть",
     "img_name_file": "wash",
     "status": false
@@ -104284,7 +104284,7 @@
   "pk": 9481,
   "fields": {
     "en_word": "feel",
-    "transcription": null,
+    "transcription": "[fil]",
     "rus_word": "чувствовать",
     "img_name_file": "feel",
     "status": false
@@ -104295,7 +104295,7 @@
   "pk": 9482,
   "fields": {
     "en_word": "play",
-    "transcription": null,
+    "transcription": "[pleɪ]",
     "rus_word": "играть",
     "img_name_file": "play",
     "status": false
@@ -104306,7 +104306,7 @@
   "pk": 9483,
   "fields": {
     "en_word": "try",
-    "transcription": null,
+    "transcription": "[traɪ]",
     "rus_word": "пробовать",
     "img_name_file": "try",
     "status": false
@@ -104317,7 +104317,7 @@
   "pk": 9484,
   "fields": {
     "en_word": "live",
-    "transcription": null,
+    "transcription": "[lɪv]",
     "rus_word": "жить",
     "img_name_file": "live",
     "status": false
@@ -104328,7 +104328,7 @@
   "pk": 9485,
   "fields": {
     "en_word": "show",
-    "transcription": null,
+    "transcription": "[ʃoʊ]",
     "rus_word": "показывать",
     "img_name_file": "show",
     "status": false
@@ -104339,7 +104339,7 @@
   "pk": 9486,
   "fields": {
     "en_word": "ask",
-    "transcription": null,
+    "transcription": "[æsk]",
     "rus_word": "спрашивать",
     "img_name_file": "ask",
     "status": false
@@ -104350,7 +104350,7 @@
   "pk": 9487,
   "fields": {
     "en_word": "help",
-    "transcription": null,
+    "transcription": "[hɛlp]",
     "rus_word": "помогать",
     "img_name_file": "help",
     "status": false
@@ -104361,7 +104361,7 @@
   "pk": 9488,
   "fields": {
     "en_word": "talk",
-    "transcription": null,
+    "transcription": "[tɔːk]",
     "rus_word": "разговаривать",
     "img_name_file": "talk",
     "status": false
@@ -104372,7 +104372,7 @@
   "pk": 9489,
   "fields": {
     "en_word": "move",
-    "transcription": null,
+    "transcription": "[muːv]",
     "rus_word": "двигаться",
     "img_name_file": "move",
     "status": false
@@ -104383,7 +104383,7 @@
   "pk": 9490,
   "fields": {
     "en_word": "begin",
-    "transcription": null,
+    "transcription": "[bɪˈɡɪn]",
     "rus_word": "начинать",
     "img_name_file": "begin",
     "status": false
@@ -104394,7 +104394,7 @@
   "pk": 9491,
   "fields": {
     "en_word": "become",
-    "transcription": null,
+    "transcription": "[bɪˈkʌm]",
     "rus_word": "становиться",
     "img_name_file": "become",
     "status": false
@@ -104405,7 +104405,7 @@
   "pk": 9492,
   "fields": {
     "en_word": "build",
-    "transcription": null,
+    "transcription": "[bɪld]",
     "rus_word": "строить",
     "img_name_file": "build",
     "status": false
@@ -104416,7 +104416,7 @@
   "pk": 9493,
   "fields": {
     "en_word": "start",
-    "transcription": null,
+    "transcription": "[stɑːrt]",
     "rus_word": "начинать",
     "img_name_file": "start",
     "status": false
@@ -104427,7 +104427,7 @@
   "pk": 9494,
   "fields": {
     "en_word": "change",
-    "transcription": null,
+    "transcription": "[tʃeɪndʒ]",
     "rus_word": "изменять",
     "img_name_file": "change",
     "status": false
@@ -104438,7 +104438,7 @@
   "pk": 9495,
   "fields": {
     "en_word": "let",
-    "transcription": null,
+    "transcription": "[lɛt]",
     "rus_word": "позволять",
     "img_name_file": "let",
     "status": false
@@ -104449,7 +104449,7 @@
   "pk": 9496,
   "fields": {
     "en_word": "run",
-    "transcription": null,
+    "transcription": "[rʌn]",
     "rus_word": "бежать",
     "img_name_file": "run",
     "status": false
@@ -104460,7 +104460,7 @@
   "pk": 9497,
   "fields": {
     "en_word": "write",
-    "transcription": null,
+    "transcription": "[raɪt]",
     "rus_word": "писать",
     "img_name_file": "write",
     "status": false
@@ -104471,7 +104471,7 @@
   "pk": 9498,
   "fields": {
     "en_word": "keep",
-    "transcription": null,
+    "transcription": "[kiːp]",
     "rus_word": "держать",
     "img_name_file": "keep",
     "status": false
@@ -104482,7 +104482,7 @@
   "pk": 9499,
   "fields": {
     "en_word": "hold",
-    "transcription": null,
+    "transcription": "[hoʊld]",
     "rus_word": "держать",
     "img_name_file": "hold",
     "status": false
@@ -104493,7 +104493,7 @@
   "pk": 9500,
   "fields": {
     "en_word": "repeat",
-    "transcription": null,
+    "transcription": "[rɪˈpiːt]",
     "rus_word": "повторять",
     "img_name_file": "repeat",
     "status": false
@@ -104504,7 +104504,7 @@
   "pk": 9501,
   "fields": {
     "en_word": "put",
-    "transcription": null,
+    "transcription": "[pʊt]",
     "rus_word": "класть",
     "img_name_file": "put",
     "status": false
@@ -104515,7 +104515,7 @@
   "pk": 9502,
   "fields": {
     "en_word": "end",
-    "transcription": null,
+    "transcription": "[ɛnd]",
     "rus_word": "заканчивать(ся)",
     "img_name_file": "end",
     "status": false
@@ -104526,7 +104526,7 @@
   "pk": 9503,
   "fields": {
     "en_word": "study",
-    "transcription": null,
+    "transcription": "[ˈstʌdi]",
     "rus_word": "учиться",
     "img_name_file": "study",
     "status": false
@@ -104537,7 +104537,7 @@
   "pk": 9504,
   "fields": {
     "en_word": "hear",
-    "transcription": null,
+    "transcription": "[hɪr]",
     "rus_word": "слышать",
     "img_name_file": "hear",
     "status": false
@@ -104548,7 +104548,7 @@
   "pk": 9505,
   "fields": {
     "en_word": "teach",
-    "transcription": null,
+    "transcription": "[tiːʧ]",
     "rus_word": "учить",
     "img_name_file": "teach",
     "status": false
@@ -104559,7 +104559,7 @@
   "pk": 9506,
   "fields": {
     "en_word": "close",
-    "transcription": null,
+    "transcription": "[kloʊz]",
     "rus_word": "закрывать",
     "img_name_file": "close",
     "status": false
@@ -104570,7 +104570,7 @@
   "pk": 9507,
   "fields": {
     "en_word": "open",
-    "transcription": null,
+    "transcription": "[ˈoʊpən]",
     "rus_word": "открывать",
     "img_name_file": "open",
     "status": false
@@ -104581,7 +104581,7 @@
   "pk": 9508,
   "fields": {
     "en_word": "add",
-    "transcription": null,
+    "transcription": "[æd]",
     "rus_word": "добавлять",
     "img_name_file": "add",
     "status": false
@@ -104592,7 +104592,7 @@
   "pk": 9509,
   "fields": {
     "en_word": "love",
-    "transcription": null,
+    "transcription": "[lʌv]",
     "rus_word": "любить",
     "img_name_file": "love",
     "status": false
@@ -104603,7 +104603,7 @@
   "pk": 9510,
   "fields": {
     "en_word": "believe",
-    "transcription": null,
+    "transcription": "[bɪˈliːv]",
     "rus_word": "верить",
     "img_name_file": "believe",
     "status": false
@@ -104614,7 +104614,7 @@
   "pk": 9511,
   "fields": {
     "en_word": "read",
-    "transcription": null,
+    "transcription": "[riːd]",
     "rus_word": "читать",
     "img_name_file": "read",
     "status": false
@@ -104625,7 +104625,7 @@
   "pk": 9512,
   "fields": {
     "en_word": "mean",
-    "transcription": null,
+    "transcription": "[miːn]",
     "rus_word": "значить",
     "img_name_file": "mean",
     "status": false
@@ -104636,7 +104636,7 @@
   "pk": 9513,
   "fields": {
     "en_word": "pay",
-    "transcription": null,
+    "transcription": "[peɪ]",
     "rus_word": "платить",
     "img_name_file": "pay",
     "status": false
@@ -104647,7 +104647,7 @@
   "pk": 9514,
   "fields": {
     "en_word": "stand",
-    "transcription": null,
+    "transcription": "[stænd]",
     "rus_word": "стоять",
     "img_name_file": "stand",
     "status": false
@@ -104658,7 +104658,7 @@
   "pk": 9515,
   "fields": {
     "en_word": "understand",
-    "transcription": null,
+    "transcription": "[ˌʌndərˈstænd]",
     "rus_word": "понимать",
     "img_name_file": "understand",
     "status": false
@@ -104669,7 +104669,7 @@
   "pk": 9516,
   "fields": {
     "en_word": "learn",
-    "transcription": null,
+    "transcription": "[lɜːrn]",
     "rus_word": "учиться",
     "img_name_file": "learn",
     "status": false
@@ -104680,7 +104680,7 @@
   "pk": 9517,
   "fields": {
     "en_word": "sit",
-    "transcription": null,
+    "transcription": "[sɪt]",
     "rus_word": "сидеть",
     "img_name_file": "sit",
     "status": false
@@ -104691,7 +104691,7 @@
   "pk": 9518,
   "fields": {
     "en_word": "win",
-    "transcription": null,
+    "transcription": "[wɪn]",
     "rus_word": "побеждать",
     "img_name_file": "win",
     "status": false
@@ -104702,7 +104702,7 @@
   "pk": 9519,
   "fields": {
     "en_word": "break",
-    "transcription": null,
+    "transcription": "[breɪk]",
     "rus_word": "ломать",
     "img_name_file": "break2",
     "status": false
@@ -104713,7 +104713,7 @@
   "pk": 9520,
   "fields": {
     "en_word": "lose",
-    "transcription": null,
+    "transcription": "[luz]",
     "rus_word": "терять",
     "img_name_file": "lose",
     "status": false
@@ -104724,7 +104724,7 @@
   "pk": 9521,
   "fields": {
     "en_word": "lose",
-    "transcription": null,
+    "transcription": "[luz]",
     "rus_word": "проигрывать",
     "img_name_file": "lose",
     "status": false
@@ -104735,7 +104735,7 @@
   "pk": 9522,
   "fields": {
     "en_word": "watch",
-    "transcription": null,
+    "transcription": "[wɑːtʃ]",
     "rus_word": "смотреть",
     "img_name_file": "watch",
     "status": false
@@ -104746,7 +104746,7 @@
   "pk": 9523,
   "fields": {
     "en_word": "speak",
-    "transcription": null,
+    "transcription": "[spiːk]",
     "rus_word": "говорить",
     "img_name_file": "speak",
     "status": false
@@ -104757,7 +104757,7 @@
   "pk": 9524,
   "fields": {
     "en_word": "stop",
-    "transcription": null,
+    "transcription": "[stɑːp]",
     "rus_word": "останавливать",
     "img_name_file": "stop",
     "status": false
@@ -104768,7 +104768,7 @@
   "pk": 9525,
   "fields": {
     "en_word": "walk",
-    "transcription": null,
+    "transcription": "[wɔːk]",
     "rus_word": "идти пешком",
     "img_name_file": "walk",
     "status": false
@@ -104779,7 +104779,7 @@
   "pk": 9526,
   "fields": {
     "en_word": "cut",
-    "transcription": null,
+    "transcription": "[kʌt]",
     "rus_word": "резать",
     "img_name_file": "cut",
     "status": false
@@ -104790,7 +104790,7 @@
   "pk": 9527,
   "fields": {
     "en_word": "wait",
-    "transcription": null,
+    "transcription": "[weɪt]",
     "rus_word": "ждать",
     "img_name_file": "wait",
     "status": false
@@ -104801,7 +104801,7 @@
   "pk": 9528,
   "fields": {
     "en_word": "kill",
-    "transcription": null,
+    "transcription": "[kɪl]",
     "rus_word": "убивать",
     "img_name_file": "kill",
     "status": false
@@ -104812,7 +104812,7 @@
   "pk": 9529,
   "fields": {
     "en_word": "buy",
-    "transcription": null,
+    "transcription": "[baɪ]",
     "rus_word": "покупать",
     "img_name_file": "buy",
     "status": false
@@ -104823,7 +104823,7 @@
   "pk": 9530,
   "fields": {
     "en_word": "remember",
-    "transcription": null,
+    "transcription": "[rɪˈmɛmbər]",
     "rus_word": "помнить",
     "img_name_file": "remember",
     "status": false
@@ -104834,7 +104834,7 @@
   "pk": 9531,
   "fields": {
     "en_word": "die",
-    "transcription": null,
+    "transcription": "[daɪ]",
     "rus_word": "умирать",
     "img_name_file": "die",
     "status": false
@@ -104845,7 +104845,7 @@
   "pk": 9532,
   "fields": {
     "en_word": "answer",
-    "transcription": null,
+    "transcription": "[ˈænsər]",
     "rus_word": "отвечать",
     "img_name_file": "answer",
     "status": false
@@ -104856,7 +104856,7 @@
   "pk": 9533,
   "fields": {
     "en_word": "fight",
-    "transcription": null,
+    "transcription": "[faɪt]",
     "rus_word": "драться",
     "img_name_file": "fight",
     "status": false
@@ -104867,7 +104867,7 @@
   "pk": 9534,
   "fields": {
     "en_word": "pull",
-    "transcription": null,
+    "transcription": "[pʊl]",
     "rus_word": "тянуть",
     "img_name_file": "pull",
     "status": false
@@ -104878,7 +104878,7 @@
   "pk": 9535,
   "fields": {
     "en_word": "paint",
-    "transcription": null,
+    "transcription": "[peɪnt]",
     "rus_word": "рисовать",
     "img_name_file": "paint",
     "status": false
@@ -104889,7 +104889,7 @@
   "pk": 9536,
   "fields": {
     "en_word": "eat",
-    "transcription": null,
+    "transcription": "[iːt]",
     "rus_word": "есть",
     "img_name_file": "eat",
     "status": false
@@ -104900,7 +104900,7 @@
   "pk": 9537,
   "fields": {
     "en_word": "listen",
-    "transcription": null,
+    "transcription": "[ˈlɪsən]",
     "rus_word": "слушать",
     "img_name_file": "listen",
     "status": false
@@ -104911,7 +104911,7 @@
   "pk": 9538,
   "fields": {
     "en_word": "smile",
-    "transcription": null,
+    "transcription": "[smaɪl]",
     "rus_word": "улыбаться",
     "img_name_file": "smile",
     "status": false
@@ -104922,7 +104922,7 @@
   "pk": 9539,
   "fields": {
     "en_word": "save",
-    "transcription": null,
+    "transcription": "[seɪv]",
     "rus_word": "спасать",
     "img_name_file": "save",
     "status": false
@@ -104933,7 +104933,7 @@
   "pk": 9540,
   "fields": {
     "en_word": "choose",
-    "transcription": null,
+    "transcription": "[tʃuːz]",
     "rus_word": "выбирать",
     "img_name_file": "choose",
     "status": false
@@ -104944,7 +104944,7 @@
   "pk": 9541,
   "fields": {
     "en_word": "sleep",
-    "transcription": null,
+    "transcription": "[sliːp]",
     "rus_word": "спать",
     "img_name_file": "sleep",
     "status": false
@@ -104955,7 +104955,7 @@
   "pk": 9542,
   "fields": {
     "en_word": "travel",
-    "transcription": null,
+    "transcription": "[ˈtrævəl]",
     "rus_word": "путешествовать",
     "img_name_file": "travel",
     "status": false
@@ -104966,7 +104966,7 @@
   "pk": 9543,
   "fields": {
     "en_word": "fill",
-    "transcription": null,
+    "transcription": "[fɪl]",
     "rus_word": "наполнять",
     "img_name_file": "fill",
     "status": false
@@ -104977,7 +104977,7 @@
   "pk": 9544,
   "fields": {
     "en_word": "fly",
-    "transcription": null,
+    "transcription": "[flaɪ]",
     "rus_word": "летать",
     "img_name_file": "fly",
     "status": false
@@ -104988,7 +104988,7 @@
   "pk": 9545,
   "fields": {
     "en_word": "hunt",
-    "transcription": null,
+    "transcription": "[hʌnt]",
     "rus_word": "охотиться",
     "img_name_file": "hunt",
     "status": false
@@ -104999,7 +104999,7 @@
   "pk": 9546,
   "fields": {
     "en_word": "finish",
-    "transcription": null,
+    "transcription": "[ˈfɪnɪʃ]",
     "rus_word": "заканчивать",
     "img_name_file": "finish",
     "status": false
@@ -105010,7 +105010,7 @@
   "pk": 9547,
   "fields": {
     "en_word": "delete",
-    "transcription": null,
+    "transcription": "[dɪˈliːt]",
     "rus_word": "удалять",
     "img_name_file": "delete",
     "status": false
@@ -105021,7 +105021,7 @@
   "pk": 9548,
   "fields": {
     "en_word": "sing",
-    "transcription": null,
+    "transcription": "[sɪŋ]",
     "rus_word": "петь",
     "img_name_file": "sing",
     "status": false
@@ -105032,7 +105032,7 @@
   "pk": 9549,
   "fields": {
     "en_word": "cook",
-    "transcription": null,
+    "transcription": "[kʊk]",
     "rus_word": "готовить",
     "img_name_file": "cook",
     "status": false
@@ -105043,7 +105043,7 @@
   "pk": 9550,
   "fields": {
     "en_word": "dream",
-    "transcription": null,
+    "transcription": "[drim]",
     "rus_word": "мечтать",
     "img_name_file": "dream",
     "status": false
@@ -105054,7 +105054,7 @@
   "pk": 9551,
   "fields": {
     "en_word": "dance",
-    "transcription": null,
+    "transcription": "[dæns]",
     "rus_word": "танцевать",
     "img_name_file": "dance",
     "status": false
@@ -105065,7 +105065,7 @@
   "pk": 9552,
   "fields": {
     "en_word": "sell",
-    "transcription": null,
+    "transcription": "[sɛl]",
     "rus_word": "продавать",
     "img_name_file": "sell",
     "status": false
@@ -105076,7 +105076,7 @@
   "pk": 9553,
   "fields": {
     "en_word": "drink",
-    "transcription": null,
+    "transcription": "[drɪŋk]",
     "rus_word": "пить",
     "img_name_file": "drink",
     "status": false
@@ -105087,7 +105087,7 @@
   "pk": 9554,
   "fields": {
     "en_word": "respect",
-    "transcription": null,
+    "transcription": "[rɪˈspɛkt]",
     "rus_word": "уважать",
     "img_name_file": "respect",
     "status": false
@@ -105098,7 +105098,7 @@
   "pk": 9555,
   "fields": {
     "en_word": "enjoy",
-    "transcription": null,
+    "transcription": "[ɪnˈdʒɔɪ]",
     "rus_word": "наслаждаться",
     "img_name_file": "enjoy",
     "status": false
@@ -105109,7 +105109,7 @@
   "pk": 9556,
   "fields": {
     "en_word": "forget",
-    "transcription": null,
+    "transcription": "[fərˈɡɛt]",
     "rus_word": "забывать",
     "img_name_file": "forget",
     "status": false
@@ -105120,7 +105120,7 @@
   "pk": 9557,
   "fields": {
     "en_word": "wish",
-    "transcription": null,
+    "transcription": "[wɪʃ]",
     "rus_word": "желать",
     "img_name_file": "wish",
     "status": false
@@ -105131,7 +105131,7 @@
   "pk": 9558,
   "fields": {
     "en_word": "cry",
-    "transcription": null,
+    "transcription": "[kraɪ]",
     "rus_word": "плакать",
     "img_name_file": "cry",
     "status": false
@@ -105142,7 +105142,7 @@
   "pk": 9559,
   "fields": {
     "en_word": "mix",
-    "transcription": null,
+    "transcription": "[mɪks]",
     "rus_word": "смешивать",
     "img_name_file": "mix",
     "status": false
@@ -105153,7 +105153,7 @@
   "pk": 9560,
   "fields": {
     "en_word": "print",
-    "transcription": null,
+    "transcription": "[prɪnt]",
     "rus_word": "печатать",
     "img_name_file": "print",
     "status": false
@@ -105164,7 +105164,7 @@
   "pk": 9561,
   "fields": {
     "en_word": "jump",
-    "transcription": null,
+    "transcription": "[dʒʌmp]",
     "rus_word": "прыгать",
     "img_name_file": "jump",
     "status": false
@@ -105175,7 +105175,7 @@
   "pk": 9562,
   "fields": {
     "en_word": "hate",
-    "transcription": null,
+    "transcription": "[heɪt]",
     "rus_word": "ненавидеть",
     "img_name_file": "hate",
     "status": false
@@ -105186,7 +105186,7 @@
   "pk": 9563,
   "fields": {
     "en_word": "kiss",
-    "transcription": null,
+    "transcription": "[kɪs]",
     "rus_word": "целовать",
     "img_name_file": "kiss",
     "status": false
@@ -105197,7 +105197,7 @@
   "pk": 9564,
   "fields": {
     "en_word": "excuse",
-    "transcription": null,
+    "transcription": "[ɪkˈskjuz]",
     "rus_word": "извинять",
     "img_name_file": "excuse",
     "status": false
@@ -105208,7 +105208,7 @@
   "pk": 9565,
   "fields": {
     "en_word": "translate",
-    "transcription": null,
+    "transcription": "[trænsˈleɪt]",
     "rus_word": "переводить",
     "img_name_file": "translate",
     "status": false
@@ -105219,7 +105219,7 @@
   "pk": 9566,
   "fields": {
     "en_word": "swim",
-    "transcription": null,
+    "transcription": "[swɪm]",
     "rus_word": "плавать",
     "img_name_file": "swim",
     "status": false
@@ -105230,7 +105230,7 @@
   "pk": 9567,
   "fields": {
     "en_word": "relax",
-    "transcription": null,
+    "transcription": "[rɪˈlæks]",
     "rus_word": "расслабляться",
     "img_name_file": "relax",
     "status": false
@@ -105241,7 +105241,7 @@
   "pk": 9568,
   "fields": {
     "en_word": "fuck",
-    "transcription": null,
+    "transcription": "[fʌk]",
     "rus_word": "трахать",
     "img_name_file": "fuck",
     "status": false
@@ -105252,9 +105252,9 @@
   "pk": 9569,
   "fields": {
     "en_word": "more/most",
-    "transcription": null,
+    "transcription": "[mɔːr/moʊst]",
     "rus_word": "более / наиболее",
-    "img_name_file": "more/most",
+    "img_name_file": "more_most",
     "status": false
   }
 },
@@ -105263,9 +105263,9 @@
   "pk": 9570,
   "fields": {
     "en_word": "less/least",
-    "transcription": null,
+    "transcription": "[lɛs/liːst]",
     "rus_word": "менее / наименее",
-    "img_name_file": "less/least",
+    "img_name_file": "less_least",
     "status": false
   }
 },
@@ -105274,7 +105274,7 @@
   "pk": 9571,
   "fields": {
     "en_word": "right",
-    "transcription": null,
+    "transcription": "[raɪt]",
     "rus_word": "правый",
     "img_name_file": "right",
     "status": false
@@ -105285,7 +105285,7 @@
   "pk": 9572,
   "fields": {
     "en_word": "left",
-    "transcription": null,
+    "transcription": "[lɛft]",
     "rus_word": "левый",
     "img_name_file": "left",
     "status": false
@@ -105296,7 +105296,7 @@
   "pk": 9573,
   "fields": {
     "en_word": "new",
-    "transcription": null,
+    "transcription": "[nuː]",
     "rus_word": "новый",
     "img_name_file": "new",
     "status": false
@@ -105307,7 +105307,7 @@
   "pk": 9574,
   "fields": {
     "en_word": "good/better/best",
-    "transcription": null,
+    "transcription": "[ɡʊd/ˈbɛtər/bɛst]",
     "rus_word": "хороший / лучший",
     "img_name_file": "good",
     "status": false
@@ -105318,7 +105318,7 @@
   "pk": 9575,
   "fields": {
     "en_word": "bad/worse/worst",
-    "transcription": null,
+    "transcription": "[bæd/wɜːrs/wɜːrst]",
     "rus_word": "плохой / худший",
     "img_name_file": "bad",
     "status": false
@@ -105329,7 +105329,7 @@
   "pk": 9576,
   "fields": {
     "en_word": "last",
-    "transcription": null,
+    "transcription": "[læst]",
     "rus_word": "последний",
     "img_name_file": "last",
     "status": false
@@ -105340,7 +105340,7 @@
   "pk": 9577,
   "fields": {
     "en_word": "own",
-    "transcription": null,
+    "transcription": "[oʊn]",
     "rus_word": "собственный",
     "img_name_file": "own",
     "status": false
@@ -105351,7 +105351,7 @@
   "pk": 9578,
   "fields": {
     "en_word": "usual",
-    "transcription": null,
+    "transcription": "[ˈjuːʒuəl]",
     "rus_word": "обычный",
     "img_name_file": "usual",
     "status": false
@@ -105362,7 +105362,7 @@
   "pk": 9579,
   "fields": {
     "en_word": "long",
-    "transcription": null,
+    "transcription": "[lɔːŋ]",
     "rus_word": "длинный",
     "img_name_file": "long",
     "status": false
@@ -105373,7 +105373,7 @@
   "pk": 9580,
   "fields": {
     "en_word": "high",
-    "transcription": null,
+    "transcription": "[haɪ]",
     "rus_word": "высокий",
     "img_name_file": "high",
     "status": false
@@ -105384,7 +105384,7 @@
   "pk": 9581,
   "fields": {
     "en_word": "little",
-    "transcription": null,
+    "transcription": "[ˈlɪtəl]",
     "rus_word": "маленький",
     "img_name_file": "little",
     "status": false
@@ -105395,7 +105395,7 @@
   "pk": 9582,
   "fields": {
     "en_word": "great",
-    "transcription": null,
+    "transcription": "[ɡreɪt]",
     "rus_word": "великий",
     "img_name_file": "great",
     "status": false
@@ -105406,7 +105406,7 @@
   "pk": 9583,
   "fields": {
     "en_word": "real",
-    "transcription": null,
+    "transcription": "[riːəl]",
     "rus_word": "реальный",
     "img_name_file": "real",
     "status": false
@@ -105417,7 +105417,7 @@
   "pk": 9584,
   "fields": {
     "en_word": "each",
-    "transcription": null,
+    "transcription": "[iːʧ]",
     "rus_word": "каждый",
     "img_name_file": "each",
     "status": false
@@ -105428,7 +105428,7 @@
   "pk": 9585,
   "fields": {
     "en_word": "old",
-    "transcription": null,
+    "transcription": "[oʊld]",
     "rus_word": "старый",
     "img_name_file": "old",
     "status": false
@@ -105439,7 +105439,7 @@
   "pk": 9586,
   "fields": {
     "en_word": "big",
-    "transcription": null,
+    "transcription": "[bɪɡ]",
     "rus_word": "большой",
     "img_name_file": "big",
     "status": false
@@ -105450,7 +105450,7 @@
   "pk": 9587,
   "fields": {
     "en_word": "same",
-    "transcription": null,
+    "transcription": "[seɪm]",
     "rus_word": "тот же",
     "img_name_file": "same",
     "status": false
@@ -105461,7 +105461,7 @@
   "pk": 9588,
   "fields": {
     "en_word": "next",
-    "transcription": null,
+    "transcription": "[nɛkst]",
     "rus_word": "следующий",
     "img_name_file": "next",
     "status": false
@@ -105472,7 +105472,7 @@
   "pk": 9589,
   "fields": {
     "en_word": "large",
-    "transcription": null,
+    "transcription": "[lɑːrdʒ]",
     "rus_word": "обширный",
     "img_name_file": "large",
     "status": false
@@ -105483,7 +105483,7 @@
   "pk": 9590,
   "fields": {
     "en_word": "kind",
-    "transcription": null,
+    "transcription": "[kaɪnd]",
     "rus_word": "добрый",
     "img_name_file": "kind",
     "status": false
@@ -105494,7 +105494,7 @@
   "pk": 9591,
   "fields": {
     "en_word": "small",
-    "transcription": null,
+    "transcription": "[smɔːl]",
     "rus_word": "маленький",
     "img_name_file": "small",
     "status": false
@@ -105505,7 +105505,7 @@
   "pk": 9592,
   "fields": {
     "en_word": "young",
-    "transcription": null,
+    "transcription": "[jʌŋ]",
     "rus_word": "молодой",
     "img_name_file": "young",
     "status": false
@@ -105516,7 +105516,7 @@
   "pk": 9593,
   "fields": {
     "en_word": "beautiful",
-    "transcription": null,
+    "transcription": "[ˈbjutəfəl]",
     "rus_word": "красивый",
     "img_name_file": "beautiful",
     "status": false
@@ -105527,7 +105527,7 @@
   "pk": 9594,
   "fields": {
     "en_word": "cheap",
-    "transcription": null,
+    "transcription": "[tʃiːp]",
     "rus_word": "дешёвый",
     "img_name_file": "cheap",
     "status": false
@@ -105538,7 +105538,7 @@
   "pk": 9595,
   "fields": {
     "en_word": "light",
-    "transcription": null,
+    "transcription": "[laɪt]",
     "rus_word": "лёгкий",
     "img_name_file": "light",
     "status": false
@@ -105549,7 +105549,7 @@
   "pk": 9596,
   "fields": {
     "en_word": "dark",
-    "transcription": null,
+    "transcription": "[dɑːrk]",
     "rus_word": "тёмный",
     "img_name_file": "dark",
     "status": false
@@ -105560,7 +105560,7 @@
   "pk": 9597,
   "fields": {
     "en_word": "true",
-    "transcription": null,
+    "transcription": "[truː]",
     "rus_word": "верный, правильный",
     "img_name_file": "true",
     "status": false
@@ -105571,7 +105571,7 @@
   "pk": 9598,
   "fields": {
     "en_word": "hard",
-    "transcription": null,
+    "transcription": "[hɑːrd]",
     "rus_word": "тяжёлый, жёсткий",
     "img_name_file": "hard",
     "status": false
@@ -105582,7 +105582,7 @@
   "pk": 9599,
   "fields": {
     "en_word": "soft",
-    "transcription": null,
+    "transcription": "[sɔft]",
     "rus_word": "мягкий",
     "img_name_file": "soft",
     "status": false
@@ -105593,7 +105593,7 @@
   "pk": 9600,
   "fields": {
     "en_word": "close",
-    "transcription": null,
+    "transcription": "[kloʊz]",
     "rus_word": "близкий",
     "img_name_file": "close",
     "status": false
@@ -105604,7 +105604,7 @@
   "pk": 9601,
   "fields": {
     "en_word": "far",
-    "transcription": null,
+    "transcription": "[fɑːr]",
     "rus_word": "далёкий",
     "img_name_file": "far",
     "status": false
@@ -105615,7 +105615,7 @@
   "pk": 9602,
   "fields": {
     "en_word": "final",
-    "transcription": null,
+    "transcription": "[ˈfaɪnl]",
     "rus_word": "последний",
     "img_name_file": "final",
     "status": false
@@ -105626,7 +105626,7 @@
   "pk": 9603,
   "fields": {
     "en_word": "low",
-    "transcription": null,
+    "transcription": "[loʊ]",
     "rus_word": "низкий",
     "img_name_file": "low",
     "status": false
@@ -105637,7 +105637,7 @@
   "pk": 9604,
   "fields": {
     "en_word": "easy",
-    "transcription": null,
+    "transcription": "[ˈizi]",
     "rus_word": "лёгкий",
     "img_name_file": "easy",
     "status": false
@@ -105648,7 +105648,7 @@
   "pk": 9605,
   "fields": {
     "en_word": "difficult",
-    "transcription": null,
+    "transcription": "[ˈdɪfɪkəlt]",
     "rus_word": "трудный",
     "img_name_file": "difficult",
     "status": false
@@ -105659,7 +105659,7 @@
   "pk": 9606,
   "fields": {
     "en_word": "strong",
-    "transcription": null,
+    "transcription": "[strɔːŋ]",
     "rus_word": "сильный",
     "img_name_file": "strong",
     "status": false
@@ -105670,7 +105670,7 @@
   "pk": 9607,
   "fields": {
     "en_word": "quick",
-    "transcription": null,
+    "transcription": "[kwɪk]",
     "rus_word": "быстрый",
     "img_name_file": "quick",
     "status": false
@@ -105681,7 +105681,7 @@
   "pk": 9608,
   "fields": {
     "en_word": "short",
-    "transcription": null,
+    "transcription": "[ʃɔːrt]",
     "rus_word": "короткий",
     "img_name_file": "short",
     "status": false
@@ -105692,7 +105692,7 @@
   "pk": 9609,
   "fields": {
     "en_word": "slow",
-    "transcription": null,
+    "transcription": "[sloʊ]",
     "rus_word": "медленный",
     "img_name_file": "slow",
     "status": false
@@ -105703,7 +105703,7 @@
   "pk": 9610,
   "fields": {
     "en_word": "dear",
-    "transcription": null,
+    "transcription": "[dɪr]",
     "rus_word": "дорогой, уважаемый",
     "img_name_file": "dear",
     "status": false
@@ -105714,7 +105714,7 @@
   "pk": 9611,
   "fields": {
     "en_word": "glad",
-    "transcription": null,
+    "transcription": "[ɡlæd]",
     "rus_word": "радостный",
     "img_name_file": "glad",
     "status": false
@@ -105725,7 +105725,7 @@
   "pk": 9612,
   "fields": {
     "en_word": "happy",
-    "transcription": null,
+    "transcription": "[ˈhæpi]",
     "rus_word": "счастливый",
     "img_name_file": "happy",
     "status": false
@@ -105736,7 +105736,7 @@
   "pk": 9613,
   "fields": {
     "en_word": "drunk (drunken)",
-    "transcription": null,
+    "transcription": "[drʌŋk (ˈdrʌŋkən)]",
     "rus_word": "пьяный",
     "img_name_file": "drunk",
     "status": false
@@ -105747,7 +105747,7 @@
   "pk": 9614,
   "fields": {
     "en_word": "sad",
-    "transcription": null,
+    "transcription": "[sæd]",
     "rus_word": "грустный",
     "img_name_file": "sad",
     "status": false
@@ -105758,7 +105758,7 @@
   "pk": 9615,
   "fields": {
     "en_word": "dead",
-    "transcription": null,
+    "transcription": "[dɛd]",
     "rus_word": "мёртвый",
     "img_name_file": "dead",
     "status": false
@@ -105769,7 +105769,7 @@
   "pk": 9616,
   "fields": {
     "en_word": "ready",
-    "transcription": null,
+    "transcription": "[ˈrɛdi]",
     "rus_word": "готовый",
     "img_name_file": "ready",
     "status": false
@@ -105780,7 +105780,7 @@
   "pk": 9617,
   "fields": {
     "en_word": "fake",
-    "transcription": null,
+    "transcription": "[feɪk]",
     "rus_word": "поддельный",
     "img_name_file": "fake",
     "status": false
@@ -105791,7 +105791,7 @@
   "pk": 9618,
   "fields": {
     "en_word": "social",
-    "transcription": null,
+    "transcription": "[ˈsoʊʃəl]",
     "rus_word": "общественный",
     "img_name_file": "social",
     "status": false
@@ -105802,7 +105802,7 @@
   "pk": 9619,
   "fields": {
     "en_word": "random",
-    "transcription": null,
+    "transcription": "[ˈrændəm]",
     "rus_word": "случайный",
     "img_name_file": "random",
     "status": false
@@ -105813,7 +105813,7 @@
   "pk": 9620,
   "fields": {
     "en_word": "fast",
-    "transcription": null,
+    "transcription": "[fæst]",
     "rus_word": "быстрый",
     "img_name_file": "fast",
     "status": false
@@ -105824,7 +105824,7 @@
   "pk": 9621,
   "fields": {
     "en_word": "main",
-    "transcription": null,
+    "transcription": "[meɪn]",
     "rus_word": "главный",
     "img_name_file": "main",
     "status": false
@@ -105835,7 +105835,7 @@
   "pk": 9622,
   "fields": {
     "en_word": "hot",
-    "transcription": null,
+    "transcription": "[hɑt]",
     "rus_word": "горячий",
     "img_name_file": "hot",
     "status": false
@@ -105846,7 +105846,7 @@
   "pk": 9623,
   "fields": {
     "en_word": "cold",
-    "transcription": null,
+    "transcription": "[koʊld]",
     "rus_word": "холодный",
     "img_name_file": "cold",
     "status": false
@@ -105857,7 +105857,7 @@
   "pk": 9624,
   "fields": {
     "en_word": "warm",
-    "transcription": null,
+    "transcription": "[wɔːrm]",
     "rus_word": "тёплый",
     "img_name_file": "warm",
     "status": false
@@ -105868,7 +105868,7 @@
   "pk": 9625,
   "fields": {
     "en_word": "full",
-    "transcription": null,
+    "transcription": "[fʊl]",
     "rus_word": "полный",
     "img_name_file": "full",
     "status": false
@@ -105879,7 +105879,7 @@
   "pk": 9626,
   "fields": {
     "en_word": "heavy",
-    "transcription": null,
+    "transcription": "[ˈhɛvi]",
     "rus_word": "тяжёлый",
     "img_name_file": "heavy",
     "status": false
@@ -105890,7 +105890,7 @@
   "pk": 9627,
   "fields": {
     "en_word": "black",
-    "transcription": null,
+    "transcription": "[blæk]",
     "rus_word": "чёрный",
     "img_name_file": "black",
     "status": false
@@ -105901,7 +105901,7 @@
   "pk": 9628,
   "fields": {
     "en_word": "white",
-    "transcription": null,
+    "transcription": "[waɪt]",
     "rus_word": "белый",
     "img_name_file": "white",
     "status": false
@@ -105912,7 +105912,7 @@
   "pk": 9629,
   "fields": {
     "en_word": "red",
-    "transcription": null,
+    "transcription": "[rɛd]",
     "rus_word": "красный",
     "img_name_file": "red",
     "status": false
@@ -105923,7 +105923,7 @@
   "pk": 9630,
   "fields": {
     "en_word": "green",
-    "transcription": null,
+    "transcription": "[ɡriːn]",
     "rus_word": "зелёный",
     "img_name_file": "green",
     "status": false
@@ -105934,7 +105934,7 @@
   "pk": 9631,
   "fields": {
     "en_word": "blue",
-    "transcription": null,
+    "transcription": "[bluː]",
     "rus_word": "синий",
     "img_name_file": "blue",
     "status": false
@@ -105945,7 +105945,7 @@
   "pk": 9632,
   "fields": {
     "en_word": "yellow",
-    "transcription": null,
+    "transcription": "[ˈjɛloʊ]",
     "rus_word": "жёлтый",
     "img_name_file": "yellow",
     "status": false
@@ -105956,7 +105956,7 @@
   "pk": 9633,
   "fields": {
     "en_word": "gray/grey",
-    "transcription": null,
+    "transcription": "[ɡreɪ]",
     "rus_word": "серый",
     "img_name_file": "gray",
     "status": false
@@ -105967,7 +105967,7 @@
   "pk": 9634,
   "fields": {
     "en_word": "pink",
-    "transcription": null,
+    "transcription": "[pɪŋk]",
     "rus_word": "розовый",
     "img_name_file": "pink",
     "status": false
@@ -105978,7 +105978,7 @@
   "pk": 9635,
   "fields": {
     "en_word": "orange",
-    "transcription": null,
+    "transcription": "[ˈɔrɪndʒ]",
     "rus_word": "оранжевый",
     "img_name_file": "orange",
     "status": false
@@ -105989,7 +105989,7 @@
   "pk": 9636,
   "fields": {
     "en_word": "clean",
-    "transcription": null,
+    "transcription": "[kliːn]",
     "rus_word": "чистый",
     "img_name_file": "clean",
     "status": false
@@ -106000,7 +106000,7 @@
   "pk": 9637,
   "fields": {
     "en_word": "dirty",
-    "transcription": null,
+    "transcription": "[ˈdɜːrti]",
     "rus_word": "грязный",
     "img_name_file": "dirty",
     "status": false
@@ -106011,7 +106011,7 @@
   "pk": 9638,
   "fields": {
     "en_word": "nice",
-    "transcription": null,
+    "transcription": "[naɪs]",
     "rus_word": "приятный",
     "img_name_file": "nice",
     "status": false
@@ -106022,7 +106022,7 @@
   "pk": 9639,
   "fields": {
     "en_word": "modern",
-    "transcription": null,
+    "transcription": "[ˈmɒdərn]",
     "rus_word": "современный",
     "img_name_file": "modern",
     "status": false
@@ -106033,7 +106033,7 @@
   "pk": 9640,
   "fields": {
     "en_word": "right",
-    "transcription": null,
+    "transcription": "[raɪt]",
     "rus_word": "правильный",
     "img_name_file": "right",
     "status": false
@@ -106044,7 +106044,7 @@
   "pk": 9641,
   "fields": {
     "en_word": "wrong",
-    "transcription": null,
+    "transcription": "[rɔːŋ]",
     "rus_word": "неправильный",
     "img_name_file": "wrong",
     "status": false
@@ -106055,7 +106055,7 @@
   "pk": 9642,
   "fields": {
     "en_word": "fresh",
-    "transcription": null,
+    "transcription": "[frɛʃ]",
     "rus_word": "свежий",
     "img_name_file": "fresh",
     "status": false
@@ -106066,7 +106066,7 @@
   "pk": 9643,
   "fields": {
     "en_word": "strange",
-    "transcription": null,
+    "transcription": "[streɪndʒ]",
     "rus_word": "странный",
     "img_name_file": "strange",
     "status": false
@@ -106077,7 +106077,7 @@
   "pk": 9644,
   "fields": {
     "en_word": "crazy",
-    "transcription": null,
+    "transcription": "[ˈkreɪzi]",
     "rus_word": "безумный",
     "img_name_file": "crazy",
     "status": false
@@ -106088,7 +106088,7 @@
   "pk": 9645,
   "fields": {
     "en_word": "mad",
-    "transcription": null,
+    "transcription": "[mæd]",
     "rus_word": "безумный",
     "img_name_file": "mad",
     "status": false
@@ -106099,7 +106099,7 @@
   "pk": 9646,
   "fields": {
     "en_word": "wild",
-    "transcription": null,
+    "transcription": "[waɪld]",
     "rus_word": "дикий",
     "img_name_file": "wild",
     "status": false
@@ -106110,7 +106110,7 @@
   "pk": 9647,
   "fields": {
     "en_word": "cool",
-    "transcription": null,
+    "transcription": "[kul]",
     "rus_word": "классный",
     "img_name_file": "cool",
     "status": false
@@ -106121,7 +106121,7 @@
   "pk": 9648,
   "fields": {
     "en_word": "sweet",
-    "transcription": null,
+    "transcription": "[swiːt]",
     "rus_word": "сладкий",
     "img_name_file": "sweet",
     "status": false
@@ -106132,7 +106132,7 @@
   "pk": 9649,
   "fields": {
     "en_word": "one",
-    "transcription": null,
+    "transcription": "[wʌn]",
     "rus_word": "один",
     "img_name_file": "one",
     "status": false
@@ -106143,7 +106143,7 @@
   "pk": 9650,
   "fields": {
     "en_word": "two",
-    "transcription": null,
+    "transcription": "[tuː]",
     "rus_word": "два",
     "img_name_file": "two",
     "status": false
@@ -106154,7 +106154,7 @@
   "pk": 9651,
   "fields": {
     "en_word": "three",
-    "transcription": null,
+    "transcription": "[θriː]",
     "rus_word": "три",
     "img_name_file": "three",
     "status": false
@@ -106165,7 +106165,7 @@
   "pk": 9652,
   "fields": {
     "en_word": "four",
-    "transcription": null,
+    "transcription": "[fɔːr]",
     "rus_word": "четыре",
     "img_name_file": "four",
     "status": false
@@ -106176,7 +106176,7 @@
   "pk": 9653,
   "fields": {
     "en_word": "five",
-    "transcription": null,
+    "transcription": "[faɪv]",
     "rus_word": "пять",
     "img_name_file": "five",
     "status": false
@@ -106187,7 +106187,7 @@
   "pk": 9654,
   "fields": {
     "en_word": "six",
-    "transcription": null,
+    "transcription": "[sɪks]",
     "rus_word": "шесть",
     "img_name_file": "six",
     "status": false
@@ -106198,7 +106198,7 @@
   "pk": 9655,
   "fields": {
     "en_word": "seven",
-    "transcription": null,
+    "transcription": "[sɛvən]",
     "rus_word": "семь",
     "img_name_file": "seven",
     "status": false
@@ -106209,7 +106209,7 @@
   "pk": 9656,
   "fields": {
     "en_word": "eight",
-    "transcription": null,
+    "transcription": "[eɪt]",
     "rus_word": "восемь",
     "img_name_file": "eight",
     "status": false
@@ -106220,7 +106220,7 @@
   "pk": 9657,
   "fields": {
     "en_word": "nine",
-    "transcription": null,
+    "transcription": "[naɪn]",
     "rus_word": "девять",
     "img_name_file": "nine",
     "status": false
@@ -106231,7 +106231,7 @@
   "pk": 9658,
   "fields": {
     "en_word": "ten",
-    "transcription": null,
+    "transcription": "[tɛn]",
     "rus_word": "десять",
     "img_name_file": "ten",
     "status": false
@@ -106242,7 +106242,7 @@
   "pk": 9659,
   "fields": {
     "en_word": "eleven",
-    "transcription": null,
+    "transcription": "[ɪˈlɛvən]",
     "rus_word": "одиннадцать",
     "img_name_file": "eleven",
     "status": false
@@ -106253,7 +106253,7 @@
   "pk": 9660,
   "fields": {
     "en_word": "twelve",
-    "transcription": null,
+    "transcription": "[twɛlv]",
     "rus_word": "двенадцать",
     "img_name_file": "twelve",
     "status": false
@@ -106264,7 +106264,7 @@
   "pk": 9661,
   "fields": {
     "en_word": "thirteen",
-    "transcription": null,
+    "transcription": "[ˈθɜːrtiːn]",
     "rus_word": "тринадцать",
     "img_name_file": "thirteen",
     "status": false
@@ -106275,7 +106275,7 @@
   "pk": 9662,
   "fields": {
     "en_word": "fourteen",
-    "transcription": null,
+    "transcription": "[ˈfɔːrtiːn]",
     "rus_word": "четырнадцать",
     "img_name_file": "fourteen",
     "status": false
@@ -106286,7 +106286,7 @@
   "pk": 9663,
   "fields": {
     "en_word": "fifteen",
-    "transcription": null,
+    "transcription": "[ˈfɪftiːn]",
     "rus_word": "пятнадцать",
     "img_name_file": "fifteen",
     "status": false
@@ -106297,7 +106297,7 @@
   "pk": 9664,
   "fields": {
     "en_word": "sixteen",
-    "transcription": null,
+    "transcription": "[ˈsɪkstiːn]",
     "rus_word": "шестнадцать",
     "img_name_file": "sixteen",
     "status": false
@@ -106308,7 +106308,7 @@
   "pk": 9665,
   "fields": {
     "en_word": "seventeen",
-    "transcription": null,
+    "transcription": "[ˈsɛvəntiːn]",
     "rus_word": "семнадцать",
     "img_name_file": "seventeen",
     "status": false
@@ -106319,7 +106319,7 @@
   "pk": 9666,
   "fields": {
     "en_word": "eighteen",
-    "transcription": null,
+    "transcription": "[ˈeɪtiːn]",
     "rus_word": "восемнадцать",
     "img_name_file": "eighteen",
     "status": false
@@ -106330,7 +106330,7 @@
   "pk": 9667,
   "fields": {
     "en_word": "nineteen",
-    "transcription": null,
+    "transcription": "[ˈnaɪntiːn]",
     "rus_word": "девятнадцать",
     "img_name_file": "nineteen",
     "status": false
@@ -106341,7 +106341,7 @@
   "pk": 9668,
   "fields": {
     "en_word": "twenty",
-    "transcription": null,
+    "transcription": "[ˈtwɛnti]",
     "rus_word": "двадцать",
     "img_name_file": "twenty",
     "status": false
@@ -106352,7 +106352,7 @@
   "pk": 9669,
   "fields": {
     "en_word": "hundred",
-    "transcription": null,
+    "transcription": "[ˈhʌndrəd]",
     "rus_word": "сто",
     "img_name_file": "hundred",
     "status": false
@@ -106363,7 +106363,7 @@
   "pk": 9670,
   "fields": {
     "en_word": "thousand",
-    "transcription": null,
+    "transcription": "[ˈθaʊzənd]",
     "rus_word": "тысяча",
     "img_name_file": "thousand",
     "status": false
@@ -106374,7 +106374,7 @@
   "pk": 9671,
   "fields": {
     "en_word": "first",
-    "transcription": null,
+    "transcription": "[fɜːrst]",
     "rus_word": "первый",
     "img_name_file": "first",
     "status": false
@@ -106385,7 +106385,7 @@
   "pk": 9672,
   "fields": {
     "en_word": "second",
-    "transcription": null,
+    "transcription": "[ˈsɛkənd]",
     "rus_word": "второй",
     "img_name_file": "second",
     "status": false
@@ -106396,7 +106396,7 @@
   "pk": 9673,
   "fields": {
     "en_word": "third",
-    "transcription": null,
+    "transcription": "[θɜːrd]",
     "rus_word": "третий",
     "img_name_file": "third",
     "status": false
@@ -106407,7 +106407,7 @@
   "pk": 9674,
   "fields": {
     "en_word": "just",
-    "transcription": null,
+    "transcription": "[dʒʌst]",
     "rus_word": "просто",
     "img_name_file": "just",
     "status": false
@@ -106418,7 +106418,7 @@
   "pk": 9675,
   "fields": {
     "en_word": "now",
-    "transcription": null,
+    "transcription": "[naʊ]",
     "rus_word": "сейчас",
     "img_name_file": "now",
     "status": false
@@ -106429,7 +106429,7 @@
   "pk": 9676,
   "fields": {
     "en_word": "then",
-    "transcription": null,
+    "transcription": "[ðɛn]",
     "rus_word": "тогда",
     "img_name_file": "then",
     "status": false
@@ -106440,7 +106440,7 @@
   "pk": 9677,
   "fields": {
     "en_word": "back",
-    "transcription": null,
+    "transcription": "[bæk]",
     "rus_word": "назад",
     "img_name_file": "back",
     "status": false
@@ -106451,7 +106451,7 @@
   "pk": 9678,
   "fields": {
     "en_word": "forward",
-    "transcription": null,
+    "transcription": "[ˈfɔrwərd]",
     "rus_word": "вперёд",
     "img_name_file": "forward",
     "status": false
@@ -106462,7 +106462,7 @@
   "pk": 9679,
   "fields": {
     "en_word": "well",
-    "transcription": null,
+    "transcription": "[wɛl]",
     "rus_word": "хорошо",
     "img_name_file": "well",
     "status": false
@@ -106473,7 +106473,7 @@
   "pk": 9680,
   "fields": {
     "en_word": "only",
-    "transcription": null,
+    "transcription": "[ˈoʊnli]",
     "rus_word": "только",
     "img_name_file": "only",
     "status": false
@@ -106484,7 +106484,7 @@
   "pk": 9681,
   "fields": {
     "en_word": "also",
-    "transcription": null,
+    "transcription": "[ˈɔlsoʊ]",
     "rus_word": "также",
     "img_name_file": "also",
     "status": false
@@ -106495,7 +106495,7 @@
   "pk": 9682,
   "fields": {
     "en_word": "even",
-    "transcription": null,
+    "transcription": "[ˈivən]",
     "rus_word": "даже",
     "img_name_file": "even",
     "status": false
@@ -106506,7 +106506,7 @@
   "pk": 9683,
   "fields": {
     "en_word": "very",
-    "transcription": null,
+    "transcription": "[ˈvɛri]",
     "rus_word": "очень",
     "img_name_file": "very",
     "status": false
@@ -106517,7 +106517,7 @@
   "pk": 9684,
   "fields": {
     "en_word": "down",
-    "transcription": null,
+    "transcription": "[daʊn]",
     "rus_word": "вниз",
     "img_name_file": "down",
     "status": false
@@ -106528,7 +106528,7 @@
   "pk": 9685,
   "fields": {
     "en_word": "still",
-    "transcription": null,
+    "transcription": "[stɪl]",
     "rus_word": "всё ещё",
     "img_name_file": "still",
     "status": false
@@ -106539,7 +106539,7 @@
   "pk": 9686,
   "fields": {
     "en_word": "never",
-    "transcription": null,
+    "transcription": "[ˈnɛvər]",
     "rus_word": "никогда",
     "img_name_file": "never",
     "status": false
@@ -106550,7 +106550,7 @@
   "pk": 9687,
   "fields": {
     "en_word": "again",
-    "transcription": null,
+    "transcription": "[əˈɡɛn]",
     "rus_word": "снова",
     "img_name_file": "again",
     "status": false
@@ -106561,7 +106561,7 @@
   "pk": 9688,
   "fields": {
     "en_word": "today",
-    "transcription": null,
+    "transcription": "[təˈdeɪ]",
     "rus_word": "сегодня",
     "img_name_file": "today",
     "status": false
@@ -106572,7 +106572,7 @@
   "pk": 9689,
   "fields": {
     "en_word": "tonight",
-    "transcription": null,
+    "transcription": "[təˈnaɪt]",
     "rus_word": "сегодня",
     "img_name_file": "tonight",
     "status": false
@@ -106583,7 +106583,7 @@
   "pk": 9690,
   "fields": {
     "en_word": "tomorrow",
-    "transcription": null,
+    "transcription": "[təˈmɔːroʊ]",
     "rus_word": "завтра",
     "img_name_file": "tomorrow",
     "status": false
@@ -106594,7 +106594,7 @@
   "pk": 9691,
   "fields": {
     "en_word": "yesterday",
-    "transcription": null,
+    "transcription": "[ˈjɛstərˌdeɪ]",
     "rus_word": "вчера",
     "img_name_file": "yesterday",
     "status": false
@@ -106605,7 +106605,7 @@
   "pk": 9692,
   "fields": {
     "en_word": "always",
-    "transcription": null,
+    "transcription": "[ˈɔːlˌweɪz]",
     "rus_word": "всегда",
     "img_name_file": "always",
     "status": false
@@ -106616,7 +106616,7 @@
   "pk": 9693,
   "fields": {
     "en_word": "enough",
-    "transcription": null,
+    "transcription": "[ɪˈnʌf]",
     "rus_word": "достаточно",
     "img_name_file": "enough",
     "status": false
@@ -106627,7 +106627,7 @@
   "pk": 9694,
   "fields": {
     "en_word": "often",
-    "transcription": null,
+    "transcription": "[ˈɔfən]",
     "rus_word": "часто",
     "img_name_file": "often",
     "status": false
@@ -106638,7 +106638,7 @@
   "pk": 9695,
   "fields": {
     "en_word": "together",
-    "transcription": null,
+    "transcription": "[təˈɡɛðər]",
     "rus_word": "вместе",
     "img_name_file": "together",
     "status": false
@@ -106649,7 +106649,7 @@
   "pk": 9696,
   "fields": {
     "en_word": "already",
-    "transcription": null,
+    "transcription": "[ɔːlˈrɛdi]",
     "rus_word": "уже",
     "img_name_file": "already",
     "status": false
@@ -106660,7 +106660,7 @@
   "pk": 9697,
   "fields": {
     "en_word": "maybe",
-    "transcription": null,
+    "transcription": "[ˈmeɪbi]",
     "rus_word": "может быть",
     "img_name_file": "maybe",
     "status": false
@@ -106671,7 +106671,7 @@
   "pk": 9698,
   "fields": {
     "en_word": "soon",
-    "transcription": null,
+    "transcription": "[sun]",
     "rus_word": "скоро",
     "img_name_file": "soon",
     "status": false
@@ -106682,7 +106682,7 @@
   "pk": 9699,
   "fields": {
     "en_word": "forever",
-    "transcription": null,
+    "transcription": "[fəˈrɛvər]",
     "rus_word": "навсегда",
     "img_name_file": "forever",
     "status": false
@@ -106693,7 +106693,7 @@
   "pk": 9700,
   "fields": {
     "en_word": "all",
-    "transcription": null,
+    "transcription": "[ɔːl]",
     "rus_word": "все",
     "img_name_file": "all",
     "status": false
@@ -106704,7 +106704,7 @@
   "pk": 9701,
   "fields": {
     "en_word": "any",
-    "transcription": null,
+    "transcription": "[ˈɛni]",
     "rus_word": "любой",
     "img_name_file": "any",
     "status": false
@@ -106715,7 +106715,7 @@
   "pk": 9702,
   "fields": {
     "en_word": "anybody",
-    "transcription": null,
+    "transcription": "[ˈɛniˌbɒdi]",
     "rus_word": "любой",
     "img_name_file": "anybody",
     "status": false
@@ -106726,7 +106726,7 @@
   "pk": 9703,
   "fields": {
     "en_word": "anyone",
-    "transcription": null,
+    "transcription": "[ˈɛniwʌn]",
     "rus_word": "любой",
     "img_name_file": "anyone",
     "status": false
@@ -106737,7 +106737,7 @@
   "pk": 9704,
   "fields": {
     "en_word": "anything",
-    "transcription": null,
+    "transcription": "[ˈɛniˌθɪŋ]",
     "rus_word": "что угодно",
     "img_name_file": "anything",
     "status": false
@@ -106748,7 +106748,7 @@
   "pk": 9705,
   "fields": {
     "en_word": "each",
-    "transcription": null,
+    "transcription": "[iːʧ]",
     "rus_word": "каждый",
     "img_name_file": "each",
     "status": false
@@ -106759,7 +106759,7 @@
   "pk": 9706,
   "fields": {
     "en_word": "every",
-    "transcription": null,
+    "transcription": "[ˈɛvri]",
     "rus_word": "каждый",
     "img_name_file": "every",
     "status": false
@@ -106770,7 +106770,7 @@
   "pk": 9707,
   "fields": {
     "en_word": "everybody",
-    "transcription": null,
+    "transcription": "[ˈɛvrɪˌbɒdi]",
     "rus_word": "каждый (человек)",
     "img_name_file": "everybody",
     "status": false
@@ -106781,7 +106781,7 @@
   "pk": 9708,
   "fields": {
     "en_word": "everything",
-    "transcription": null,
+    "transcription": "[ˈɛvrɪˌθɪŋ]",
     "rus_word": "всё",
     "img_name_file": "everything",
     "status": false
@@ -106792,7 +106792,7 @@
   "pk": 9709,
   "fields": {
     "en_word": "he",
-    "transcription": null,
+    "transcription": "[hiː]",
     "rus_word": "он",
     "img_name_file": "he",
     "status": false
@@ -106803,7 +106803,7 @@
   "pk": 9710,
   "fields": {
     "en_word": "here",
-    "transcription": null,
+    "transcription": "[hɪr]",
     "rus_word": "здесь",
     "img_name_file": "here",
     "status": false
@@ -106814,7 +106814,7 @@
   "pk": 9711,
   "fields": {
     "en_word": "it",
-    "transcription": null,
+    "transcription": "[ɪt]",
     "rus_word": "это",
     "img_name_file": "it",
     "status": false
@@ -106825,7 +106825,7 @@
   "pk": 9712,
   "fields": {
     "en_word": "itself, oneself",
-    "transcription": null,
+    "transcription": "[ɪtˈsɛlf, wʌnˈsɛlf]",
     "rus_word": "сам, себя",
     "img_name_file": "itself_oneself",
     "status": false
@@ -106836,7 +106836,7 @@
   "pk": 9713,
   "fields": {
     "en_word": "nobody",
-    "transcription": null,
+    "transcription": "[ˈnoʊˌbɒdi]",
     "rus_word": "никто",
     "img_name_file": "nobody",
     "status": false
@@ -106847,7 +106847,7 @@
   "pk": 9714,
   "fields": {
     "en_word": "nothing",
-    "transcription": null,
+    "transcription": "[ˈnʌθɪŋ]",
     "rus_word": "ничто",
     "img_name_file": "nothing",
     "status": false
@@ -106858,7 +106858,7 @@
   "pk": 9715,
   "fields": {
     "en_word": "she",
-    "transcription": null,
+    "transcription": "[ʃiː]",
     "rus_word": "она",
     "img_name_file": "she",
     "status": false
@@ -106869,7 +106869,7 @@
   "pk": 9716,
   "fields": {
     "en_word": "some",
-    "transcription": null,
+    "transcription": "[sʌm]",
     "rus_word": "некоторое кол-во",
     "img_name_file": "some",
     "status": false
@@ -106880,7 +106880,7 @@
   "pk": 9717,
   "fields": {
     "en_word": "somebody",
-    "transcription": null,
+    "transcription": "[ˈsʌmbɒdi]",
     "rus_word": "кто-нибудь",
     "img_name_file": "somebody",
     "status": false
@@ -106891,7 +106891,7 @@
   "pk": 9718,
   "fields": {
     "en_word": "someone",
-    "transcription": null,
+    "transcription": "[ˈsʌmwʌn]",
     "rus_word": "кто-нибудь",
     "img_name_file": "someone",
     "status": false
@@ -106902,7 +106902,7 @@
   "pk": 9719,
   "fields": {
     "en_word": "something",
-    "transcription": null,
+    "transcription": "[ˈsʌmθɪŋ]",
     "rus_word": "что-нибудь",
     "img_name_file": "something",
     "status": false
@@ -106913,7 +106913,7 @@
   "pk": 9720,
   "fields": {
     "en_word": "sometimes",
-    "transcription": null,
+    "transcription": "[ˈsʌmˌtaɪmz]",
     "rus_word": "иногда",
     "img_name_file": "sometimes",
     "status": false
@@ -106924,7 +106924,7 @@
   "pk": 9721,
   "fields": {
     "en_word": "such",
-    "transcription": null,
+    "transcription": "[sʌtʃ]",
     "rus_word": "такой",
     "img_name_file": "such",
     "status": false
@@ -106935,7 +106935,7 @@
   "pk": 9722,
   "fields": {
     "en_word": "there",
-    "transcription": null,
+    "transcription": "[ðɛr]",
     "rus_word": "там",
     "img_name_file": "there",
     "status": false
@@ -106946,7 +106946,7 @@
   "pk": 9723,
   "fields": {
     "en_word": "they",
-    "transcription": null,
+    "transcription": "[ðeɪ]",
     "rus_word": "они",
     "img_name_file": "they",
     "status": false
@@ -106957,7 +106957,7 @@
   "pk": 9724,
   "fields": {
     "en_word": "this / that",
-    "transcription": null,
+    "transcription": "[ðɪs / ðæt]",
     "rus_word": "этот / тот",
     "img_name_file": "this_that",
     "status": false
@@ -106968,7 +106968,7 @@
   "pk": 9725,
   "fields": {
     "en_word": "these / those",
-    "transcription": null,
+    "transcription": "[ðiz / ðoʊz]",
     "rus_word": "эти / те",
     "img_name_file": "these_those",
     "status": false
@@ -106979,7 +106979,7 @@
   "pk": 9726,
   "fields": {
     "en_word": "we",
-    "transcription": null,
+    "transcription": "[wiː]",
     "rus_word": "мы",
     "img_name_file": "we",
     "status": false
@@ -106990,7 +106990,7 @@
   "pk": 9727,
   "fields": {
     "en_word": "you",
-    "transcription": null,
+    "transcription": "[juː]",
     "rus_word": "ты",
     "img_name_file": "you",
     "status": false
@@ -107001,7 +107001,7 @@
   "pk": 9728,
   "fields": {
     "en_word": "how",
-    "transcription": null,
+    "transcription": "[haʊ]",
     "rus_word": "как",
     "img_name_file": "how",
     "status": false
@@ -107012,7 +107012,7 @@
   "pk": 9729,
   "fields": {
     "en_word": "when",
-    "transcription": null,
+    "transcription": "[wɛn]",
     "rus_word": "когда",
     "img_name_file": "when",
     "status": false
@@ -107023,7 +107023,7 @@
   "pk": 9730,
   "fields": {
     "en_word": "where",
-    "transcription": null,
+    "transcription": "[wɛr]",
     "rus_word": "где",
     "img_name_file": "where",
     "status": false
@@ -107034,7 +107034,7 @@
   "pk": 9731,
   "fields": {
     "en_word": "what",
-    "transcription": null,
+    "transcription": "[wʌt]",
     "rus_word": "что",
     "img_name_file": "what",
     "status": false
@@ -107045,7 +107045,7 @@
   "pk": 9732,
   "fields": {
     "en_word": "who",
-    "transcription": null,
+    "transcription": "[huː]",
     "rus_word": "кто",
     "img_name_file": "who",
     "status": false
@@ -107056,7 +107056,7 @@
   "pk": 9733,
   "fields": {
     "en_word": "why",
-    "transcription": null,
+    "transcription": "[waɪ]",
     "rus_word": "почему",
     "img_name_file": "why",
     "status": false
@@ -107067,7 +107067,7 @@
   "pk": 9734,
   "fields": {
     "en_word": "which",
-    "transcription": null,
+    "transcription": "[wɪtʃ]",
     "rus_word": "который",
     "img_name_file": "which",
     "status": false
@@ -107078,7 +107078,7 @@
   "pk": 9735,
   "fields": {
     "en_word": "other",
-    "transcription": null,
+    "transcription": "[ˈʌðər]",
     "rus_word": "другой",
     "img_name_file": "other",
     "status": false
@@ -107089,7 +107089,7 @@
   "pk": 9736,
   "fields": {
     "en_word": "another",
-    "transcription": null,
+    "transcription": "[əˈnʌðər]",
     "rus_word": "любой другой",
     "img_name_file": "another",
     "status": false
@@ -107100,7 +107100,7 @@
   "pk": 9737,
   "fields": {
     "en_word": "many",
-    "transcription": null,
+    "transcription": "[ˈmɛni]",
     "rus_word": "много",
     "img_name_file": "many",
     "status": false
@@ -107111,7 +107111,7 @@
   "pk": 9738,
   "fields": {
     "en_word": "much",
-    "transcription": null,
+    "transcription": "[mʌtʃ]",
     "rus_word": "много",
     "img_name_file": "much",
     "status": false
@@ -107122,7 +107122,7 @@
   "pk": 9739,
   "fields": {
     "en_word": "few",
-    "transcription": null,
+    "transcription": "[fjuː]",
     "rus_word": "мало",
     "img_name_file": "few",
     "status": false
@@ -107133,7 +107133,7 @@
   "pk": 9740,
   "fields": {
     "en_word": "away",
-    "transcription": null,
+    "transcription": "[əˈweɪ]",
     "rus_word": "прочь",
     "img_name_file": "away",
     "status": false
@@ -107144,7 +107144,7 @@
   "pk": 9741,
   "fields": {
     "en_word": "along",
-    "transcription": null,
+    "transcription": "[əˈlɔŋ]",
     "rus_word": "вдоль",
     "img_name_file": "along",
     "status": false
@@ -107155,7 +107155,7 @@
   "pk": 9742,
   "fields": {
     "en_word": "behind",
-    "transcription": null,
+    "transcription": "[bɪˈhaɪnd]",
     "rus_word": "за",
     "img_name_file": "behind",
     "status": false
@@ -107166,7 +107166,7 @@
   "pk": 9743,
   "fields": {
     "en_word": "else",
-    "transcription": null,
+    "transcription": "[ɛls]",
     "rus_word": "ещё",
     "img_name_file": "else",
     "status": false
@@ -107177,7 +107177,7 @@
   "pk": 9744,
   "fields": {
     "en_word": "upon",
-    "transcription": null,
+    "transcription": "[əˈpɒn]",
     "rus_word": "на",
     "img_name_file": "upon",
     "status": false
@@ -107188,7 +107188,7 @@
   "pk": 9745,
   "fields": {
     "en_word": "about",
-    "transcription": null,
+    "transcription": "[əˈbaʊt]",
     "rus_word": "о",
     "img_name_file": "about",
     "status": false
@@ -107199,7 +107199,7 @@
   "pk": 9746,
   "fields": {
     "en_word": "above",
-    "transcription": null,
+    "transcription": "[əˈbʌv]",
     "rus_word": "над",
     "img_name_file": "above",
     "status": false
@@ -107210,7 +107210,7 @@
   "pk": 9747,
   "fields": {
     "en_word": "after",
-    "transcription": null,
+    "transcription": "[ˈæftər]",
     "rus_word": "за",
     "img_name_file": "after",
     "status": false
@@ -107221,7 +107221,7 @@
   "pk": 9748,
   "fields": {
     "en_word": "among",
-    "transcription": null,
+    "transcription": "[əˈmʌŋ]",
     "rus_word": "среди",
     "img_name_file": "among",
     "status": false
@@ -107232,7 +107232,7 @@
   "pk": 9749,
   "fields": {
     "en_word": "around",
-    "transcription": null,
+    "transcription": "[əˈraʊnd]",
     "rus_word": "вокруг",
     "img_name_file": "around",
     "status": false
@@ -107243,7 +107243,7 @@
   "pk": 9750,
   "fields": {
     "en_word": "at",
-    "transcription": null,
+    "transcription": "[æt]",
     "rus_word": "у, на",
     "img_name_file": "at",
     "status": false
@@ -107254,7 +107254,7 @@
   "pk": 9751,
   "fields": {
     "en_word": "before",
-    "transcription": null,
+    "transcription": "[bɪˈfɔr]",
     "rus_word": "до",
     "img_name_file": "before",
     "status": false
@@ -107265,7 +107265,7 @@
   "pk": 9752,
   "fields": {
     "en_word": "between",
-    "transcription": null,
+    "transcription": "[bɪˈtwiːn]",
     "rus_word": "между",
     "img_name_file": "between",
     "status": false
@@ -107276,7 +107276,7 @@
   "pk": 9753,
   "fields": {
     "en_word": "through",
-    "transcription": null,
+    "transcription": "[θruː]",
     "rus_word": "через",
     "img_name_file": "through",
     "status": false
@@ -107287,7 +107287,7 @@
   "pk": 9754,
   "fields": {
     "en_word": "from",
-    "transcription": null,
+    "transcription": "[frʌm]",
     "rus_word": "из",
     "img_name_file": "from",
     "status": false
@@ -107298,7 +107298,7 @@
   "pk": 9755,
   "fields": {
     "en_word": "in",
-    "transcription": null,
+    "transcription": "[ɪn]",
     "rus_word": "в",
     "img_name_file": "in",
     "status": false
@@ -107309,7 +107309,7 @@
   "pk": 9756,
   "fields": {
     "en_word": "of",
-    "transcription": null,
+    "transcription": "[ʌv]",
     "rus_word": "из",
     "img_name_file": "of",
     "status": false
@@ -107320,7 +107320,7 @@
   "pk": 9757,
   "fields": {
     "en_word": "into",
-    "transcription": null,
+    "transcription": "[ˈɪntuː]",
     "rus_word": "в",
     "img_name_file": "into",
     "status": false
@@ -107331,7 +107331,7 @@
   "pk": 9758,
   "fields": {
     "en_word": "near",
-    "transcription": null,
+    "transcription": "[nɪr]",
     "rus_word": "около",
     "img_name_file": "near",
     "status": false
@@ -107342,7 +107342,7 @@
   "pk": 9759,
   "fields": {
     "en_word": "under",
-    "transcription": null,
+    "transcription": "[ˈʌndər]",
     "rus_word": "под",
     "img_name_file": "under",
     "status": false
@@ -107353,7 +107353,7 @@
   "pk": 9760,
   "fields": {
     "en_word": "with",
-    "transcription": null,
+    "transcription": "[wɪð]",
     "rus_word": "с",
     "img_name_file": "with",
     "status": false
@@ -107364,7 +107364,7 @@
   "pk": 9761,
   "fields": {
     "en_word": "without",
-    "transcription": null,
+    "transcription": "[wɪˈðaʊt]",
     "rus_word": "без",
     "img_name_file": "without",
     "status": false
@@ -107375,7 +107375,7 @@
   "pk": 9762,
   "fields": {
     "en_word": "and",
-    "transcription": null,
+    "transcription": "[ænd]",
     "rus_word": "и",
     "img_name_file": "and",
     "status": false
@@ -107386,7 +107386,7 @@
   "pk": 9763,
   "fields": {
     "en_word": "because",
-    "transcription": null,
+    "transcription": "[bɪˈkɔz]",
     "rus_word": "потому что",
     "img_name_file": "because",
     "status": false
@@ -107397,7 +107397,7 @@
   "pk": 9764,
   "fields": {
     "en_word": "against",
-    "transcription": null,
+    "transcription": "[əˈɡɛnst]",
     "rus_word": "против",
     "img_name_file": "against",
     "status": false
@@ -107408,7 +107408,7 @@
   "pk": 9765,
   "fields": {
     "en_word": "but",
-    "transcription": null,
+    "transcription": "[bʌt]",
     "rus_word": "но",
     "img_name_file": "but",
     "status": false
@@ -107419,7 +107419,7 @@
   "pk": 9766,
   "fields": {
     "en_word": "if",
-    "transcription": null,
+    "transcription": "[ɪf]",
     "rus_word": "если",
     "img_name_file": "if",
     "status": false
@@ -107430,7 +107430,7 @@
   "pk": 9767,
   "fields": {
     "en_word": "not",
-    "transcription": null,
+    "transcription": "[nɒt]",
     "rus_word": "не",
     "img_name_file": "not",
     "status": false
@@ -107441,7 +107441,7 @@
   "pk": 9768,
   "fields": {
     "en_word": "or",
-    "transcription": null,
+    "transcription": "[ɔːr]",
     "rus_word": "или",
     "img_name_file": "or",
     "status": false
@@ -107452,7 +107452,7 @@
   "pk": 9769,
   "fields": {
     "en_word": "so",
-    "transcription": null,
+    "transcription": "[soʊ]",
     "rus_word": "так",
     "img_name_file": "so",
     "status": false
@@ -107463,7 +107463,7 @@
   "pk": 9770,
   "fields": {
     "en_word": "than",
-    "transcription": null,
+    "transcription": "[ðæn]",
     "rus_word": "чем",
     "img_name_file": "than",
     "status": false
@@ -107474,7 +107474,7 @@
   "pk": 9771,
   "fields": {
     "en_word": "too",
-    "transcription": null,
+    "transcription": "[tuː]",
     "rus_word": "слишком",
     "img_name_file": "too",
     "status": false
@@ -107485,7 +107485,7 @@
   "pk": 9772,
   "fields": {
     "en_word": "while",
-    "transcription": null,
+    "transcription": "[waɪl]",
     "rus_word": "пока",
     "img_name_file": "while",
     "status": false
@@ -107496,7 +107496,7 @@
   "pk": 9773,
   "fields": {
     "en_word": "until",
-    "transcription": null,
+    "transcription": "[ʌnˈtɪl]",
     "rus_word": "до тех пор",
     "img_name_file": "until",
     "status": false
@@ -107507,7 +107507,7 @@
   "pk": 9774,
   "fields": {
     "en_word": "of",
-    "transcription": null,
+    "transcription": "[ʌv]",
     "rus_word": "из",
     "img_name_file": "of",
     "status": false
@@ -107518,7 +107518,7 @@
   "pk": 9775,
   "fields": {
     "en_word": "off",
-    "transcription": null,
+    "transcription": "[ɔf]",
     "rus_word": "из, вне",
     "img_name_file": "off",
     "status": false
@@ -107529,7 +107529,7 @@
   "pk": 9776,
   "fields": {
     "en_word": "on",
-    "transcription": null,
+    "transcription": "[ɒn]",
     "rus_word": "на",
     "img_name_file": "on",
     "status": false
@@ -107540,7 +107540,7 @@
   "pk": 9777,
   "fields": {
     "en_word": "over",
-    "transcription": null,
+    "transcription": "[ˈoʊvər]",
     "rus_word": "над",
     "img_name_file": "over",
     "status": false
@@ -107551,7 +107551,7 @@
   "pk": 9778,
   "fields": {
     "en_word": "to",
-    "transcription": null,
+    "transcription": "[tuː]",
     "rus_word": "в, к",
     "img_name_file": "to",
     "status": false
@@ -107562,7 +107562,7 @@
   "pk": 9779,
   "fields": {
     "en_word": "please",
-    "transcription": null,
+    "transcription": "[pliːz]",
     "rus_word": "пожалуйста",
     "img_name_file": "please",
     "status": false
@@ -107573,7 +107573,7 @@
   "pk": 9780,
   "fields": {
     "en_word": "sorry",
-    "transcription": null,
+    "transcription": "[ˈsɔri]",
     "rus_word": "мне жаль",
     "img_name_file": "sorry",
     "status": false
@@ -107584,7 +107584,7 @@
   "pk": 9781,
   "fields": {
     "en_word": "hello",
-    "transcription": null,
+    "transcription": "[həˈloʊ]",
     "rus_word": "привет",
     "img_name_file": "hello",
     "status": false
@@ -107595,7 +107595,7 @@
   "pk": 9782,
   "fields": {
     "en_word": "bye",
-    "transcription": null,
+    "transcription": "[baɪ]",
     "rus_word": "пока",
     "img_name_file": "bye",
     "status": false
@@ -107606,7 +107606,7 @@
   "pk": 9783,
   "fields": {
     "en_word": "hi",
-    "transcription": null,
+    "transcription": "[haɪ]",
     "rus_word": "привет",
     "img_name_file": "hi",
     "status": false
@@ -107617,7 +107617,7 @@
   "pk": 9784,
   "fields": {
     "en_word": "goodbye",
-    "transcription": null,
+    "transcription": "[ˌɡʊdˈbaɪ]",
     "rus_word": "до свидания",
     "img_name_file": "goodbye",
     "status": false
@@ -107628,7 +107628,7 @@
   "pk": 9785,
   "fields": {
     "en_word": "yes/yeah",
-    "transcription": null,
+    "transcription": "[jɛs/jɛə]",
     "rus_word": "да",
     "img_name_file": "yes",
     "status": false
@@ -107639,7 +107639,7 @@
   "pk": 9786,
   "fields": {
     "en_word": "no",
-    "transcription": null,
+    "transcription": "[noʊ]",
     "rus_word": "нет",
     "img_name_file": "no",
     "status": false
