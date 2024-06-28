@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Word, FavoritesWords
+from users.models import User
 
 
 @admin.register(Word)
@@ -50,3 +51,9 @@ class FavoritesWordsAdmin(admin.ModelAdmin):
 
     def get_rus_word(self, obj):
         return obj.word.rus_word
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('id', 'username', 'first_name', 'last_name', 'email', 'photo', 'date_birth')
+    list_display_links = ('id', 'username',)
