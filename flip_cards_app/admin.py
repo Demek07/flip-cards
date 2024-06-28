@@ -47,11 +47,17 @@ class FavoritesWordsAdmin(admin.ModelAdmin):
     def get_en_word(self, obj):
         return obj.word.en_word
 
+    get_en_word.short_description = 'Слово'
+
     def get_transcription(self, obj):
         return obj.word.transcription
 
+    get_transcription.short_description = 'Транскрипция'
+
     def get_rus_word(self, obj):
         return obj.word.rus_word
+
+    get_rus_word.short_description = 'Перевод'
 
 
 @admin.register(User)
