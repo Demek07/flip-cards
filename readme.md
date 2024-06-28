@@ -40,6 +40,8 @@
    - EMAIL*HOST=ВВЕДИТЕ*ХОСТ_ПОЧТЫ
    - EMAIL*PORT=ВВЕДИТЕ*ПОРТ_ПОЧТЫ
    - EMAIL*HOST_USER=ВВЕДИТЕ*ВАШ_ЕМЕЙЛ
+   - DEBUG=True
+   - API*DICTIONARYAPI=ВВЕДИТЕ*API*КЛЮЧ*DICTIONARYAPI
 
 6. Примените миграции:
 
