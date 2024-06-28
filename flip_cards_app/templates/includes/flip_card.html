@@ -13,10 +13,10 @@
           </div>
           <div class="back">
             <p class="h1">{{ word.word.rus_word }}
-              <a href="#" class="play-audio-button" data-word="{{ word.word.en_word }}"><i class="bi bi-volume-up ms-2" style="color:#68539E"></i></a>
+              <a href="#" class="play-audio-button" data-word="{{ word.word.en_word }}"><i title="Прослушать слово" class="bi bi-volume-up ms-2" style="color:#68539E"></i></a>
             </p>
             <div class="card_footer">
-              <button class="btn btn-primary learned-btn" data-word-id="{{ word.id }}""><i class="bbi bi-patch-check-fill me-2"></i>Запомнил</button>
+              <button class="btn btn-primary learned-btn" data-word-id="{{ word.id }}" title="Отметить слово как изученное"><i class="bbi bi-patch-check-fill me-2"></i>Запомнил</button>
             </div>
           </div>
         </div>

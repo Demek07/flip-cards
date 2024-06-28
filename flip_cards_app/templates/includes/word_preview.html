@@ -11,17 +11,17 @@
       <div class="card-header text-end">
         {% if user.is_authenticated %}
           {% if user in word.favorites_word.all %}
-            <a href="#" class="favorites-button favorited" data-word-id="{{ word.id }}"><i class="bi bi-star-fill ms-2 h5"  style="color:#68539E"></i></a>
+            <a href="#" class="favorites-button favorited" data-word-id="{{ word.id }}"><i title="Добавить/удалить слово в избранное" class="bi bi-star-fill ms-2 h5"  style="color:#68539E"></i></a>
           {% else %}
-            <a href="#" class="favorites-button" data-word-id="{{ word.id }}"><i class="bi bi-star ms-2 h5"  style="color:#68539E"></i></a>
+            <a href="#" class="favorites-button" data-word-id="{{ word.id }}"><i title="Добавить/удалить слово в избранное" class="bi bi-star ms-2 h5"  style="color:#68539E"></i></a>
           {% endif %}
         {% else %}
-            <a href="{% url 'users:login' %}"><i class="bi bi-star ms-2 h5" style="color:#68539E"></i></a>
+            <a href="{% url 'users:login' %}"><i title="Добавить/удалить слово в избранное" class="bi bi-star ms-2 h5" style="color:#68539E"></i></a>
         {% endif %} 
       </div>
       <div class="card-body text-center">
         <h4 class="card-title">{{ word.en_word }}
-          <a href="#" class="play-audio-button" data-word="{{ word.en_word }}"><i class="bi bi-volume-up ms-2"  style="color:#68539E"></i></a>
+          <a href="#" class="play-audio-button" data-word="{{ word.en_word }}"><i title="Прослушать слово" class="bi bi-volume-up ms-2"  style="color:#68539E"></i></a>
         </h4>
         <p class="card-text text-muted">{{ word.transcription }}</p>
         <h4 class="card-text">{{ word.rus_word }}</h4>
