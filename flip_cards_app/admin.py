@@ -42,6 +42,7 @@ class FavoritesWordsAdmin(admin.ModelAdmin):
                     'is_learned', 'errors_word', 'rights_word')
     list_editable = ('is_learned', 'errors_word', 'rights_word',)
     # search_fields = ('name',)
+    save_on_top = True
 
     def get_en_word(self, obj):
         return obj.word.en_word
@@ -56,4 +57,6 @@ class FavoritesWordsAdmin(admin.ModelAdmin):
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'username', 'first_name', 'last_name', 'email', 'photo', 'date_birth')
-    list_display_links = ('id', 'username',)
+    list_display_links = ('id', 'username')
+    save_on_top = True
+    search_fields = ('username', 'first_name', 'last_name', 'email')
