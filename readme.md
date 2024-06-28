@@ -35,13 +35,13 @@
 
 5. Откройте файл `.env` и заполните следующие переменные окружения:
 
-   - SECRET*KEY=ВВЕДИТЕ*ДЖАНГО*СЕКРЕТНЫЙ*КЛЮЧ
-   - EMAIL*HOST_PASSWORD=ВВЕДИТЕ*ПАРОЛЬ*ОТ*ПОЧТЫ
-   - EMAIL*HOST=ВВЕДИТЕ*ХОСТ_ПОЧТЫ
-   - EMAIL*PORT=ВВЕДИТЕ*ПОРТ_ПОЧТЫ
-   - EMAIL*HOST_USER=ВВЕДИТЕ*ВАШ_ЕМЕЙЛ
+   - SECRET_KEY=ВВЕДИТЕ_ДЖАНГО_СЕКРЕТНЫЙ_КЛЮЧ
+   - EMAIL_HOST_PASSWORD=ВВЕДИТЕ_ПАРОЛЬ_ОТ_ПОЧТЫ
+   - EMAIL_HOST=ВВЕДИТЕ_ХОСТ_ПОЧТЫ
+   - EMAIL_PORT=ВВЕДИТЕ_ПОРТ_ПОЧТЫ
+   - EMAIL_HOST_USER=ВВЕДИТЕ_ВАШ_ЕМЕЙЛ
    - DEBUG=True
-   - API*DICTIONARYAPI=ВВЕДИТЕ*API*КЛЮЧ*DICTIONARYAPI
+   - API_DICTIONARYAPI=ВВЕДИТЕ_API_КЛЮЧ_DICTIONARYAPI
 
 6. Примените миграции:
 
