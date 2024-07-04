@@ -193,7 +193,7 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
         # Фильтрация слов по поисковому запросу
         if search_query:
             queryset = FavoritesWords.objects.filter(
-                Q(card__en_word__iregex=search_query) | Q(card__rus_word__iregex=search_query) &
+                Q(word__en_word__iregex=search_query) | Q(word__rus_word__iregex=search_query) &
                 Q(user=self.request.user)).select_related('word').order_by('word__en_word').distinct()
         else:
             # Получаем только избранные слова
@@ -302,7 +302,7 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
         # Фильтрация карточек по поисковому запросу
         if search_query:
             queryset = FavoritesWords.objects.filter(
-                Q(card__en_word__iregex=search_query) | Q(card__rus_word__iregex=search_query) &
+                Q(word__en_word__iregex=search_query) | Q(word__rus_word__iregex=search_query) &
                 Q(user=self.request.user) & Q(is_learned=False)).select_related('word').order_by('word__en_word').distinct()
         else:
             # Получаем только избранные карточки
