@@ -26,10 +26,26 @@ function updateTimeLeft() {
         clearInterval(timer);
         inputField.setAttribute("disabled", "disabled");
         submitButton.setAttribute("disabled", "disabled");
-        if (confirm(`Время вышло! ${currentWord.toUpperCase()} является правильным словом! Желаете сыграть еще раз?`)) {
-            window.location.reload(true);
-            newRound();
-        }
+        // if (confirm(`Время вышло! ${currentWord.toUpperCase()} является правильным словом! Желаете сыграть еще раз?`)) {
+        //     window.location.reload(true);
+        //     newRound();
+        // }
+        Swal.fire({
+            title: "Время вышло!",
+            html: `<b>${currentWord.toUpperCase()}</b> является правильным словом! <br> Желаете сыграть еще раз ?`,
+            icon: "warning",
+            showDenyButton: true,
+            confirmButtonText: "Да",
+            confirmButtonColor: "#68539E",
+            denyButtonText: `Нет`,
+            }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                window.location.reload(true);
+                newRound();
+            }
+            });
+
     } else {
         timeLeft--;
         timeLeftElement.textContent = `${timeLeft} sec`;
@@ -46,17 +62,38 @@ submitButton.addEventListener("click", function () {
     const userGuess = inputField.value;
     console.log(userGuess);
 
-    if(!userGuess) return alert("Пожалуйста введите слово!");
+    if (!userGuess) return Swal.fire({text: "Пожалуйста введите слово!", icon: "error", confirmButtonColor: "#68539E"});
     if (userGuess.toUpperCase() === currentWord.toUpperCase()) {
         clearInterval(timer);
         inputField.setAttribute("disabled", "disabled");
         submitButton.setAttribute("disabled", "disabled");
-        if (confirm(`Поздравляем! ${userGuess.toUpperCase()} является правильным словом! Желаете сыграть еще раз?`)) {
-            window.location.reload(true);
-            newRound();
-        }
+        // if (confirm(`Поздравляем! ${userGuess.toUpperCase()} является правильным словом! Желаете сыграть еще раз?`)) {
+        //     window.location.reload(true);
+        //     newRound();
+        // }
+        Swal.fire({
+            title: "Поздравляем!",
+            html: `<b>${ userGuess.toUpperCase() }</b> является правильным словом! <br> Желаете сыграть еще раз ?`,
+            icon: "success",
+            showDenyButton: true,
+            confirmButtonColor: "#68539E",
+            confirmButtonText: "Да",
+            denyButtonText: `Нет`,
+            }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                window.location.reload(true);
+                newRound();
+            }
+            });
     } else {
-        alert(`Упссс! ${userGuess.toUpperCase()} это неправильное слово!`);
+        Swal.fire({
+            title: "Упссс!",
+            html: `<b>${userGuess.toUpperCase()}</b> это неправильное слово!`,
+            icon: "error",
+            confirmButtonColor: "#68539E"
+            });
+        // alert(`${userGuess.toUpperCase()} это неправильное слово!`);
     }
 });
 
