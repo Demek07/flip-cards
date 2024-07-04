@@ -24,15 +24,15 @@ info = {
         {"title": "Флип карточки",
          "url": "/words/flip/",
          "url_name": "flip-cards"},
-        {"title": "Определи слово",
-         "url": "/words/game/",
-         "url_name": "game"},
+        # {"title": "Определи слово",
+        #  "url": "/words/game/",
+        #  "url_name": "game"},
         {"title": "Избранное",
          "url": "/words/favorites/",
          "url_name": "favorites"},
-        {"title": "О проекте",
-         "url": "/about/",
-         "url_name": "about"},
+        # {"title": "О проекте",
+        #  "url": "/about/",
+        #  "url_name": "about"},
     ]
 }
 
@@ -242,6 +242,36 @@ class GameView(MenuMixin, LoginRequiredMixin, ListView):
         en_word = dict(en)
         rus_word = dict(rus)
         return en_word, rus_word
+
+    # Метод для модификации начального запроса к БД
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+
+# Класс для вывода страницы игры Word Scramble Game
+class ScrambleGameView(MenuMixin, LoginRequiredMixin, ListView):
+    # Указываем модель, данные которой мы хотим отобразить
+    model = Word
+    # Путь к шаблону, который будет использоваться для отображения страницы
+    template_name = 'words/scramble_game.html'
+    # Имя переменной контекста, которую будем использовать в шаблоне
+    context_object_name = 'scramble_words_game'
+
+    def get_queryset(self):
+        # Получаем все слова из избранных слов
+        all_objects = Word.objects.filter(favorites_word=self.request.user)
+        # Берем случайное слово
+        random_objects = random.sample(list(all_objects), 1)
+        # Заполняем переменные
+        en_word = random_objects[0].en_word
+        rus_word = random_objects[0].rus_word
+        hint = random_objects[0].hints.capitalize()
+        en_word_shuffle = list(en_word.upper())
+        # Перемешиваем слова
+        random.shuffle(en_word_shuffle)
+        en_word_shuffle = ''.join(en_word_shuffle)
+        return en_word_shuffle, rus_word, hint, en_word
 
     # Метод для модификации начального запроса к БД
     def get_context_data(self, **kwargs):

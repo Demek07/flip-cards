@@ -7,38 +7,50 @@
     <h1>Запоминание инстранных слов с помощью флип-карточек</h1>
     <br>
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <a href="{% url 'catalog' %}" class="text-decoration-none">
                 <div class="card text-center mb-3">
                     <img src="{% static 'flip_cards_app/img/trans.png' %}"
                          class="card-img-top rotateImg"
                          alt="Словарь">
                     <div class="card-body">
-                        <h1>Словарь</h1>
+                        <h3>Словарь</h3>
                     </div>
                 </div>
             </a>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <a href="{% url 'flip-cards' %}" class="text-decoration-none">
                 <div class="card text-center mb-3">
                     <img src="{% static 'flip_cards_app/img/card.png' %}"
                          class="card-img-top rotateImg"
                          alt="Флип карточки">
                     <div class="card-body">
-                        <h1>Флип карточки</h1>
+                        <h3>Флип карточки</h3>
                     </div>
                 </div>
             </a>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <a href="{% url 'game' %}" class="text-decoration-none">
                 <div class="card text-center mb-3">
                     <img src="{% static 'flip_cards_app/img/game.png' %}"
                          class="card-img-top rotateImg"
-                         alt="Определи слово">
+                         alt="Определи слова">
                     <div class="card-body">
-                        <h1>Определи слово</h1>
+                        <h3>Определи слова</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="{% url 'scramble_game' %}" class="text-decoration-none">
+                <div class="card text-center mb-3">
+                    <img src="{% static 'flip_cards_app/img/game_guess.png' %}"
+                         class="card-img-top rotateImg"
+                         alt="Угодай слово">
+                    <div class="card-body">
+                        <h3>Угодай слово</h3>
                     </div>
                 </div>
             </a>

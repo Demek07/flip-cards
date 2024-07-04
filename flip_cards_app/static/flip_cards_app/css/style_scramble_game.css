@@ -1,0 +1,22 @@
+.main {
+  /* margin-top: 200px; */
+  /* align-items: center; */
+  /* width: 550px; */
+}
+
+.card {
+  /* padding-top: 10px; */
+  border-radius: 20px !important;
+  /* display: flex; */
+}
+
+.word {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 15px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}

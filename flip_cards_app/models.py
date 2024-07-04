@@ -23,6 +23,7 @@ class Word(models.Model):
                                      verbose_name='Имя файла картинки', null=True)
     status = models.BooleanField(default=False, choices=tuple(
         map(lambda x: (bool(x[0]), x[1]), Status.choices)), verbose_name='Проверено')
+    hints = models.CharField(max_length=150, db_column='Hints', verbose_name='Подсказки', null=True)
 
     class Meta:
         db_table = 'allwords'  # имя таблицы в базе данных

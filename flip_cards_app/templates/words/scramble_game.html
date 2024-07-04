@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+   <link rel="stylesheet" href="{% static 'flip_cards_app/css/style_scramble_game.css' %}" />
+  <body>
+    <div class="main pt-4">
+        <h1 class="title text-center"><strong>Игра угадай слово</strong></h1>
+        <div class="content" id="{{ scramble_words_game.3 }}">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Угадай зашифрованное слово</h5>
+                </div>
+                <div class="card-body pl-5">
+                    <p class="text-center word">{{ scramble_words_game.0 }}</p>
+                    <p class="hint">Подсказка: <span>{{ scramble_words_game.2 }}</span></p>
+                    <p class="hint">Время: <span><strong>30 sec</strong></span></p>
+                    <input class="form-control p-2" type="text" name="" id="input" placeholder="Введите угаданное слово...">
+                </div>
+                <div class="buttons text-center pb-5">
+                    <button type="button" class="btn btn-primary mr-5" id="btn_new">Новое слово</button>
+                    <button type="button" class="btn btn-primary" id="btn_check">Проверить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+{% endblock content %}
