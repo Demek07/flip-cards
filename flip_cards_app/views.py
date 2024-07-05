@@ -261,17 +261,20 @@ class ScrambleGameView(MenuMixin, LoginRequiredMixin, ListView):
     def get_queryset(self):
         # Получаем все слова из избранных слов
         all_objects = Word.objects.filter(favorites_word=self.request.user)
-        # Берем случайное слово
-        random_objects = random.sample(list(all_objects), 1)
-        # Заполняем переменные
-        en_word = random_objects[0].en_word
-        rus_word = random_objects[0].rus_word
-        hint = random_objects[0].hints.capitalize()
-        en_word_shuffle = list(en_word.upper())
-        # Перемешиваем слова
-        random.shuffle(en_word_shuffle)
-        en_word_shuffle = ''.join(en_word_shuffle)
-        return en_word_shuffle, rus_word, hint, en_word
+        if all_objects.count() > 1:
+            # Берем случайное слово
+            random_objects = random.sample(list(all_objects), 1)
+            # Заполняем переменные
+            en_word = random_objects[0].en_word
+            rus_word = random_objects[0].rus_word
+            hint = random_objects[0].hints.capitalize()
+            en_word_shuffle = list(en_word.upper())
+            # Перемешиваем слова
+            random.shuffle(en_word_shuffle)
+            en_word_shuffle = ''.join(en_word_shuffle)
+            return en_word_shuffle, rus_word, hint, en_word
+        else:
+            return None
 
     # Метод для модификации начального запроса к БД
     def get_context_data(self, **kwargs):

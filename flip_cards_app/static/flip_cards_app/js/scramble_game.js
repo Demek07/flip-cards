@@ -48,7 +48,7 @@ function updateTimeLeft() {
 
     } else {
         timeLeft--;
-        timeLeftElement.textContent = `${timeLeft} sec`;
+        timeLeftElement.textContent = `${timeLeft} сек`;
     }
 }
 
