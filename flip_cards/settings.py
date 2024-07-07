@@ -28,11 +28,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#if socket.gethostname() == '127.0.0.1':
-
-    #DEBUG = True
-
-#else:
 DEBUG = False
 
 ALLOWED_HOSTS = ['flip-cards.ru', 'www.flip-cards.ru', 'localhost', '127.0.0.1', '213.171.10.225']
