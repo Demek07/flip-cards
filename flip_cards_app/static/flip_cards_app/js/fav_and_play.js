@@ -43,6 +43,7 @@ $(document).ready(function() {
                 console.log('Ошибка при обновлении статуса избранного');
             }
         });
+        return false
     });
 });
 
