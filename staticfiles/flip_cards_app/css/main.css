@@ -1,0 +1,208 @@
+.rotateImg {
+  transition: 1s;
+}
+
+.rotateImg:hover {
+  transform: scale(1.2);
+  /* transform: rotate(360deg) scale(1.2); */
+}
+
+.card-img-pic {
+  transition: 1s;
+}
+
+.card-img-pic:hover {
+  transform: scale(2);
+  /* transform: rotate(360deg) scale(1.2); */
+}
+
+
+h1, h3 {
+  text-align: center;
+  color: #4A6042;
+}
+.h1, .h2, .h5 {
+  text-align: center;
+}
+
+.all_text {
+  color: #4A6042;
+}
+
+span {
+  margin-right: 2px;
+}
+
+.hljs {
+  background: #1b5589 !important;
+}
+
+.pagination {
+  --bs-pagination-color: #68539E;
+  --bs-pagination-hover-color: #6d6d6d;
+  --bs-pagination-active-color: #eae7dc;
+  --bs-pagination-active-border-color: #afb4fd;
+  --bs-pagination-active-bg: #68539E;
+  --bs-pagination-hover-bg: #B7ABD8;
+  --bs-pagination-border-color: #afb4fd;
+}
+
+.navbar {
+  --bs-navbar-color: #4A6042
+}
+
+.card {
+  --bs-card-bg: #eae7dc;
+}
+
+.badge-info {
+  background-color: #5288b9;
+}
+
+.badge-info:hover {
+  background-color: #2d6987;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + .btn {
+  color: #eae7dc;
+  background: #1b5589 !important;
+  border-color: #1b5589 !important;
+}
+
+input[type="radio"]:hover + .btn {
+  color: #eae7dc;
+  background-color: #9dcbf3;
+}
+
+.btn-group .btn {
+  color: #1b5589;
+  border-color: #1b5589;
+}
+
+/* .btn-secondary {  */
+  /* --bs-btn-bg: #1b5589; */
+  /* --bs-btn-border-color: #1b5589; */
+  /* --bs-btn-hover-color: #9dcbf3; */
+  /* --bs-btn-active-color: var(--bs-btn-hover-color); */ */
+/* --bs-btn-color: #1b5589; */
+/* --bs-btn-hover-bg: #{shade-color($bd-violet, 10%)}; */
+/* --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)}; */
+/* --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
+  --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)}; */
+
+button[type="reset"] {
+  position: relative;
+  left: -20px;
+  color: #666;
+  border: 0;
+  display: none;
+  padding: 0 10px;
+  border-radius: 50%;
+  background-color: #eae7dc;
+  transition: background 200ms;
+  outline: none;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+input:valid ~ button[type="reset"] {
+  display: block;
+}
+
+/* главная страница */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container1 {
+  display: flex;
+  justify-content: center;
+  min-height: 10vh;
+}
+body {
+  background: #B8CEB3;
+}
+h2 {
+  text-align: center;
+  font-size: 2em;
+  padding: 0.5em;
+}
+label, .helptext {
+  color: #4A6042;
+}
+
+
+/* для игры */
+.title {
+  padding: 10px;
+  text-align: center"
+}
+.card1 {
+  background-color: #eae7dc;
+  padding: 8px 11px;
+  color: #555;
+  cursor: pointer;
+  margin: -1px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: 15px;
+}
+.card_z {
+  margin: 10px;
+  margin-top: 10px;
+  background-color: #eee;
+  transition: 0.5s;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.black {
+  background-color: #68539E;
+  color: #eae7dc;
+  border-color: #68539E;
+}
+.table {
+  display: none;
+}
+
+.container_game {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #68539E !important;
+  border-color: #afb4fd !important;
+
+  &:hover {
+    background-color:  #B7ABD8 !important;
+    border-color:  #B7ABD8 !important;
+    color: #68539E !important;
+  }
+}
+
+.nav-link.active {
+  background-color: #68539E !important;
+}
+
+.profile-img {
+  border-radius: 50%;
+  max-width: 30%;
+  border: 2px solid #68539E;
+  box-shadow: 0 0 20px #B7ABD8;
+}
+
+@media (max-width:760px) {
+  .card-img-pic:hover {
+    transform: none;
+  }
+}
