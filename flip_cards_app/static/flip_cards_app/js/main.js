@@ -74,11 +74,31 @@ function click1(id_word) {
             remove(id);
         }, 333);
         if ((remains == 0) & ( error_count == 0)) {
-            if (confirm('Вы без ошибок определили все пары! Желаете повторить?')) {
-                location.reload();}
+            calert({
+                confirmButton: { innerText: 'Да', style: { background: '#68539E' } },
+                cancelButton: 'Нет',
+                title: "Поздравляем!",
+                text: { innerHTML: 'Вы без ошибок определили все пары! Желаете сыграть еще раз?' },
+                icon: 'success'
+            }).then((result) => {
+                if (result.isConfirmed) {location.reload(true);}
+            });
+
+            // if (confirm('Вы без ошибок определили все пары! Желаете повторить?')) {
+            //     location.reload();}
         } else if ((remains == 0) & (error_count != 0)) {
-            if (confirm('Вы ошиблись ' + error_count + ' раз(а). Желаете повторить?')) {
-                location.reload();}
+            calert({
+                confirmButton: { innerText: 'Да', style: { background: '#68539E' } },
+                cancelButton: 'Нет',
+                // title: "Поздравляем!",
+                text: { innerHTML: 'Вы ошиблись ' + error_count + ' раз(а). Желаете повторить?' },
+                icon: 'question'
+            }).then((result) => {
+                if (result.isConfirmed) {location.reload(true);}
+            });
+
+            // if (confirm('Вы ошиблись ' + error_count + ' раз(а). Желаете повторить?')) {
+            //     location.reload();}
         }
         
 
