@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
    <link rel="stylesheet" href="{% static 'flip_cards_app/css/style_flip.css' %}" />
-   <h1>Общий словарь английских слов</h1>
+   <h1>Каталог с флип-карточками</h1>
    <p class="all_text">Здесь вы можете выбрать слова для изучения</p>
    <p class="all_text">На данный момент у вас для изучения: {{ page_obj.paginator.count }} слов</p>
    {% comment %} Пагинация начало {% endcomment %}

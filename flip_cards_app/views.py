@@ -104,7 +104,7 @@ class MenuMixin:
         # добавляем в контекст меню
         context['menu'] = self.get_menu()
         # добавляем в контекст количество слов
-        context['cards_count'] = self.get_words_count()
+        context['words_count'] = self.get_words_count()
         # добавляем в контекст количество пользователей
         context['users_count'] = self.get_users_count()
         return context
@@ -173,7 +173,7 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
     # Указываем модель, данные которой мы хотим отобразить
     model = Word
     # Путь к шаблону, который будет использоваться для отображения страницы
-    template_name = 'words/catalog_favorite.html'
+    # template_name = 'words/catalog_favorite.html'
     # Имя переменной контекста, которую будем использовать в шаблоне
     context_object_name = 'words'
     # Количество объектов на странице
@@ -199,6 +199,10 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
             # Получаем только избранные слова
             queryset = FavoritesWords.objects.filter(
                 user=self.request.user).select_related('word').order_by('word__en_word')
+        if queryset.count() > 0:
+            self.template_name = 'words/catalog_favorite.html'
+        else:
+            self.template_name = 'words/empty_favotite.html'
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -212,8 +216,6 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
 class GameView(MenuMixin, LoginRequiredMixin, ListView):
     # Указываем модель, данные которой мы хотим отобразить
     model = Word
-    # Путь к шаблону, который будет использоваться для отображения страницы
-    template_name = 'words/game.html'
     # Имя переменной контекста, которую будем использовать в шаблоне
     context_object_name = 'words_game'
 
@@ -225,23 +227,29 @@ class GameView(MenuMixin, LoginRequiredMixin, ListView):
         rus_word = {}
         # Получаем 10 случайных слов
         all_objects = Word.objects.filter(favorites_word=self.request.user)
-        # Если количество слов меньше 10, то берем все
-        if all_objects.count() < 10:
-            random_objects = random.sample(list(all_objects), all_objects.count())
+        if all_objects.count() > 0:
+            # Путь к шаблону, который будет использоваться для отображения страницы
+            self.template_name = 'words/game.html'
+            # Если количество слов меньше 10, то берем все
+            if all_objects.count() < 10:
+                random_objects = random.sample(list(all_objects), all_objects.count())
+            else:
+                # Берем 10 случайных слов
+                random_objects = random.sample(list(all_objects), 10)
+            # Заполняем переменные
+            for item in random_objects:
+                en.append((item.id, item.en_word))
+                rus.append((item.id, item.rus_word))
+            # Перемешиваем слова
+            random.shuffle(rus)
+            tuple(en)
+            tuple(rus)
+            en_word = dict(en)
+            rus_word = dict(rus)
+            return en_word, rus_word
         else:
-            # Берем 10 случайных слов
-            random_objects = random.sample(list(all_objects), 10)
-        # Заполняем переменные
-        for item in random_objects:
-            en.append((item.id, item.en_word))
-            rus.append((item.id, item.rus_word))
-        # Перемешиваем слова
-        random.shuffle(rus)
-        tuple(en)
-        tuple(rus)
-        en_word = dict(en)
-        rus_word = dict(rus)
-        return en_word, rus_word
+            # Если избранное пусто, то берем шаблон пустого избранного
+            self.template_name = 'words/empty_favotite.html'
 
     # Метод для модификации начального запроса к БД
     def get_context_data(self, **kwargs):
@@ -254,27 +262,34 @@ class ScrambleGameView(MenuMixin, LoginRequiredMixin, ListView):
     # Указываем модель, данные которой мы хотим отобразить
     model = Word
     # Путь к шаблону, который будет использоваться для отображения страницы
-    template_name = 'words/scramble_game.html'
+    # template_name = 'words/scramble_game.html'
     # Имя переменной контекста, которую будем использовать в шаблоне
     context_object_name = 'scramble_words_game'
 
     def get_queryset(self):
         # Получаем все слова из избранных слов
         all_objects = Word.objects.filter(favorites_word=self.request.user)
-        if all_objects.count() > 1:
+        if all_objects.count() > 0:
+            # Если избранное не пусто, то берем шаблон игры
+            self.template_name = 'words/scramble_game.html'
             # Берем случайное слово
             random_objects = random.sample(list(all_objects), 1)
             # Заполняем переменные
             en_word = random_objects[0].en_word
+            en_word_shuffle = en_word
             rus_word = random_objects[0].rus_word
             hint = random_objects[0].hints.capitalize()
-            en_word_shuffle = list(en_word.upper())
-            # Перемешиваем слова
-            random.shuffle(en_word_shuffle)
-            en_word_shuffle = ''.join(en_word_shuffle)
+            while en_word.upper() == en_word_shuffle.upper():
+                en_word_shuffle = list(en_word.upper())
+                # Перемешиваем слова
+                random.shuffle(en_word_shuffle)
+                en_word_shuffle = ''.join(en_word_shuffle)
+
             return en_word_shuffle, rus_word, hint, en_word
         else:
-            return None
+            # Если избранное пусто, то берем шаблон пустого избранного
+            self.template_name = 'words/empty_favotite.html'
+            # return play
 
     # Метод для модификации начального запроса к БД
     def get_context_data(self, **kwargs):
@@ -290,7 +305,7 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
     # Указываем модель, данные которой мы хотим отобразить
     model = FavoritesWords
     # Путь к шаблону, который будет использоваться для отображения страницы
-    template_name = 'words/flip_catalog.html'
+    # template_name = 'words/flip_catalog.html'
     # Имя переменной контекста, которую будем использовать в шаблоне
     context_object_name = 'flip_cards'
     # Количество объектов на странице
@@ -311,6 +326,10 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
             # Получаем только избранные карточки
             queryset = FavoritesWords.objects.filter(Q(user=self.request.user) & Q(
                 is_learned=False)).select_related('word').order_by('word__en_word')
+        if queryset.count() > 0:
+            self.template_name = 'words/flip_catalog.html'
+        else:
+            self.template_name = 'words/empty_favotite.html'
         return queryset
 
     def get_context_data(self, **kwargs):
