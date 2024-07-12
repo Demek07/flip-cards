@@ -51,11 +51,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'django_extensions',
     'debug_toolbar',
     'flip_cards_app',
+    'verify_email.apps.VerifyEmailConfig',
     'users',
 ]
+
+SITE_ID = 1
 
 # Админпанель
 JAZZMIN_UI_TWEAKS = {

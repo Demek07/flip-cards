@@ -34,6 +34,7 @@ urlpatterns = [
     path('about/', views.AboutView.as_view(), name='about'),
     path('words/', include('flip_cards_app.urls')),
     path('users/', include('users.urls', namespace='users')),
+    path('verification/', include('verify_email.urls')),
 
 ]
 
