@@ -11,10 +11,6 @@ urlpatterns = [
     path('signup/', views.RegisterUser.as_view(), name='signup'),
     # Сообщение об успешной регистрации
     path('register_done/', views.RegisterDoneView.as_view(), name='register_done'),
-    # активация почты
-    path('verify_email/<uidb64>/<token>/', views.VerifyEmailView.as_view(), name='verify_email'),
-    path('signup/confirm/<uidb64>/<token>/', views.SignupConfirmView.as_view(), name='signup_confirm'),
-    path('resend_verification_email/', views.ResendVerificationEmail.as_view(), name='resend_verification_email'),
     # Профиль / Изменение пароля / Мои карточки
     path("profile/", views.ProfileUser.as_view(), name='profile'),
     path("password_change/", views.PasswordChange.as_view(), name='password_change'),
