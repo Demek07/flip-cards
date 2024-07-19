@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'users',
 ]
 
+
 # Админпанель
 JAZZMIN_UI_TWEAKS = {
     "theme": "litera",
@@ -113,12 +114,12 @@ TEMPLATES = [
     },
 ]
 
-LOCALE_PATHS = [
-    Path(__file__).parent.parent / "allauth_ui" / "locale",
-]
-LANGUAGES = (
-    ("ru", _("Russian")),
-)
+# LOCALE_PATHS = [
+#     Path(__file__).parent.parent / "allauth_ui" / "locale",
+# ]
+# LANGUAGES = (
+#     ("ru", _("Russian")),
+# )
 
 WSGI_APPLICATION = 'flip_cards.wsgi.application'
 
@@ -213,6 +214,7 @@ URL_FOR_VOICE = os.getenv("URL_FOR_VOICE")
 API_WORDNIK = os.getenv("API_WORDNIK")
 
 API_DICTIONARYAPI = os.getenv("API_DICTIONARYAPI")
+
 
 ALLAUTH_UI_THEME = "corporate"
 
