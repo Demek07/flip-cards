@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+# генератор секретного ключа DJANGO_SECRET_KEY - python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -54,7 +56,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
     'flip_cards_app',
-    "allauth_ui",
+    "allauth_themes.bootstrap",
+    # "allauth_ui",
     'allauth',
     'allauth.account',
     "widget_tweaks",
