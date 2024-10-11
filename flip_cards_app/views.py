@@ -11,7 +11,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
 from .models import Word, FavoritesWords
 from flip_cards.settings import API_WORDNIK, URL_FOR_VOICE, API_DICTIONARYAPI
-from .utils import load_words_from_json
 from django.urls import reverse_lazy
 
 
