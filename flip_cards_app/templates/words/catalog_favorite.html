@@ -19,9 +19,21 @@
                          aria-label="Поиск слов..."
                          name="search_query"
                          value="{{ request.GET.search_query }}">
-                  <button class="btn btn-primary"
-                          type="submit">
+                  <button class="btn btn-primary" type="submit">
                      <i class="bi bi-search"></i>
+                  </button>
+               </div>
+            </div>
+         </form>
+      </div>
+      <div class="container mt-3 col-auto">
+         <form method="post" enctype="multipart/form-data">
+            <div class="row">
+               <div class="input-group mb-3">
+                  {% csrf_token %}
+                  <input class="form-control" type="file" accept=".txt" name="file">
+                  <button class="btn btn-primary" type="submit">
+                     <i class="fa fa-upload"></i>
                   </button>
                </div>
             </div>

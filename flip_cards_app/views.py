@@ -1,8 +1,8 @@
 import random
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
-from django.shortcuts import get_object_or_404
-from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, render
+from django.http import JsonResponse, HttpResponseRedirect
 from django.core.cache import cache
 from django.db.models import Q
 from django.db import transaction
@@ -11,6 +11,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
 from .models import Word, FavoritesWords
 from flip_cards.settings import API_WORDNIK, URL_FOR_VOICE, API_DICTIONARYAPI
+from .utils import load_words_from_json
+from django.urls import reverse_lazy
 
 
 info = {
@@ -30,9 +32,9 @@ info = {
         {"title": "Избранное",
          "url": "/words/favorites/",
          "url_name": "favorites"},
-        # {"title": "О проекте",
-        #  "url": "/about/",
-        #  "url_name": "about"},
+        # {"title": "Загрузить слова в избранное",
+        #  "url": "/words/load_txt/",
+        #  "url_name": "load_txt"},
     ]
 }
 
@@ -211,6 +213,28 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
         context['search_query'] = self.request.GET.get('search_query', '')
         return context
 
+    def post(self, request, *args, **kwargs):
+        file = request.FILES['file']
+        words = file.read().decode('utf-8').splitlines()
+        not_found_words = []
+        for word in words:
+            word = word.strip()
+            try:
+                word_obj = Word.objects.filter(en_word=word)
+                if word_obj.exists():
+                    for word in word_obj:
+                        favorites_word(request, word.id, load=True)
+            except Word.DoesNotExist:
+                not_found_words.append(word)
+        # context = super().get_context_data(**kwargs)
+        # context['search_query'] = self.request.GET.get('search_query', '')
+        # context['not_found_words'] = not_found_words
+        # return self.render_to_response(context)
+
+        return HttpResponseRedirect(reverse_lazy('favorites'))
+
+        # return render(request, self.template_name, {'not_found_words': not_found_words})
+
 
 # Класс для вывода страницы игры
 class GameView(MenuMixin, LoginRequiredMixin, ListView):
@@ -341,13 +365,13 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
 
 # Метод для добавления/удаления из избранного
 @login_required
-def favorites_word(request, id):
+def favorites_word(request, id, **kwargs):
     # Получаем слово по id
     word = get_object_or_404(Word, id=id)
     # Получаем текущего пользователя
     user = request.user
     # Проверяем наличие в избранном
-    if word.favorites_word.filter(id=user.id).exists():
+    if word.favorites_word.filter(id=user.id).exists() and not kwargs.get('load'):
         # Удаляем из избранного
         word.favorites_word.remove(user)
         is_favorite = False

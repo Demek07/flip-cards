@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load static %}
+    <body>
+        <h1>Загрузка слов в Ваше избранное из файла</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="file" accept=".txt">
+            <button type="submit">Загрузить слова</button>
+        </form>
+        {% if not_found_words %}
+            <h2>Не найденные слова:</h2>
+            <ul>
+                {% for word in not_found_words %}<li>{{ word }}</li>{% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+{% endblock content %}
