@@ -15,6 +15,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from django.utils.translation import gettext_lazy as _
+from logging.handlers import RotatingFileHandler
 
 load_dotenv()  # Загружает переменные окружения из файла .env, который находится в той же директории, что и settings.py
 
@@ -225,3 +226,29 @@ ALLAUTH_UI_THEME = "corporate"
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"  # (default: "username", alternatives: "email" or "username_email")
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {'file': {
+        'level': 'DEBUG',
+        'class': 'logging.handlers.RotatingFileHandler',
+        'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
+        'maxBytes': 1024*1024*5,  # Максимальный размер файла - 5 MB
+        'backupCount': 5,          # Хранить до 5 архивных файлов
+        'formatter': 'verbose',
+    },
+    },
+    'formatters': {'verbose': {
+        'format': '{levelname} {asctime} {module} {message}',
+        'style': '{',
+    },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}

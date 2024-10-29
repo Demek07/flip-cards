@@ -217,15 +217,29 @@ class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
         words = file.read().decode('utf-8').splitlines()
         not_found_words = []
         for word in words:
-            word = word.strip()
-            try:
-                word_obj = Word.objects.filter(en_word=word)
-                if word_obj.exists():
-                    for word in word_obj:
-                        favorites_word(request, word.id, load=True)
-            except Word.DoesNotExist:
+            word = word.strip().lower()
+            word_obj = Word.objects.filter(Q(en_word__iexact=word) | Q(rus_word__iexact=word))
+            if word_obj.exists():
+                for obj in word_obj:
+                    print(obj)
+                    favorites_word(request, obj.id, load=True)
+            else:
                 not_found_words.append(word)
+        if not_found_words:
+            messages.warning(request, f'Следующие слова не загружены: {", ".join(not_found_words)}')
         # context = super().get_context_data(**kwargs)
+        # context['search_query'] = self.request.GET.get('search_query', '')
+        # return self.render_to_response(context)
+        # for word in words:
+        #     word = word.strip().lower()
+        #     try:
+        #         word_obj = Word.objects.filter(Q(en_word__iexact=word) | Q(rus_word__iexact=word))
+        #         if word_obj.exists():
+        #             for word in word_obj:
+        #                 favorites_word(request, word.id, load=True)
+        #     except Word.DoesNotExist:
+        #         not_found_words.append(word)
+        # # context = super().get_context_data(**kwargs)
         # context['search_query'] = self.request.GET.get('search_query', '')
         # context['not_found_words'] = not_found_words
         # return self.render_to_response(context)

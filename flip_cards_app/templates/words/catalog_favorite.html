@@ -3,6 +3,13 @@
    <h1>Каталог избранных слов</h1>
    <p class="all_text">Здесь вы можете выбрать слова для изучения</p>
    <p class="all_text">На данный момент всего слов: {{ page_obj.paginator.count }}</p>
+   {% if messages %}
+      <ul class="messages">
+         {% for message in messages %}
+            <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+         {% endfor %}
+      </ul>
+   {% endif %}
    {% comment %} Пагинация начало {% endcomment %}
    {% if page_obj.paginator.num_pages != 1 %}
       <div class="col-12">{% include "includes/pagination.html" %}</div>
