@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     # 'sslserver',
 ]
 
+ALLAUTH_UI_THEME = "corporate"
 
 # Админпанель
 JAZZMIN_UI_TWEAKS = {
