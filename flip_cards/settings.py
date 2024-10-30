@@ -188,6 +188,7 @@ CACHES = {
 
 LOGIN_URL = 'account_login'
 LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',  # Стандартный бекенд для аутентификации по username
@@ -228,27 +229,27 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 LOGGING = {
-   'version': 1,
-   'disable_existing_loggers': False,
-   'handlers': {'file': {
-       'level': 'DEBUG',
-       'class': 'logging.handlers.RotatingFileHandler',
-       'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
-       'maxBytes': 1024*1024*5,  # Максимальный размер файла - 5 MB
-       'backupCount': 5,          # Хранить до 5 архивных файлов
-       'formatter': 'verbose',
-   },
-   },
-   'formatters': {'verbose': {
-       'format': '{levelname} {asctime} {module} {message}',
-       'style': '{',
-   },
-   },
-   'loggers': {
-       'django': {
-           'handlers': ['file'],
-           'level': 'DEBUG',
-           'propagate': True,
-       },
-   },
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {'file': {
+        'level': 'DEBUG',
+        'class': 'logging.handlers.RotatingFileHandler',
+        'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
+        'maxBytes': 1024*1024*5,  # Максимальный размер файла - 5 MB
+        'backupCount': 5,          # Хранить до 5 архивных файлов
+        'formatter': 'verbose',
+    },
+    },
+    'formatters': {'verbose': {
+        'format': '{levelname} {asctime} {module} {message}',
+        'style': '{',
+    },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
 }
