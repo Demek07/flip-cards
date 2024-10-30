@@ -12,3 +12,4 @@ dict.db
 .vscode/launch.json
 media/users/images/*
 проект.txt
+*.log
