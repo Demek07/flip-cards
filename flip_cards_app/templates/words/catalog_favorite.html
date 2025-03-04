@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-   <h1>Каталог избранных слов</h1>
+   <div class="d-flex align-items-center mb-4">
+      <a href="{% url 'favorite_folders' %}"
+         class="btn btn-outline-primary me-3">
+         <i class="bi bi-arrow-left"></i> К папкам
+      </a>
+      <h1>Каталог избранных слов</h1>
+   </div>
    <p class="all_text">Здесь вы можете выбрать слова для изучения</p>
    <p class="all_text">На данный момент всего слов: {{ page_obj.paginator.count }}</p>
    {% if messages %}

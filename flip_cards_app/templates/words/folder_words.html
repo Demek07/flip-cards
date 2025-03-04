@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="d-flex align-items-center mb-4">
+        <a href="{% url 'favorites' %}" class="btn btn-outline-primary me-3">
+            <i class="bi bi-arrow-left"></i> К папкам
+        </a>
+        <h1>{{ folder.name }}</h1>
+    </div>
+    <p class="all_text">Слова в папке: {{ total_words }}</p>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% if page_obj.paginator.num_pages != 1 %}
+        <div class="col-12">{% include "includes/pagination.html" %}</div>
+    {% endif %}
+    <div class="container mt-3 col-auto">
+        <form method="GET">
+            <div class="row">
+                <div class="input-group mb-3">
+                    <input type="search"
+                           class="form-control"
+                           placeholder="Поиск слов..."
+                           name="search_query"
+                           value="{{ request.GET.search_query }}">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container mt-3 col-auto">
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="input-group mb-3">
+                    {% csrf_token %}
+                    <input class="form-control" type="file" accept=".txt" name="file">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-upload"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        {% for word in words %}
+            <div class="col-12 col-lg-6">{% include "includes/word_preview_favorite.html" %}</div>
+        {% empty %}
+            <div class="col-12 text-center">
+                <p>В этой папке пока нет слов</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% if page_obj.paginator.num_pages != 1 %}
+        <div class="col-12">{% include "includes/pagination.html" %}</div>
+    {% endif %}
+{% endblock content %}

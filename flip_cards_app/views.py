@@ -1,11 +1,12 @@
 import json
 import random
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404, render
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.cache import cache
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.db import transaction
 from django.views.generic import ListView, TemplateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -379,20 +380,24 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
 
 # Метод для добавления/удаления из избранного
 @login_required
-def favorites_word(request, id, **kwargs):
+def favorites_word(request, word_id, folder_id, **kwargs):
     # Получаем слово по id
-    word = get_object_or_404(Word, id=id)
+    word = get_object_or_404(Word, id=word_id)
+    # Получаем папку по id
+    folder = get_object_or_404(FavoriteFolder, id=folder_id)
     # Получаем текущего пользователя
     user = request.user
     # Проверяем наличие в избранном
-    if word.favorites_word.filter(id=user.id).exists() and not kwargs.get('load'):
-        # Удаляем из избранного
-        word.favorites_word.remove(user)
-        is_favorite = False
-    else:
-        # Либо добавляем в избранное
-        word.favorites_word.add(user)
-        is_favorite = True
+
+    favorite_word, created = FavoritesWords.objects.get_or_create(
+        user=user,
+        word=word,
+        defaults={'folder': folder}
+    )
+    if not created:
+        favorite_word.folder = folder
+        favorite_word.save()
+    is_favorite = True
 
     return JsonResponse({'is_favorite': is_favorite})
 
@@ -505,3 +510,91 @@ class FolderRemoveWordView(View):
         favorite_word.folder = None
         favorite_word.save()
         return JsonResponse({'status': 'success'})
+
+
+class FavoriteFolderView(MenuMixin, LoginRequiredMixin, ListView):
+    model = FavoriteFolder
+    template_name = 'words/catalog_favorite_folders.html'
+    context_object_name = 'folders'  # это явно укажет имя переменной в шаблоне
+    paginate_by = 10
+
+    def get_queryset(self):
+        return FavoriteFolder.objects.filter(
+            user=self.request.user
+        ).annotate(
+            words_count=Count('favoriteswords')
+        )
+
+
+class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
+    template_name = 'words/folder_words.html'
+    context_object_name = 'words'
+    paginate_by = 10
+
+    def get_queryset(self):
+        self.folder = get_object_or_404(FavoriteFolder, id=self.kwargs['folder_id'], user=self.request.user)
+        return FavoritesWords.objects.filter(
+            user=self.request.user,
+            folder=self.folder
+        ).distinct()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['folder'] = self.folder
+        context['total_words'] = self.get_queryset().count()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        folder_id = self.kwargs['folder_id']
+        try:
+            if 'file' not in request.FILES:
+                messages.error(request, 'Файл не был выбран')
+                return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+
+            file = request.FILES['file']
+
+            if not file.name.endswith('.txt'):
+                messages.error(request, 'Поддерживаются только .txt файлы')
+                return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+
+            try:
+                words = file.read().decode('utf-8').splitlines()
+            except UnicodeDecodeError:
+                messages.error(request, 'Файл должен быть в кодировке UTF-8')
+                return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+
+            not_found_words = []
+            added_words = 0
+            already_exists = 0
+
+            for word in words:
+                word = word.strip().lower()
+                if not word:
+                    continue
+
+                word_obj = Word.objects.filter(Q(en_word__iexact=word) | Q(rus_word__iexact=word))
+
+                if word_obj.exists():
+                    for obj in word_obj:
+                        if not FavoritesWords.objects.filter(user=request.user, word=obj).exists():
+                            favorites_word(request, obj.id, folder_id=folder_id, load=True)
+                            added_words += 1
+                        else:
+                            already_exists += 1
+                else:
+                    not_found_words.append(word)
+
+            if added_words:
+                messages.success(request, f'Успешно добавлено {added_words} слов')
+
+            if already_exists:
+                messages.warning(request, f'{already_exists} слов уже были в избранном')
+
+            if not_found_words:
+                messages.warning(request, f'Следующие слова не загружены: {", ".join(not_found_words)}')
+
+            return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+
+        except Exception as e:
+            messages.error(request, f'Произошла ошибка при загрузке файла: {str(e)}')
+            return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))

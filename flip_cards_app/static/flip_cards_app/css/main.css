@@ -198,6 +198,17 @@ label, .helptext {
   background-color: #B7ABD8;
 }
 
+.btn-outline-primary {
+    color: #68539E !important;;
+    border-color: #68539E !important;;
+}
+
+.btn-outline-primary:hover {
+    color: #fff !important;;
+    background-color: #B7ABD8 !important;;
+    border-color: #B7ABD8 !important;;
+}
+
 .nav-link.active {
   background-color: #68539E !important;
 }
