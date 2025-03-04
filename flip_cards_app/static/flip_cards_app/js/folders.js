@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+$(document).ready(function() {
+    const csrfToken = getCookie('csrftoken');
 
     // Обработка выбора папки
     document.querySelectorAll('.folder-select').forEach(item => {
@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const folderId = this.dataset.folderId;
             const wordId = this.dataset.wordId;
-            const button = this.closest('.dropdown').querySelector('button');
-            
+            const button = this.closest('.dropdown').querySelector('.favorites-folder');
+           
             fetch('/words/catalog/folders/add/', {
                 method: 'POST',
                 headers: {
@@ -23,17 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
-                    // Обновляем иконку и бейдж
                     if (folderId) {
                         button.innerHTML = `
-                            <i class="bi bi-folder-fill" style="color:#68539E"></i>
-                            <span class="badge bg-secondary">${this.textContent.trim()}</span>
+                            <i class="bi bi-folder-fill ms-2 h5" style="color:#68539E"></i>
+                            <span class="badge badge-primary">${this.textContent.trim()}</span>
                         `;
                     } else {
-                        button.innerHTML = `<i class="bi bi-folder" style="color:#68539E"></i>`;
+                        button.innerHTML = `<i class="bi bi-folder ms-2 h5" style="color:#68539E"></i>`;
                     }
-                    
-                    // Обновляем активный класс
+                   
                     this.closest('.dropdown-menu').querySelectorAll('.folder-select').forEach(link => {
                         link.classList.remove('active');
                     });
@@ -43,13 +41,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-     // Обработка создания новой папки
+    // Обработка создания новой папки
     document.querySelectorAll('.new-folder-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             const folderName = prompt('Введите название папки:');
             const wordId = this.closest('.dropdown').querySelector('.folder-select').dataset.wordId;
-            const button = this.closest('.dropdown').querySelector('button');
+            const button = this.closest('.dropdown').querySelector('.favorites-folder');
 
             if (folderName) {
                 fetch('/words/catalog/folders/create/', {
@@ -65,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(response => response.json())
                 .then(data => {
                     if(data.id) {
-                        // Добавляем слово в новую папку
                         return fetch('/words/catalog/folders/add/', {
                             method: 'POST',
                             headers: {
@@ -83,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(data => {
                     if (data.status === 'success') {
                         button.innerHTML = `
-                            <i class="bi bi-folder-fill" style="color:#68539E"></i>
-                            <span class="badge bg-secondary">${folderName}</span>
+                            <i class="bi bi-folder-fill ms-2 h5" style="color:#68539E"></i>
+                            <span class="badge badge-primary">${folderName}</span>
                         `;
                         location.reload();
                     }

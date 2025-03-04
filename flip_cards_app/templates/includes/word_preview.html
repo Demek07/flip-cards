@@ -22,7 +22,10 @@
                 <i class="bi bi-star-fill ms-2 h5" style="color:#68539E"></i>
               </a>
               <div class="dropdown d-inline">
-                <a href="#" data-bs-toggle="dropdown" style="text-decoration: none">
+                <a href="#"
+                   class="favorites-folder"
+                   data-bs-toggle="dropdown"
+                   style="text-decoration: none">
                   {% if word.favoriteswords_set.first.folder %}
                     <i class="bi bi-folder-fill ms-2 h5" style="color:#68539E"></i>
                     <span class="badge badge-primary">{{ word.favoriteswords_set.first.folder.name }}</span>

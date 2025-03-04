@@ -214,6 +214,11 @@ label, .helptext {
     color: white;
 }
 
+.dropdown-item:hover {
+    background-color: #B7ABD8;
+    color: #68539E;
+}
+
 @media (max-width:760px) {
   .card-img-pic:hover {
     transform: none;
