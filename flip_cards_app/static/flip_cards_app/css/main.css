@@ -190,6 +190,14 @@ label, .helptext {
   }
 }
 
+.badge-primary {
+  background-color: #68539E;
+}
+
+.badge-primary:hover {
+  background-color: #B7ABD8;
+}
+
 .nav-link.active {
   background-color: #68539E !important;
 }
@@ -199,6 +207,11 @@ label, .helptext {
   max-width: 30%;
   border: 2px solid #68539E;
   box-shadow: 0 0 20px #B7ABD8;
+}
+
+.dropdown-item.active {
+    background-color: #68539E;
+    color: white;
 }
 
 @media (max-width:760px) {

@@ -14,39 +14,54 @@ function getCookie(name) {
     return cookieValue;
 }
 
+// Ждем полной загрузки DOM перед выполнением скрипта
 $(document).ready(function() {
-    // Обработчик события клика на элементе с классом "favorites-button"
+    // Добавляем обработчик клика на все элементы с классом favorites-button
     $('.favorites-button').on('click', function(event) {
-        event.preventDefault(); // предотвратить перезагрузку страницы
+        // Отменяем стандартное поведение браузера при клике
+        event.preventDefault();
         
+        // Получаем ID слова из data-атрибута кнопки
         var wordId = $(this).data('word-id');
+        // Сохраняем ссылку на текущую кнопку
+        var $button = $(this);
 
-        // Получение токена CSRF из элемента meta с именем csrf-token
+        // Получаем CSRF-токен из cookies для защиты от CSRF-атак
         var csrftoken = getCookie('csrftoken');
 
-        // AJAX-запрос
+        // Отправляем AJAX-запрос на сервер
         $.ajax({
+            // Формируем URL для запроса
             url: '/words/favorite/' + wordId,
+            // Указываем метод запроса
             type: 'POST',
+            // Добавляем CSRF-токен в заголовки запроса
             headers: {'X-CSRFToken': csrftoken},
+            // Обработчик успешного выполнения запроса
             success: function(response) {
+                // Если слово добавлено в избранное
                 if (response.is_favorite) {
-                    $(this).addClass('favorited');
+                    // Добавляем класс favorited кнопке
+                    $button.addClass('favorited');
+                    // Выводим сообщение в консоль
                     console.log('Карточка добавлена в избранное');
                 } else {
-                    $(this).removeClass('favorited');
+                    // Удаляем класс favorited с кнопки
+                    $button.removeClass('favorited');
+                    // Выводим сообщение в консоль
                     console.log('Карточка удалена из избранного');
                 }
-                window.location.reload();
-            }.bind(this), // привязка контекста this к текущему элементу
+            },
+            // Обработчик ошибки запроса
             error: function() {
+                // Выводим сообщение об ошибке в консоль
                 console.log('Ошибка при обновлении статуса избранного');
             }
         });
-       return false
+        // Предотвращаем дальнейшее всплытие события
+        return false;
     });
 });
-
 
 
 $(document).ready(function () {

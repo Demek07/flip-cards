@@ -33,7 +33,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['flip-cards.ru', 'www.flip-cards.ru', 'localhost', '127.0.0.1', '213.171.10.225']
+ALLOWED_HOSTS = ['flip-cards.ru', 'www.flip-cards.ru', 'localhost', '127.0.0.1', '176.124.215.68']
 
 CSRF_TRUSTED_ORIGINS = ['https://flip-cards.ru', 'https://www.flip-cards.ru']
 
@@ -229,28 +229,28 @@ ACCOUNT_AUTHENTICATION_METHOD = "username_email"  # (default: "username", altern
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {'file': {
-        'level': 'DEBUG',
-        'class': 'logging.handlers.RotatingFileHandler',
-        'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
-        'maxBytes': 1024*1024*5,  # Максимальный размер файла - 5 MB
-        'backupCount': 5,          # Хранить до 5 архивных файлов
-        'formatter': 'verbose',
-    },
-    },
-    'formatters': {'verbose': {
-        'format': '{levelname} {asctime} {module} {message}',
-        'style': '{',
-    },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {'file': {
+#         'level': 'DEBUG',
+#         'class': 'logging.handlers.RotatingFileHandler',
+#         'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
+#         'maxBytes': 1024*1024*5,  # Максимальный размер файла - 5 MB
+#         'backupCount': 5,          # Хранить до 5 архивных файлов
+#         'formatter': 'verbose',
+#     },
+#     },
+#     'formatters': {'verbose': {
+#         'format': '{levelname} {asctime} {module} {message}',
+#         'style': '{',
+#     },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['file'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     },
+# }

@@ -1,3 +1,4 @@
+import json
 import random
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
@@ -6,10 +7,10 @@ from django.http import JsonResponse, HttpResponseRedirect
 from django.core.cache import cache
 from django.db.models import Q
 from django.db import transaction
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView, TemplateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 import requests
-from .models import Word, FavoritesWords
+from .models import Word, FavoritesWords, FavoriteFolder
 from flip_cards.settings import API_WORDNIK, URL_FOR_VOICE, API_DICTIONARYAPI
 from django.urls import reverse_lazy
 
@@ -470,3 +471,37 @@ def speak(request, word):
     if audio_url:
         return JsonResponse({'audio_url': audio_url})
     return JsonResponse({'audio_url': None})
+
+
+class FolderCreateView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        folder = FavoriteFolder.objects.create(
+            name=data['name'],
+            user=request.user
+        )
+        return JsonResponse({'id': folder.id, 'name': folder.name})
+
+
+class FolderAddWordView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        favorite_word = FavoritesWords.objects.get(
+            word_id=data['word_id'],
+            user=request.user
+        )
+        favorite_word.folder_id = data['folder_id']
+        favorite_word.save()
+        return JsonResponse({'status': 'success'})
+
+
+class FolderRemoveWordView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        favorite_word = FavoritesWords.objects.get(
+            word_id=data['word_id'],
+            user=request.user
+        )
+        favorite_word.folder = None
+        favorite_word.save()
+        return JsonResponse({'status': 'success'})

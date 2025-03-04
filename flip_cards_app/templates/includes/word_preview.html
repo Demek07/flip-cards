@@ -3,7 +3,10 @@
   <div class="row g-0 ">
     <div class="col-md-3 d-flex align-items-center justify-content-center">
       <div class="p-3 d-md-block">
-          <img src="{% static 'flip_cards_app/img/images/' %}{{ word.img_name_file }}.jpg" class="img-fluid card-img-pic" alt="{{ word.en_word }}" onerror="this.remove();">
+        <img src="{% static 'flip_cards_app/img/images/' %}{{ word.img_name_file }}.jpg"
+             class="img-fluid card-img-pic"
+             alt="{{ word.en_word }}"
+             onerror="this.remove();">
         {% comment %} <i class="bi bi-question-circle-fill" style="font-size: 3rem;"></i> {% endcomment %}
       </div>
     </div>
@@ -11,17 +14,61 @@
       <div class="card-header text-end">
         {% if user.is_authenticated %}
           {% if user in word.favorites_word.all %}
-            <a href="#" class="favorites-button favorited" data-word-id="{{ word.id }}"><i title="Добавить/удалить слово в избранное" class="bi bi-star-fill ms-2 h5"  style="color:#68539E"></i></a>
+            <div class="dropdown d-inline">
+              <a href="#"
+                 class="favorites-button favorited"
+                 data-word-id="{{ word.id }}"
+                 style="text-decoration: none">
+                <i class="bi bi-star-fill ms-2 h5" style="color:#68539E"></i>
+              </a>
+              <div class="dropdown d-inline">
+                <a href="#" data-bs-toggle="dropdown" style="text-decoration: none">
+                  {% if word.favoriteswords_set.first.folder %}
+                    <i class="bi bi-folder-fill ms-2 h5" style="color:#68539E"></i>
+                    <span class="badge badge-primary">{{ word.favoriteswords_set.first.folder.name }}</span>
+                  {% else %}
+                    <i class="bi bi-folder h5" style="color:#68539E"></i>
+                  {% endif %}
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item folder-select {% if not word.favoriteswords_set.first.folder %}active{% endif %}"
+                       href="#"
+                       data-folder-id=""
+                       data-word-id="{{ word.id }}">Без папки</a>
+                  </li>
+                  {% for folder in user.favoritefolder_set.all %}
+                    <li>
+                      <a class="dropdown-item folder-select {% if word.favoriteswords_set.first.folder.id == folder.id %}active{% endif %}"
+                         href="#"
+                         data-folder-id="{{ folder.id }}"
+                         data-word-id="{{ word.id }}">{{ folder.name }}</a>
+                    </li>
+                  {% endfor %}
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li>
+                    <a class="dropdown-item new-folder-btn" href="#">
+                      <i class="bi bi-plus-circle"></i> Новая папка
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           {% else %}
-            <a href="#" class="favorites-button" data-word-id="{{ word.id }}"><i title="Добавить/удалить слово в избранное" class="bi bi-star ms-2 h5"  style="color:#68539E"></i></a>
+            <a href="#" class="favorites-button" data-word-id="{{ word.id }}">
+              <i class="bi bi-star h5" style="color:#68539E"></i>
+            </a>
           {% endif %}
-        {% else %}
-            <a href="{% url 'users:login' %}"><i title="Добавить/удалить слово в избранное" class="bi bi-star ms-2 h5" style="color:#68539E"></i></a>
-        {% endif %} 
+        {% endif %}
       </div>
       <div class="card-body text-center">
-        <h4 class="card-title">{{ word.en_word }}
-          <a href="#" class="play-audio-button" data-word="{{ word.en_word }}"><i title="Прослушать слово" class="bi bi-volume-up ms-2"  style="color:#68539E"></i></a>
+        <h4 class="card-title">
+          {{ word.en_word }}
+          <a href="#" class="play-audio-button" data-word="{{ word.en_word }}"><i title="Прослушать слово"
+   class="bi bi-volume-up ms-2"
+   style="color:#68539E"></i></a>
         </h4>
         <p class="card-text text-muted">{{ word.transcription }}</p>
         <h4 class="card-text">{{ word.rus_word }}</h4>

@@ -34,6 +34,21 @@ class Word(models.Model):
         return user.is_authenticated and self.favorites_word.filter(id=user.id).exists()
 
 
+# Модель папки избранного
+class FavoriteFolder(models.Model):
+    id = models.AutoField(primary_key=True, db_column="id")
+    name = models.CharField(max_length=100, db_column="Name", verbose_name="Название")
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'FavoriteFolders'
+        verbose_name = 'Папка избранного'
+        verbose_name_plural = 'Папки избранного'
+
+    def __str__(self):
+        return self.name
+
+
 # Модель избранных слов
 class FavoritesWords(models.Model):
 
@@ -43,6 +58,7 @@ class FavoritesWords(models.Model):
     is_learned = models.BooleanField(default=False, verbose_name='Выучено')
     errors_word = models.IntegerField(default=0, db_column='Errors_word', verbose_name='Количество ошибок')
     rights_word = models.IntegerField(default=0, db_column='Rights_word', verbose_name='Количество ответов')
+    folder = models.ForeignKey(FavoriteFolder, on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         db_table = 'FavoritesWords'
