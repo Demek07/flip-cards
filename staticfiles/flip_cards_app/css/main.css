@@ -190,6 +190,25 @@ label, .helptext {
   }
 }
 
+.badge-primary {
+  background-color: #68539E;
+}
+
+.badge-primary:hover {
+  background-color: #B7ABD8;
+}
+
+.btn-outline-primary {
+    color: #68539E !important;;
+    border-color: #68539E !important;;
+}
+
+.btn-outline-primary:hover {
+    color: #fff !important;;
+    background-color: #B7ABD8 !important;;
+    border-color: #B7ABD8 !important;;
+}
+
 .nav-link.active {
   background-color: #68539E !important;
 }
@@ -199,6 +218,16 @@ label, .helptext {
   max-width: 30%;
   border: 2px solid #68539E;
   box-shadow: 0 0 20px #B7ABD8;
+}
+
+.dropdown-item.active {
+    background-color: #68539E;
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #B7ABD8;
+    color: #68539E;
 }
 
 @media (max-width:760px) {
