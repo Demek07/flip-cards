@@ -41,7 +41,7 @@ $(document).ready(function() {
     // Обработчик создания папки
     $(document).on('click', '.new-folder-btn', function(e) {
         e.preventDefault();
-        const wordId = $(this).closest('.dropdown').find('.folder-select').data('word-id');
+        const wordId = $(this).closest('.dropdown').find('.favorites-btn').data('word-id');
         const button = $(this).closest('.dropdown').find('.favorites-btn');
 
         calert({
@@ -82,7 +82,8 @@ $(document).ready(function() {
                         body: JSON.stringify({
                             folder_id: folderId,
                             word_id: wordId
-                        })
+                        }),
+                        
                     }).then(response => response.json())
                     .then(addData => {
                         return {
@@ -94,29 +95,38 @@ $(document).ready(function() {
                 })
                 .then(result => {
                     if (result.data.is_favorite) {
+                        // Обновляем все выпадающие меню на странице
+                        $('.dropdown-menu').each(function() {
+                            const currentWordId = $(this).closest('.dropdown').find('.favorites-btn').data('word-id');
+                            const currentMenu = $(this);
+                            
+                            // Добавляем новую папку во все меню
+                            const newFolderOption = `
+                                <li>
+                                    <a class="dropdown-item folder-select"
+                                    data-folder-id="${result.folderId}"
+                                    data-word-id="${currentWordId}"
+                                    href="#">
+                                    <i class="bi bi-folder"></i> ${result.folderName}
+                                    </a>
+                                </li>`;
+                                
+                            currentMenu.find('.dropdown-divider').closest('li').before(newFolderOption);
+                        });
+                        
+                        // Обновляем текущее меню
                         button.html('<i class="bi bi-heart-fill" style="color:#68539E"></i>');
-                        
                         const dropdownMenu = button.closest('.dropdown').find('.dropdown-menu');
-                        
+                        // Заменяем "Добавить в избранное" на "Убрать из избранного"
                         dropdownMenu.find('.dropdown-header').closest('li').replaceWith(`
                             <li>
                                 <a class="dropdown-item remove-favorite" href="#" data-word-id="${wordId}">
                                     <i class="bi bi-x-circle"></i> Убрать из избранного
                                 </a>
                             </li>
-                        `);
-                        
-                        const newOption = `
-                            <li>
-                                <a class="dropdown-item folder-select active"
-                                data-folder-id="${result.folderId}"
-                                data-word-id="${wordId}"
-                                href="#">
-                                <i class="bi bi-folder"></i> ${result.folderName}
-                                </a>
-                            </li>`;
-                        
-                        dropdownMenu.find('.dropdown-divider').closest('li').before(newOption);
+                        `);                        
+                        dropdownMenu.find('.folder-select').removeClass('active');
+                        dropdownMenu.find(`[data-folder-id="${result.folderId}"]`).addClass('active');
                     }
                 });
             }
@@ -128,7 +138,6 @@ $(document).ready(function() {
         const wordId = $(this).data('word-id');
         const folderId = $(this).closest('.dropdown-menu').find('.folder-select.active').data('folder-id');
         const button = $(this).closest('.dropdown').find('.favorites-btn');
-        console.log(folderId, wordId);
         
         $.ajax({
             url: `/words/favorite/${folderId}/${wordId}`,
