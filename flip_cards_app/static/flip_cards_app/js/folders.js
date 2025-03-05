@@ -72,33 +72,51 @@ $(document).ready(function() {
                 })
                 .then(response => response.json())
                 .then(data => {
-                    if(data.id) {
-                        return fetch('/words/catalog/folders/add/', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'X-CSRFToken': csrfToken
-                            },
-                            body: JSON.stringify({
-                                folder_id: data.id,
-                                word_id: wordId
-                            })
-                        });
-                    }
+                    const folderId = data.id;
+                    return fetch('/words/catalog/folders/add/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrfToken
+                        },
+                        body: JSON.stringify({
+                            folder_id: folderId,
+                            word_id: wordId
+                        })
+                    }).then(response => response.json())
+                    .then(addData => {
+                        return {
+                            data: addData,
+                            folderId: folderId,
+                            folderName: folderName
+                        };
+                    });
                 })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
+                .then(result => {
+                    if (result.data.is_favorite) {
                         button.html('<i class="bi bi-heart-fill" style="color:#68539E"></i>');
+                        
+                        const dropdownMenu = button.closest('.dropdown').find('.dropdown-menu');
+                        
+                        dropdownMenu.find('.dropdown-header').closest('li').replaceWith(`
+                            <li>
+                                <a class="dropdown-item remove-favorite" href="#" data-word-id="${wordId}">
+                                    <i class="bi bi-x-circle"></i> Убрать из избранного
+                                </a>
+                            </li>
+                        `);
                         
                         const newOption = `
                             <li>
-                                <a class="dropdown-item folder-select" 
-                                   data-folder-id="${data.id}" 
-                                   data-word-id="${wordId}" 
-                                   href="#">${folderName}</a>
+                                <a class="dropdown-item folder-select active"
+                                data-folder-id="${result.folderId}"
+                                data-word-id="${wordId}"
+                                href="#">
+                                <i class="bi bi-folder"></i> ${result.folderName}
+                                </a>
                             </li>`;
-                        $(this).closest('.dropdown-menu').find('.dropdown-divider').closest('li').before(newOption);
+                        
+                        dropdownMenu.find('.dropdown-divider').closest('li').before(newOption);
                     }
                 });
             }
@@ -110,6 +128,7 @@ $(document).ready(function() {
         const wordId = $(this).data('word-id');
         const folderId = $(this).closest('.dropdown-menu').find('.folder-select.active').data('folder-id');
         const button = $(this).closest('.dropdown').find('.favorites-btn');
+        console.log(folderId, wordId);
         
         $.ajax({
             url: `/words/favorite/${folderId}/${wordId}`,
