@@ -3,7 +3,7 @@ import random
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import get_user_model
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.cache import cache
 from django.db.models import Q, Count
@@ -603,3 +603,13 @@ class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
         except Exception as e:
             messages.error(request, f'Произошла ошибка при загрузке файла: {str(e)}')
             return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+
+
+def rename_folder(request):
+    if request.method == 'POST':
+        folder_id = request.POST.get('folder_id')
+        new_name = request.POST.get('new_name')
+        folder = get_object_or_404(FavoriteFolder, id=folder_id, user=request.user)
+        folder.name = new_name
+        folder.save()
+        return redirect('favorites')

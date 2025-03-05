@@ -49,7 +49,8 @@
                               <li>
                                  <a class="dropdown-item edit-folder"
                                     href="#"
-                                    data-folder-id="{{ folder.id }}">
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#renameModal{{ folder.id }}">
                                     <i class="bi bi-pencil me-2"></i>Переименовать
                                  </a>
                               </li>
@@ -63,6 +64,37 @@
                            </ul>
                         </div>
                      </div>
+                  </div>
+               </div>
+            </div>
+            <div class="modal fade" id="renameModal{{ folder.id }}" tabindex="-1">
+               <!-- Модальное окно для переименования -->
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h5 class="modal-title">Переименовать папку</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                     </div>
+                     <form method="POST" action="{% url 'rename_folder' %}">
+                        {% csrf_token %}
+                        <div class="modal-body">
+                           <input type="hidden" name="folder_id" value="{{ folder.id }}">
+                           <div class="mb-3">
+                              <label class="form-label">Новое название папки</label>
+                              <input type="text"
+                                     class="form-control"
+                                     name="new_name"
+                                     value="{{ folder.name }}"
+                                     required>
+                           </div>
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                           <button type="submit"
+                                   class="btn btn-primary"
+                                   style="background-color:#68539E">Сохранить</button>
+                        </div>
+                     </form>
                   </div>
                </div>
             </div>
