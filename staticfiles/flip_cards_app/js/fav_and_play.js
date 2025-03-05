@@ -17,7 +17,7 @@ function getCookie(name) {
 // Ждем полной загрузки DOM перед выполнением скрипта
 $(document).ready(function() {
     // Добавляем обработчик клика на все элементы с классом favorites-button
-    $('.favorites-button').on('click', function(event) {
+    $('.favorites-button1').on('click', function(event) {
         // Отменяем стандартное поведение браузера при клике
         event.preventDefault();
         

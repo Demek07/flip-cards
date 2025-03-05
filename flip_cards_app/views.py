@@ -380,24 +380,29 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
 
 # Метод для добавления/удаления из избранного
 @login_required
-def favorites_word(request, word_id, folder_id, **kwargs):
-    # Получаем слово по id
+def favorites_word(request, word_id, folder_id=None, **kwargs):
     word = get_object_or_404(Word, id=word_id)
-    # Получаем папку по id
-    folder = get_object_or_404(FavoriteFolder, id=folder_id)
-    # Получаем текущего пользователя
     user = request.user
-    # Проверяем наличие в избранном
 
-    favorite_word, created = FavoritesWords.objects.get_or_create(
-        user=user,
-        word=word,
-        defaults={'folder': folder}
-    )
-    if not created:
-        favorite_word.folder = folder
-        favorite_word.save()
-    is_favorite = True
+    # Проверяем есть ли слово в избранном
+    is_favorite = word.favorites_word.filter(id=user.id).exists()
+
+    if is_favorite:
+        # Если есть - удаляем
+        word.favorites_word.remove(user)
+        # Удаляем связанную запись из FavoritesWords
+        FavoritesWords.objects.filter(user=user, word=word).delete()
+        is_favorite = False
+    else:
+        # Если нет - добавляем
+        # word.favorites_word.add(user)
+        # Создаем запись в FavoritesWords
+        FavoritesWords.objects.create(
+            user=user,
+            word=word,
+            folder_id=folder_id if folder_id != 'null' else None
+        )
+        is_favorite = True
 
     return JsonResponse({'is_favorite': is_favorite})
 
@@ -491,13 +496,13 @@ class FolderCreateView(View):
 class FolderAddWordView(View):
     def post(self, request):
         data = json.loads(request.body)
-        favorite_word = FavoritesWords.objects.get(
-            word_id=data['word_id'],
-            user=request.user
-        )
-        favorite_word.folder_id = data['folder_id']
-        favorite_word.save()
-        return JsonResponse({'status': 'success'})
+        word_id = data['word_id']
+        folder_id = data['folder_id']
+
+        # Вызываем функцию favorites_word
+        response = favorites_word(request, word_id, folder_id)
+
+        return response
 
 
 class FolderRemoveWordView(View):
