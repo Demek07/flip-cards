@@ -43,6 +43,7 @@ $(document).ready(function() {
         e.preventDefault();
         const wordId = $(this).closest('.dropdown').find('.favorites-btn').data('word-id');
         const button = $(this).closest('.dropdown').find('.favorites-btn');
+        const isFromWordContext = !!wordId; // проверяем, создаётся ли папка из контекста слова
 
         calert({
             confirmButton: { innerText: 'Создать', style: { background: '#68539E' } },
@@ -53,7 +54,7 @@ $(document).ready(function() {
             inputs: {
                 folderName: {
                     type: 'text',
-                    placeholder: 'Название папки'
+                    placeholder: 'Название папки1'
                 }
             }
         }).then(value => {
@@ -73,28 +74,33 @@ $(document).ready(function() {
                 .then(response => response.json())
                 .then(data => {
                     const folderId = data.id;
-                    return fetch('/words/catalog/folders/add/', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRFToken': csrfToken
-                        },
-                        body: JSON.stringify({
-                            folder_id: folderId,
-                            word_id: wordId
-                        }),
-                        
-                    }).then(response => response.json())
-                    .then(addData => {
-                        return {
-                            data: addData,
-                            folderId: folderId,
-                            folderName: folderName
-                        };
-                    });
+                    if (isFromWordContext) {
+                        // Если создаём папку из контекста слова, добавляем слово в папку
+                        return fetch('/words/catalog/folders/add/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': csrfToken
+                            },
+                            body: JSON.stringify({
+                                folder_id: folderId,
+                                word_id: wordId
+                            }),
+                        }).then(response => response.json())
+                            .then(addData => {
+                                return {
+                                    data: addData,
+                                    folderId: folderId,
+                                    folderName: folderName
+                                };
+                            });
+                    } else {
+                        // Если создаём папку из контекста папки, перезагружаем страницу
+                        location.reload();
+                    }
                 })
                 .then(result => {
-                    if (result.data.is_favorite) {
+                    if (result && result.data.is_favorite) {
                         // Обновляем все выпадающие меню на странице
                         $('.dropdown-menu').each(function() {
                             const currentWordId = $(this).closest('.dropdown').find('.favorites-btn').data('word-id');
@@ -237,5 +243,47 @@ $(document).ready(function() {
             }
         });
     });
+    // Добавляем обработчик для удаления из избранного в превью
+    $(document).on('click', '.remove-from-favorite', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const button = $(this);
+        const wordId = button.data('word-id');
+        const folderId = button.data('folder-id');
+        const wordCard = button.closest('.word-card');
+        const wordsCountElement = $('.all_text.words-count');
+        const currentPage = window.location.href;
+        
+        $.ajax({
+            url: `/words/favorite/${folderId}/${wordId}`,
+            type: 'POST',
+            headers: {'X-CSRFToken': getCookie('csrftoken')},
+            success: function(response) {
+                if (!response.is_favorite) {
+                    wordCard.fadeOut(300, function() {
+                        $(this).remove();
+                        
+                        // Обновляем список карточек
+                        $.get(currentPage, function(data) {
+                            $('.words-container').html($(data).find('.words-container').html());
+                        });
+                        
+                        // Обновляем счётчик слов
+                        const currentText = wordsCountElement.text();
+                        const currentCount = parseInt(currentText.match(/\d+/)[0]);
+                        wordsCountElement.text(`Слов в папке: ${currentCount - 1}`);
+
+                        if ($('.word-card').length === 0) {
+                            $('.words-container').html('<p class="text-center">В этой папке пока нет слов</p>');
+                        }
+                    });
+                }
+            },
+            error: function() {
+                console.log('Ошибка при удалении из избранного');
+            }
+        });
+    });  
 });
 

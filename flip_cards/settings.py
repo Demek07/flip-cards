@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     "widget_tweaks",
-    "slippers",
+    # "slippers",
     'users',
     # 'sslserver',
 ]

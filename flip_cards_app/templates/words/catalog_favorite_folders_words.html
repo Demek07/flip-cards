@@ -6,7 +6,7 @@
         </a>
         <h1>{{ folder.name }}</h1>
     </div>
-    <p class="all_text">Слова в папке: {{ total_words }}</p>
+    <p class="all_text words-count">Слов в папке: {{ total_words }}</p>
     {% if messages %}
         <ul class="messages">
             {% for message in messages %}
@@ -46,14 +46,16 @@
             </div>
         </form>
     </div>
-    <div class="row">
-        {% for word in words %}
-            <div class="col-12 col-lg-6">{% include "includes/word_preview_favorite.html" %}</div>
-        {% empty %}
-            <div class="col-12 text-center">
-                <p>В этой папке пока нет слов</p>
-            </div>
-        {% endfor %}
+    <div class="words-container">
+        <div class="row">
+            {% for word in words %}
+                <div class="col-12 col-lg-6">{% include "includes/word_preview_favorite.html" %}</div>
+            {% empty %}
+                <div class="col-12 text-center">
+                    <p>В этой папке пока нет слов</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
     {% if page_obj.paginator.num_pages != 1 %}
         <div class="col-12">{% include "includes/pagination.html" %}</div>

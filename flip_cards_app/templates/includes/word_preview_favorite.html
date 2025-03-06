@@ -1,82 +1,54 @@
 {% load static %}
-<div class="card mb-3 light">
-  <div class="row g-0 ">
-    <div class="col-md-3 d-flex align-items-center justify-content-center">
-      <div class="p-3 d-md-block">
-        <img src="{% static 'flip_cards_app/img/images/' %}{{ word.word.img_name_file }}.jpg"
-             class="img-fluid card-img-pic"
-             alt="{{ word.word.en_word }}"
-             onerror="this.remove();">
-        {% comment %} <i class="bi bi-question-circle-fill" style="font-size: 3rem;"></i> {% endcomment %}
+<div class="word-card">
+  <div class="card mb-3 light">
+    <div class="row g-0 ">
+      <div class="col-md-3 d-flex align-items-center justify-content-center">
+        <div class="p-3 d-md-block">
+          <img src="{% static 'flip_cards_app/img/images/' %}{{ word.word.img_name_file }}.jpg"
+               class="img-fluid card-img-pic"
+               alt="{{ word.word.en_word }}"
+               onerror="this.remove();">
+          {% comment %} <i class="bi bi-question-circle-fill" style="font-size: 3rem;"></i> {% endcomment %}
+        </div>
       </div>
-    </div>
-    <div class="col-md-9">
-      <div class="card-header d-flex">
-        {% if word.is_learned %}
-          <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i title="Слово изучено"
+      <div class="col-md-9">
+        <div class="card-header d-flex">
+          {% if word.is_learned %}
+            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i title="Слово изучено"
    class="bbi bi-patch-check-fill ms-2 h5"
    style="color:#68539E"></i></a>
-        {% else %}
-          <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i title="Слово не изучено"
+          {% else %}
+            <a href="#" class="learned-btn" data-word-id="{{ word.id }}"><i title="Слово не изучено"
    class="bi bi-patch-check ms-2 h5"
    style="color:#68539E"></i></a>
-        {% endif %}
-        <a href="#"
-           class="favorites-button favorited"
-           data-word-id="{{ word.word.id }}"><i title="Добавить/удалить слово в избранное"
-   class="bi bi-star-fill ms-2 h5"
-   style="color:#68539E"></i></a>
-        <div class="dropdown d-inline">
-          <button class="btn" type="button" data-bs-toggle="dropdown">
-            {% if word.favoriteswords_set.first.folder %}
-              <i class="bi bi-folder-fill ms-2 h5" style="color:#68539E"></i>
-              <span class="badge bg-secondary h5">{{ word.favoriteswords_set.first.folder.name }}</span>
-            {% else %}
-              <i class="bi bi-folder ms-2 h5" style="color:#68539E"></i>
-            {% endif %}
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item folder-select {% if not word.favoriteswords_set.first.folder %}active{% endif %}"
-                 href="#"
-                 data-folder-id=""
-                 data-word-id="{{ word.id }}">Без папки</a>
-            </li>
-            {% for folder in user.favoritefolder_set.all %}
-              <li>
-                <a class="dropdown-item folder-select {% if word.favoriteswords_set.first.folder.id == folder.id %}active{% endif %}"
-                   href="#"
-                   data-folder-id="{{ folder.id }}"
-                   data-word-id="{{ word.id }}">{{ folder.name }}</a>
-              </li>
-            {% endfor %}
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li>
-              <a class="dropdown-item new-folder-btn" href="#">
-                <i class="bi bi-plus-circle"></i> Новая папка
-              </a>
-            </li>
-          </ul>
-        </div>
-        <span class="ms-auto"><i title="Количество правильных ответов"
+          {% endif %}
+          <a href="#"
+             class="remove-from-favorite"
+             data-word-id="{{ word.word.id }}"
+             data-folder-id="{{ folder.id }}">
+            <i title="Удалить слово из избранного"
+               class="bi bi-heart-fill ms-2 h5"
+               style="color:#68539E">
+            </i>
+          </a>
+          <span class="ms-auto"><i title="Количество правильных ответов"
    class="fa-regular fa-face-smile fa-xl"
    style="color: #31d41c"></i> - {{ word.rights_word }} <i title="Количество неправильных ответов"
     class="fa-regular fa-face-angry fa-xl"
     style="color: #e70d0d"></i> - {{ word.errors_word }}</span>
-      </div>
-      <div class="card-body text-center">
-        <h4 class="card-title">
-          {{ word.word.en_word }}
-          <a href="#"
-             class="play-audio-button"
-             data-word="{{ word.word.en_word }}"><i title="Прослушать слово"
+        </div>
+        <div class="card-body text-center">
+          <h4 class="card-title">
+            {{ word.word.en_word }}
+            <a href="#"
+               class="play-audio-button"
+               data-word="{{ word.word.en_word }}"><i title="Прослушать слово"
    class="bi bi-volume-up ms-2"
    style="color:#68539E"></i></a>
-        </h4>
-        <p class="card-text text-muted">{{ word.word.transcription }}</p>
-        <h4 class="card-text">{{ word.word.rus_word }}</h4>
+          </h4>
+          <p class="card-text text-muted">{{ word.word.transcription }}</p>
+          <h4 class="card-text">{{ word.word.rus_word }}</h4>
+        </div>
       </div>
     </div>
   </div>

@@ -425,6 +425,7 @@ def save_results(request):
         if rights > 0:
             favorite_word.rights_word += rights
         favorite_word.save()
+        return JsonResponse({'status': 'success'})
 
 
 # Метод для изменения статуса - выучено/не выучено
@@ -532,7 +533,7 @@ class FavoriteFolderView(MenuMixin, LoginRequiredMixin, ListView):
 
 
 class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
-    template_name = 'words/folder_words.html'
+    template_name = 'words/catalog_favorite_folders_words.html'
     context_object_name = 'words'
     paginate_by = 10
 

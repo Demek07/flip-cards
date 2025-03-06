@@ -15,53 +15,53 @@ function getCookie(name) {
 }
 
 // Ждем полной загрузки DOM перед выполнением скрипта
-$(document).ready(function() {
-    // Добавляем обработчик клика на все элементы с классом favorites-button
-    $('.favorites-button1').on('click', function(event) {
-        // Отменяем стандартное поведение браузера при клике
-        event.preventDefault();
+// $(document).ready(function() {
+//     // Добавляем обработчик клика на все элементы с классом favorites-button
+//     $('.favorites-button1').on('click', function(event) {
+//         // Отменяем стандартное поведение браузера при клике
+//         event.preventDefault();
         
-        // Получаем ID слова из data-атрибута кнопки
-        var wordId = $(this).data('word-id');
-        // Сохраняем ссылку на текущую кнопку
-        var $button = $(this);
+//         // Получаем ID слова из data-атрибута кнопки
+//         var wordId = $(this).data('word-id');
+//         // Сохраняем ссылку на текущую кнопку
+//         var $button = $(this);
 
-        // Получаем CSRF-токен из cookies для защиты от CSRF-атак
-        var csrftoken = getCookie('csrftoken');
+//         // Получаем CSRF-токен из cookies для защиты от CSRF-атак
+//         var csrftoken = getCookie('csrftoken');
 
-        // Отправляем AJAX-запрос на сервер
-        $.ajax({
-            // Формируем URL для запроса
-            url: '/words/favorite/' + wordId,
-            // Указываем метод запроса
-            type: 'POST',
-            // Добавляем CSRF-токен в заголовки запроса
-            headers: {'X-CSRFToken': csrftoken},
-            // Обработчик успешного выполнения запроса
-            success: function(response) {
-                // Если слово добавлено в избранное
-                if (response.is_favorite) {
-                    // Добавляем класс favorited кнопке
-                    $button.addClass('favorited');
-                    // Выводим сообщение в консоль
-                    console.log('Карточка добавлена в избранное');
-                } else {
-                    // Удаляем класс favorited с кнопки
-                    $button.removeClass('favorited');
-                    // Выводим сообщение в консоль
-                    console.log('Карточка удалена из избранного');
-                }
-            },
-            // Обработчик ошибки запроса
-            error: function() {
-                // Выводим сообщение об ошибке в консоль
-                console.log('Ошибка при обновлении статуса избранного');
-            }
-        });
-        // Предотвращаем дальнейшее всплытие события
-        return false;
-    });
-});
+//         // Отправляем AJAX-запрос на сервер
+//         $.ajax({
+//             // Формируем URL для запроса
+//             url: '/words/favorite/' + wordId,
+//             // Указываем метод запроса
+//             type: 'POST',
+//             // Добавляем CSRF-токен в заголовки запроса
+//             headers: {'X-CSRFToken': csrftoken},
+//             // Обработчик успешного выполнения запроса
+//             success: function(response) {
+//                 // Если слово добавлено в избранное
+//                 if (response.is_favorite) {
+//                     // Добавляем класс favorited кнопке
+//                     $button.addClass('favorited');
+//                     // Выводим сообщение в консоль
+//                     console.log('Карточка добавлена в избранное');
+//                 } else {
+//                     // Удаляем класс favorited с кнопки
+//                     $button.removeClass('favorited');
+//                     // Выводим сообщение в консоль
+//                     console.log('Карточка удалена из избранного');
+//                 }
+//             },
+//             // Обработчик ошибки запроса
+//             error: function() {
+//                 // Выводим сообщение об ошибке в консоль
+//                 console.log('Ошибка при обновлении статуса избранного');
+//             }
+//         });
+//         // Предотвращаем дальнейшее всплытие события
+//         return false;
+//     });
+// });
 
 
 $(document).ready(function () {
@@ -81,7 +81,7 @@ $(document).ready(function () {
     toastr.options.showMethod = 'fadeIn';
     toastr.options.hideMethod = 'fadeOut';
     // Обработчик события клика на кнопке воспроизведения аудио
-    $('.play-audio-button').on('click', function(event) {
+    $('.play-audio-button').on('click', function (event) {
         event.preventDefault(); // предотвратить перезагрузку страницы
         
         var word = $(this).data('word');
@@ -93,8 +93,8 @@ $(document).ready(function () {
         $.ajax({
             url: '/words/speak/' + word,
             type: 'POST',
-            headers: {'X-CSRFToken': csrftoken},
-            success: function(response) {
+            headers: { 'X-CSRFToken': csrftoken },
+            success: function (response) {
                 if (response.audio_url) {
                     var audio = new Audio(response.audio_url);
                     audio.play();
@@ -109,34 +109,32 @@ $(document).ready(function () {
             }
         });
     });
-});
-
-
-$(document).ready(function() {
-    $('.learned-btn').on('click', function(event) {
-        event.preventDefault(); // предотвратить перезагрузку страницы
-
-        var wordId = $(this).data('word-id');
-        var isLearned = true;
-
-        // Получение токена CSRF из элемента meta с именем csrf-token
-        var csrftoken = getCookie('csrftoken');
-        // AJAX-запрос для обновления данных в базе данных 
+    $(document).on('click', '.learned-btn', function (e) {
+        e.preventDefault();
+        const wordId = $(this).data('word-id');
+        const button = $(this);
+        
         $.ajax({
-            url: '/words/learned_words/' + wordId,
+            url: `/words/learned_words/${wordId}`,
             type: 'POST',
-            headers: {'X-CSRFToken': csrftoken},
+            headers: { 'X-CSRFToken': getCookie('csrftoken') },
             data: {
                 word_id: wordId,
                 is_learned: true,
             },
-            success: function(response) {
-                // Обработка успешного ответа здесь
-                window.location.reload();
+            success: function (response) {
+                if (response.is_learned) {
+                    button.html('<i class="bi bi-check-circle-fill" style="color:#68539E"></i>');
+                    button.addClass('learned');
+                } else {
+                    button.html('<i class="bi bi-check-circle" style="color:#68539E"></i>');
+                    button.removeClass('learned');
+                }
             },
-            error: function(xhr, status, error) {
-                // Обработка ошибки здесь
+            error: function () {
+                console.log('Ошибка при обновлении статуса слова');
             }
         });
+        return false;
     });
 });
