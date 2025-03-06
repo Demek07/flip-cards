@@ -578,7 +578,7 @@ class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
                 if not word:
                     continue
 
-                word_obj = Word.objects.filter(Q(en_word__iexact=word) | Q(rus_word__iexact=word))
+                word_obj = Word.objects.filter(Q(en_word__iregex=word) | Q(rus_word__iregex=word))
 
                 if word_obj.exists():
                     for obj in word_obj:
@@ -591,10 +591,10 @@ class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
                     not_found_words.append(word)
 
             if added_words:
-                messages.success(request, f'Успешно добавлено {added_words} слов')
+                messages.success(request, f'Успешно добавлено {added_words} слов(а)')
 
             if already_exists:
-                messages.warning(request, f'{already_exists} слов уже были в избранном')
+                messages.warning(request, f'{already_exists} слов(а) уже были в избранном')
 
             if not_found_words:
                 messages.warning(request, f'Следующие слова не загружены: {", ".join(not_found_words)}')
