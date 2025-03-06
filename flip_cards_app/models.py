@@ -58,7 +58,7 @@ class FavoritesWords(models.Model):
     is_learned = models.BooleanField(default=False, verbose_name='Выучено')
     errors_word = models.IntegerField(default=0, db_column='Errors_word', verbose_name='Количество ошибок')
     rights_word = models.IntegerField(default=0, db_column='Rights_word', verbose_name='Количество ответов')
-    folder = models.ForeignKey(FavoriteFolder, on_delete=models.SET_NULL, null=True, blank=True)
+    folder = models.ForeignKey(FavoriteFolder, on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
         db_table = 'FavoritesWords'

@@ -605,11 +605,21 @@ class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
             return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
 
 
-def rename_folder(request):
-    if request.method == 'POST':
-        folder_id = request.POST.get('folder_id')
-        new_name = request.POST.get('new_name')
+class RenameFolderView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        folder_id = data.get('folder_id')
+        new_name = data.get('name')
         folder = get_object_or_404(FavoriteFolder, id=folder_id, user=request.user)
         folder.name = new_name
         folder.save()
-        return redirect('favorites')
+        return JsonResponse({'status': 'success'})
+
+
+class DeleteFolderView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        folder_id = data.get('folder_id')
+        folder = get_object_or_404(FavoriteFolder, id=folder_id, user=request.user)
+        folder.delete()
+        return JsonResponse({'status': 'success'})

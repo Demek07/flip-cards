@@ -17,7 +17,8 @@ urlpatterns = [
     path('catalog/folders/add/', views.FolderAddWordView.as_view(), name='add_to_folder'),
     path('catalog/folders/remove/', views.FolderRemoveWordView.as_view(), name='remove_from_folder'),
     path('catalog/folders/<int:folder_id>/words/', views.FolderWordsView.as_view(), name='folder_words'),
-    path('catalog/folders/rename/', views.rename_folder, name='rename_folder'),
+    path('catalog/folders/rename/', views.RenameFolderView.as_view(), name='rename_folder'),
+    path('catalog/folders/delete/', views.DeleteFolderView.as_view(), name='delete_folder'),
 
 
 ]

@@ -163,5 +163,79 @@ $(document).ready(function() {
         });
         return false;
     });
+    // Обработчик переименования папки
+    $(document).on('click', '.edit-folder', function(e) {
+        e.preventDefault();
+        const folderId = $(this).data('folder-id');
+        const currentName = $(this).closest('.card').find('.card-title').text().trim();
+        
+        calert({
+            confirmButton: { innerText: 'Сохранить', style: { background: '#68539E' } },
+            cancelButton: 'Отмена',
+            title: 'Переименовать папку',
+            text: 'Введите новое название папки:',
+            icon: 'info',
+            inputs: {
+                folderName: {
+                    type: 'text',
+                    placeholder: 'Название папки',
+                    value: currentName
+                }
+            }
+        }).then(value => {
+            if (value.inputs.folderName) {
+                fetch('/words/catalog/folders/rename/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: JSON.stringify({
+                        folder_id: folderId,
+                        name: value.inputs.folderName
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        location.reload();
+                    }
+                });
+            }
+        });
+    });
+
+    // Обработчик удаления папки
+    $(document).on('click', '.delete-folder', function(e) {
+        e.preventDefault();
+        const folderId = $(this).data('folder-id');
+        
+        calert({
+            confirmButton: { innerText: 'Удалить', style: { background: '#dc3545' } },
+            cancelButton: 'Отмена',
+            title: 'Удалить папку?',
+            text: 'Все слова из этой папки будут удалены из избранного',
+            icon: 'warning'
+        }).then(result => {
+            if (result.isConfirmed) {
+                fetch('/words/catalog/folders/delete/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: JSON.stringify({
+                        folder_id: folderId
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        location.reload();
+                    }
+                });
+            }
+        });
+    });
 });
 
