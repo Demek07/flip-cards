@@ -245,6 +245,42 @@ label, .helptext {
     color: #68539E;
 }
 
+.success {
+    background-color: #c3e6cb; /* Ярче светло-зеленый фон */
+    color: #155724; /* Темно-зеленый текст */
+    padding: 10px;
+    border: 1px solid #b1dfbb; /* Ярче зеленая рамка */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.info {
+    background-color: #99c2ff; /* Ярче светло-голубой фон */
+    color: #004085; /* Темно-синий текст */
+    padding: 10px;
+    border: 1px solid #80b3ff; /* Ярче голубая рамка */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.warning {
+    background-color: #ffeeba; /* Ярче светло-желтый фон */
+    color: #856404; /* Темно-желтый текст */
+    padding: 10px;
+    border: 1px solid #ffeeba; /* Ярче желтая рамка */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.error {
+    background-color: #f5c6cb; /* Ярче светло-красный фон */
+    color: #721c24; /* Темно-красный текст */
+    padding: 10px;
+    border: 1px solid #f1b0b7; /* Ярче красная рамка */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 @media (max-width:760px) {
   .card-img-pic:hover {
     transform: none;

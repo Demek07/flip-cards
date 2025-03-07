@@ -29,46 +29,51 @@
          {% for folder in folders %}
             <div class="col-md-3 mb-4">
                <div class="card folder-card h-100">
-                  <div class="card-body">
-                     <h5 class="card-title d-flex align-items-center">
-                        <i class="bi bi-folder-fill me-2" style="color:#68539E"></i>
-                        {{ folder.name }}
-                     </h5>
-                     <p class="card-text">Слов в папке: {{ folder.words_count }}</p>
-                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="{% url 'folder_words' folder.id %}" class="btn btn-primary">
-                           <i class="bi bi-eye me-1"></i> Открыть
-                        </a>
-                        <div class="dropdown">
-                           <button class="btn btn-outline-primary dropdown-toggle"
-                                   type="button"
-                                   data-bs-toggle="dropdown">
-                              <i class="bi bi-three-dots-vertical"></i>
-                           </button>
-                           <ul class="dropdown-menu">
-                              <li>
-                                 <a class="dropdown-item edit-folder"
-                                    href="#"
-                                    data-folder-id="{{ folder.id }}">
-                                    <i class="bi bi-pencil me-2"></i>Переименовать
-                                 </a>
-                              </li>
-                              <li>
-                                 <a class="dropdown-item delete-folder"
-                                    href="#"
-                                    data-folder-id="{{ folder.id }}">
-                                    <i class="bi bi-trash me-2"></i>Удалить
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
+                  <!-- Шапка карточки -->
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                     <span class="text-muted">Слов в папке: {{ folder.words_count }}</span>
+                     <div class="dropdown">
+                        <button class="btn btn-link btn-sm p-0 text-dark"
+                                type="button"
+                                data-bs-toggle="dropdown">
+                           <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                           <li>
+                              <a class="dropdown-item edit-folder"
+                                 href="#"
+                                 data-folder-id="{{ folder.id }}">
+                                 <i class="bi bi-pencil me-2"></i>Переименовать
+                              </a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item delete-folder"
+                                 href="#"
+                                 data-folder-id="{{ folder.id }}">
+                                 <i class="bi bi-trash me-2"></i>Удалить
+                              </a>
+                           </li>
+                        </ul>
                      </div>
                   </div>
+                  <!-- Тело карточки -->
+                  <a href="{% url 'folder_words' folder.id %}"
+                     class="text-decoration-none text-dark">
+                     <div class="card-body text-center">
+                        <i class="bi bi-folder-fill mb-3" style="color:#68539E; font-size: 52px"></i>
+                        <h5 class="card-title">{{ folder.name }}</h5>
+                     </div>
+                  </a>
                </div>
             </div>
          {% empty %}
             <div class="col-12 text-center mt-4">
-               <p>У вас пока нет папок. Создайте новую папку для организации избранных слов.</p>
+               <h1>У вас пока нет папок!</h1>
+               <div class="d-md-flex justify-content-md-center">
+                  <a href="{% url 'catalog' %}" class="btn btn-primary">Вернуться в словарь</a>
+                  <a href="{% url 'index' %}" class="btn btn-primary">Вернуться на главную</a>
+               </div>
+               {% comment %} <p>У вас пока нет папок. Создайте новую папку для организации избранных слов.</p> {% endcomment %}
             </div>
          {% endfor %}
       </div>

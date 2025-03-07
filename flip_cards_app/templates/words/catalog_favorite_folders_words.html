@@ -52,7 +52,8 @@
                 <div class="col-12 col-lg-6">{% include "includes/word_preview_favorite.html" %}</div>
             {% empty %}
                 <div class="col-12 text-center">
-                    <p>В этой папке пока нет слов</p>
+                    {% include "words/empty_favorite.html" %}
+                    {% comment %} <p>В этой папке пока нет слов</p> {% endcomment %}
                 </div>
             {% endfor %}
         </div>

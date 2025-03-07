@@ -54,7 +54,7 @@ $(document).ready(function() {
             inputs: {
                 folderName: {
                     type: 'text',
-                    placeholder: 'Название папки1'
+                    placeholder: 'Название папки'
                 }
             }
         }).then(value => {

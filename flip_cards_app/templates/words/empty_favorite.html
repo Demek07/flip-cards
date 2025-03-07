@@ -1,0 +1,11 @@
+{% comment %} {% extends "base.html" %} {% endcomment %}
+{% block content %}
+  {% load static %}
+  <body>
+    <h1>В этой папке пока нет слов!</h1>
+    <div class="d-md-flex justify-content-md-center">
+      <a href="{% url 'catalog' %}" class="btn btn-primary">Вернуться в словарь</a>
+      <a href="{% url 'index' %}" class="btn btn-primary">Вернуться на главную</a>
+    </div>
+  </body>
+{% endblock content %}
