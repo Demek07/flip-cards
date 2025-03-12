@@ -21,6 +21,7 @@ urlpatterns = [
     path('catalog/folders/<int:folder_id>/words/', views.FolderWordsView.as_view(), name='folder_words'),
     path('catalog/folders/rename/', views.RenameFolderView.as_view(), name='rename_folder'),
     path('catalog/folders/delete/', views.DeleteFolderView.as_view(), name='delete_folder'),
+    path('catalog/folders/<int:folder_id>/words/progress/', views.UploadProgressView.as_view(), name='upload_progress'),
 
 
 ]

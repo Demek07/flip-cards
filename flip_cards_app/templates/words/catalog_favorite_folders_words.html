@@ -34,7 +34,7 @@
         </form>
     </div>
     <div class="container mt-3 col-auto">
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" id="uploadForm">
             <div class="row">
                 <div class="input-group mb-3">
                     {% csrf_token %}
@@ -45,6 +45,15 @@
                 </div>
             </div>
         </form>
+        <!-- Добавляем прогресс-бар -->
+        <div id="uploadProgress" style="display: none;">
+            <div class="progress mb-2">
+                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                     role="progressbar"
+                     style="width: 0%"></div>
+            </div>
+            <p id="uploadStatus" class="text-center"></p>
+        </div>
     </div>
     <div class="words-container">
         <div class="row">

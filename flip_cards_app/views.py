@@ -532,6 +532,12 @@ class FavoriteFolderView(MenuMixin, LoginRequiredMixin, ListView):
         )
 
 
+class UploadProgressView(View):
+    def get(self, request, folder_id):
+        progress = cache.get(f'upload_progress_{folder_id}', 0)
+        return JsonResponse({'progress': progress})
+
+
 class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
     template_name = 'words/catalog_favorite_folders_words.html'
     context_object_name = 'words'
@@ -552,28 +558,30 @@ class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
 
     def post(self, request, *args, **kwargs):
         folder_id = self.kwargs['folder_id']
+
         try:
             if 'file' not in request.FILES:
                 messages.error(request, 'Файл не был выбран')
-                return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+                return JsonResponse({'status': 'error'})
 
             file = request.FILES['file']
 
             if not file.name.endswith('.txt'):
                 messages.error(request, 'Поддерживаются только .txt файлы')
-                return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+                return JsonResponse({'status': 'error'})
 
             try:
                 words = file.read().decode('utf-8').splitlines()
+                total_words = len(words)
             except UnicodeDecodeError:
                 messages.error(request, 'Файл должен быть в кодировке UTF-8')
-                return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+                return JsonResponse({'status': 'error'})
 
             not_found_words = []
             added_words = 0
             already_exists = 0
 
-            for word in words:
+            for i, word in enumerate(words, 1):
                 word = word.strip().lower()
                 if not word:
                     continue
@@ -590,6 +598,9 @@ class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
                 else:
                     not_found_words.append(word)
 
+                progress = (i / total_words) * 100
+                cache.set(f'upload_progress_{folder_id}', progress)
+
             if added_words:
                 messages.success(request, f'Успешно добавлено {added_words} слов(а)')
 
@@ -599,11 +610,11 @@ class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
             if not_found_words:
                 messages.warning(request, f'Следующие слова не загружены: {", ".join(not_found_words)}')
 
-            return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+            return JsonResponse({'status': 'success'})
 
         except Exception as e:
             messages.error(request, f'Произошла ошибка при загрузке файла: {str(e)}')
-            return HttpResponseRedirect(reverse_lazy('folder_words', kwargs={'folder_id': folder_id}))
+            return JsonResponse({'status': 'error'})
 
 
 class RenameFolderView(View):

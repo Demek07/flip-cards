@@ -284,6 +284,112 @@ $(document).ready(function() {
                 console.log('Ошибка при удалении из избранного');
             }
         });
-    });  
+    });
+    // Добавляем обработчик формы загрузки слов
+// $(document).on('submit', '#uploadForm', function(e) {
+//     e.preventDefault();
+    
+//     const formData = new FormData(this);
+//     const $progressBar = $('.progress-bar');
+//     const $progressDiv = $('#uploadProgress');
+//     const $statusText = $('#uploadStatus');
+    
+//     $progressDiv.show();
+//     $progressBar.width('0%');
+//     $statusText.text('Начинаем загрузку...');
+
+//     // Отправляем файл
+//     $.ajax({
+//         url: window.location.href,
+//         method: 'POST',
+//         data: formData,
+//         processData: false,
+//         contentType: false,
+//         headers: {
+//             'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+//         },
+//         success: function() {
+//             $progressBar.width('100%');
+//             $statusText.text('Загрузка завершена!');
+//             setTimeout(() => {
+//                 window.location.reload();
+//             }, 1000);
+//         },
+//         error: function() {
+//             $progressBar.addClass('bg-danger');
+//             $statusText.text('Произошла ошибка при загрузке');
+//         }
+//     });
+
+
+//     // Проверяем прогресс каждую секунду
+//     const progressCheck = setInterval(() => {
+//         $.get(`${window.location.href}progress/`, function(data) {
+//             const progress = Math.round(data.progress);
+//             $progressBar.width(progress + '%');
+//             $statusText.text('Загрузка слов... ' + progress + '%');
+            
+//             if(progress >= 100) {
+//                 clearInterval(progressCheck);
+//             }
+//         });
+//     }, 1000);
+// });
+    $(document).on('submit', '#uploadForm', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const $progressBar = $('.progress-bar');
+        const $progressDiv = $('#uploadProgress');
+        const $statusText = $('#uploadStatus');
+        
+        $progressDiv.show();
+        $progressBar.width('0%');
+        $statusText.text('Начинаем загрузку...');
+
+        const progressCheck = setInterval(() => {
+            $.get(`${window.location.href}progress/`, function(data) {
+                const progress = Math.round(data.progress);
+                $progressBar.width(progress + '%');
+                $statusText.text('Загрузка слов... ' + progress + '%');
+                
+                if(progress >= 100) {
+                    clearInterval(progressCheck);
+                }
+            });
+        }, 1000);
+
+        $.ajax({
+            url: window.location.href,
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+            },
+            success: function(response) {
+                clearInterval(progressCheck);
+                $progressBar.width('100%');
+                $statusText.text('Загрузка завершена!');
+                
+                // Скрываем прогресс-бар и перезагружаем страницу
+                setTimeout(() => {
+                    $progressDiv.hide();
+                    window.location.href = window.location.href;
+                }, 1000);
+            },
+            error: function(xhr) {
+                clearInterval(progressCheck);
+                $progressBar.addClass('bg-danger');
+                $statusText.text('Произошла ошибка при загрузке');
+                
+                setTimeout(() => {
+                    $progressDiv.hide();
+                    window.location.href = window.location.href;
+                }, 1000);
+            }
+        });
+    });
 });
 
