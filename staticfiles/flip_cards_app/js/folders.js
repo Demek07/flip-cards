@@ -1,6 +1,25 @@
 $(document).ready(function() {
     const csrfToken = getCookie('csrftoken');
 
+    // Добавляем в начало файла folders.js
+    $(document).ready(function() {
+        // Добавляем кнопку закрытия к каждому сообщению
+        $('.messages li').each(function() {
+            $(this).append('<button type="button" class="btn-close float-end" aria-label="Close"></button>');
+        });
+
+        // Обработчик клика по кнопке закрытия
+        $(document).on('click', '.btn-close', function() {
+            $(this).closest('li').fadeOut(300, function() {
+                $(this).remove();
+                // Если сообщений больше нет, скрываем весь блок
+                if ($('.messages li').length === 0) {
+                    $('.messages').fadeOut(300);
+                }
+            });
+        });
+    });    
+
     // Обработка выбора папки
     $(document).on('click', '.folder-select', function(e) {
         e.preventDefault();
@@ -343,21 +362,31 @@ $(document).ready(function() {
         const $progressDiv = $('#uploadProgress');
         const $statusText = $('#uploadStatus');
         
+        // Устанавливаем фирменный цвет #68539E
+        $progressBar.css({
+            'background-color': '#68539E',
+            'color': '#fff',
+            'display': 'flex',
+            'align-items': 'center',
+            'justify-content': 'center'
+        });
+        $progressBar.addClass('progress-bar-animated progress-bar-striped');
         $progressDiv.show();
         $progressBar.width('0%');
-        $statusText.text('Начинаем загрузку...');
+        $progressBar.text('Начинаем загрузку...');
 
         const progressCheck = setInterval(() => {
             $.get(`${window.location.href}progress/`, function(data) {
                 const progress = Math.round(data.progress);
+                $progressBar.css('transition', 'width 0.5s ease-in-out');
                 $progressBar.width(progress + '%');
-                $statusText.text('Загрузка слов... ' + progress + '%');
+                $progressBar.text('Загрузка слов... ' + progress + '%');
                 
                 if(progress >= 100) {
                     clearInterval(progressCheck);
                 }
             });
-        }, 1000);
+        }, 500);
 
         $.ajax({
             url: window.location.href,
@@ -370,23 +399,26 @@ $(document).ready(function() {
             },
             success: function(response) {
                 clearInterval(progressCheck);
+                $progressBar.removeClass('progress-bar-animated');
                 $progressBar.width('100%');
-                $statusText.text('Загрузка завершена!');
+                $progressBar.text('Загрузка успешно завершена!');
                 
-                // Скрываем прогресс-бар и перезагружаем страницу
                 setTimeout(() => {
-                    $progressDiv.hide();
-                    window.location.href = window.location.href;
+                    $progressDiv.fadeOut(300, function() {
+                        window.location.href = window.location.href;
+                    });
                 }, 1000);
             },
             error: function(xhr) {
                 clearInterval(progressCheck);
-                $progressBar.addClass('bg-danger');
-                $statusText.text('Произошла ошибка при загрузке');
+                $progressBar.removeClass('progress-bar-animated');
+                $progressBar.css('background-color', '#dc3545');
+                $progressBar.text('Произошла ошибка при загрузке');
                 
                 setTimeout(() => {
-                    $progressDiv.hide();
-                    window.location.href = window.location.href;
+                    $progressDiv.fadeOut(300, function() {
+                        window.location.href = window.location.href;
+                    });
                 }, 1000);
             }
         });

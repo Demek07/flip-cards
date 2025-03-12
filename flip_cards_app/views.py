@@ -605,7 +605,7 @@ class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
                 messages.success(request, f'Успешно добавлено {added_words} слов(а)')
 
             if already_exists:
-                messages.warning(request, f'{already_exists} слов(а) уже были в избранном')
+                messages.info(request, f'{already_exists} слов(а) уже были в избранном')
 
             if not_found_words:
                 messages.warning(request, f'Следующие слова не загружены: {", ".join(not_found_words)}')
