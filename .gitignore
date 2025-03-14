@@ -13,3 +13,5 @@ dict.db
 media/users/images/*
 проект.txt
 *.log
+_dict.db
+1dict.db

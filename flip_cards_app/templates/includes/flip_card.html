@@ -7,16 +7,29 @@
             <p class="h1">{{ word.word.en_word }}</p>
             <p class="h2">{{ word.word.transcription }}</p>
             <div class="card_footer">
-              <p class="h5 d-block d-md-none"><i class="fa-regular fa-face-smile fa-xl" style="color: #31d41c;"></i> - {{ word.rights_word }} <i class="fa-regular fa-face-angry fa-xl" style="color: #e70d0d;"></i> - {{ word.errors_word }}</p>
-              <p class="h5 d-none d-md-block"><i class="fa-regular fa-face-smile fa-xl" style="color: #31d41c;"></i> Правильных слов - {{ word.rights_word }} / <i class="fa-regular fa-face-angry fa-xl" style="color: #e70d0d;"></i> Ошибочных слов - {{ word.errors_word }}</p>
+              <p class="h5 d-block d-md-none">
+                <i class="fa-regular fa-face-smile fa-xl" style="color: #31d41c;"></i> - {{ word.rights_word }} <i class="fa-regular fa-face-angry fa-xl" style="color: #e70d0d;"></i> - {{ word.errors_word }}
+              </p>
+              <p class="h5 d-none d-md-block">
+                <i class="fa-regular fa-face-smile fa-xl" style="color: #31d41c;"></i> Правильных слов - {{ word.rights_word }} / <i class="fa-regular fa-face-angry fa-xl" style="color: #e70d0d;"></i> Ошибочных слов - {{ word.errors_word }}
+              </p>
             </div>
           </div>
           <div class="back">
-            <p class="h1">{{ word.word.rus_word }}
-              <a href="#" class="play-audio-button" data-word="{{ word.word.en_word }}"><i title="Прослушать слово" class="bi bi-volume-up ms-2" style="color:#68539E"></i></a>
+            <p class="h1">
+              {{ word.word.rus_word }}
+              <a href="#"
+                 class="play-audio-button"
+                 data-word="{{ word.word.en_word }}"><i title="Прослушать слово"
+   class="bi bi-volume-up ms-2"
+   style="color:#68539E"></i></a>
             </p>
             <div class="card_footer">
-              <button class="btn btn-primary learned-btn" data-word-id="{{ word.id }}" title="Отметить слово как изученное"><i class="bbi bi-patch-check-fill me-2"></i>Запомнил</button>
+              <button class="btn btn-primary learned-btn"
+                      data-word-id="{{ word.id }}"
+                      title="Отметить слово как изученное">
+                <i class="bi bi-patch-check-fill me-2"></i>Запомнил
+              </button>
             </div>
           </div>
         </div>

@@ -14,55 +14,6 @@ function getCookie(name) {
     return cookieValue;
 }
 
-// Ждем полной загрузки DOM перед выполнением скрипта
-// $(document).ready(function() {
-//     // Добавляем обработчик клика на все элементы с классом favorites-button
-//     $('.favorites-button1').on('click', function(event) {
-//         // Отменяем стандартное поведение браузера при клике
-//         event.preventDefault();
-        
-//         // Получаем ID слова из data-атрибута кнопки
-//         var wordId = $(this).data('word-id');
-//         // Сохраняем ссылку на текущую кнопку
-//         var $button = $(this);
-
-//         // Получаем CSRF-токен из cookies для защиты от CSRF-атак
-//         var csrftoken = getCookie('csrftoken');
-
-//         // Отправляем AJAX-запрос на сервер
-//         $.ajax({
-//             // Формируем URL для запроса
-//             url: '/words/favorite/' + wordId,
-//             // Указываем метод запроса
-//             type: 'POST',
-//             // Добавляем CSRF-токен в заголовки запроса
-//             headers: {'X-CSRFToken': csrftoken},
-//             // Обработчик успешного выполнения запроса
-//             success: function(response) {
-//                 // Если слово добавлено в избранное
-//                 if (response.is_favorite) {
-//                     // Добавляем класс favorited кнопке
-//                     $button.addClass('favorited');
-//                     // Выводим сообщение в консоль
-//                     console.log('Карточка добавлена в избранное');
-//                 } else {
-//                     // Удаляем класс favorited с кнопки
-//                     $button.removeClass('favorited');
-//                     // Выводим сообщение в консоль
-//                     console.log('Карточка удалена из избранного');
-//                 }
-//             },
-//             // Обработчик ошибки запроса
-//             error: function() {
-//                 // Выводим сообщение об ошибке в консоль
-//                 console.log('Ошибка при обновлении статуса избранного');
-//             }
-//         });
-//         // Предотвращаем дальнейшее всплытие события
-//         return false;
-//     });
-// });
-
 
 $(document).ready(function () {
     toastr.options.closeButton = false;
@@ -82,29 +33,31 @@ $(document).ready(function () {
     toastr.options.hideMethod = 'fadeOut';
     // Обработчик события клика на кнопке воспроизведения аудио
     $('.play-audio-button').on('click', function (event) {
-        event.preventDefault(); // предотвратить перезагрузку страницы
+        event.preventDefault();
         
         var word = $(this).data('word');
-
-        // Получение токена CSRF из элемента meta с именем csrf-token
         var csrftoken = getCookie('csrftoken');
 
-        // AJAX-запрос для получения ссылки на аудио
         $.ajax({
             url: '/words/speak/' + word,
             type: 'POST',
             headers: { 'X-CSRFToken': csrftoken },
             success: function (response) {
                 if (response.audio_url) {
-                    var audio = new Audio(response.audio_url);
-                    audio.play();
+                    const audio = new Audio();
+                    audio.preload = 'auto';
+                    audio.src = response.audio_url;
+                    
+                    setTimeout(() => {
+                        audio.currentTime = 0;
+                        audio.play();
+                    }, 100);
+                    
                 } else {
-                    console.log('Ошибка при получении ссылки на аудио');
                     toastr.error('К сожаления, такого звукового файла пока нет')
                 }
             },
             error: function () {
-                console.log('Ошибка при запросе ссылки на аудио');
                 toastr.error('К сожаления, такого звукового файла пока нет')
             }
         });
@@ -113,6 +66,8 @@ $(document).ready(function () {
         e.preventDefault();
         const wordId = $(this).data('word-id');
         const button = $(this);
+        const card = button.closest('.card'); // находим родительскую карточку
+        const isFlipPage = window.location.pathname.includes('flip');
         
         $.ajax({
             url: `/words/learned_words/${wordId}`,
@@ -124,17 +79,41 @@ $(document).ready(function () {
             },
             success: function (response) {
                 if (response.is_learned) {
-                    button.html('<i class="bi bi-check-circle-fill" style="color:#68539E"></i>');
-                    button.addClass('learned');
+                    if (isFlipPage) {
+                        card.fadeOut(400, function() {
+                            card.remove();
+                        });
+                    } else {
+                        button.html('<i class="bi bi-patch-check-fill ms-2 h5" style="color:#68539E"></i>');
+                        button.addClass('learned');
+                    }
                 } else {
-                    button.html('<i class="bi bi-check-circle" style="color:#68539E"></i>');
+                    button.html('<i class="bi bi-patch-check ms-2 h5" style="color:#68539E"></i>');
                     button.removeClass('learned');
                 }
             },
+
             error: function () {
                 console.log('Ошибка при обновлении статуса слова');
             }
         });
+        return false;
+    });
+        // Добавляем HTML кнопки в body
+    $('body').append('<button id="scrollTopBtn" class="scroll-top-btn"><i class="bi bi-chevron-double-up"></i></button>');
+
+    // Показываем/скрываем кнопку при скролле
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('#scrollTopBtn').fadeIn();
+        } else {
+            $('#scrollTopBtn').fadeOut();
+        }
+    });
+
+    // Обработчик клика - плавная прокрутка вверх
+    $('#scrollTopBtn').click(function() {
+        $('html, body').animate({scrollTop: 0}, 800);
         return false;
     });
 });

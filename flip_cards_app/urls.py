@@ -13,15 +13,15 @@ urlpatterns = [
     path('learned_words/<int:id>', views.learned_words, name='learned_words'),
     # вся для избранного
     path('favorites/', views.FavoriteFolderView.as_view(), name='favorites'),  # Общий каталог всех папок в избранном
-    path('favorite/<int:folder_id>/<int:word_id>', views.favorites_word,
+    path('favorites/<int:folder_id>/<int:word_id>', views.favorites_word,
          name='favorites_word'),  # Добавление/удаление слова в избранное
-    path('catalog/folders/create/', views.FolderCreateView.as_view(), name='create_folder'),
-    path('catalog/folders/add/', views.FolderAddWordView.as_view(), name='add_to_folder'),
-    path('catalog/folders/remove/', views.FolderRemoveWordView.as_view(), name='remove_from_folder'),
-    path('catalog/folders/<int:folder_id>/words/', views.FolderWordsView.as_view(), name='folder_words'),
-    path('catalog/folders/rename/', views.RenameFolderView.as_view(), name='rename_folder'),
-    path('catalog/folders/delete/', views.DeleteFolderView.as_view(), name='delete_folder'),
-    path('catalog/folders/<int:folder_id>/words/progress/', views.UploadProgressView.as_view(), name='upload_progress'),
+    path('favorites/folders/create/', views.FolderCreateView.as_view(), name='create_folder'),
+    path('favorites/folders/add/', views.FolderAddWordView.as_view(), name='add_to_folder'),
+    path('favorites/folders/remove/', views.FolderRemoveWordView.as_view(), name='remove_from_folder'),
+    path('favorites/folders/<int:folder_id>/words/', views.FolderWordsView.as_view(), name='folder_words'),
+    path('favorites/folders/rename/', views.RenameFolderView.as_view(), name='rename_folder'),
+    path('favorites/folders/delete/', views.DeleteFolderView.as_view(), name='delete_folder'),
+    path('favorites/folders/<int:folder_id>/words/progress/', views.UploadProgressView.as_view(), name='upload_progress'),
 
 
 ]

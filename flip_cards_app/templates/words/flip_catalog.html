@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-{% load static %}
-   <link rel="stylesheet" href="{% static 'flip_cards_app/css/style_flip.css' %}" />
+   {% load static %}
+   <link rel="stylesheet"
+         href="{% static 'flip_cards_app/css/style_flip.css' %}" />
    <h1>Каталог с флип-карточками</h1>
    <p class="all_text">Здесь вы можете выбрать слова для изучения</p>
    <p class="all_text">На данный момент у вас для изучения: {{ page_obj.paginator.count }} слов</p>
@@ -21,8 +22,7 @@
                          aria-label="Поиск слов..."
                          name="search_query"
                          value="{{ request.GET.search_query }}">
-                  <button class="btn btn-primary"
-                          type="submit">
+                  <button class="btn btn-primary" type="submit">
                      <i class="bi bi-search"></i>
                   </button>
                </div>
@@ -31,14 +31,14 @@
       </div>
    </p>
    <div class="row">
-         {% for word in flip_cards %}
-            <div class="col-12">{% include "includes/flip_card.html" %}</div>
-         {% endfor %}
-   </div>  
-   <br>    
+      {% for word in flip_cards %}
+         <div class="col-12">{% include "includes/flip_card.html" %}</div>
+      {% endfor %}
+   </div>
+   <br>
    {% comment %} Пагинация начало {% endcomment %}
    {% if page_obj.paginator.num_pages != 1 %}
       <div class="col-12">{% include "includes/pagination.html" %}</div>
    {% endif %}
    {% comment %} Пагинация конец {% endcomment %}
-   {% endblock content %}
+{% endblock content %}

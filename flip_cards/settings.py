@@ -140,6 +140,23 @@ DATABASES = {
     }
 }
 
+# Postgresql команды:
+# удаление базы  данных - psql -U postgres -c "DROP DATABASE dict_db"
+# создание базы данных - psql -U postgres -c "CREATE DATABASE dict_db WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0"
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'dict_db',
+#         'USER': os.getenv('POSTGRES_USER'),
+#         'PASSWORD': os.getenv('POSTGRES_PWD'),
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#         'OPTIONS': {
+#             'client_encoding': 'UTF8'
+#         }
+#     }
+# }
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

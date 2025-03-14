@@ -60,9 +60,13 @@
             {% for word in words %}
                 <div class="col-12 col-lg-6">{% include "includes/word_preview_favorite.html" %}</div>
             {% empty %}
-                <div class="col-12 text-center">
-                    {% include "words/empty_favorite.html" %}
-                    {% comment %} <p>В этой папке пока нет слов</p> {% endcomment %}
+                <div class="col-12 text-center mt-4">
+                    <h1>Здесь пока пусто!</h1>
+                    <div class="d-md-flex justify-content-md-center">
+                        <a href="{% url 'catalog' %}" class="btn btn-primary">Вернуться в словарь</a>
+                        <a href="{% url 'index' %}" class="btn btn-primary">Вернуться на главную</a>
+                    </div>
+                    {% comment %} <p>У вас пока нет папок. Создайте новую папку для организации избранных слов.</p> {% endcomment %}
                 </div>
             {% endfor %}
         </div>

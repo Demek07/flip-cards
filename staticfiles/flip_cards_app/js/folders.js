@@ -27,7 +27,7 @@ $(document).ready(function() {
         const wordId = $(this).data('word-id');
         const button = $(this).closest('.dropdown').find('.favorites-btn');
         
-        fetch('/words/catalog/folders/add/', {
+        fetch('/words/favorites/folders/add/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ $(document).ready(function() {
             if (value.inputs.folderName) {
                 const folderName = value.inputs.folderName;
                 
-                fetch('/words/catalog/folders/create/', {
+                fetch('/words/favorites/folders/create/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ $(document).ready(function() {
                     const folderId = data.id;
                     if (isFromWordContext) {
                         // Если создаём папку из контекста слова, добавляем слово в папку
-                        return fetch('/words/catalog/folders/add/', {
+                        return fetch('/words/favorites/folders/add/', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ $(document).ready(function() {
         const button = $(this).closest('.dropdown').find('.favorites-btn');
         
         $.ajax({
-            url: `/words/favorite/${folderId}/${wordId}`,
+            url: `/words/favorites/${folderId}/${wordId}`,
             type: 'POST',
             headers: {'X-CSRFToken': csrfToken},
             success: function(response) {
@@ -206,10 +206,11 @@ $(document).ready(function() {
                     placeholder: 'Название папки',
                     value: currentName
                 }
-            }
+            },
+            
         }).then(value => {
             if (value.inputs.folderName) {
-                fetch('/words/catalog/folders/rename/', {
+                fetch('/words/favorites/folders/rename/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -243,7 +244,7 @@ $(document).ready(function() {
             icon: 'warning'
         }).then(result => {
             if (result.isConfirmed) {
-                fetch('/words/catalog/folders/delete/', {
+                fetch('/words/favorites/folders/delete/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -275,7 +276,7 @@ $(document).ready(function() {
         const currentPage = window.location.href;
         
         $.ajax({
-            url: `/words/favorite/${folderId}/${wordId}`,
+            url: `/words/favorites/${folderId}/${wordId}`,
             type: 'POST',
             headers: {'X-CSRFToken': getCookie('csrftoken')},
             success: function(response) {
@@ -304,117 +305,82 @@ $(document).ready(function() {
             }
         });
     });
-    // Добавляем обработчик формы загрузки слов
-// $(document).on('submit', '#uploadForm', function(e) {
-//     e.preventDefault();
-    
-//     const formData = new FormData(this);
-//     const $progressBar = $('.progress-bar');
-//     const $progressDiv = $('#uploadProgress');
-//     const $statusText = $('#uploadStatus');
-    
-//     $progressDiv.show();
-//     $progressBar.width('0%');
-//     $statusText.text('Начинаем загрузку...');
-
-//     // Отправляем файл
-//     $.ajax({
-//         url: window.location.href,
-//         method: 'POST',
-//         data: formData,
-//         processData: false,
-//         contentType: false,
-//         headers: {
-//             'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-//         },
-//         success: function() {
-//             $progressBar.width('100%');
-//             $statusText.text('Загрузка завершена!');
-//             setTimeout(() => {
-//                 window.location.reload();
-//             }, 1000);
-//         },
-//         error: function() {
-//             $progressBar.addClass('bg-danger');
-//             $statusText.text('Произошла ошибка при загрузке');
-//         }
-//     });
-
-
-//     // Проверяем прогресс каждую секунду
-//     const progressCheck = setInterval(() => {
-//         $.get(`${window.location.href}progress/`, function(data) {
-//             const progress = Math.round(data.progress);
-//             $progressBar.width(progress + '%');
-//             $statusText.text('Загрузка слов... ' + progress + '%');
-            
-//             if(progress >= 100) {
-//                 clearInterval(progressCheck);
-//             }
-//         });
-//     }, 1000);
-// });
-    $(document).on('submit', '#uploadForm', function(e) {
+    // Обработчик отправки формы загрузки файла
+    $(document).on('submit', '#uploadForm', function (e) {
+        // Отменяем стандартное поведение формы
         e.preventDefault();
         
+        // создаем объект FormData из текущей формы
         const formData = new FormData(this);
+        // получаем элементы прогресс-бара и статуса
         const $progressBar = $('.progress-bar');
         const $progressDiv = $('#uploadProgress');
         const $statusText = $('#uploadStatus');
         
-        // Устанавливаем фирменный цвет #68539E
+        // Устанавливаем стили для прогресс-бара
         $progressBar.css({
-            'background-color': '#68539E',
-            'color': '#fff',
-            'display': 'flex',
-            'align-items': 'center',
-            'justify-content': 'center'
+            'background-color': '#68539E', // фирменный цвет
+            'color': '#fff',               // цвет текста
+            'display': 'flex',             // гибкое позиционирование
+            'align-items': 'center',       // центрирование по вертикали
+            'justify-content': 'center'    // центрирование по горизонтали
         });
+        // Добавляем анимацию прогресс-бара
         $progressBar.addClass('progress-bar-animated progress-bar-striped');
+        // показываем контейнер прогресс-бара 
         $progressDiv.show();
+        // Устанавливаем начальную ширину прогресс-бара на 0%
         $progressBar.width('0%');
+        // Устанавливаем начальный текст статуса
         $progressBar.text('Начинаем загрузку...');
 
+        // Запускаем проверку прогресса каждые 500 мс
         const progressCheck = setInterval(() => {
             $.get(`${window.location.href}progress/`, function(data) {
                 const progress = Math.round(data.progress);
+                // Добаввляем плавную анимацию прогресс-бара
                 $progressBar.css('transition', 'width 0.5s ease-in-out');
+                // Обновляем ширину прогресс-бара
                 $progressBar.width(progress + '%');
+                // Обновляем текст прогресса
                 $progressBar.text('Загрузка слов... ' + progress + '%');
-                
+                // Если прогресс достиг 100%, останавливаем проверку прогресса
                 if(progress >= 100) {
                     clearInterval(progressCheck);
                 }
             });
         }, 500);
 
+        // Отправляем AJAX-запрос для загрузки файла
         $.ajax({
             url: window.location.href,
             method: 'POST',
             data: formData,
-            processData: false,
-            contentType: false,
+            processData: false,     // Отключаем обработку данный Query
+            contentType: false,     // Отключаем установку заголовка Content-Type
             headers: {
-                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')  // Добавляем CSRF-токен в заголовок
             },
-            success: function(response) {
+            success: function (response) {
+                // Обрабатываем успешную загрузку файла
                 clearInterval(progressCheck);
                 $progressBar.removeClass('progress-bar-animated');
                 $progressBar.width('100%');
                 $progressBar.text('Загрузка успешно завершена!');
-                
+                // Перезагружаем страницу через 1 секунду
                 setTimeout(() => {
                     $progressDiv.fadeOut(300, function() {
                         window.location.href = window.location.href;
                     });
                 }, 1000);
             },
-            error: function(xhr) {
+            error: function (xhr) {
+                // Обрабатываем ошибку при загрузке файла
                 clearInterval(progressCheck);
                 $progressBar.removeClass('progress-bar-animated');
-                $progressBar.css('background-color', '#dc3545');
+                $progressBar.css('background-color', '#dc3545'); // красный цвет
                 $progressBar.text('Произошла ошибка при загрузке');
-                
+                // Перезагружаем страницу через 1 секунду
                 setTimeout(() => {
                     $progressDiv.fadeOut(300, function() {
                         window.location.href = window.location.href;

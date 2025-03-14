@@ -169,86 +169,86 @@ class CatalogView(MenuMixin, ListView):
 
 
 # Класс для вывода каталога избранных слов
-class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
-    """
-    Выводим каталог избранных слов
-    """
-    # Указываем модель, данные которой мы хотим отобразить
-    model = Word
-    # Путь к шаблону, который будет использоваться для отображения страницы
-    # template_name = 'words/catalog_favorite.html'
-    # Имя переменной контекста, которую будем использовать в шаблоне
-    context_object_name = 'words'
-    # Количество объектов на странице
-    paginate_by = 26
+# class FavoritesView(MenuMixin, LoginRequiredMixin, ListView):
+#     """
+#     Выводим каталог избранных слов
+#     """
+#     # Указываем модель, данные которой мы хотим отобразить
+#     model = Word
+#     # Путь к шаблону, который будет использоваться для отображения страницы
+#     # template_name = 'words/catalog_favorite.html'
+#     # Имя переменной контекста, которую будем использовать в шаблоне
+#     context_object_name = 'words'
+#     # Количество объектов на странице
+#     paginate_by = 26
 
-    # Метод для модификации начального запроса к БД
-    def get_queryset(self):
-        # Получение параметров сортировки из GET-запроса
-        search_query = self.request.GET.get('search_query', '')
-        # if search_query:
-        #     queryset = Word.objects.filter(Q(en_word__iregex=search_query) | Q(
-        #         rus_word__iregex=search_query) & Q(favorites_word=self.request.user)).order_by('en_word')
-        # else:
-        #     queryset = Word.objects.filter(favorites_word=self.request.user).prefetch_related(
-        #         "favorites_word").order_by('en_word')
-        # return queryset
-        # Фильтрация слов по поисковому запросу
-        if search_query:
-            queryset = FavoritesWords.objects.filter(
-                Q(word__en_word__iregex=search_query) | Q(word__rus_word__iregex=search_query) &
-                Q(user=self.request.user)).select_related('word').order_by('word__en_word').distinct()
-        else:
-            # Получаем только избранные слова
-            queryset = FavoritesWords.objects.filter(
-                user=self.request.user).select_related('word').order_by('word__en_word')
-        if queryset.count() > 0:
-            self.template_name = 'words/catalog_favorite.html'
-        else:
-            self.template_name = 'words/empty_favotite.html'
-        return queryset
+#     # Метод для модификации начального запроса к БД
+#     def get_queryset(self):
+#         # Получение параметров сортировки из GET-запроса
+#         search_query = self.request.GET.get('search_query', '')
+#         # if search_query:
+#         #     queryset = Word.objects.filter(Q(en_word__iregex=search_query) | Q(
+#         #         rus_word__iregex=search_query) & Q(favorites_word=self.request.user)).order_by('en_word')
+#         # else:
+#         #     queryset = Word.objects.filter(favorites_word=self.request.user).prefetch_related(
+#         #         "favorites_word").order_by('en_word')
+#         # return queryset
+#         # Фильтрация слов по поисковому запросу
+#         if search_query:
+#             queryset = FavoritesWords.objects.filter(
+#                 Q(word__en_word__iregex=search_query) | Q(word__rus_word__iregex=search_query) &
+#                 Q(user=self.request.user)).select_related('word').order_by('word__en_word').distinct()
+#         else:
+#             # Получаем только избранные слова
+#             queryset = FavoritesWords.objects.filter(
+#                 user=self.request.user).select_related('word').order_by('word__en_word')
+#         if queryset.count() > 0:
+#             self.template_name = 'words/catalog_favorite.html'
+#         else:
+#             self.template_name = 'words/empty_favotite.html'
+#         return queryset
 
-    def get_context_data(self, **kwargs):
-        # Получение существующего контекста из базового класса
-        context = super().get_context_data(**kwargs)
-        context['search_query'] = self.request.GET.get('search_query', '')
-        return context
+#     def get_context_data(self, **kwargs):
+#         # Получение существующего контекста из базового класса
+#         context = super().get_context_data(**kwargs)
+#         context['search_query'] = self.request.GET.get('search_query', '')
+#         return context
 
-    def post(self, request, *args, **kwargs):
-        file = request.FILES['file']
-        words = file.read().decode('utf-8').splitlines()
-        not_found_words = []
-        for word in words:
-            word = word.strip().lower()
-            word_obj = Word.objects.filter(Q(en_word__iexact=word) | Q(rus_word__iexact=word))
-            if word_obj.exists():
-                for obj in word_obj:
-                    print(obj)
-                    favorites_word(request, obj.id, load=True)
-            else:
-                not_found_words.append(word)
-        if not_found_words:
-            messages.warning(request, f'Следующие слова не загружены: {", ".join(not_found_words)}')
-        # context = super().get_context_data(**kwargs)
-        # context['search_query'] = self.request.GET.get('search_query', '')
-        # return self.render_to_response(context)
-        # for word in words:
-        #     word = word.strip().lower()
-        #     try:
-        #         word_obj = Word.objects.filter(Q(en_word__iexact=word) | Q(rus_word__iexact=word))
-        #         if word_obj.exists():
-        #             for word in word_obj:
-        #                 favorites_word(request, word.id, load=True)
-        #     except Word.DoesNotExist:
-        #         not_found_words.append(word)
-        # # context = super().get_context_data(**kwargs)
-        # context['search_query'] = self.request.GET.get('search_query', '')
-        # context['not_found_words'] = not_found_words
-        # return self.render_to_response(context)
+#     def post(self, request, *args, **kwargs):
+#         file = request.FILES['file']
+#         words = file.read().decode('utf-8').splitlines()
+#         not_found_words = []
+#         for word in words:
+#             word = word.strip().lower()
+#             word_obj = Word.objects.filter(Q(en_word__iexact=word) | Q(rus_word__iexact=word))
+#             if word_obj.exists():
+#                 for obj in word_obj:
+#                     print(obj)
+#                     favorites_word(request, obj.id, load=True)
+#             else:
+#                 not_found_words.append(word)
+#         if not_found_words:
+#             messages.warning(request, f'Следующие слова не загружены: {", ".join(not_found_words)}')
+#         # context = super().get_context_data(**kwargs)
+#         # context['search_query'] = self.request.GET.get('search_query', '')
+#         # return self.render_to_response(context)
+#         # for word in words:
+#         #     word = word.strip().lower()
+#         #     try:
+#         #         word_obj = Word.objects.filter(Q(en_word__iexact=word) | Q(rus_word__iexact=word))
+#         #         if word_obj.exists():
+#         #             for word in word_obj:
+#         #                 favorites_word(request, word.id, load=True)
+#         #     except Word.DoesNotExist:
+#         #         not_found_words.append(word)
+#         # # context = super().get_context_data(**kwargs)
+#         # context['search_query'] = self.request.GET.get('search_query', '')
+#         # context['not_found_words'] = not_found_words
+#         # return self.render_to_response(context)
 
-        return HttpResponseRedirect(reverse_lazy('favorites'))
+#         return HttpResponseRedirect(reverse_lazy('favorites'))
 
-        # return render(request, self.template_name, {'not_found_words': not_found_words})
+#         # return render(request, self.template_name, {'not_found_words': not_found_words})
 
 
 # Класс для вывода страницы игры
@@ -368,7 +368,7 @@ class FlipCardsView(MenuMixin, LoginRequiredMixin, ListView):
         if queryset.count() > 0:
             self.template_name = 'words/flip_catalog.html'
         else:
-            self.template_name = 'words/empty_favotite.html'
+            self.template_name = 'words/empty_favorite.html'
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -438,9 +438,13 @@ def learned_words(request, id):
 
         # Обновите или создайте новую запись в модели FavoritesWords
         if is_learned:
-            FavoritesWords.objects.filter(id=word_id).update(is_learned=not is_learned_status.is_learned)
+            new_status = not is_learned_status.is_learned
+            FavoritesWords.objects.filter(id=word_id).update(is_learned=new_status)
 
-        return JsonResponse({'message': 'Слово помечено как выученное'})
+        return JsonResponse({
+            'message': 'Слово помечено как выученное',
+            'is_learned': new_status
+        })
     return JsonResponse({'message': 'Ошибка'}, status=400)
 
 
@@ -540,15 +544,30 @@ class UploadProgressView(View):
 
 class FolderWordsView(MenuMixin, LoginRequiredMixin,  ListView):
     template_name = 'words/catalog_favorite_folders_words.html'
+    # Имя переменной контекста, которую будем использовать в шаблоне
     context_object_name = 'words'
-    paginate_by = 10
+    # Количество объектов на странице
+    paginate_by = 26
 
     def get_queryset(self):
+        # Получение параметров сортировки из GET-запроса
+        search_query = self.request.GET.get('search_query', '')
+
+        # Фильтрация слов по поисковому запросу
         self.folder = get_object_or_404(FavoriteFolder, id=self.kwargs['folder_id'], user=self.request.user)
-        return FavoritesWords.objects.filter(
-            user=self.request.user,
-            folder=self.folder
-        ).distinct()
+        if search_query:
+            queryset = FavoritesWords.objects.filter(
+                Q(word__en_word__iregex=search_query) | Q(word__rus_word__iregex=search_query) &
+                Q(user=self.request.user) & Q(folder=self.folder)).select_related('word').order_by('word__en_word').distinct()
+        else:
+            # Получаем только избранные слова
+            queryset = FavoritesWords.objects.filter(
+                user=self.request.user, folder=self.folder).select_related('word').order_by('word__en_word')
+        # if queryset.count() > 0:
+        #     self.template_name = 'words/catalog_favorite.html'
+        # else:
+        #     self.template_name = 'words/empty_favotite.html'
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
