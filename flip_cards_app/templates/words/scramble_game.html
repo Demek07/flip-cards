@@ -1,27 +1,95 @@
 {% extends "base.html" %}
 {% block content %}
-{% load static %}
-   <link rel="stylesheet" href="{% static 'flip_cards_app/css/style_scramble_game.css' %}" />
-  <body>
-    <div class="main pt-4">
-        <h1 class="title text-center"><strong>Игра угадай слово</strong></h1>
-        <div class="content" id="{{ scramble_words_game.3 }}">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Угадай зашифрованное слово</h5>
-                </div>
-                <div class="card-body pl-5">
-                    <p class="text-center word">{{ scramble_words_game.0 }}</p>
-                    <p class="hint">Подсказка: <span>{{ scramble_words_game.2 }}</span></p>
-                    <p class="hint">Время: <span><strong>30 sec</strong></span></p>
-                    <input class="form-control p-2" type="text" name="" id="input" placeholder="Введите угаданное слово...">
-                </div>
-                <div class="buttons text-center pb-5">
-                    <button type="button" class="btn btn-primary mr-5" id="btn_new">Новое слово</button>
-                    <button type="button" class="btn btn-primary" id="btn_check">Проверить</button>
+    {% load static %}
+    <link rel="stylesheet"
+          href="{% static 'flip_cards_app/css/style_scramble_game.css' %}" />
+    <body>
+        <div class="main pt-4">
+            <h1 class="title text-center">
+                <strong>Игра угадай слово</strong>
+            </h1>
+            <!-- Форма выбора папки -->
+            <div class="folder-selection mb-4"
+                 style="max-width: 600px;
+                        margin: 0 auto 20px">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Выберите папку со словами</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="folder-form" method="GET">
+                            <select class="form-select"
+                                    id="folder-select"
+                                    name="folder_id"
+                                    style="margin-bottom: 10px">
+                                <!-- Первый пункт - "Выберите папку со словами" -->
+                                <option value="" {% if selected_folder is None %}selected{% endif %}>Выберите папку со словами</option>
+                                <!-- Затем опция "Все избранные слова" -->
+                                <option value="all" {% if selected_folder == "all" %}selected{% endif %}>Все избранные слова</option>
+                                <!-- Затем список папок -->
+                                {% for folder in folders %}
+                                    <option value="{{ folder.id }}"
+                                            {% if selected_folder == folder.id|stringformat:"s" %}selected{% endif %}>
+                                        {{ folder.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="btn btn-primary">Начать игру</button>
+                        </form>
+                    </div>
                 </div>
             </div>
+            <!-- Игра отображается только если выбрана папка и есть слова -->
+            {% if selected_folder and scramble_words_game %}
+                <div class="content" id="{{ scramble_words_game.3 }}">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Угадай зашифрованное слово</h5>
+                        </div>
+                        <div class="card-body pl-5">
+                            <p class="text-center word">{{ scramble_words_game.0 }}</p>
+                            <p class="hint">
+                                Подсказка: <span>{{ scramble_words_game.2 }}</span>
+                            </p>
+                            <p class="hint">
+                                Время: <span><strong>30 sec</strong></span>
+                            </p>
+                            <input class="form-control p-2"
+                                   type="text"
+                                   name=""
+                                   id="input"
+                                   placeholder="Введите угаданное слово...">
+                        </div>
+                        <div class="buttons text-center pb-5">
+                            <button type="button" class="btn btn-primary mr-5" id="btn_new">Новое слово</button>
+                            <button type="button" class="btn btn-primary" id="btn_check">Проверить</button>
+                        </div>
+                    </div>
+                </div>
+            {% elif selected_folder %}
+                <div class="alert alert-warning" style="max-width: 600px; margin: 0 auto;">
+                    <h4>Нет слов для игры.</h4>
+                    <p>В выбранной папке нет слов. Пожалуйста, выберите другую папку или добавьте слова в эту папку.</p>
+                </div>
+            {% else %}
+                <div class="alert alert-info" style="max-width: 600px; margin: 0 auto;">
+                    <h4>Необходимо выбрать папку</h4>
+                    <p>Для начала игры необходимо выбрать папку со словами из списка выше.</p>
+                </div>
+            {% endif %}
         </div>
-    </div>
-  </body>
+        <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Обработчик кнопки "Новое слово" - сохраняем выбранную папку
+        const btnNew = document.getElementById('btn_new');
+        if (btnNew) {
+          btnNew.addEventListener('click', function() {
+            const folderSelect = document.getElementById('folder-select');
+            const folderId = folderSelect ? folderSelect.value : '';
+            window.location.href = folderId ? `?folder_id=${folderId}` : '?folder_id=';
+          });
+        }
+      });
+        </script>
+    </body>
 {% endblock content %}

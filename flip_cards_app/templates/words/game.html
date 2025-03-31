@@ -1,31 +1,106 @@
 {% extends "base.html" %}
 {% block content %}
+  {% load static %}
+  <link rel="stylesheet"
+        href="{% static 'flip_cards_app/css/style_scramble_game.css' %}" />
   <body>
-    <center>
-      <h1 class="title text-center"><strong>Игра определи слова</strong></h1>
-      <h1>
-        Осталось: <b id="remains">{{ words_game.0.items|length }}</b> Ошибок: <b id="errors_count">0</b>
+    <div class="main pt-4">
+      <h1 class="title text-center">
+        <strong>Игра определи слова</strong>
       </h1>
-      <br />
-      <div class="container_game">
-        <span id="block1">
-          {% for key, value in words_game.0.items %}
-            <div class="card_z" id="zs1{{ key }}">
-              <div id="l{{ key }}" class="card1" onclick='click1(id,"{{ value }}");'>{{ value }}</div>
-            </div>
-          {% endfor %}
-        </span>
-        <span id="block2">
-          {% for key, value in words_game.1.items %}
-            <div class="card_z" id="zs2{{ key }}">
-              <div id="r{{ key }}"
-                   class="card1 black"
-                   onclick='click1(id,"{{ value }}");'>{{ value }}</div>
-            </div>
-          {% endfor %}
-        </span>
+      <!-- Форма выбора папки -->
+      <div class="folder-selection mb-4"
+           style="max-width: 600px;
+                  margin: 0 auto 20px">
+        <div class="card">
+          <div class="card-header">
+            <h5>Выберите папку со словами</h5>
+          </div>
+          <div class="card-body">
+            <form id="folder-form" method="GET">
+              <select class="form-select"
+                      id="folder-select"
+                      name="folder_id"
+                      style="margin-bottom: 10px">
+                <!-- Первый пункт - "Выберите папку со словами" -->
+                <option value="" {% if selected_folder is None %}selected{% endif %}>Выберите папку со словами</option>
+                <!-- Затем опция "Все избранные слова" -->
+                <option value="all" {% if selected_folder == "all" %}selected{% endif %}>Все избранные слова</option>
+                <!-- Затем список папок -->
+                {% for folder in folders %}
+                  <option value="{{ folder.id }}"
+                          {% if selected_folder == folder.id|stringformat:"s" %}selected{% endif %}>
+                    {{ folder.name }}
+                  </option>
+                {% endfor %}
+              </select>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Начать игру</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      <button class="btn btn-primary" onclick="location.reload()">Перезапустить</button>
-    </center>
+      <!-- Игра отображается только если выбрана папка и есть слова -->
+      {% if selected_folder and words_game %}
+        <div class="content">
+          <div class="card">
+            <div class="card-header">
+              <h5>Соедините слова и их переводы</h5>
+            </div>
+            <div class="card-body">
+              <h3 class="text-center">
+                Осталось: <b id="remains">{{ words_game.0.items|length }}</b>
+                Ошибок: <b id="errors_count">0</b>
+              </h3>
+              <div class="container_game">
+                <span id="block1">
+                  {% for key, value in words_game.0.items %}
+                    <div class="card_z" id="zs1{{ key }}">
+                      <div id="l{{ key }}" class="card1" onclick='click1(id,"{{ value }}");'>{{ value }}</div>
+                    </div>
+                  {% endfor %}
+                </span>
+                <span id="block2">
+                  {% for key, value in words_game.1.items %}
+                    <div class="card_z" id="zs2{{ key }}">
+                      <div id="r{{ key }}"
+                           class="card1 black"
+                           onclick='click1(id,"{{ value }}");'>{{ value }}</div>
+                    </div>
+                  {% endfor %}
+                </span>
+              </div>
+              <div class="buttons text-center pb-3 pt-3">
+                <button class="btn btn-primary" id="new-game-btn">Перезапустить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% elif selected_folder %}
+        <div class="alert alert-warning" style="max-width: 600px; margin: 0 auto;">
+          <h4>Нет слов для игры.</h4>
+          <p>В выбранной папке нет слов. Пожалуйста, выберите другую папку или добавьте слова в эту папку.</p>
+        </div>
+      {% else %}
+        <div class="alert alert-info" style="max-width: 600px; margin: 0 auto;">
+          <h4>Необходимо выбрать папку</h4>
+          <p>Для начала игры необходимо выбрать папку со словами из списка выше.</p>
+        </div>
+      {% endif %}
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Обработчик кнопки "Перезапустить"
+            const newGameBtn = document.getElementById('new-game-btn');
+            if (newGameBtn) {
+                newGameBtn.addEventListener('click', function() {
+                    const folderSelect = document.getElementById('folder-select');
+                    const folderId = folderSelect ? folderSelect.value : '';
+                    window.location.href = folderId ? `?folder_id=${folderId}` : '?folder_id=';
+                });
+            }
+        });
+    </script>
   </body>
 {% endblock content %}

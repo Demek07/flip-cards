@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Добавляем обработчик для выбора папки
+    const folderSelect = document.getElementById('folder-select');
+    const folderForm = document.getElementById('folder-form');
+    const newGameBtn = document.getElementById('new-game-btn');
+    
+    // Если есть выпадающий список папок, добавляем обработчик события
+    if (folderSelect && folderForm) {
+        folderSelect.addEventListener('change', function() {
+            folderForm.submit();
+        });
+    }
+    
+    // Если есть кнопка "Новая игра", добавляем обработчик события
+    if (newGameBtn && folderSelect) {
+        newGameBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const folderId = folderSelect.value;
+            window.location.href = `?folder_id=${folderId}`;
+        });
+    }
+
     /*игра начало*/
     const remainsElement = document.getElementById("remains");
     let mark = "";
@@ -86,11 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     text: { innerHTML: 'Вы без ошибок определили все пары! Желаете сыграть еще раз?' },
                     icon: 'success'
                 }).then((result) => {
-                    if (result.isConfirmed) { location.reload(true); }
+                    if (result.isConfirmed) { 
+                        // Сохраняем выбранную папку при перезагрузке
+                        const folderId = folderSelect ? folderSelect.value : '';
+                        location.href = folderId ? `?folder_id=${folderId}` : location.href;
+                    }
                 });
-
-                // if (confirm('Вы без ошибок определили все пары! Желаете повторить?')) {
-                //     location.reload();}
             } else if ((remains == 0) & (error_count != 0)) {
                 calert({
                     confirmButton: { innerText: 'Да', style: { background: '#68539E' } },
@@ -99,20 +121,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     text: { innerHTML: 'Вы ошиблись ' + error_count + ' раз(а). Желаете повторить?' },
                     icon: 'question'
                 }).then((result) => {
-                    if (result.isConfirmed) { location.reload(true); }
+                    if (result.isConfirmed) { 
+                        // Сохраняем выбранную папку при перезагрузке
+                        const folderId = folderSelect ? folderSelect.value : '';
+                        location.href = folderId ? `?folder_id=${folderId}` : location.href;
+                    }
                 });
-
-                // if (confirm('Вы ошиблись ' + error_count + ' раз(а). Желаете повторить?')) {
-                //     location.reload();}
             }
-            
-
         } else if (right == "") {
             if (left != mark) {
                 document.getElementById(mark).style = light_style;
                 document.getElementById(left).style = select_style;
                 document.getElementById(left).style.color = "#000";
-
             }
             mark = id_word;
         } else if (left == "") {
@@ -134,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
             right = "";
             mark = "";
         }
-
     }
 
     window.remove = function (btn) {

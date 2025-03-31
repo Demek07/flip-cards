@@ -251,88 +251,156 @@ class CatalogView(MenuMixin, ListView):
 #         # return render(request, self.template_name, {'not_found_words': not_found_words})
 
 
-# Класс для вывода страницы игры
 class GameView(MenuMixin, LoginRequiredMixin, ListView):
     # Указываем модель, данные которой мы хотим отобразить
-    model = Word
+    model = FavoritesWords
     # Имя переменной контекста, которую будем использовать в шаблоне
     context_object_name = 'words_game'
+    # Путь к шаблону, который будет использоваться для отображения страницы
+    template_name = 'words/game.html'
 
     def get_queryset(self):
+        # Получаем ID выбранной папки из параметров запроса
+        folder_id = self.request.GET.get('folder_id')
+
+        # Если папка не выбрана или выбран пункт "Выберите папку со словами", возвращаем None
+        if folder_id is None or folder_id == "":
+            return None
+
         # Обнуляем переменные
         en = []
         rus = []
         en_word = {}
         rus_word = {}
-        # Получаем 10 случайных слов
-        all_objects = Word.objects.filter(favorites_word=self.request.user)
-        if all_objects.count() > 0:
-            # Путь к шаблону, который будет использоваться для отображения страницы
-            self.template_name = 'words/game.html'
-            # Если количество слов меньше 10, то берем все
-            if all_objects.count() < 10:
-                random_objects = random.sample(list(all_objects), all_objects.count())
-            else:
-                # Берем 10 случайных слов
-                random_objects = random.sample(list(all_objects), 10)
-            # Заполняем переменные
-            for item in random_objects:
-                en.append((item.id, item.en_word))
-                rus.append((item.id, item.rus_word))
-            # Перемешиваем слова
-            random.shuffle(rus)
-            tuple(en)
-            tuple(rus)
-            en_word = dict(en)
-            rus_word = dict(rus)
-            return en_word, rus_word
-        else:
-            # Если избранное пусто, то берем шаблон пустого избранного
-            self.template_name = 'words/empty_favotite.html'
 
-    # Метод для модификации начального запроса к БД
+        try:
+            # Если выбраны все избранные слова
+            if folder_id == "all":
+                # Получаем все избранные слова пользователя
+                favorite_word_ids = FavoritesWords.objects.filter(
+                    user=self.request.user
+                ).values_list('word_id', flat=True)
+                all_objects = Word.objects.filter(id__in=favorite_word_ids)
+            else:
+                # Фильтруем слова по выбранной папке через модель FavoritesWords
+                favorite_word_ids = FavoritesWords.objects.filter(
+                    folder_id=folder_id,
+                    user=self.request.user
+                ).values_list('word_id', flat=True)
+
+                # Фильтруем слова по полученным ID
+                all_objects = Word.objects.filter(id__in=favorite_word_ids)
+
+            if all_objects.count() > 0:
+                # Если количество слов меньше 10, то берем все
+                if all_objects.count() < 10:
+                    random_objects = random.sample(list(all_objects), all_objects.count())
+                else:
+                    # Берем 10 случайных слов
+                    random_objects = random.sample(list(all_objects), 10)
+
+                # Заполняем переменные
+                for item in random_objects:
+                    en.append((item.id, item.en_word))
+                    rus.append((item.id, item.rus_word))
+
+                # Перемешиваем слова
+                random.shuffle(rus)
+                tuple(en)
+                tuple(rus)
+                en_word = dict(en)
+                rus_word = dict(rus)
+
+                return en_word, rus_word
+            else:
+                # Если в выбранной папке нет слов
+                return None
+        except Exception as e:
+            print(f"Error: {e}")
+            return None
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        try:
+            # Добавляем список папок в контекст
+            context['folders'] = FavoriteFolder.objects.filter(user=self.request.user)
+        except Exception as e:
+            print(f"Error in get_context_data: {e}")
+            # Если возникла ошибка, используем пустой список
+            context['folders'] = []
+
+        # Добавляем ID выбранной папки
+        context['selected_folder'] = self.request.GET.get('folder_id')
+
         return context
 
 
-# Класс для вывода страницы игры Word Scramble Game
 class ScrambleGameView(MenuMixin, LoginRequiredMixin, ListView):
-    # Указываем модель, данные которой мы хотим отобразить
     model = Word
-    # Путь к шаблону, который будет использоваться для отображения страницы
-    # template_name = 'words/scramble_game.html'
-    # Имя переменной контекста, которую будем использовать в шаблоне
     context_object_name = 'scramble_words_game'
+    template_name = 'words/scramble_game.html'  # Устанавливаем шаблон по умолчанию
 
     def get_queryset(self):
-        # Получаем все слова из избранных слов
-        all_objects = Word.objects.filter(favorites_word=self.request.user)
-        if all_objects.count() > 0:
-            # Если избранное не пусто, то берем шаблон игры
-            self.template_name = 'words/scramble_game.html'
-            # Берем случайное слово
-            random_objects = random.sample(list(all_objects), 1)
-            # Заполняем переменные
-            en_word = random_objects[0].en_word
-            en_word_shuffle = en_word
-            rus_word = random_objects[0].rus_word
-            hint = random_objects[0].hints.capitalize()
-            while en_word.upper() == en_word_shuffle.upper():
-                en_word_shuffle = list(en_word.upper())
-                # Перемешиваем слова
-                random.shuffle(en_word_shuffle)
-                en_word_shuffle = ''.join(en_word_shuffle)
+        # Получаем ID выбранной папки из параметров запроса
+        folder_id = self.request.GET.get('folder_id')
 
-            return en_word_shuffle, rus_word, hint, en_word
-        else:
-            # Если избранное пусто, то берем шаблон пустого избранного
-            self.template_name = 'words/empty_favotite.html'
-            # return play
+        # Если папка не выбрана или выбран пункт "Выберите папку со словами", возвращаем None
+        if folder_id is None or folder_id == "":
+            return None
 
-    # Метод для модификации начального запроса к БД
+        try:
+            # Если выбраны все избранные слова
+            if folder_id == "all":
+                # Получаем все избранные слова пользователя
+                all_objects = Word.objects.filter(favorites_word=self.request.user)
+            else:
+                # Фильтруем слова по выбранной папке через модель FavoritesWords
+                favorite_word_ids = FavoritesWords.objects.filter(
+                    folder_id=folder_id,
+                    user=self.request.user
+                ).values_list('word_id', flat=True)
+
+                # Фильтруем слова по полученным ID
+                all_objects = Word.objects.filter(id__in=favorite_word_ids)
+
+            if all_objects.count() > 0:
+                # Берем случайное слово
+                random_objects = random.sample(list(all_objects), 1)
+
+                # Заполняем переменные
+                en_word = random_objects[0].en_word
+                en_word_shuffle = en_word
+                rus_word = random_objects[0].rus_word
+                hint = random_objects[0].hints.capitalize() if random_objects[0].hints else "Подсказка недоступна"
+
+                # Перемешиваем буквы в слове, пока оно не станет отличным от оригинала
+                while en_word.upper() == en_word_shuffle.upper():
+                    en_word_shuffle = list(en_word.upper())
+                    random.shuffle(en_word_shuffle)
+                    en_word_shuffle = ''.join(en_word_shuffle)
+
+                return en_word_shuffle, rus_word, hint, en_word
+            else:
+                # Если в выбранной папке нет слов
+                return None
+        except Exception as e:
+            print(f"Error: {e}")
+            return None
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        try:
+            # Добавляем список папок в контекст
+            context['folders'] = FavoriteFolder.objects.filter(user=self.request.user)
+        except Exception as e:
+            print(f"Error in get_context_data: {e}")
+            context['folders'] = []
+
+        # Добавляем ID выбранной папки
+        context['selected_folder'] = self.request.GET.get('folder_id')
+
         return context
 
 
