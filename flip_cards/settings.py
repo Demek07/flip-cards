@@ -140,7 +140,7 @@ WSGI_APPLICATION = 'flip_cards.wsgi.application'
 #     }
 # }
 
-# Postgresql команды сборки:
+# Postgresql команды сборки::
 # удаление базы  данных - psql -U postgres -c "DROP DATABASE dict_db"
 # создание базы данных - psql -U postgres -c "CREATE DATABASE dict_db WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0"
 
