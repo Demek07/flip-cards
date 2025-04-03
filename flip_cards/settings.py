@@ -149,7 +149,7 @@ DATABASES = {
         'NAME': 'dict_db',
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PWD'),
-        'HOST': 'localhost',
+        'HOST': os.getenv('POSTGRES_HOST'),
         'PORT': '5432',
         'OPTIONS': {
             'client_encoding': 'UTF8'
