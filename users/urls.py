@@ -11,6 +11,7 @@ urlpatterns = [
     path('signup/', views.RegisterUser.as_view(), name='signup'),
     # Сообщение об успешной регистрации
     path('register_done/', views.RegisterDoneView.as_view(), name='register_done'),
+    path('activate/', views.ActivateAccountView.as_view(), name='activate_account'),
     # Профиль / Изменение пароля / Мои карточки
     path("profile/", views.ProfileUser.as_view(), name='profile'),
     path("password_change/", views.PasswordChange.as_view(), name='password_change'),

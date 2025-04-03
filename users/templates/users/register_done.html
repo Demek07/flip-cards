@@ -1,5 +1,29 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<p>Вы успешно зарегистрировались. <a href="{% url 'users:login' %}">Авторизуйтесь</a>.</p>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4>Регистрация успешна!</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <p>Вы успешно зарегистрировались на сайте Flip-Cards.</p>
+                            <p>
+                                <strong>На ваш email отправлена ссылка для активации аккаунта.</strong>
+                            </p>
+                            <p>Пожалуйста, проверьте вашу электронную почту и перейдите по ссылке для активации.</p>
+                            <p>
+                                После активации вы сможете <a href="{% url 'users:login' %}">авторизоваться</a> на сайте.
+                            </p>
+                        </div>
+                        <p class="text-muted small">
+                            Если вы не получили письмо, проверьте папку "Спам" или свяжитесь с администрацией сайта.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

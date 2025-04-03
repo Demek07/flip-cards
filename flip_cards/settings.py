@@ -58,17 +58,17 @@ INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
     'flip_cards_app',
-    "allauth_themes.bootstrap",
+    # "allauth_themes.bootstrap",
     # "allauth_ui",
-    'allauth',
-    'allauth.account',
+    # 'allauth',
+    # 'allauth.account',
     "widget_tweaks",
     # "slippers",
     'users',
     # 'sslserver',
 ]
 
-ALLAUTH_UI_THEME = "corporate"
+# ALLAUTH_UI_THEME = "corporate"
 
 # Админпанель
 JAZZMIN_UI_TWEAKS = {
@@ -95,7 +95,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
+    # 'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'flip_cards.urls'
@@ -205,14 +205,15 @@ CACHES = {
     }
 }
 
-LOGIN_URL = 'account_login'
+# LOGIN_URL = 'account_login'
+LOGIN_URL = 'users:login'
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_REDIRECT_URL = "/"
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',  # Стандартный бекенд для аутентификации по username
     'users.authentication.EmailAuthBackend',      # Наш кастомный бекенд для аутентификации по email
-    'allauth.account.auth_backends.AuthenticationBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -240,12 +241,15 @@ API_WORDNIK = os.getenv("API_WORDNIK")
 
 API_DICTIONARYAPI = os.getenv("API_DICTIONARYAPI")
 
+# Настройки для активации аккаунта по email
+EMAIL_ACTIVATION_TIMEOUT_DAYS = 7  # Срок действия ссылки активации (в днях)
 
-ALLAUTH_UI_THEME = "corporate"
 
-ACCOUNT_AUTHENTICATION_METHOD = "username_email"  # (default: "username", alternatives: "email" or "username_email")
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+# ALLAUTH_UI_THEME = "corporate"
+
+# ACCOUNT_AUTHENTICATION_METHOD = "username_email"  # (default: "username", alternatives: "email" or "username_email")
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 # LOGGING = {
 #     'version': 1,

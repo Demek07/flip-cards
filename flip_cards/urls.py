@@ -35,7 +35,7 @@ urlpatterns = [
     path('about/', views.AboutView.as_view(), name='about'),
     path('words/', include('flip_cards_app.urls')),
     path('users/', include('users.urls', namespace='users')),
-    path('accounts/', include('allauth.urls')),
+    # path('accounts/', include('allauth.urls')),
     # Профиль / Изменение пароля / Мои карточки
     path("accounts/profile/", user_views.ProfileUser.as_view(), name='profile'),
 

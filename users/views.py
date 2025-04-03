@@ -7,6 +7,55 @@ from flip_cards_app.views import MenuMixin
 from flip_cards_app.models import Word
 from .forms import RegisterUserForm, ProfileUserForm, UserPasswordChangeForm, CustomAuthenticationForm
 
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import EmailActivationToken
+from .utils import send_activation_email
+
+
+from django.views import View
+
+
+class ActivateAccountView(MenuMixin, TemplateView):
+    """
+    Представление для активации аккаунта пользователя по токену
+    """
+    template_name = 'users/activation_success.html'  # По умолчанию
+
+    def get(self, request, *args, **kwargs):
+        token = request.GET.get('token')
+        if not token:
+            messages.error(request, 'Недействительная ссылка активации.')
+            self.template_name = 'users/activation_error.html'
+            kwargs['error_message'] = 'Недействительная ссылка активации.'
+            return super().get(request, *args, **kwargs)
+
+        try:
+            activation = EmailActivationToken.objects.get(token=token)
+            if not activation.is_valid():
+                messages.error(request, 'Срок действия ссылки активации истек. Пожалуйста, запросите новую ссылку.')
+                self.template_name = 'users/activation_error.html'
+                kwargs['error_message'] = 'Срок действия ссылки активации истек. Пожалуйста, запросите новую ссылку.'
+                return super().get(request, *args, **kwargs)
+
+            user = activation.user
+            user.is_active = True
+            user.save()
+
+            # Удаляем использованный токен
+            activation.delete()
+
+            # Устанавливаем шаблон успешной активации
+            self.template_name = 'users/activation_success.html'
+            kwargs['user'] = user
+            return super().get(request, *args, **kwargs)
+
+        except EmailActivationToken.DoesNotExist:
+            messages.error(request, 'Недействительная ссылка активации.')
+            self.template_name = 'users/activation_error.html'
+            kwargs['error_message'] = 'Недействительная ссылка активации.'
+            return super().get(request, *args, **kwargs)
+
 
 class LoginUser(MenuMixin, LoginView):
     form_class = CustomAuthenticationForm
@@ -25,9 +74,28 @@ class LogoutUser(LogoutView):
 
 
 class RegisterUser(MenuMixin, CreateView):
+    """
+    Представление для регистрации пользователя с отправкой email для активации
+    """
     form_class = RegisterUserForm
     template_name = 'users/register.html'
-    success_url = reverse_lazy('users:register_done')
+    success_url = reverse_lazy('users:register_done')  # Изменено на страницу входа
+
+    def form_valid(self, form):
+        # Сохраняем пользователя (он будет неактивным благодаря переопределенному методу save в форме)
+        response = super().form_valid(form)
+        user = self.object
+
+        # Создаем токен активации
+        token = EmailActivationToken.objects.create(user=user)
+
+        # Отправляем email с ссылкой активации
+        send_activation_email(self.request, user, token.token)
+
+        # Добавляем сообщение об успешной регистрации
+        messages.success(self.request, 'Регистрация успешна! На ваш email отправлена ссылка для активации аккаунта.')
+
+        return response
 
 
 class RegisterDoneView(MenuMixin, TemplateView):
