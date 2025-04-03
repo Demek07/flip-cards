@@ -34,7 +34,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['flip-cards.ru', 'www.flip-cards.ru', 'localhost',
-                 '127.0.0.1', '176.124.215.68', 'demek07-flip-cards-f779.twc1.net']
+                 '127.0.0.1', '188.225.25.251', 'demek07-flip-cards-66be.twc1.net', '192.168.0.6']
 
 CSRF_TRUSTED_ORIGINS = ['https://flip-cards.ru', 'https://www.flip-cards.ru']
 
